@@ -1,0 +1,149 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #64748b;
+  --border: #dce4ee;
+  --brand: #2f6fb1;
+  --brand-strong: #1f5f9e;
+  --brand-soft: #e7f0fb;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.panel {
+  padding: 14px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--brand), #75a7d5);
+  color: #fff;
+  font-weight: 850;
+  font-size: 13px;
+  letter-spacing: -0.04em;
+  box-shadow: 0 8px 20px rgba(47,111,177,0.22);
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.03em;
+}
+
+p {
+  margin: 1px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.switch-row,
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.switch-row span {
+  display: grid;
+  gap: 3px;
+}
+
+strong {
+  font-size: 13px;
+}
+
+small,
+.field span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+input[type="checkbox"] {
+  width: 38px;
+  height: 22px;
+  accent-color: var(--brand);
+}
+
+select {
+  min-height: 34px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--brand-strong);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2f78bf, #2464a2);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#status {
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* IDU+ v0.3 popup polish */
+body {
+  font-family: "Inter", "InterVariable", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+.switch-row,
+.field {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 14px;
+}
+.logo {
+  height: 40px;
+  border-radius: 13px;
+}

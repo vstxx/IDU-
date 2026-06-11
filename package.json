@@ -1,0 +1,20 @@
+{
+  "name": "idu-plus-extension",
+  "version": "0.4.0",
+  "private": true,
+  "description": "IDU+ Chrome/Opera/Safari WebExtension source workspace for s19.idu.edu.pl visual redesign.",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-extension.mjs",
+    "pack": "node scripts/pack-extension.mjs"
+  },
+  "keywords": [
+    "chrome-extension",
+    "webextension",
+    "idu",
+    "css-injection",
+    "ui-redesign"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {}
+}
