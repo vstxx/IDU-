@@ -1,0 +1,557 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 59m 56s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/informations#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny > Aktualności",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Podpięte aktualności:",
+    "textStart": "Podpięte aktualności: Posiedzenie Sejmu Szkolnego | 11.06.2026 11 cze 2026, 07:00 komentarze: 1 Aktualizacja: 08 cze 2026, 22:27 MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students 03 cze 2026, 16:00 komentarze: 0 MYP MOCKS 2026 | MYP5 08 cze 2026, 17:00 komentarze: 0 MYP MOCKS 2026 | MYP4 08 cze 2026, 17:00 komentarze: 0 Aktualizacja: 03 cze 2026, 11:29 DP | RETAKES SESSIONS info for stude",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 1314
+    },
+    "links": [
+      {
+        "text": "Posiedzenie Sejmu Szkolnego | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18007"
+      },
+      {
+        "text": "MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students",
+        "href": "https://s19.idu.edu.pl/informations/17989"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP5",
+        "href": "https://s19.idu.edu.pl/informations/17996"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP4",
+        "href": "https://s19.idu.edu.pl/informations/17995"
+      },
+      {
+        "text": "DP | RETAKES SESSIONS info for students",
+        "href": "https://s19.idu.edu.pl/informations/17654"
+      },
+      {
+        "text": "Applying to the US important info",
+        "href": "https://s19.idu.edu.pl/informations/16815"
+      },
+      {
+        "text": "SCHOOL CALENDAR 2025/26",
+        "href": "https://s19.idu.edu.pl/informations/16618"
+      },
+      {
+        "text": "DYŻURY PSYCHOLOGÓW SZKOLNYCH",
+        "href": "https://s19.idu.edu.pl/informations/16610"
+      },
+      {
+        "text": "MICROSOFT 365",
+        "href": "https://s19.idu.edu.pl/informations/16601"
+      },
+      {
+        "text": "BRITANNICA and NEW YORK TIMES access",
+        "href": "https://s19.idu.edu.pl/informations/16598"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18003"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 10.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18002"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17991"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17990"
+      },
+      {
+        "text": "Spotkanie Rady Szkoły | Tue, 9.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17981"
+      },
+      {
+        "text": "Godziny otwarcia sekretariatów w dn. 5.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17977"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17976"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17975"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 2.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17974"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17971"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17964"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17954"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17953"
+      },
+      {
+        "text": "TEATR BARDZO DYSKUSYJNY | \"IWONA KSIĘŻNICZKA BURGUNDA”, Teatr Ateneum",
+        "href": "https://s19.idu.edu.pl/informations/17958"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17956"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17948"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17947"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17932"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17943"
+      },
+      {
+        "text": "TEACHERS DP1 | Trip to Berlin (26-30.05.2026) - list of students",
+        "href": "https://s19.idu.edu.pl/informations/17937"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17935"
+      },
+      {
+        "text": "Spotkanie Ministerstw Szkolnych | Wed, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17934"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17925"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17927"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17926"
+      },
+      {
+        "text": "Zaproszenie na wycieczkę ornitologiczną (dla uczniów MYP) - przypomnienie",
+        "href": "https://s19.idu.edu.pl/informations/17823"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 25.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17922"
+      },
+      {
+        "text": "Łazienki Królewskie ponownie zapraszają uczniów IB Raszyńska!",
+        "href": "https://s19.idu.edu.pl/informations/17916"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17915"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 20.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17912"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Podpięte aktualności:",
+    "textStart": "Podpięte aktualności: Posiedzenie Sejmu Szkolnego | 11.06.2026 11 cze 2026, 07:00 komentarze: 1 Aktualizacja: 08 cze 2026, 22:27 MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students 03 cze 2026, 16:00 komentarze: 0 MYP MOCKS 2026 | MYP5 08 cze 2026, 17:00 komentarze: 0 MYP MOCKS 2026 | MYP4 08 cze 2026, 17:00 komentarze: 0 Aktualizacja: 03 cze 2026, 11:29 DP | RETAKES SESSIONS info for stude",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 343
+    },
+    "links": [
+      {
+        "text": "Posiedzenie Sejmu Szkolnego | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18007"
+      },
+      {
+        "text": "MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students",
+        "href": "https://s19.idu.edu.pl/informations/17989"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP5",
+        "href": "https://s19.idu.edu.pl/informations/17996"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP4",
+        "href": "https://s19.idu.edu.pl/informations/17995"
+      },
+      {
+        "text": "DP | RETAKES SESSIONS info for students",
+        "href": "https://s19.idu.edu.pl/informations/17654"
+      },
+      {
+        "text": "Applying to the US important info",
+        "href": "https://s19.idu.edu.pl/informations/16815"
+      },
+      {
+        "text": "SCHOOL CALENDAR 2025/26",
+        "href": "https://s19.idu.edu.pl/informations/16618"
+      },
+      {
+        "text": "DYŻURY PSYCHOLOGÓW SZKOLNYCH",
+        "href": "https://s19.idu.edu.pl/informations/16610"
+      },
+      {
+        "text": "MICROSOFT 365",
+        "href": "https://s19.idu.edu.pl/informations/16601"
+      },
+      {
+        "text": "BRITANNICA and NEW YORK TIMES access",
+        "href": "https://s19.idu.edu.pl/informations/16598"
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "",
+    "textStart": "DP1 | TIMETABLE CHANGES | 11.06.2026 10 cze 2026, 17:00 komentarze: 0 DP1 | TIMETABLE CHANGES | Wed, 10.06.2026 10 cze 2026, 12:00 komentarze: 0 Aktualizacja: 08 cze 2026, 10:43 MYP5 | TIMETABLE CHANGES | Mon, 8.06.2026 08 cze 2026, 07:00 komentarze: 0 DP1 | TIMETABLE CHANGES | Mon, 8.06.2026 07 cze 2026, 17:00 komentarze: 0 Spotkanie Rady Szkoły | Tue, 9.06.2026 02 cze 2026, 15:00 komentarze: 0 G",
+    "rect": {
+      "x": 200,
+      "y": 554,
+      "width": 950,
+      "height": 951
+    },
+    "links": [
+      {
+        "text": "DP1 | TIMETABLE CHANGES | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18003"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 10.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18002"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17991"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17990"
+      },
+      {
+        "text": "Spotkanie Rady Szkoły | Tue, 9.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17981"
+      },
+      {
+        "text": "Godziny otwarcia sekretariatów w dn. 5.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17977"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17976"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17975"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 2.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17974"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17971"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17964"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17954"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17953"
+      },
+      {
+        "text": "TEATR BARDZO DYSKUSYJNY | \"IWONA KSIĘŻNICZKA BURGUNDA”, Teatr Ateneum",
+        "href": "https://s19.idu.edu.pl/informations/17958"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17956"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17948"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17947"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17932"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17943"
+      },
+      {
+        "text": "TEACHERS DP1 | Trip to Berlin (26-30.05.2026) - list of students",
+        "href": "https://s19.idu.edu.pl/informations/17937"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17935"
+      },
+      {
+        "text": "Spotkanie Ministerstw Szkolnych | Wed, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17934"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17925"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17927"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17926"
+      },
+      {
+        "text": "Zaproszenie na wycieczkę ornitologiczną (dla uczniów MYP) - przypomnienie",
+        "href": "https://s19.idu.edu.pl/informations/17823"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 25.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17922"
+      },
+      {
+        "text": "Łazienki Królewskie ponownie zapraszają uczniów IB Raszyńska!",
+        "href": "https://s19.idu.edu.pl/informations/17916"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17915"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 20.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17912"
+      },
+      {
+        "text": "2",
+        "href": "https://s19.idu.edu.pl/informations?page=2"
+      },
+      {
+        "text": "3",
+        "href": "https://s19.idu.edu.pl/informations?page=3"
+      },
+      {
+        "text": "4",
+        "href": "https://s19.idu.edu.pl/informations?page=4"
+      },
+      {
+        "text": "5",
+        "href": "https://s19.idu.edu.pl/informations?page=5"
+      },
+      {
+        "text": "6",
+        "href": "https://s19.idu.edu.pl/informations?page=6"
+      },
+      {
+        "text": "7",
+        "href": "https://s19.idu.edu.pl/informations?page=7"
+      },
+      {
+        "text": "8",
+        "href": "https://s19.idu.edu.pl/informations?page=8"
+      },
+      {
+        "text": "9",
+        "href": "https://s19.idu.edu.pl/informations?page=9"
+      },
+      {
+        "text": "50",
+        "href": "https://s19.idu.edu.pl/informations?page=50"
+      },
+      {
+        "text": "51",
+        "href": "https://s19.idu.edu.pl/informations?page=51"
+      }
+    ]
+  }
+]

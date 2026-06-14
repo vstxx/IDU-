@@ -1,0 +1,365 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 59m 55s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny > Met Galla > Student Name > Oceny",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Student Name",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Student Name - wystawione oceny",
+    "textStart": "Student Name - wystawione oceny Przedmiot Oceny Ocena końcowa DP1_BM oceny cząstkowe : 6 (Unit 3 test 05 mar 2026) 7 (U1 definitions 31 mar 2026) 6 (Units 134 class test 11 maj 2026) 6 (MayMock 08 cze 2026) DP1_CAS DP1_CAS ALL CAS blog checks: Nieobecny (CAS Blog Check 2 18 lut 2026) NZAL (Portfolio review - May 2026 10 maj 2026) DP1_CS Mock : 7 (Mock 07 cze 2026) DP1_English_B (4) Summative assess",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 1101
+    },
+    "links": [
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63258"
+      },
+      {
+        "text": "DP1_CAS ALL",
+        "href": "https://s19.idu.edu.pl/subjects/63263"
+      },
+      {
+        "text": "DP1_CS",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Paper 1 writing: 29/30 Paper 2 ...",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2469677"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "[1/1]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2399452"
+      },
+      {
+        "text": "[0/1]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2420547"
+      },
+      {
+        "text": "4 [11/20]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2403951"
+      },
+      {
+        "text": "5 [20/30]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2432164"
+      },
+      {
+        "text": "ZAL",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2413451"
+      },
+      {
+        "text": "ZAL",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2430998"
+      },
+      {
+        "text": "5 [11/16]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2456132"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2460963"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2460964"
+      },
+      {
+        "text": "4 [30/50]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2461098"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Polish_A (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "DP1_TUTOR",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "Extended Essay",
+        "href": "https://s19.idu.edu.pl/subjects/63698"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Student Name - wystawione oceny",
+    "textStart": "Student Name - wystawione oceny Przedmiot Oceny Ocena końcowa DP1_BM oceny cząstkowe : 6 (Unit 3 test 05 mar 2026) 7 (U1 definitions 31 mar 2026) 6 (Units 134 class test 11 maj 2026) 6 (MayMock 08 cze 2026) DP1_CAS DP1_CAS ALL CAS blog checks: Nieobecny (CAS Blog Check 2 18 lut 2026) NZAL (Portfolio review - May 2026 10 maj 2026) DP1_CS Mock : 7 (Mock 07 cze 2026) DP1_English_B (4) Summative assess",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 1091
+    },
+    "links": [
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63258"
+      },
+      {
+        "text": "DP1_CAS ALL",
+        "href": "https://s19.idu.edu.pl/subjects/63263"
+      },
+      {
+        "text": "DP1_CS",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Paper 1 writing: 29/30 Paper 2 ...",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2469677"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "[1/1]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2399452"
+      },
+      {
+        "text": "[0/1]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2420547"
+      },
+      {
+        "text": "4 [11/20]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2403951"
+      },
+      {
+        "text": "5 [20/30]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2432164"
+      },
+      {
+        "text": "ZAL",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2413451"
+      },
+      {
+        "text": "ZAL",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2430998"
+      },
+      {
+        "text": "5 [11/16]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2456132"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2460963"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2460964"
+      },
+      {
+        "text": "4 [30/50]",
+        "href": "https://s19.idu.edu.pl/students/11899/grades#description_for_grade_2461098"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Polish_A (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "DP1_TUTOR",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "Extended Essay",
+        "href": "https://s19.idu.edu.pl/subjects/63698"
+      }
+    ]
+  }
+]

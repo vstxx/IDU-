@@ -1,0 +1,2096 @@
+@font-face {
+  font-family: "InterVariable";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "InterVariable";
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aligra";
+  src: url("../fonts/Aligra.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@media screen {
+  html.idu-plus {
+    --idu-bg: #eef5fb;
+    --idu-bg-soft: #f4f8fc;
+    --idu-navy: #0b2f55;
+    --idu-navy-2: #123f68;
+    --idu-text: #0d2945;
+    --idu-text-soft: #38566f;
+    --idu-muted: #6f8497;
+    --idu-accent: #2f78b7;
+    --idu-accent-2: #3b82c4;
+    --idu-accent-deep: #185d96;
+    --idu-accent-soft: rgba(47, 120, 183, 0.1);
+    --idu-accent-faint: rgba(47, 120, 183, 0.08);
+    --idu-accent-border: rgba(47, 120, 183, 0.18);
+    --idu-accent-border-strong: rgba(47, 120, 183, 0.34);
+    --idu-focus-ring: rgba(59, 130, 196, 0.18);
+    --idu-accent-shadow: 0 10px 22px rgba(47, 120, 183, 0.2);
+    --idu-topbar: #0b2f55;
+    --idu-topbar-2: #123f68;
+    --idu-topbar-glow: rgba(102, 169, 224, 0.24);
+    --idu-topbar-shadow: 0 18px 50px rgba(18, 52, 82, 0.19);
+    --idu-surface: rgba(255, 255, 255, 0.78);
+    --idu-surface-strong: rgba(255, 255, 255, 0.88);
+    --idu-surface-soft: rgba(255, 255, 255, 0.58);
+    --idu-popover: rgba(255, 255, 255, 0.94);
+    --idu-input-bg: rgba(255, 255, 255, 0.82);
+    --idu-input-gloss: rgba(255, 255, 255, 0.72);
+    --idu-table-bg: rgba(255, 255, 255, 0.54);
+    --idu-row-bg: rgba(255, 255, 255, 0.56);
+    --idu-row-bg-soft: rgba(255, 255, 255, 0.38);
+    --idu-row-alt: rgba(235, 244, 251, 0.5);
+    --idu-hover-bg: rgba(255, 255, 255, 0.58);
+    --idu-inline-bg: rgba(255, 255, 255, 0.5);
+    --idu-border: rgba(127, 166, 202, 0.34);
+    --idu-border-strong: rgba(103, 146, 184, 0.45);
+    --idu-line: rgba(132, 166, 196, 0.24);
+    --idu-shadow: 0 18px 48px rgba(38, 78, 112, 0.13);
+    --idu-shadow-soft: 0 10px 30px rgba(42, 83, 118, 0.1);
+    --idu-page-glow-a: rgba(147, 190, 225, 0.45);
+    --idu-page-glow-b: rgba(185, 211, 232, 0.5);
+    --idu-bg-end: #edf5fb;
+    --idu-header-text: #f5fbff;
+    --idu-header-chip-bg: rgba(255, 255, 255, 0.085);
+    --idu-header-chip-border: rgba(221, 236, 248, 0.22);
+    --idu-header-chip-hover: rgba(255, 255, 255, 0.14);
+    --idu-lesson-bg: rgba(216, 232, 244, 0.8);
+    --idu-lesson-border: rgba(111, 156, 194, 0.2);
+    --idu-lesson-shadow: 0 8px 18px rgba(39, 78, 112, 0.08);
+    --idu-radius-lg: 22px;
+    --idu-radius-md: 16px;
+    --idu-radius-sm: 12px;
+    --idu-shell-max: 1620px;
+    --idu-section-gap: 12px;
+    --idu-dashboard-gap: 18px;
+    --idu-font: "InterVariable", Inter, "Segoe UI", Arial, sans-serif;
+    --idu-title-font: "Aligra", Georgia, serif;
+    --idu-icon-user: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+    --idu-icon-mail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='16' x='2' y='4' rx='2'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E");
+    --idu-icon-news: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 22h16a2 2 0 0 0 2-2V4H2v16a2 2 0 0 0 2 2Z'/%3E%3Cpath d='M7 8h10'/%3E%3Cpath d='M7 12h10'/%3E%3Cpath d='M7 16h6'/%3E%3C/svg%3E");
+    --idu-icon-template: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Cpath d='M8 13h8'/%3E%3Cpath d='M8 17h6'/%3E%3C/svg%3E");
+    --idu-icon-forum: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z'/%3E%3Cpath d='M8 9h8'/%3E%3Cpath d='M8 13h5'/%3E%3C/svg%3E");
+    --idu-icon-logout: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpath d='m16 17 5-5-5-5'/%3E%3Cpath d='M21 12H9'/%3E%3C/svg%3E");
+    --idu-icon-document: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Cpath d='M9 13h6'/%3E%3Cpath d='M9 17h4'/%3E%3C/svg%3E");
+    --idu-profile-icon-user: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21a8 8 0 0 0-16 0'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+    --idu-profile-icon-home: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 10.5 12 3l9 7.5'/%3E%3Cpath d='M5 10v10h14V10'/%3E%3Cpath d='M9 20v-6h6v6'/%3E%3C/svg%3E");
+    --idu-profile-icon-mail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='m4 8 7.05 5.2a1.6 1.6 0 0 0 1.9 0L20 8'/%3E%3C/svg%3E");
+    --idu-profile-icon-phone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 3.2 2 2 0 0 1 4.11 1h2a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.8a2 2 0 0 1-.45 2.11L7.45 8.5a16 16 0 0 0 8.05 8.05l.87-.87a2 2 0 0 1 2.11-.45c.9.31 1.84.53 2.8.66A2 2 0 0 1 22 16.92Z'/%3E%3C/svg%3E");
+    --idu-profile-icon-mobile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='7' y='2' width='10' height='20' rx='2'/%3E%3Cpath d='M11 18h2'/%3E%3C/svg%3E");
+    --idu-profile-icon-globe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M2 12h20'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 0 20'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 0 0 20'/%3E%3C/svg%3E");
+    --idu-profile-icon-video: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='6' width='13' height='12' rx='3'/%3E%3Cpath d='m16 10 5-3v10l-5-3'/%3E%3C/svg%3E");
+    --idu-profile-icon-message: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z'/%3E%3Cpath d='M8 9h8'/%3E%3Cpath d='M8 13h5'/%3E%3C/svg%3E");
+    --idu-attendance-present: #2f9e61;
+    --idu-attendance-absence: #d85b61;
+    --idu-attendance-lateness: #c18a26;
+    --idu-event-icon-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 6h13'/%3E%3Cpath d='M8 12h13'/%3E%3Cpath d='M8 18h13'/%3E%3Cpath d='M3 6h.01'/%3E%3Cpath d='M3 12h.01'/%3E%3Cpath d='M3 18h.01'/%3E%3C/svg%3E");
+    --idu-event-icon-calendar: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v4'/%3E%3Cpath d='M16 2v4'/%3E%3Crect x='3' y='4' width='18' height='18' rx='3'/%3E%3Cpath d='M3 10h18'/%3E%3Cpath d='m9 15 2 2 4-4'/%3E%3C/svg%3E");
+    --idu-event-icon-announcement: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11v2a2 2 0 0 0 2 2h3l7 4V5l-7 4H5a2 2 0 0 0-2 2Z'/%3E%3Cpath d='M19 8a5 5 0 0 1 0 8'/%3E%3C/svg%3E");
+    --idu-event-icon-grade: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 14.7 8.5 21 9.4l-4.5 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2L3 9.4l6.3-.9L12 3Z'/%3E%3C/svg%3E");
+    --idu-event-icon-attendance: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9.5' cy='7' r='4'/%3E%3Cpath d='m16 11 2 2 4-4'/%3E%3C/svg%3E");
+    --idu-event-icon-absence: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9.5' cy='7' r='4'/%3E%3Cpath d='m18 8 4 4'/%3E%3Cpath d='m22 8-4 4'/%3E%3C/svg%3E");
+    --idu-event-icon-justified: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
+    --idu-event-icon-lateness: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3Cpath d='M7 3 4 6'/%3E%3Cpath d='m17 3 3 3'/%3E%3C/svg%3E");
+    --idu-event-icon-forum: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z'/%3E%3Cpath d='M8 9h8'/%3E%3Cpath d='M8 13h5'/%3E%3C/svg%3E");
+    --idu-event-icon-file: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Cpath d='M9 13h6'/%3E%3Cpath d='M9 17h4'/%3E%3C/svg%3E");
+    --idu-event-icon-lesson: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/%3E%3Cpath d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z'/%3E%3C/svg%3E");
+    --idu-event-icon-homework: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='3' width='14' height='18' rx='2'/%3E%3Cpath d='M9 7h6'/%3E%3Cpath d='M9 12h6'/%3E%3Cpath d='M9 17h3'/%3E%3C/svg%3E");
+    --idu-event-icon-meeting: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+    --idu-inline-icon-presence: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%232f9e61' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9.5' cy='7' r='4'/%3E%3Cpath d='m16 11 2 2 4-4'/%3E%3C/svg%3E");
+    --idu-inline-icon-absence: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23d85b61' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9.5' cy='7' r='4'/%3E%3Cpath d='m18 8 4 4'/%3E%3Cpath d='m22 8-4 4'/%3E%3C/svg%3E");
+    --idu-inline-icon-justified: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%232f9e61' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E");
+    --idu-inline-icon-lateness: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c18a26' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3Cpath d='M7 3 4 6'/%3E%3Cpath d='m17 3 3 3'/%3E%3C/svg%3E");
+    color-scheme: light;
+  }
+
+  html.idu-plus[data-idu-theme="dark"] {
+    --idu-bg: #0b0c0f;
+    --idu-bg-soft: #111216;
+    --idu-bg-end: #15161a;
+    --idu-navy: #111827;
+    --idu-navy-2: #1f2933;
+    --idu-text: #f1f3f5;
+    --idu-text-soft: #d3d7de;
+    --idu-muted: #9ba1aa;
+    --idu-surface: rgba(24, 25, 29, 0.78);
+    --idu-surface-strong: rgba(31, 32, 37, 0.92);
+    --idu-surface-soft: rgba(35, 36, 42, 0.58);
+    --idu-popover: rgba(18, 19, 23, 0.96);
+    --idu-input-bg: rgba(20, 21, 25, 0.82);
+    --idu-input-gloss: rgba(255, 255, 255, 0.06);
+    --idu-table-bg: rgba(27, 28, 33, 0.6);
+    --idu-row-bg: rgba(35, 36, 42, 0.58);
+    --idu-row-bg-soft: rgba(33, 34, 39, 0.46);
+    --idu-row-alt: rgba(44, 45, 52, 0.42);
+    --idu-hover-bg: rgba(56, 57, 64, 0.48);
+    --idu-inline-bg: rgba(34, 35, 40, 0.58);
+    --idu-border: rgba(192, 198, 208, 0.18);
+    --idu-border-strong: rgba(204, 210, 220, 0.28);
+    --idu-line: rgba(205, 211, 221, 0.12);
+    --idu-shadow: 0 22px 58px rgba(0, 0, 0, 0.32);
+    --idu-shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.24);
+    --idu-page-glow-a: rgba(92, 96, 105, 0.24);
+    --idu-page-glow-b: rgba(64, 66, 74, 0.18);
+    --idu-header-text: #f2f8ff;
+    --idu-header-chip-bg: rgba(255, 255, 255, 0.07);
+    --idu-header-chip-border: rgba(195, 222, 246, 0.18);
+    --idu-header-chip-hover: rgba(255, 255, 255, 0.12);
+    --idu-lesson-bg: rgba(46, 48, 55, 0.84);
+    --idu-lesson-border: rgba(210, 216, 226, 0.14);
+    --idu-lesson-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    color-scheme: dark;
+  }
+
+  html.idu-plus,
+  html.idu-plus body {
+    min-height: 100%;
+    color: var(--idu-text);
+    font-family: var(--idu-font) !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  html.idu-plus body *,
+  html.idu-plus body *::before,
+  html.idu-plus body *::after {
+    font-family: var(--idu-font) !important;
+  }
+
+  html.idu-plus body {
+    position: relative;
+    overflow-x: hidden;
+    margin: 0 !important;
+    background:
+      radial-gradient(circle at 12% -8%, var(--idu-page-glow-a), transparent 34rem),
+      radial-gradient(circle at 88% 6%, var(--idu-page-glow-b), transparent 32rem),
+      linear-gradient(180deg, var(--idu-bg) 0%, var(--idu-bg-soft) 48%, var(--idu-bg-end) 100%) !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html.idu-plus *,
+  html.idu-plus *::before,
+  html.idu-plus *::after {
+    box-sizing: border-box;
+  }
+
+  html.idu-plus a {
+    color: var(--idu-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  }
+
+  html.idu-plus a:hover,
+  html.idu-plus a:focus {
+    color: var(--idu-accent-deep);
+    text-decoration: none;
+  }
+
+  html.idu-plus a:focus-visible,
+  html.idu-plus button:focus-visible,
+  html.idu-plus input:focus-visible,
+  html.idu-plus select:focus-visible,
+  html.idu-plus textarea:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 4px var(--idu-focus-ring) !important;
+  }
+
+  html.idu-plus h1,
+  html.idu-plus h2,
+  html.idu-plus h3,
+  html.idu-plus h4,
+  html.idu-plus h5,
+  html.idu-plus h6 {
+    color: var(--idu-text);
+    font-family: var(--idu-font) !important;
+    letter-spacing: 0;
+  }
+
+  html.idu-plus .container {
+    width: min(calc(100vw - 48px), var(--idu-shell-max)) !important;
+    max-width: var(--idu-shell-max);
+    margin: 0 auto !important;
+    padding: 0 0 56px !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus .container > .span-24,
+  html.idu-plus #breadcrumbs-section.span-24,
+  html.idu-plus #flash-messages-section.span-24 {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html.idu-plus #breadcrumbs-section .span-20 {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  html.idu-plus #top {
+    float: none !important;
+    display: grid;
+    gap: 10px;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 112px;
+    margin-right: calc(50% - 50vw) !important;
+    margin-left: calc(50% - 50vw) !important;
+    padding: 14px max(24px, calc((100vw - var(--idu-shell-max)) / 2 + 24px)) !important;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--idu-topbar), #000000 6%) 0%, var(--idu-topbar-2) 62%, var(--idu-topbar) 100%),
+      radial-gradient(circle at 70% 0%, var(--idu-topbar-glow), transparent 28rem);
+    border-bottom: 1px solid rgba(196, 218, 237, 0.24);
+    box-shadow: var(--idu-topbar-shadow);
+  }
+
+  html.idu-plus #visual {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 58px;
+  }
+
+  html.idu-plus #logo {
+    float: none !important;
+    flex: 0 0 auto;
+    width: auto !important;
+    padding: 0 !important;
+  }
+
+  html.idu-plus #logo a,
+  html.idu-plus #logo img {
+    display: block;
+  }
+
+  html.idu-plus #logo img {
+    width: 142px !important;
+    height: auto !important;
+    max-height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.2));
+  }
+
+  html.idu-plus #school-name {
+    float: none !important;
+    flex: 1 1 auto;
+    min-width: 280px;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--idu-header-text) !important;
+    font-size: 15.5px !important;
+    font-weight: 650;
+    line-height: 1.28;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+    overflow-wrap: anywhere;
+  }
+
+  html.idu-plus #change_language {
+    float: none !important;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    margin-left: auto;
+    padding: 0 !important;
+    color: rgba(238, 247, 255, 0.82);
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  html.idu-plus #change_language a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 10px;
+    color: var(--idu-header-text) !important;
+    border: 1px solid rgba(221, 236, 248, 0.28);
+    border-radius: 999px;
+    background: var(--idu-header-chip-hover);
+  }
+
+  html.idu-plus #change_language .logout-timer {
+    color: rgba(231, 242, 251, 0.78) !important;
+    font-size: 12px;
+  }
+
+  html.idu-plus #change_language .js-counter {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  html.idu-plus #account-actions {
+    float: none !important;
+    display: flex !important;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0;
+    padding: 0 !important;
+    color: rgba(241, 248, 255, 0.86);
+    font-size: 12px !important;
+    line-height: 1.25;
+  }
+
+  html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
+    float: none !important;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 7px;
+    min-height: 34px;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 7px 12px !important;
+    color: rgba(241, 248, 255, 0.9);
+    border: 1px solid var(--idu-header-chip-border) !important;
+    border-radius: 999px;
+    background-color: var(--idu-header-chip-bg) !important;
+    background-image: none !important;
+    backdrop-filter: blur(16px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 8px 20px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+  }
+
+  html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    background: currentColor;
+    opacity: 0.9;
+    mask: var(--idu-icon-user) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions #messages::before {
+    mask: var(--idu-icon-mail) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions #news::before {
+    mask: var(--idu-icon-news) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions #templates::before {
+    mask: var(--idu-icon-template) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions #forums_path::before {
+    mask: var(--idu-icon-forum) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions #logout::before {
+    mask: var(--idu-icon-logout) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions > #messages:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    -webkit-mask: var(--idu-icon-mail) center / 15px 15px no-repeat;
+    mask: var(--idu-icon-mail) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions > #news:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    -webkit-mask: var(--idu-icon-news) center / 15px 15px no-repeat;
+    mask: var(--idu-icon-news) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions > #templates:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    -webkit-mask: var(--idu-icon-template) center / 15px 15px no-repeat;
+    mask: var(--idu-icon-template) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions > #forums_path:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    -webkit-mask: var(--idu-icon-forum) center / 15px 15px no-repeat;
+    mask: var(--idu-icon-forum) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions > #logout:not(#last_internal_messages):not(#unread_forum_posts)::before {
+    -webkit-mask: var(--idu-icon-logout) center / 15px 15px no-repeat;
+    mask: var(--idu-icon-logout) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus #account-actions strong,
+  html.idu-plus #account-actions #login strong {
+    color: #ffffff;
+    font-weight: 760;
+  }
+
+  html.idu-plus #account-actions a {
+    color: var(--idu-header-text) !important;
+    font-weight: 650;
+  }
+
+  html.idu-plus #last_internal_messages,
+  html.idu-plus #unread_forum_posts {
+    z-index: 30;
+    top: 42px !important;
+    left: 0 !important;
+    width: min(520px, calc(100vw - 48px)) !important;
+    padding: 14px !important;
+    color: var(--idu-text) !important;
+    border: 1px solid var(--idu-border-strong) !important;
+    border-radius: 18px;
+    background-color: var(--idu-popover) !important;
+    box-shadow: var(--idu-shadow);
+    backdrop-filter: blur(22px);
+  }
+
+  html.idu-plus #last_internal_messages,
+  html.idu-plus #last_internal_messages *,
+  html.idu-plus #unread_forum_posts,
+  html.idu-plus #unread_forum_posts * {
+    color: var(--idu-text) !important;
+    text-shadow: none !important;
+  }
+
+  html.idu-plus #last_internal_messages a,
+  html.idu-plus #unread_forum_posts a {
+    color: var(--idu-text) !important;
+    font-weight: 700;
+  }
+
+  html.idu-plus #last_internal_messages a:hover,
+  html.idu-plus #unread_forum_posts a:hover {
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus #last_internal_messages .header,
+  html.idu-plus #unread_forum_posts .header {
+    margin-bottom: 10px;
+    color: var(--idu-text);
+    font-size: 13px;
+    font-weight: 760;
+  }
+
+  html.idu-plus #top-selection,
+  html.idu-plus #breadcrumbs-section,
+  html.idu-plus #flash-messages-section {
+    float: none !important;
+    width: 100% !important;
+    min-height: 0;
+    margin: var(--idu-section-gap) 0 0 !important;
+    padding: 13px 17px !important;
+    border: 1px solid var(--idu-border);
+    border-radius: 20px;
+    background: var(--idu-surface);
+    box-shadow: var(--idu-shadow-soft);
+    backdrop-filter: blur(20px);
+  }
+
+  html.idu-plus #top-selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  html.idu-plus #top-selection form {
+    float: none !important;
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1 1 auto;
+    width: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: 0 !important;
+  }
+
+  html.idu-plus #top-selection form label {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--idu-text-soft);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  html.idu-plus form > div[style*="display:inline"],
+  html.idu-plus form > div[style*="display: inline"] {
+    display: none !important;
+  }
+
+  html.idu-plus #top-selection select {
+    width: min(100%, 310px);
+    min-width: 0;
+  }
+
+  html.idu-plus .idu-toolbar-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
+  html.idu-plus .idu-plus-empty,
+  html.idu-plus .idu-plus-removed {
+    display: none !important;
+  }
+
+  html.idu-plus #breadcrumbs-section {
+    display: block !important;
+    margin-top: 10px !important;
+    padding: 10px 16px !important;
+  }
+
+  html.idu-plus #flash-messages-section {
+    display: block !important;
+  }
+
+  html.idu-plus #flash-messages-section.idu-plus-empty {
+    display: none !important;
+  }
+
+  html.idu-plus #breadcrumbs {
+    padding: 0 !important;
+    color: var(--idu-muted);
+    background-image: none !important;
+    font-size: 12px !important;
+  }
+
+  html.idu-plus #flash-messages-section:empty {
+    display: none;
+  }
+
+  html.idu-plus #site-content {
+    float: none !important;
+    width: 100% !important;
+    margin-top: var(--idu-section-gap);
+  }
+
+  html.idu-plus #content {
+    float: none !important;
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: minmax(0, 1.14fr) minmax(360px, 0.86fr);
+    gap: var(--idu-dashboard-gap) 22px;
+    align-items: start;
+  }
+
+  html.idu-plus #content > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  html.idu-plus .no-menu #content .left-column,
+  html.idu-plus .no-menu #content .right-column,
+  html.idu-plus .no-menu #content .double-column,
+  html.idu-plus .no-menu #content .triple-column {
+    float: none !important;
+    width: 100% !important;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 !important;
+  }
+
+  html.idu-plus .no-menu #content .left-column {
+    grid-column: 1;
+  }
+
+  html.idu-plus .no-menu #content .right-column {
+    grid-column: 2;
+  }
+
+  html.idu-plus .no-menu #content .double-column,
+  html.idu-plus .no-menu #content .triple-column {
+    grid-column: 1 / -1;
+  }
+
+  html.idu-plus .menu-exist #site-content {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  html.idu-plus .menu-exist #menu,
+  html.idu-plus .menu-exist #content {
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  html.idu-plus .menu-exist #content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  html.idu-plus .module,
+  html.idu-plus .module-important,
+  html.idu-plus .action-module,
+  html.idu-plus #student-card,
+  html.idu-plus #subject-card,
+  html.idu-plus .menu-section,
+  html.idu-plus #message,
+  html.idu-plus .notice,
+  html.idu-plus .alert,
+  html.idu-plus .success-info {
+    margin: 0 0 var(--idu-dashboard-gap) !important;
+    padding: 20px !important;
+    color: var(--idu-text);
+    border: 1px solid var(--idu-border) !important;
+    border-radius: var(--idu-radius-lg);
+    background: var(--idu-surface) !important;
+    box-shadow: var(--idu-shadow);
+    backdrop-filter: blur(22px);
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  html.idu-plus.idu-dashboard-page .no-menu #content > .double-column > .module,
+  html.idu-plus.idu-dashboard-page .no-menu #content > .double-column > .module-important,
+  html.idu-plus.idu-dashboard-page .no-menu #content > .double-column > .action-module,
+  html.idu-plus.idu-dashboard-page .no-menu #content > .left-column > :last-child,
+  html.idu-plus.idu-dashboard-page .no-menu #content > .right-column > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  html.idu-plus .module-important {
+    border-color: rgba(209, 81, 81, 0.38) !important;
+    box-shadow: 0 18px 48px rgba(116, 42, 42, 0.12);
+  }
+
+  html.idu-plus .module h3,
+  html.idu-plus .module-important h3,
+  html.idu-plus #student-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+    margin: 0 0 16px !important;
+    padding: 0 0 13px !important;
+    color: var(--idu-text);
+    border-bottom: 1px solid var(--idu-line) !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: 22px !important;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  html.idu-plus .module h3::before,
+  html.idu-plus .module-important h3::before,
+  html.idu-plus #student-card h3::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--idu-accent), var(--idu-accent-2));
+    box-shadow: 0 0 0 4px var(--idu-accent-soft);
+  }
+
+  html.idu-plus h4 {
+    margin: 14px 0 8px !important;
+    padding: 0 !important;
+    color: var(--idu-text-soft);
+    font-size: 13px !important;
+    font-weight: 760;
+    line-height: 1.3;
+  }
+
+  html.idu-plus.idu-profile-page #student-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0 !important;
+    padding: 24px !important;
+    background:
+      linear-gradient(145deg, var(--idu-surface-strong), var(--idu-surface-soft)) !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-card::before {
+    content: "";
+    position: absolute;
+    top: -72px;
+    right: -80px;
+    width: 260px;
+    height: 260px;
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+    pointer-events: none;
+  }
+
+  html.idu-plus.idu-profile-page #student-card > table,
+  html.idu-plus.idu-profile-page #student-card > table > tbody {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100% !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-card > table > tbody > tr {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+  }
+
+  html.idu-plus.idu-profile-page #student-card > table > tbody > tr > td {
+    display: block;
+    width: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    vertical-align: top !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-card > table > tbody > tr > td:first-child {
+    display: grid;
+    justify-items: start;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #photo {
+    width: 112px;
+    min-height: 150px;
+    overflow: hidden;
+    border: 1px solid var(--idu-border);
+    border-radius: 24px;
+    background:
+      linear-gradient(145deg, var(--idu-surface-strong), var(--idu-accent-faint));
+    box-shadow: 0 14px 34px rgba(38, 78, 112, 0.14);
+  }
+
+  html.idu-plus.idu-profile-page #student-card #photo img {
+    display: block;
+    width: 112px !important;
+    height: 150px !important;
+    border-radius: 22px;
+    object-fit: cover;
+  }
+
+  html.idu-plus.idu-profile-page #student-card a.edit {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 7px 11px !important;
+    color: var(--idu-accent) !important;
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-faint) !important;
+    background-image: none !important;
+    font-size: 12px;
+    font-weight: 740;
+  }
+
+  html.idu-plus.idu-profile-page #student-card a.edit::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20h9'/%3E%3Cpath d='M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z'/%3E%3C/svg%3E") center / 14px 14px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #student-data {
+    min-width: 0;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #student-data > h3 {
+    margin-bottom: 12px !important;
+    font-size: 24px !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #student-data > h6 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 14px;
+    margin: -4px 0 18px !important;
+    padding: 0 !important;
+    color: var(--idu-text-soft);
+    font-size: 13px !important;
+    font-weight: 740;
+    line-height: 1.45;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #student-data > h6 a {
+    color: var(--idu-accent);
+  }
+
+  html.idu-plus.idu-profile-page #student-data > table,
+  html.idu-plus.idu-profile-page #student-data > table > tbody {
+    display: block;
+    width: 100% !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-data > table > tbody > tr {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    align-items: start;
+    gap: 14px;
+  }
+
+  html.idu-plus.idu-profile-page #student-data > table > tbody > tr > td {
+    display: block;
+    width: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    vertical-align: top !important;
+  }
+
+  html.idu-plus.idu-profile-page #parents,
+  html.idu-plus.idu-profile-page #contact-data,
+  html.idu-plus.idu-profile-page #messengers,
+  html.idu-plus.idu-profile-page #social-media {
+    padding: 15px !important;
+    border: 1px solid var(--idu-line);
+    border-radius: 18px;
+    background: var(--idu-surface-soft);
+    box-shadow: 0 10px 24px rgba(38, 78, 112, 0.07);
+  }
+
+  html.idu-plus.idu-profile-page #student-card #parents p,
+  html.idu-plus.idu-profile-page #student-card #contact-data p,
+  html.idu-plus.idu-profile-page #student-card #messengers p,
+  html.idu-plus.idu-profile-page #student-card #social-media p {
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+    color: var(--idu-muted);
+    font-size: 11.5px !important;
+    font-weight: 760;
+    line-height: 1.25;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data {
+    margin: 0 0 10px !important;
+    padding: 8px 0 0 !important;
+    color: var(--idu-text);
+    border-top: 1px solid var(--idu-line);
+    background-image: none !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+    font-size: 13px;
+    font-weight: 620;
+    line-height: 1.45;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.father,
+  html.idu-plus.idu-profile-page #student-card .data.mother,
+  html.idu-plus.idu-profile-page #student-card .data.address,
+  html.idu-plus.idu-profile-page #student-card .data.email,
+  html.idu-plus.idu-profile-page #student-card .data.phone,
+  html.idu-plus.idu-profile-page #student-card .data.mobile,
+  html.idu-plus.idu-profile-page #student-card .data.gg,
+  html.idu-plus.idu-profile-page #student-card .data.video,
+  html.idu-plus.idu-profile-page #student-card .data.skype,
+  html.idu-plus.idu-profile-page #student-card .data.facebook,
+  html.idu-plus.idu-profile-page #student-card .data.blip,
+  html.idu-plus.idu-profile-page #student-card .data.twitter,
+  html.idu-plus.idu-profile-page #student-card .data.www {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    column-gap: 8px;
+    align-items: start;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.father::before,
+  html.idu-plus.idu-profile-page #student-card .data.mother::before,
+  html.idu-plus.idu-profile-page #student-card .data.address::before,
+  html.idu-plus.idu-profile-page #student-card .data.email::before,
+  html.idu-plus.idu-profile-page #student-card .data.phone::before,
+  html.idu-plus.idu-profile-page #student-card .data.mobile::before,
+  html.idu-plus.idu-profile-page #student-card .data.gg::before,
+  html.idu-plus.idu-profile-page #student-card .data.video::before,
+  html.idu-plus.idu-profile-page #student-card .data.skype::before,
+  html.idu-plus.idu-profile-page #student-card .data.facebook::before,
+  html.idu-plus.idu-profile-page #student-card .data.blip::before,
+  html.idu-plus.idu-profile-page #student-card .data.twitter::before,
+  html.idu-plus.idu-profile-page #student-card .data.www::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    background: var(--idu-accent);
+    opacity: 0.82;
+    -webkit-mask: var(--idu-profile-icon-user) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-user) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.address::before {
+    -webkit-mask: var(--idu-profile-icon-home) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-home) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.email::before {
+    -webkit-mask: var(--idu-profile-icon-mail) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-mail) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.phone::before {
+    -webkit-mask: var(--idu-profile-icon-phone) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-phone) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.mobile::before {
+    -webkit-mask: var(--idu-profile-icon-mobile) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-mobile) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.www::before,
+  html.idu-plus.idu-profile-page #student-card .data.facebook::before,
+  html.idu-plus.idu-profile-page #student-card .data.twitter::before,
+  html.idu-plus.idu-profile-page #student-card .data.blip::before {
+    -webkit-mask: var(--idu-profile-icon-globe) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-globe) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.video::before {
+    -webkit-mask: var(--idu-profile-icon-video) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-video) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data.gg::before,
+  html.idu-plus.idu-profile-page #student-card .data.skype::before {
+    -webkit-mask: var(--idu-profile-icon-message) center / 16px 16px no-repeat;
+    mask: var(--idu-profile-icon-message) center / 16px 16px no-repeat;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  html.idu-plus.idu-profile-page #student-card .data a {
+    color: var(--idu-text);
+    font-weight: 760;
+  }
+
+  html.idu-plus.idu-profile-page #student-card #social-media:empty::after {
+    content: "Brak danych";
+    display: block;
+    padding-top: 8px;
+    color: var(--idu-muted);
+    border-top: 1px solid var(--idu-line);
+    font-size: 13px;
+  }
+
+  html.idu-plus .toggle-switch {
+    float: none !important;
+    margin-left: auto;
+    padding: 0 !important;
+    font-family: var(--idu-font) !important;
+    font-size: 12px !important;
+    font-weight: 650;
+  }
+
+  html.idu-plus .toggle-switch a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 10px;
+    color: var(--idu-accent) !important;
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+  }
+
+  html.idu-plus .foldable {
+    color: var(--idu-text-soft);
+  }
+
+  html.idu-plus .action-module {
+    display: flex;
+    align-items: center;
+    min-height: 58px;
+    height: auto !important;
+  }
+
+  html.idu-plus #content .action-module {
+    display: flex !important;
+  }
+
+  html.idu-plus .action-button {
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #ffffff;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+  }
+
+  html.idu-plus form {
+    color: var(--idu-text-soft);
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus .action-button a,
+  html.idu-plus input[type="submit"],
+  html.idu-plus input.submit,
+  html.idu-plus button,
+  html.idu-plus .button,
+  html.idu-plus a.thread-action-button,
+  html.idu-plus a.subject-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 14px !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, var(--idu-accent), var(--idu-accent-2)) !important;
+    box-shadow: var(--idu-accent-shadow) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 13px !important;
+    font-weight: 750 !important;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+
+  html.idu-plus .idu-toolbar-actions .action-button a::before,
+  html.idu-plus .idu-toolbar-actions .idu-documents-action a::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    background: currentColor;
+    mask: var(--idu-icon-document) center / 15px 15px no-repeat;
+  }
+
+  html.idu-plus input[type="text"],
+  html.idu-plus input[type="password"],
+  html.idu-plus input[type="email"],
+  html.idu-plus input[type="search"],
+  html.idu-plus input[type="url"],
+  html.idu-plus input[type="tel"],
+  html.idu-plus input[type="number"],
+  html.idu-plus input[type="date"],
+  html.idu-plus input.text,
+  html.idu-plus input.title,
+  html.idu-plus textarea,
+  html.idu-plus select {
+    float: none !important;
+    display: inline-block !important;
+    width: auto;
+    min-height: 38px;
+    margin: 0.35em 0 !important;
+    padding: 8px 12px !important;
+    color: var(--idu-text);
+    border: 1px solid var(--idu-border-strong) !important;
+    border-radius: var(--idu-radius-sm) !important;
+    background: var(--idu-input-bg) !important;
+    box-shadow: inset 0 1px 0 var(--idu-input-gloss);
+    font-family: var(--idu-font) !important;
+    font-size: 13px !important;
+    line-height: 1.25;
+  }
+
+  html.idu-plus textarea {
+    width: min(100%, 640px) !important;
+    min-height: 160px;
+  }
+
+  html.idu-plus select {
+    max-width: 100%;
+  }
+
+  html.idu-plus form label {
+    float: none !important;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    margin: 0 10px 0 0;
+    color: var(--idu-text-soft);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  html.idu-plus form div.field {
+    clear: both;
+    display: grid;
+    grid-template-columns: max-content minmax(180px, 280px);
+    align-items: center;
+    gap: 10px 18px;
+    margin-bottom: 10px;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus table {
+    max-width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    color: var(--idu-text-soft);
+    font-size: 13px;
+  }
+
+  html.idu-plus table.message-table,
+  html.idu-plus table.top-message-table,
+  html.idu-plus .forum-table,
+  html.idu-plus .thread-table,
+  html.idu-plus .subjects-table,
+  html.idu-plus .give-mark-table,
+  html.idu-plus .presence-table,
+  html.idu-plus .marks-table,
+  html.idu-plus .object_list-table,
+  html.idu-plus .students-presents-table,
+  html.idu-plus table.zebra-table {
+    overflow: hidden;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: var(--idu-radius-md);
+    background: var(--idu-table-bg) !important;
+    box-shadow: 0 8px 22px rgba(45, 84, 116, 0.06);
+  }
+
+  html.idu-plus th,
+  html.idu-plus td {
+    border-color: var(--idu-line) !important;
+  }
+
+  html.idu-plus table.message-table tr:first-child,
+  html.idu-plus table.top-message-table tr:first-child,
+  html.idu-plus .forum-table .forum-header,
+  html.idu-plus .give-mark-table thead tr th,
+  html.idu-plus .presence-table thead tr th,
+  html.idu-plus .marks-table thead tr th,
+  html.idu-plus table.zebra-table thead tr {
+    color: var(--idu-text);
+    background: var(--idu-accent-faint) !important;
+    font-weight: 740;
+  }
+
+  html.idu-plus table.message-table tr.even,
+  html.idu-plus table.top-message-table tr.even,
+  html.idu-plus table.zebra-table tbody tr:nth-child(2n),
+  html.idu-plus .forum-table .even,
+  html.idu-plus .thread-table .even,
+  html.idu-plus .subjects-table tr.even,
+  html.idu-plus .object_list-table tr.even {
+    background-color: var(--idu-row-alt) !important;
+  }
+
+  html.idu-plus table.message-table td,
+  html.idu-plus table.top-message-table td,
+  html.idu-plus .forum-table td,
+  html.idu-plus .thread-table td,
+  html.idu-plus .subjects-table td,
+  html.idu-plus .object_list-table td,
+  html.idu-plus .object_list-table th {
+    padding: 9px 10px !important;
+  }
+
+  html.idu-plus .profile-event {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    min-height: 40px;
+    margin: 0 0 8px !important;
+    padding: 10px 12px 10px 48px !important;
+    color: var(--idu-text-soft);
+    border: 1px solid var(--idu-line) !important;
+    border-radius: 14px;
+    background-color: var(--idu-row-bg) !important;
+    background-image: none !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+    box-shadow: 0 6px 18px rgba(39, 78, 112, 0.055);
+  }
+
+  html.idu-plus .profile-event::before {
+    content: "";
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+    box-shadow: inset 0 1px 0 var(--idu-input-gloss), 0 4px 10px rgba(47, 120, 183, 0.08);
+    transform: translateY(-50%);
+  }
+
+  html.idu-plus .profile-event::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    background: var(--idu-accent);
+    -webkit-mask: var(--idu-event-icon-default) center / 14px 14px no-repeat;
+    mask: var(--idu-event-icon-default) center / 14px 14px no-repeat;
+    transform: translateY(-50%);
+  }
+
+  html.idu-plus .profile-event.callendar-event-on-dash::after,
+  html.idu-plus .profile-event.calendar::after {
+    -webkit-mask-image: var(--idu-event-icon-calendar);
+    mask-image: var(--idu-event-icon-calendar);
+  }
+
+  html.idu-plus .profile-event.announcement::after {
+    -webkit-mask-image: var(--idu-event-icon-announcement);
+    mask-image: var(--idu-event-icon-announcement);
+  }
+
+  html.idu-plus .profile-event.news::after {
+    -webkit-mask-image: var(--idu-icon-news);
+    mask-image: var(--idu-icon-news);
+  }
+
+  html.idu-plus .profile-event.mark::after {
+    -webkit-mask-image: var(--idu-event-icon-grade);
+    mask-image: var(--idu-event-icon-grade);
+  }
+
+  html.idu-plus .profile-event.presence::after {
+    -webkit-mask-image: var(--idu-event-icon-attendance);
+    mask-image: var(--idu-event-icon-attendance);
+  }
+
+  html.idu-plus .profile-event.absence::after {
+    -webkit-mask-image: var(--idu-event-icon-absence);
+    mask-image: var(--idu-event-icon-absence);
+  }
+
+  html.idu-plus .profile-event.absence-justified::after {
+    -webkit-mask-image: var(--idu-event-icon-justified);
+    mask-image: var(--idu-event-icon-justified);
+  }
+
+  html.idu-plus .profile-event.lateness::after {
+    -webkit-mask-image: var(--idu-event-icon-lateness);
+    mask-image: var(--idu-event-icon-lateness);
+  }
+
+  html.idu-plus .profile-event.thread::after,
+  html.idu-plus .profile-event.forum::after {
+    -webkit-mask-image: var(--idu-event-icon-forum);
+    mask-image: var(--idu-event-icon-forum);
+  }
+
+  html.idu-plus .profile-event.file::after {
+    -webkit-mask-image: var(--idu-event-icon-file);
+    mask-image: var(--idu-event-icon-file);
+  }
+
+  html.idu-plus .profile-event.lesson::after,
+  html.idu-plus .profile-event.exam::after {
+    -webkit-mask-image: var(--idu-event-icon-lesson);
+    mask-image: var(--idu-event-icon-lesson);
+  }
+
+  html.idu-plus .profile-event.homework::after {
+    -webkit-mask-image: var(--idu-event-icon-homework);
+    mask-image: var(--idu-event-icon-homework);
+  }
+
+  html.idu-plus .profile-event.meeting::after,
+  html.idu-plus .profile-event.student::after,
+  html.idu-plus .profile-event.child::after {
+    -webkit-mask-image: var(--idu-event-icon-meeting);
+    mask-image: var(--idu-event-icon-meeting);
+  }
+
+  html.idu-plus .profile-event.presence::before,
+  html.idu-plus .profile-event.absence-justified::before {
+    border-color: rgba(47, 120, 183, 0.28);
+    background: rgba(47, 120, 183, 0.11);
+  }
+
+  html.idu-plus .profile-event.presence::after,
+  html.idu-plus .profile-event.absence-justified::after {
+    background: var(--idu-attendance-present);
+  }
+
+  html.idu-plus .profile-event.absence::before {
+    border-color: rgba(216, 91, 97, 0.3);
+    background: rgba(216, 91, 97, 0.11);
+  }
+
+  html.idu-plus .profile-event.absence::after {
+    background: var(--idu-attendance-absence);
+  }
+
+  html.idu-plus .profile-event.lateness::before {
+    border-color: rgba(193, 138, 38, 0.3);
+    background: rgba(193, 138, 38, 0.11);
+  }
+
+  html.idu-plus .profile-event.lateness::after {
+    background: var(--idu-attendance-lateness);
+  }
+
+  html.idu-plus img[src*="icon-presence"],
+  html.idu-plus img[src*="icon-absence"],
+  html.idu-plus img[src*="icon-absence-justified"],
+  html.idu-plus img[src*="icon-lateness"] {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 3px !important;
+    object-fit: contain !important;
+    vertical-align: middle !important;
+  }
+
+  html.idu-plus img[src*="icon-presence"] {
+    content: var(--idu-inline-icon-presence) !important;
+  }
+
+  html.idu-plus img[src*="icon-absence"] {
+    content: var(--idu-inline-icon-absence) !important;
+  }
+
+  html.idu-plus img[src*="icon-absence-justified"] {
+    content: var(--idu-inline-icon-justified) !important;
+  }
+
+  html.idu-plus img[src*="icon-lateness"] {
+    content: var(--idu-inline-icon-lateness) !important;
+  }
+
+  html.idu-plus .idu-programme-badge {
+    display: inline;
+    margin: 0 1px;
+    padding: 0 1px;
+    border: 0 !important;
+    background: transparent !important;
+    font-family: var(--idu-font) !important;
+    font-size: 0.92em;
+    font-weight: 820;
+    line-height: inherit;
+    letter-spacing: 0;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-shadow: none !important;
+    vertical-align: baseline;
+  }
+
+  html.idu-plus .idu-programme-myp5 {
+    color: #7a4cc2;
+    text-decoration-color: rgba(122, 76, 194, 0.38);
+  }
+
+  html.idu-plus .idu-programme-myp4 {
+    color: #c06a2c;
+    text-decoration-color: rgba(192, 106, 44, 0.4);
+  }
+
+  html.idu-plus .idu-programme-dp1 {
+    color: #2f78b7;
+    text-decoration-color: rgba(47, 120, 183, 0.4);
+  }
+
+  html.idu-plus .idu-programme-dp2 {
+    color: #2f9e61;
+    text-decoration-color: rgba(47, 158, 97, 0.4);
+  }
+
+  html.idu-plus .profile-event.priority_2,
+  html.idu-plus .priority_2 {
+    border-color: var(--idu-accent-border-strong) !important;
+  }
+
+  html.idu-plus .profile-event span {
+    padding-left: 0 !important;
+  }
+
+  html.idu-plus .profile-event .subject {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 3px 8px !important;
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+  }
+
+  html.idu-plus .profile-event .subject a {
+    color: var(--idu-text-soft);
+    font-size: 12px;
+    font-weight: 760;
+  }
+
+  html.idu-plus .profile-event .name {
+    color: var(--idu-text);
+    font-weight: 720;
+  }
+
+  html.idu-plus .profile-event .description {
+    color: var(--idu-muted);
+    font-size: 12px;
+  }
+
+  html.idu-plus .profile-event .date,
+  html.idu-plus .profile-event .author {
+    margin-left: auto;
+    color: var(--idu-muted);
+    font-size: 12px !important;
+  }
+
+  html.idu-plus .see-more {
+    float: none !important;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding: 0 !important;
+    background-image: none !important;
+  }
+
+  html.idu-plus .see-more a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 10px;
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+    color: var(--idu-accent);
+    font-size: 12px;
+    font-weight: 720;
+  }
+
+  html.idu-plus .idu-class-summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    margin-bottom: 12px;
+    padding: 11px 12px;
+    border: 1px solid var(--idu-line);
+    border-radius: 14px;
+    background: var(--idu-inline-bg);
+  }
+
+  html.idu-plus .idu-subject-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 10px;
+  }
+
+  html.idu-plus .idu-subject-row {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    border: 1px solid var(--idu-line);
+    border-radius: 15px;
+    background: var(--idu-hover-bg);
+    box-shadow: 0 6px 18px rgba(39, 78, 112, 0.05);
+  }
+
+  html.idu-plus .idu-subject-name b,
+  html.idu-plus .idu-subject-name a {
+    color: var(--idu-text);
+    font-weight: 780;
+  }
+
+  html.idu-plus .idu-subject-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  html.idu-plus .idu-subject-actions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 8px;
+    color: var(--idu-accent);
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-faint);
+    font-size: 12px;
+    font-weight: 680;
+    white-space: nowrap;
+  }
+
+  html.idu-plus .schedule {
+    overflow-x: auto;
+    padding: 8px;
+    border: 1px solid var(--idu-border);
+    border-radius: var(--idu-radius-lg);
+    background: var(--idu-surface-soft);
+    box-shadow: var(--idu-shadow-soft);
+  }
+
+  html.idu-plus .schedule table {
+    min-width: 900px;
+    overflow: hidden;
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 4px !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none;
+  }
+
+  html.idu-plus .schedule table thead th {
+    color: var(--idu-text);
+    padding: 7px 8px !important;
+    border: 0 !important;
+    border-radius: 10px;
+    background: var(--idu-row-bg-soft) !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+
+  html.idu-plus .schedule table tbody td {
+    height: 64px;
+    padding: 4px !important;
+    color: var(--idu-text-soft);
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px var(--idu-line);
+  }
+
+  html.idu-plus .schedule table tbody td:first-child {
+    width: 34px;
+    color: var(--idu-muted);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: none;
+  }
+
+  html.idu-plus .schedule table tbody td.lesson {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+
+  html.idu-plus div.lesson-cell {
+    display: grid;
+    align-content: start;
+    min-height: 58px;
+    height: auto;
+    gap: 3px;
+    padding: 8px 10px;
+    border: 1px solid var(--idu-lesson-border);
+    border-radius: 12px;
+    background: var(--idu-lesson-bg) !important;
+    box-shadow: var(--idu-lesson-shadow);
+  }
+
+  html.idu-plus div.lesson-cell > br {
+    display: none !important;
+  }
+
+  html.idu-plus div.lesson-cell-line {
+    border-bottom: 0 !important;
+  }
+
+  html.idu-plus .schedule table tbody td .subject a {
+    color: var(--idu-text) !important;
+    font-size: 13px;
+    font-weight: 780;
+    line-height: 1.2;
+  }
+
+  html.idu-plus .schedule table tbody td .subject {
+    display: block;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  html.idu-plus .schedule table tbody td .teacher {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  html.idu-plus .schedule table tbody td .klass {
+    display: block;
+    margin-top: 2px;
+    color: var(--idu-muted);
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  html.idu-plus .schedule table tbody td .location,
+  html.idu-plus .lesson-date,
+  html.idu-plus .marks-table .single-mark .date,
+  html.idu-plus .marks-table .single-mark .desc {
+    color: var(--idu-muted);
+    font-size: 12px !important;
+  }
+
+  html.idu-plus .schedule table tbody td .location {
+    display: block;
+    margin-top: 4px;
+    line-height: 1.15;
+  }
+
+  html.idu-plus .schedule table tbody td .location a {
+    color: var(--idu-text-soft) !important;
+  }
+
+  html.idu-plus .schedule table tbody td .subject + .location {
+    margin-top: 5px;
+  }
+
+  html.idu-plus .schedule table tbody td .location img {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 2px 2px 0 !important;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .menu-section-header {
+    margin: -20px -20px 12px;
+    padding: 12px 16px !important;
+    color: var(--idu-text);
+    border-bottom: 1px solid var(--idu-line);
+    background: var(--idu-accent-faint) !important;
+    font-weight: 760;
+  }
+
+  html.idu-plus .menu-list ul li a,
+  html.idu-plus .menu-list ul li ul li a {
+    margin: 4px 0;
+    padding: 8px 10px 8px 34px !important;
+    color: var(--idu-text-soft);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background-position: 10px center !important;
+  }
+
+  html.idu-plus .menu-list ul li a:hover,
+  html.idu-plus .menu-list ul li ul li a:hover {
+    color: var(--idu-text);
+    border-color: var(--idu-line);
+    background-color: var(--idu-hover-bg);
+  }
+
+  html.idu-plus .notice {
+    color: #0e5488;
+    background: rgba(218, 237, 252, 0.84) !important;
+  }
+
+  html.idu-plus .alert,
+  html.idu-plus #error_explanation {
+    color: #7a2430;
+    border-color: rgba(191, 72, 88, 0.32) !important;
+    background: rgba(255, 231, 235, 0.84) !important;
+  }
+
+  html.idu-plus[data-idu-theme="dark"] .notice {
+    color: #d9edff;
+    border-color: rgba(116, 176, 225, 0.28) !important;
+    background: rgba(31, 74, 109, 0.72) !important;
+  }
+
+  html.idu-plus[data-idu-theme="dark"] .alert,
+  html.idu-plus[data-idu-theme="dark"] #error_explanation {
+    color: #ffdbe1;
+    border-color: rgba(225, 124, 143, 0.32) !important;
+    background: rgba(92, 31, 43, 0.72) !important;
+  }
+
+  html.idu-plus #footer {
+    width: min(calc(100vw - 48px), var(--idu-shell-max)) !important;
+    margin: 24px auto !important;
+    padding: 14px !important;
+    color: var(--idu-muted);
+    border: 1px solid var(--idu-border);
+    border-radius: var(--idu-radius-md);
+    background: var(--idu-surface);
+    box-shadow: var(--idu-shadow-soft);
+  }
+
+  html.idu-plus.idu-login-page,
+  html.idu-plus.idu-login-page body {
+    min-height: 100vh;
+  }
+
+  html.idu-plus.idu-login-page body {
+    display: grid;
+    place-items: center;
+    min-width: 0 !important;
+    padding: 34px 18px !important;
+  }
+
+  html.idu-plus.idu-login-page body > div[style*="clear"] {
+    display: none !important;
+  }
+
+  html.idu-plus.idu-login-page body > .alert,
+  html.idu-plus.idu-login-page body > .notice {
+    position: fixed;
+    z-index: 10;
+    top: 16px;
+    left: 50%;
+    width: min(calc(100vw - 32px), 520px);
+    margin: 0 !important;
+    padding: 11px 16px !important;
+    transform: translateX(-50%);
+  }
+
+  html.idu-plus.idu-login-page #container,
+  html.idu-plus.idu-login-page #container-low {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: min(calc(100vw - 32px), 520px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 24px;
+    background: var(--idu-surface-strong) !important;
+    box-shadow: 0 24px 70px rgba(42, 83, 118, 0.18);
+    backdrop-filter: blur(24px);
+  }
+
+  html.idu-plus.idu-login-page #container #top,
+  html.idu-plus.idu-login-page #container-low #top {
+    float: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 64px;
+    margin: 0 !important;
+    padding: 14px 20px !important;
+    border-radius: 0;
+    background:
+      linear-gradient(135deg, rgba(11, 47, 85, 0.98), rgba(18, 63, 104, 0.96)),
+      radial-gradient(circle at 70% 0%, rgba(102, 169, 224, 0.2), transparent 18rem);
+    box-shadow: none;
+  }
+
+  html.idu-plus.idu-login-page #container #logo,
+  html.idu-plus.idu-login-page #container-low #logo {
+    float: none !important;
+    width: auto !important;
+    padding: 0 !important;
+  }
+
+  html.idu-plus.idu-login-page #container #logo img,
+  html.idu-plus.idu-login-page #container-low #logo img {
+    width: 96px !important;
+    height: auto !important;
+    max-height: 40px;
+    object-fit: contain;
+  }
+
+  html.idu-plus.idu-login-page #language {
+    padding: 0 !important;
+  }
+
+  html.idu-plus.idu-login-page #language a {
+    float: none !important;
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 10px !important;
+    color: var(--idu-header-text) !important;
+    border: 1px solid rgba(221, 236, 248, 0.28);
+    border-radius: 999px;
+    background: var(--idu-header-chip-hover);
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  html.idu-plus.idu-login-page #container .module,
+  html.idu-plus.idu-login-page #container-low .module {
+    margin: 0 !important;
+    padding: 26px 30px 24px !important;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  html.idu-plus.idu-login-page #new_user {
+    display: grid;
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+    padding: 0 0 18px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus.idu-login-page #new_user .field {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px 14px;
+    margin-bottom: 14px;
+  }
+
+  html.idu-plus.idu-login-page #new_user .field:first-of-type {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  html.idu-plus.idu-login-page #new_user .field:first-of-type label {
+    display: none;
+  }
+
+  html.idu-plus.idu-login-page #new_user h1 {
+    margin: 0;
+    color: var(--idu-text);
+    font-family: var(--idu-title-font) !important;
+    font-size: 26px !important;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  html.idu-plus.idu-login-page #new_user input[type="text"],
+  html.idu-plus.idu-login-page #new_user input[type="password"] {
+    width: 100% !important;
+    min-height: 42px;
+    margin: 0 !important;
+  }
+
+  html.idu-plus.idu-login-page #new_user .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: -2px 0 16px 72px !important;
+    padding: 0 !important;
+    color: var(--idu-muted);
+    font-size: 12px;
+  }
+
+  html.idu-plus.idu-login-page #new_user .remember-me input {
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  html.idu-plus.idu-login-page #new_user .remember-me span {
+    float: none !important;
+  }
+
+  html.idu-plus.idu-login-page #new_user .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  html.idu-plus.idu-login-page #password-recovery {
+    width: min(100%, 360px);
+    margin: 0 auto !important;
+    padding: 0 !important;
+    color: var(--idu-text-soft);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  html.idu-plus.idu-login-page #password-recovery a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 0 !important;
+    background-image: none !important;
+  }
+
+  @media (max-width: 1100px) {
+    html.idu-plus #content {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    html.idu-plus.idu-profile-page #student-data > table > tbody > tr {
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+
+    html.idu-plus .no-menu #content .left-column,
+    html.idu-plus .no-menu #content .right-column,
+    html.idu-plus .no-menu #content .double-column,
+    html.idu-plus .no-menu #content .triple-column {
+      grid-column: 1 / -1;
+    }
+
+    html.idu-plus .menu-exist #site-content {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    html.idu-plus #visual {
+      flex-wrap: wrap;
+    }
+
+    html.idu-plus #change_language {
+      align-items: flex-start;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 760px) {
+    html.idu-plus .container {
+      width: calc(100vw - 28px) !important;
+      padding-bottom: 34px !important;
+    }
+
+    html.idu-plus.idu-profile-page #student-card {
+      padding: 16px !important;
+    }
+
+    html.idu-plus.idu-profile-page #student-card > table > tbody > tr,
+    html.idu-plus.idu-profile-page #student-data > table > tbody > tr {
+      grid-template-columns: 1fr;
+    }
+
+    html.idu-plus.idu-profile-page #student-card > table > tbody > tr > td:first-child {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+    }
+
+    html.idu-plus.idu-profile-page #student-card #photo,
+    html.idu-plus.idu-profile-page #student-card #photo img {
+      width: 86px !important;
+      height: 112px !important;
+      min-height: 112px;
+      border-radius: 18px;
+    }
+
+    html.idu-plus #top {
+      padding: 14px !important;
+    }
+
+    html.idu-plus #visual {
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    html.idu-plus #logo img {
+      width: 112px !important;
+      max-height: 48px;
+    }
+
+    html.idu-plus #school-name {
+      min-width: 0;
+      max-width: calc(100% - 124px);
+      flex: 1 1 0;
+      font-size: 13.5px !important;
+      line-height: 1.3;
+    }
+
+    html.idu-plus #top-selection form {
+      display: grid !important;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+    }
+
+    html.idu-plus #top-selection {
+      flex-wrap: wrap;
+    }
+
+    html.idu-plus .idu-toolbar-actions {
+      width: 100%;
+      justify-content: flex-start;
+      margin-left: 0;
+    }
+
+    html.idu-plus #top-selection select {
+      width: 100%;
+    }
+
+    html.idu-plus form div.field {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    html.idu-plus input[type="text"],
+    html.idu-plus input[type="password"],
+    html.idu-plus input[type="email"],
+    html.idu-plus input[type="search"],
+    html.idu-plus input[type="url"],
+    html.idu-plus input[type="tel"],
+    html.idu-plus input[type="number"],
+    html.idu-plus input[type="date"],
+    html.idu-plus input.text,
+    html.idu-plus input.title,
+    html.idu-plus textarea,
+    html.idu-plus select {
+      width: 100% !important;
+      max-width: 100%;
+    }
+
+    html.idu-plus #account-actions {
+      gap: 6px;
+      font-size: 11px !important;
+    }
+
+    html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
+      min-height: 30px;
+      padding: 5px 9px !important;
+    }
+
+    html.idu-plus #top-selection,
+    html.idu-plus #breadcrumbs-section,
+    html.idu-plus #flash-messages-section,
+    html.idu-plus .module,
+    html.idu-plus .module-important,
+    html.idu-plus .action-module,
+    html.idu-plus #student-card,
+    html.idu-plus #subject-card,
+    html.idu-plus .menu-section {
+      border-radius: 18px;
+    }
+
+    html.idu-plus .module,
+    html.idu-plus .module-important,
+    html.idu-plus .action-module,
+    html.idu-plus #student-card,
+    html.idu-plus #subject-card,
+    html.idu-plus .menu-section {
+      padding: 16px !important;
+    }
+
+    html.idu-plus .module h3,
+    html.idu-plus .module-important h3,
+    html.idu-plus #student-card h3 {
+      font-size: 16px !important;
+    }
+
+    html.idu-plus .profile-event {
+      align-items: flex-start;
+    }
+
+    html.idu-plus .profile-event .date,
+    html.idu-plus .profile-event .author {
+      margin-left: 0;
+    }
+
+    html.idu-plus .idu-subject-row {
+      grid-template-columns: 1fr;
+    }
+
+    html.idu-plus .idu-subject-actions {
+      justify-content: flex-start;
+    }
+
+    html.idu-plus #footer {
+      width: calc(100vw - 28px) !important;
+    }
+  }
+}

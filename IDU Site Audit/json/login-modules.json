@@ -1,0 +1,26 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Zaloguj się",
+    "textStart": "Zaloguj się Login Hasło Pamiętaj mnie Zapomniałeś/aś hasła? Nie dostałeś instrukcji odblokowania konta?",
+    "rect": {
+      "x": 434,
+      "y": 389,
+      "width": 500,
+      "height": 220
+    },
+    "links": [
+      {
+        "text": "Zapomniałeś/aś hasła?",
+        "href": "https://s19.idu.edu.pl/users/password/new"
+      },
+      {
+        "text": "Nie dostałeś instrukcji odblokowania konta?",
+        "href": "https://s19.idu.edu.pl/users/unlock/new"
+      }
+    ]
+  }
+]

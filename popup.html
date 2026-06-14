@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDU+ Appearance</title>
+    <link rel="stylesheet" href="src/popup.css">
+    <script defer src="src/popup.js"></script>
+  </head>
+  <body>
+    <main class="popup-shell" aria-label="IDU+ appearance settings">
+      <header class="popup-header">
+        <div>
+          <p class="eyebrow">IDU+</p>
+          <h1>Appearance</h1>
+        </div>
+        <div class="status-pill" id="saveStatus">Saved</div>
+      </header>
+
+      <section class="control-group" aria-labelledby="themeHeading">
+        <div class="section-heading">
+          <h2 id="themeHeading">Theme</h2>
+          <p>Choose the portal mood.</p>
+        </div>
+        <div class="theme-switch" role="group" aria-label="Theme">
+          <button class="theme-option" type="button" data-theme-option="light" aria-pressed="true">
+            <span class="theme-icon sun-icon" aria-hidden="true"></span>
+            Light
+          </button>
+          <button class="theme-option" type="button" data-theme-option="dark" aria-pressed="false">
+            <span class="theme-icon moon-icon" aria-hidden="true"></span>
+            Dark
+          </button>
+        </div>
+      </section>
+
+      <section class="control-group" aria-labelledby="accentHeading">
+        <div class="section-heading">
+          <h2 id="accentHeading">Accent</h2>
+          <p>Controls links, chips, focus, and buttons.</p>
+        </div>
+        <div class="accent-grid" role="group" aria-label="Accent color presets">
+          <button class="accent-swatch" type="button" data-accent-preset="#2f78b7" style="--swatch: #2f78b7" aria-label="IDU blue" aria-pressed="true"></button>
+          <button class="accent-swatch" type="button" data-accent-preset="#2d9c8f" style="--swatch: #2d9c8f" aria-label="Sea teal" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-accent-preset="#6f63d9" style="--swatch: #6f63d9" aria-label="Soft violet" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-accent-preset="#c4577d" style="--swatch: #c4577d" aria-label="Rose" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-accent-preset="#d0802e" style="--swatch: #d0802e" aria-label="Amber" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-accent-preset="#4e8f42" style="--swatch: #4e8f42" aria-label="Moss" aria-pressed="false"></button>
+        </div>
+        <label class="custom-color" for="accentColor">
+          <span>Custom</span>
+          <input id="accentColor" type="color" value="#2f78b7" aria-label="Custom accent color">
+          <input id="accentHex" type="text" value="#2f78b7" maxlength="7" spellcheck="false" aria-label="Accent hex value">
+        </label>
+      </section>
+
+      <section class="control-group" aria-labelledby="topbarHeading">
+        <div class="section-heading">
+          <h2 id="topbarHeading">Topbar</h2>
+          <p>Controls the main blue header bar.</p>
+        </div>
+        <div class="accent-grid" role="group" aria-label="Topbar color presets">
+          <button class="accent-swatch" type="button" data-topbar-preset="#0b2f55" style="--swatch: #0b2f55" aria-label="IDU navy" aria-pressed="true"></button>
+          <button class="accent-swatch" type="button" data-topbar-preset="#111827" style="--swatch: #111827" aria-label="Graphite" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-topbar-preset="#17324a" style="--swatch: #17324a" aria-label="Steel blue" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-topbar-preset="#243b2f" style="--swatch: #243b2f" aria-label="Deep green" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-topbar-preset="#3a2440" style="--swatch: #3a2440" aria-label="Aubergine" aria-pressed="false"></button>
+          <button class="accent-swatch" type="button" data-topbar-preset="#4a2d18" style="--swatch: #4a2d18" aria-label="Walnut" aria-pressed="false"></button>
+        </div>
+        <label class="custom-color" for="topbarColor">
+          <span>Custom</span>
+          <input id="topbarColor" type="color" value="#0b2f55" aria-label="Custom topbar color">
+          <input id="topbarHex" type="text" value="#0b2f55" maxlength="7" spellcheck="false" aria-label="Topbar hex value">
+        </label>
+      </section>
+
+      <section class="preview-card" aria-label="Theme preview">
+        <div class="preview-topbar">
+          <span class="preview-logo">IDU+</span>
+          <span class="preview-chip">Profile</span>
+        </div>
+        <div class="preview-content">
+          <div>
+            <span class="preview-dot"></span>
+            <strong>Aktualnosci</strong>
+          </div>
+          <p>Soft glass panels with the selected accent.</p>
+          <button type="button" class="preview-button">Dokumenty</button>
+        </div>
+      </section>
+
+      <footer class="popup-footer">
+        <button class="reset-button" type="button" id="resetButton">Reset</button>
+        <p>Updates apply to open IDU tabs.</p>
+      </footer>
+    </main>
+  </body>
+</html>

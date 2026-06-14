@@ -1,0 +1,33 @@
+# IDU+ fresh extension goals
+
+We are building a new extension from scratch.
+
+Do not use previous IDU+ extension code.
+
+Use the exported IDU HTML/CSS/layout JSON/screenshots as the source of truth.
+
+Core goals:
+- Bundle InterVariable.woff2 and apply it globally.
+- Keep the original IDU logo.
+- Make the header modern dark navy.
+- Make the whole IDU layout use the browser width intelligently.
+- Fix old narrow fixed-width layout.
+- Add consistent rounded corners to all panels, forms, modules, buttons, selects, inputs, tables, and sections.
+- Improve spacing and alignment.
+- Do not break IDU links/forms/selects.
+- Do not create a fake dashboard app shell yet.
+- This should be a clean, stable CSS/JS visual layer for the real IDU DOM.
+
+Visual target:
+- clean modern school portal
+- light background
+- dark navy topbar
+- Inter typography
+- rounded white cards
+- subtle borders
+- subtle shadows
+- consistent spacing
+- no old grey table strips
+- no massive blank gaps
+- no cramped tiny text
+- no broken alignment

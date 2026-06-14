@@ -1,0 +1,939 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 59m 54s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny > Met Galla > Student Name",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "",
+    "textStart": "",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "links": []
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "action-module",
+    "heading": "",
+    "textStart": "",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
+    },
+    "links": []
+  },
+  {
+    "i": 6,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Profil ucznia",
+    "textStart": "Profil ucznia Edytuj profil Student Name rocznik: DP1_2025/2026 Klasa: Met Galla wychowawca: Robert Lasek Rodzice/opiekunowie: Parent One Parent Two Dane kontaktowe: Example Street 1 00-000 City Adres zamieszkania Example Street 1 00-000 City Adres zameldowania: Example Street 1 00-000 City Kontakt elektroniczny: student@example.com Nr z księgi ucznia: 5139 Telefon: 500 71",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 3626
+    },
+    "links": [
+      {
+        "text": "Edytuj profil",
+        "href": "https://s19.idu.edu.pl/profile/edit"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Parent One",
+        "href": "https://s19.idu.edu.pl/parents/13600"
+      },
+      {
+        "text": "Parent Two",
+        "href": "https://s19.idu.edu.pl/parents/13601"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "Business Management",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "English",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Tomasz Wiśniewski",
+        "href": "https://s19.idu.edu.pl/teachers/1888"
+      },
+      {
+        "text": "Computer Science",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "Sebastian Kowalski",
+        "href": "https://s19.idu.edu.pl/teachers/2288"
+      },
+      {
+        "text": "Maths",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "Joanna Staniszkis",
+        "href": "https://s19.idu.edu.pl/teachers/901"
+      },
+      {
+        "text": "Polish",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "Izabella Rowińska",
+        "href": "https://s19.idu.edu.pl/teachers/897"
+      },
+      {
+        "text": "Tutor's Hour",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "TOK",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Natalia Zakrzewska",
+        "href": "https://s19.idu.edu.pl/teachers/2435"
+      },
+      {
+        "text": "CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63258"
+      },
+      {
+        "text": "Bartłomiej Mrożewski",
+        "href": "https://s19.idu.edu.pl/teachers/1533"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63263"
+      },
+      {
+        "text": "Bartłomiej Mrożewski",
+        "href": "https://s19.idu.edu.pl/teachers/1533"
+      },
+      {
+        "text": "Extended Essay",
+        "href": "https://s19.idu.edu.pl/subjects/63698"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "DP1_CS(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "Sebastian Kowalski",
+        "href": "https://s19.idu.edu.pl/teachers/2288"
+      },
+      {
+        "text": "R_F3",
+        "href": "https://s19.idu.edu.pl/rooms/1263"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Natalia Zakrzewska",
+        "href": "https://s19.idu.edu.pl/teachers/2435"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Profil ucznia",
+    "textStart": "Profil ucznia Edytuj profil Student Name rocznik: DP1_2025/2026 Klasa: Met Galla wychowawca: Robert Lasek Rodzice/opiekunowie: Parent One Parent Two Dane kontaktowe: Example Street 1 00-000 City Adres zamieszkania Example Street 1 00-000 City Adres zameldowania: Example Street 1 00-000 City Kontakt elektroniczny: student@example.com Nr z księgi ucznia: 5139 Telefon: 500 71",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 630
+    },
+    "links": [
+      {
+        "text": "Edytuj profil",
+        "href": "https://s19.idu.edu.pl/profile/edit"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Parent One",
+        "href": "https://s19.idu.edu.pl/parents/13600"
+      },
+      {
+        "text": "Parent Two",
+        "href": "https://s19.idu.edu.pl/parents/13601"
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Przedmioty\nzwiń",
+    "textStart": "Przedmioty zwiń Higher Level Business Management - Bernard Markowski Geography - Michał Sokolski English - Tomasz Wiśniewski Standard Level Computer Science - Sebastian Kowalski Maths - Joanna Staniszkis Polish - Izabella Rowińska Brak poziomu Tutor's Hour - Robert Lasek TOK - Natalia Zakrzewska CAS - Bartłomiej Mrożewski, Robert Lasek CAS - Bartłomiej Mrożewski Extended Essay - Bernard Markowski",
+    "rect": {
+      "x": 200,
+      "y": 840,
+      "width": 950,
+      "height": 326
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "Business Management",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "English",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Tomasz Wiśniewski",
+        "href": "https://s19.idu.edu.pl/teachers/1888"
+      },
+      {
+        "text": "Computer Science",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "Sebastian Kowalski",
+        "href": "https://s19.idu.edu.pl/teachers/2288"
+      },
+      {
+        "text": "Maths",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "Joanna Staniszkis",
+        "href": "https://s19.idu.edu.pl/teachers/901"
+      },
+      {
+        "text": "Polish",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "Izabella Rowińska",
+        "href": "https://s19.idu.edu.pl/teachers/897"
+      },
+      {
+        "text": "Tutor's Hour",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "TOK",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Natalia Zakrzewska",
+        "href": "https://s19.idu.edu.pl/teachers/2435"
+      },
+      {
+        "text": "CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63258"
+      },
+      {
+        "text": "Bartłomiej Mrożewski",
+        "href": "https://s19.idu.edu.pl/teachers/1533"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "CAS",
+        "href": "https://s19.idu.edu.pl/subjects/63263"
+      },
+      {
+        "text": "Bartłomiej Mrożewski",
+        "href": "https://s19.idu.edu.pl/teachers/1533"
+      },
+      {
+        "text": "Extended Essay",
+        "href": "https://s19.idu.edu.pl/subjects/63698"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ogólny plan tygodniowy\nzwiń",
+    "textStart": "Ogólny plan tygodniowy zwiń Poniedziałek Wtorek Środa Czwartek Piątek 0 DP1_CS(SL) Sebastian Kowalski Rocznik: DP1_2025/2026 R_F3 1 DP1_TOK (2) Natalia Zakrzewska Rocznik: DP1_2025/2026 R_30 DP1_BM(HL) Bernard Markowski Rocznik: DP1_2025/2026 R_35 DP1_Geography(HL) Michał Sokolski Rocznik: DP1_2025/2026 R_31 DP1_English_B (4)(HL) Tomasz Wiśniewski Rocznik: DP1_2025/2026 R_b6 2 DP1_TOK (2) Natalia ",
+    "rect": {
+      "x": 200,
+      "y": 1176,
+      "width": 950,
+      "height": 1668
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "DP1_CS(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "Sebastian Kowalski",
+        "href": "https://s19.idu.edu.pl/teachers/2288"
+      },
+      {
+        "text": "R_F3",
+        "href": "https://s19.idu.edu.pl/rooms/1263"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Natalia Zakrzewska",
+        "href": "https://s19.idu.edu.pl/teachers/2435"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Tomasz Wiśniewski",
+        "href": "https://s19.idu.edu.pl/teachers/1888"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Natalia Zakrzewska",
+        "href": "https://s19.idu.edu.pl/teachers/2435"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Tomasz Wiśniewski",
+        "href": "https://s19.idu.edu.pl/teachers/1888"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Szczegółowy plan dla dni\nzwiń",
+    "textStart": "Szczegółowy plan dla dni zwiń",
+    "rect": {
+      "x": 211,
+      "y": 2708,
+      "width": 928,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnio wystawione oceny\nzwiń",
+    "textStart": "Ostatnio wystawione oceny zwiń DP1_Maths_AI (2) 30 (Formative: Graphing) 08 cze 2026, 13:02 DP1_BM 6 (oceny cząstkowe: MayMock) 08 cze 2026, 08:58 DP1_CS 7 (Mock: Mock) 07 cze 2026, 21:11 DP1_English_B (4) 6 (Summative assessment - semester 2: Mock exams - spring session) 01 cze 2026, 23:45 DP1_English_B (4) Paper 1 writing: 29/30 Paper 2 ... (MOCKS - BREAKDOWN: Mock exams breakdown - spring) 01 c",
+    "rect": {
+      "x": 200,
+      "y": 2855,
+      "width": 950,
+      "height": 319
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_CS",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Paper 1 writing: 29/30 Paper 2 ...",
+        "href": "https://s19.idu.edu.pl/students/11899#description_for_grade_2469677"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Polish_A (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "4 [30/50]",
+        "href": "https://s19.idu.edu.pl/students/11899#description_for_grade_2461098"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/students/11899#description_for_grade_2460963"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/grades"
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnie recenzje\nzwiń",
+    "textStart": "Ostatnie recenzje zwiń DP1_TOK (2) 10 cze 2026, 14:15 zobacz DP1_Polish_A (4) 08 cze 2026, 12:16 zobacz DP1_BM 08 cze 2026, 10:23 zobacz DP1_CS 07 cze 2026, 21:14 zobacz Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 3184,
+      "width": 950,
+      "height": 172
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/854692"
+      },
+      {
+        "text": "DP1_Polish_A (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/852958"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/852760"
+      },
+      {
+        "text": "DP1_CS",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/851417"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews"
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnio wystawione obecności\nzwiń",
+    "textStart": "Ostatnio wystawione obecności zwiń DP1_English_B (4) Obecność 11 cze 2026 DP1_English_B (4) Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Nieobecność 10 cze 2026 DP1_BM Nieobecność 10 cze 2026 DP1_Maths_AI (2) Nieobecność 10 cze 2026 DP1_Maths_AI (2) Nieobecność 10 cze 2026 Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 3366,
+      "width": 950,
+      "height": 319
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/presences"
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Najbliższe zapowiedziane sprawdziany\nzwiń",
+    "textStart": "Najbliższe zapowiedziane sprawdziany zwiń",
+    "rect": {
+      "x": 200,
+      "y": 3695,
+      "width": 950,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Przypisane pliki\nzwiń",
+    "textStart": "Przypisane pliki zwiń",
+    "rect": {
+      "x": 200,
+      "y": 3761,
+      "width": 950,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/students/11899#"
+      }
+    ]
+  }
+]

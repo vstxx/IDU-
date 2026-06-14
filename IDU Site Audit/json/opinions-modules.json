@@ -1,0 +1,509 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 59m 56s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny > Met Galla > Student Name > Recenzje",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Student Name",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "",
+    "textStart": "Nazwa Data DP | Suggested grades | II sem. 2025/26 / session for ALL DP TEACHERS / deadline: 8.06.2026 (Mon), 8:00 AM 08 cze 2026, 12:00 Pokaż DP1 | Failing grades | II sem. 2025/26 / session for DP1 TEACHERS / deadline: 22.05.2026 (Fri), 8:00 AM 22 maj 2026, 12:00 Pokaż DP1 | Mid-semester reports | Spring 2025/26 / session for ALL DP TEACHERS / deadline: 8.04.2026 (Wed), 8:00 AM 10 kwi 2026, 12:0",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 976
+    },
+    "links": [
+      {
+        "text": "DP | Suggested grades | II sem. 2025/26 / session for ALL DP TEACHERS / deadline: 8.06.2026 (Mon), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1076/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1076/reviews"
+      },
+      {
+        "text": "DP1 | Failing grades | II sem. 2025/26 / session for DP1 TEACHERS / deadline: 22.05.2026 (Fri), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1064/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1064/reviews"
+      },
+      {
+        "text": "DP1 | Mid-semester reports | Spring 2025/26 / session for ALL DP TEACHERS / deadline: 8.04.2026 (Wed), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1057/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1057/reviews"
+      },
+      {
+        "text": "DP | ATTENDANCE | Final grades | I sem. 2025/26 / session for FORM TUTORS / deadline: 11.02.2026, 2:00 PM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1033/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1033/reviews"
+      },
+      {
+        "text": "DP | ZACHOWANIE | Final grades | I sem. 2025/26 / session for FORM TUTORS / deadline: 11.02.2026, 2:00 PM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1031/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1031/reviews"
+      },
+      {
+        "text": "DP | Final grades | I sem. 2025/26 / session for ALL DP TEACHERS / deadline: 9.02.2026, 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1029/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1029/reviews"
+      },
+      {
+        "text": "DP | Suggested grades | I sem. 2025/26 / session for ALL DP TEACHERS / deadline: 16.01.2026, 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1023/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1023/reviews"
+      },
+      {
+        "text": "DP | Failing grades | I sem. 2025/26",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1018/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1018/reviews"
+      },
+      {
+        "text": "DP | Mid-semester reports | Autumn 2025/26",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1000/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1000/reviews"
+      },
+      {
+        "text": "MYP&DP | GRADE FOR ATTENDANCE | II sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/991/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/991/reviews"
+      },
+      {
+        "text": "MYP | ZACHOWANIE | Final grades | II sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/982/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/982/reviews"
+      },
+      {
+        "text": "MYP | Final grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/980/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/980/reviews"
+      },
+      {
+        "text": "MYP | Suggested grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/969/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/969/reviews"
+      },
+      {
+        "text": "MYP | Failing grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/964/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/964/reviews"
+      },
+      {
+        "text": "MYP | Mid-term reports | II sem. 2024/25 / session for ALL SUBJECT TEACHERS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/951/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/951/reviews"
+      },
+      {
+        "text": "MYP | ZACHOWANIE | Final grades | I sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/921/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/921/reviews"
+      },
+      {
+        "text": "MYP | GRADE FOR ATTENDANCE | I sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/926/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/926/reviews"
+      },
+      {
+        "text": "MYP | Final grades | I sem. 2024/25 / session for ALL SUBJECT TEACHERS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/923/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/923/reviews"
+      },
+      {
+        "text": "MYP | Suggested grades | I sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/913/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/913/reviews"
+      },
+      {
+        "text": "MYP | Failing grades | I sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/907/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/907/reviews"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "",
+    "textStart": "Nazwa Data DP | Suggested grades | II sem. 2025/26 / session for ALL DP TEACHERS / deadline: 8.06.2026 (Mon), 8:00 AM 08 cze 2026, 12:00 Pokaż DP1 | Failing grades | II sem. 2025/26 / session for DP1 TEACHERS / deadline: 22.05.2026 (Fri), 8:00 AM 22 maj 2026, 12:00 Pokaż DP1 | Mid-semester reports | Spring 2025/26 / session for ALL DP TEACHERS / deadline: 8.04.2026 (Wed), 8:00 AM 10 kwi 2026, 12:0",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 966
+    },
+    "links": [
+      {
+        "text": "DP | Suggested grades | II sem. 2025/26 / session for ALL DP TEACHERS / deadline: 8.06.2026 (Mon), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1076/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1076/reviews"
+      },
+      {
+        "text": "DP1 | Failing grades | II sem. 2025/26 / session for DP1 TEACHERS / deadline: 22.05.2026 (Fri), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1064/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1064/reviews"
+      },
+      {
+        "text": "DP1 | Mid-semester reports | Spring 2025/26 / session for ALL DP TEACHERS / deadline: 8.04.2026 (Wed), 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1057/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1057/reviews"
+      },
+      {
+        "text": "DP | ATTENDANCE | Final grades | I sem. 2025/26 / session for FORM TUTORS / deadline: 11.02.2026, 2:00 PM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1033/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1033/reviews"
+      },
+      {
+        "text": "DP | ZACHOWANIE | Final grades | I sem. 2025/26 / session for FORM TUTORS / deadline: 11.02.2026, 2:00 PM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1031/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1031/reviews"
+      },
+      {
+        "text": "DP | Final grades | I sem. 2025/26 / session for ALL DP TEACHERS / deadline: 9.02.2026, 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1029/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1029/reviews"
+      },
+      {
+        "text": "DP | Suggested grades | I sem. 2025/26 / session for ALL DP TEACHERS / deadline: 16.01.2026, 8:00 AM",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1023/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1023/reviews"
+      },
+      {
+        "text": "DP | Failing grades | I sem. 2025/26",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1018/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1018/reviews"
+      },
+      {
+        "text": "DP | Mid-semester reports | Autumn 2025/26",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1000/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/1000/reviews"
+      },
+      {
+        "text": "MYP&DP | GRADE FOR ATTENDANCE | II sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/991/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/991/reviews"
+      },
+      {
+        "text": "MYP | ZACHOWANIE | Final grades | II sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/982/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/982/reviews"
+      },
+      {
+        "text": "MYP | Final grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/980/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/980/reviews"
+      },
+      {
+        "text": "MYP | Suggested grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/969/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/969/reviews"
+      },
+      {
+        "text": "MYP | Failing grades | II sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/964/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/964/reviews"
+      },
+      {
+        "text": "MYP | Mid-term reports | II sem. 2024/25 / session for ALL SUBJECT TEACHERS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/951/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/951/reviews"
+      },
+      {
+        "text": "MYP | ZACHOWANIE | Final grades | I sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/921/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/921/reviews"
+      },
+      {
+        "text": "MYP | GRADE FOR ATTENDANCE | I sem. 2024/25 / session for FORM TUTORS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/926/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/926/reviews"
+      },
+      {
+        "text": "MYP | Final grades | I sem. 2024/25 / session for ALL SUBJECT TEACHERS",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/923/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/923/reviews"
+      },
+      {
+        "text": "MYP | Suggested grades | I sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/913/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/913/reviews"
+      },
+      {
+        "text": "MYP | Failing grades | I sem. 2024/25",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/907/reviews"
+      },
+      {
+        "text": "Pokaż",
+        "href": "https://s19.idu.edu.pl/students/11899/review_sessions/907/reviews"
+      }
+    ]
+  }
+]

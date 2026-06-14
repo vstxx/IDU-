@@ -1,0 +1,1801 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 52m 55s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Wyszukiwarka użytkowników\nzwiń",
+    "textStart": "Wyszukiwarka użytkowników zwiń Imię lub nazwisko",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 135
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Wyszukiwarka użytkowników\nzwiń",
+    "textStart": "Wyszukiwarka użytkowników zwiń Imię lub nazwisko",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 950,
+      "height": 125
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "",
+    "textStart": "Dokumenty",
+    "rect": {
+      "x": 200,
+      "y": 336,
+      "width": 950,
+      "height": 52
+    },
+    "links": [
+      {
+        "text": "Dokumenty",
+        "href": "https://s19.idu.edu.pl/documents/attachments"
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "tag": "div",
+    "id": "",
+    "className": "action-module",
+    "heading": "",
+    "textStart": "Dokumenty",
+    "rect": {
+      "x": 200,
+      "y": 336,
+      "width": 950,
+      "height": 42
+    },
+    "links": [
+      {
+        "text": "Dokumenty",
+        "href": "https://s19.idu.edu.pl/documents/attachments"
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "tag": "div",
+    "id": "",
+    "className": "left-column",
+    "heading": "Twoja klasa i przedmioty\nzwiń",
+    "textStart": "Twoja klasa i przedmioty zwiń Twoja klasa Met Galla - forum klasowe - wychowawca : Robert Lasek Twoje przedmioty Business Management - zadania domowe , forum , tematy lekcji , oceny , obecności Computer Science - zadania domowe , forum , tematy lekcji , oceny , obecności Geography - zadania domowe , forum , tematy lekcji , oceny , obecności Tutor's Hour - zadania domowe , forum , tematy lekcji , o",
+    "rect": {
+      "x": 200,
+      "y": 388,
+      "width": 470,
+      "height": 1019
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "forum klasowe",
+        "href": "https://s19.idu.edu.pl/forums/54387-met-galla"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Business Management",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63164/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Computer Science",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63168/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64039-dp1_cs"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63168/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63168/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63168/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63173/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64044-dp1_geography"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63173/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63173/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63173/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Tutor's Hour",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63191/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64062-dp1_tutor"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63191/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63191/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63191/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "English",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63200/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64071-dp1_english_b-4"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63200/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63200/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63200/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Twoja klasa i przedmioty\nzwiń",
+    "textStart": "Twoja klasa i przedmioty zwiń Twoja klasa Met Galla - forum klasowe - wychowawca : Robert Lasek Twoje przedmioty Business Management - zadania domowe , forum , tematy lekcji , oceny , obecności Computer Science - zadania domowe , forum , tematy lekcji , oceny , obecności Geography - zadania domowe , forum , tematy lekcji , oceny , obecności Tutor's Hour - zadania domowe , forum , tematy lekcji , o",
+    "rect": {
+      "x": 200,
+      "y": 388,
+      "width": 470,
+      "height": 340
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "forum klasowe",
+        "href": "https://s19.idu.edu.pl/forums/54387-met-galla"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Business Management",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63164/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Computer Science",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63168/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64039-dp1_cs"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63168/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63168/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63168/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63173/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64044-dp1_geography"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63173/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63173/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63173/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Tutor's Hour",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63191/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64062-dp1_tutor"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63191/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63191/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63191/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "English",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "zadania domowe",
+        "href": "https://s19.idu.edu.pl/subjects/63200/homeworks"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums/64071-dp1_english_b-4"
+      },
+      {
+        "text": "tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63200/lesson_instances"
+      },
+      {
+        "text": "oceny",
+        "href": "https://s19.idu.edu.pl/subjects/63200/students_grades?student_id=11899"
+      },
+      {
+        "text": "obecności",
+        "href": "https://s19.idu.edu.pl/subjects/63200/students_presences?student_id=11899"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ogłoszenia przedmiotowe\nzwiń",
+    "textStart": "Ogłoszenia przedmiotowe zwiń DP1_CAS ALL CAS Exhibition 12 czerwca - task description 10 cze 2026, 12:50 DP1_TOK (2) Core Day 09 cze 2026, 20:40 DP1_TUTOR Core Day :: 12 czerwca 09 cze 2026, 13:10 DP1_Maths_AI (2) First Draft 05 cze 2026, 13:17 Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 738,
+      "width": 470,
+      "height": 191
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "DP1_CAS ALL",
+        "href": "https://s19.idu.edu.pl/subjects/63263"
+      },
+      {
+        "text": "CAS Exhibition 12 czerwca - task description",
+        "href": "https://s19.idu.edu.pl/subject_announcements/141359/confirm"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "Core Day",
+        "href": "https://s19.idu.edu.pl/subject_announcements/141344/confirm"
+      },
+      {
+        "text": "DP1_TUTOR",
+        "href": "https://s19.idu.edu.pl/subjects/63191"
+      },
+      {
+        "text": "Core Day :: 12 czerwca",
+        "href": "https://s19.idu.edu.pl/subject_announcements/141327/confirm"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "First Draft",
+        "href": "https://s19.idu.edu.pl/subject_announcements/141191/confirm"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/subject_announcements"
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Oceny\nzwiń",
+    "textStart": "Oceny zwiń DP1_Maths_AI (2) 30 (Formative: Graphing) 08 cze 2026, 13:02 DP1_BM 6 (oceny cząstkowe: MayMock) 08 cze 2026, 08:58 DP1_CS 7 (Mock: Mock) 07 cze 2026, 21:11 DP1_English_B (4) 6 (Summative assessment - semester 2: Mock exams - spring session) 01 cze 2026, 23:45 DP1_English_B (4) Paper 1 writing: 29/30 Paper 2 ... (MOCKS - BREAKDOWN: Mock exams breakdown - spring) 01 cze 2026, 23:22 DP1_M",
+    "rect": {
+      "x": 200,
+      "y": 939,
+      "width": 470,
+      "height": 392
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_CS",
+        "href": "https://s19.idu.edu.pl/subjects/63168"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "Paper 1 writing: 29/30 Paper 2 ...",
+        "href": "https://s19.idu.edu.pl/#description_for_grade_2469677"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Polish_A (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "4 [30/50]",
+        "href": "https://s19.idu.edu.pl/#description_for_grade_2461098"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "4 [16/28]",
+        "href": "https://s19.idu.edu.pl/#description_for_grade_2460963"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/grades"
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Najbliższe sprawdziany\nzwiń",
+    "textStart": "Najbliższe sprawdziany zwiń",
+    "rect": {
+      "x": 200,
+      "y": 1341,
+      "width": 470,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "tag": "div",
+    "id": "",
+    "className": "right-column",
+    "heading": "Aktualności\nrozwiń",
+    "textStart": "Aktualności rozwiń Najbliższe wydarzenia zwiń END OF THE SCHOOL YEAR CEREMONY 26 cze 2026 kalendarz zobacz swój kalendarz zobacz kalendarz publiczny Obecności zwiń DP1_English_B (4) Obecność 11 cze 2026 DP1_English_B (4) Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Nieobecność 10 cze 2026 D",
+    "rect": {
+      "x": 680,
+      "y": 388,
+      "width": 470,
+      "height": 588
+    },
+    "links": [
+      {
+        "text": "rozwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "Posiedzenie Sejmu Szkolnego | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18007"
+      },
+      {
+        "text": "MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students",
+        "href": "https://s19.idu.edu.pl/informations/17989"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP5",
+        "href": "https://s19.idu.edu.pl/informations/17996"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP4",
+        "href": "https://s19.idu.edu.pl/informations/17995"
+      },
+      {
+        "text": "DP | RETAKES SESSIONS info for students",
+        "href": "https://s19.idu.edu.pl/informations/17654"
+      },
+      {
+        "text": "Applying to the US important info",
+        "href": "https://s19.idu.edu.pl/informations/16815"
+      },
+      {
+        "text": "SCHOOL CALENDAR 2025/26",
+        "href": "https://s19.idu.edu.pl/informations/16618"
+      },
+      {
+        "text": "DYŻURY PSYCHOLOGÓW SZKOLNYCH",
+        "href": "https://s19.idu.edu.pl/informations/16610"
+      },
+      {
+        "text": "MICROSOFT 365",
+        "href": "https://s19.idu.edu.pl/informations/16601"
+      },
+      {
+        "text": "BRITANNICA and NEW YORK TIMES access",
+        "href": "https://s19.idu.edu.pl/informations/16598"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18003"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17991"
+      },
+      {
+        "text": "Spotkanie Rady Szkoły | Tue, 9.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17981"
+      },
+      {
+        "text": "Godziny otwarcia sekretariatów w dn. 5.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17977"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17975"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 2.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17974"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17971"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17964"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17954"
+      },
+      {
+        "text": "TEATR BARDZO DYSKUSYJNY | \"IWONA KSIĘŻNICZKA BURGUNDA”, Teatr Ateneum",
+        "href": "https://s19.idu.edu.pl/informations/17958"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17956"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17948"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17947"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17932"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17943"
+      },
+      {
+        "text": "TEACHERS DP1 | Trip to Berlin (26-30.05.2026) - list of students",
+        "href": "https://s19.idu.edu.pl/informations/17937"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17935"
+      },
+      {
+        "text": "Spotkanie Ministerstw Szkolnych | Wed, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17934"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17925"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17927"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17926"
+      },
+      {
+        "text": "Zaproszenie na wycieczkę ornitologiczną (dla uczniów MYP) - przypomnienie",
+        "href": "https://s19.idu.edu.pl/informations/17823"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 25.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17922"
+      },
+      {
+        "text": "Łazienki Królewskie ponownie zapraszają uczniów IB Raszyńska!",
+        "href": "https://s19.idu.edu.pl/informations/17916"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17915"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 20.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17912"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 19.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17904"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 18.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17892"
+      },
+      {
+        "text": "MYP4 | SPECIAL TIMETABLE | 18-22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17891"
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Aktualności\nrozwiń",
+    "textStart": "Aktualności rozwiń",
+    "rect": {
+      "x": 680,
+      "y": 388,
+      "width": 470,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "rozwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "Posiedzenie Sejmu Szkolnego | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18007"
+      },
+      {
+        "text": "MYP MOCK EXAMS 2026 | 9-11.06.2026 | schedule for students",
+        "href": "https://s19.idu.edu.pl/informations/17989"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP5",
+        "href": "https://s19.idu.edu.pl/informations/17996"
+      },
+      {
+        "text": "MYP MOCKS 2026 | MYP4",
+        "href": "https://s19.idu.edu.pl/informations/17995"
+      },
+      {
+        "text": "DP | RETAKES SESSIONS info for students",
+        "href": "https://s19.idu.edu.pl/informations/17654"
+      },
+      {
+        "text": "Applying to the US important info",
+        "href": "https://s19.idu.edu.pl/informations/16815"
+      },
+      {
+        "text": "SCHOOL CALENDAR 2025/26",
+        "href": "https://s19.idu.edu.pl/informations/16618"
+      },
+      {
+        "text": "DYŻURY PSYCHOLOGÓW SZKOLNYCH",
+        "href": "https://s19.idu.edu.pl/informations/16610"
+      },
+      {
+        "text": "MICROSOFT 365",
+        "href": "https://s19.idu.edu.pl/informations/16601"
+      },
+      {
+        "text": "BRITANNICA and NEW YORK TIMES access",
+        "href": "https://s19.idu.edu.pl/informations/16598"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | 11.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/18003"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 8.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17991"
+      },
+      {
+        "text": "Spotkanie Rady Szkoły | Tue, 9.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17981"
+      },
+      {
+        "text": "Godziny otwarcia sekretariatów w dn. 5.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17977"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 3.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17975"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 2.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17974"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17971"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Mon, 1.06.2026",
+        "href": "https://s19.idu.edu.pl/informations/17964"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17954"
+      },
+      {
+        "text": "TEATR BARDZO DYSKUSYJNY | \"IWONA KSIĘŻNICZKA BURGUNDA”, Teatr Ateneum",
+        "href": "https://s19.idu.edu.pl/informations/17958"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Fri, 29.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17956"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17948"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Thu, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17947"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17932"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17943"
+      },
+      {
+        "text": "TEACHERS DP1 | Trip to Berlin (26-30.05.2026) - list of students",
+        "href": "https://s19.idu.edu.pl/informations/17937"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 27.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17935"
+      },
+      {
+        "text": "Spotkanie Ministerstw Szkolnych | Wed, 28.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17934"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17925"
+      },
+      {
+        "text": "MYP4 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17927"
+      },
+      {
+        "text": "DP1 | TIMETABLE CHANGES | Tue, 26.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17926"
+      },
+      {
+        "text": "Zaproszenie na wycieczkę ornitologiczną (dla uczniów MYP) - przypomnienie",
+        "href": "https://s19.idu.edu.pl/informations/17823"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 25.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17922"
+      },
+      {
+        "text": "Łazienki Królewskie ponownie zapraszają uczniów IB Raszyńska!",
+        "href": "https://s19.idu.edu.pl/informations/17916"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Fri, 22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17915"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Wed, 20.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17912"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Tue, 19.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17904"
+      },
+      {
+        "text": "MYP5 | TIMETABLE CHANGES | Mon, 18.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17892"
+      },
+      {
+        "text": "MYP4 | SPECIAL TIMETABLE | 18-22.05.2026",
+        "href": "https://s19.idu.edu.pl/informations/17891"
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Najbliższe wydarzenia\nzwiń",
+    "textStart": "Najbliższe wydarzenia zwiń END OF THE SCHOOL YEAR CEREMONY 26 cze 2026 kalendarz zobacz swój kalendarz zobacz kalendarz publiczny",
+    "rect": {
+      "x": 680,
+      "y": 454,
+      "width": 470,
+      "height": 117
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "kalendarz",
+        "href": "https://s19.idu.edu.pl/calendar"
+      },
+      {
+        "text": "zobacz swój kalendarz",
+        "href": "https://s19.idu.edu.pl/calendar"
+      },
+      {
+        "text": "zobacz kalendarz publiczny",
+        "href": "https://s19.idu.edu.pl/public_calendar/19"
+      }
+    ]
+  },
+  {
+    "i": 16,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Obecności\nzwiń",
+    "textStart": "Obecności zwiń DP1_English_B (4) Obecność 11 cze 2026 DP1_English_B (4) Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_Geography Obecność 11 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Obecność 10 cze 2026 DP1_BM Nieobecność 10 cze 2026 DP1_BM Nieobecność 10 cze 2026 DP1_Maths_AI (2) Nieobecność 10 cze 2026 DP1_Maths_AI (2) Nieobecność 10 cze 2026 Zobacz wszystkie",
+    "rect": {
+      "x": 680,
+      "y": 581,
+      "width": 470,
+      "height": 319
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_English_B (4)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "DP1_Geography",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "DP1_Maths_AI (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/presences"
+      }
+    ]
+  },
+  {
+    "i": 17,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Moje wypowiedzi na forach\nzwiń",
+    "textStart": "Moje wypowiedzi na forach zwiń",
+    "rect": {
+      "x": 680,
+      "y": 910,
+      "width": 470,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      }
+    ]
+  },
+  {
+    "i": 18,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Ostatnie recenzje\nzwiń",
+    "textStart": "Ostatnie recenzje zwiń MYP4_Maths_(6) 30 paź 2023, 09:57 zobacz MYP4_Spanish_(2) 03 lis 2023, 13:16 zobacz Service as Action 03 lis 2023, 22:11 zobacz MYP4_Geo_(2) 04 lis 2023, 06:12 zobacz Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 1407,
+      "width": 950,
+      "height": 182
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "MYP4_Maths_(6)",
+        "href": "https://s19.idu.edu.pl/subjects/54223"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/643765"
+      },
+      {
+        "text": "MYP4_Spanish_(2)",
+        "href": "https://s19.idu.edu.pl/subjects/54155"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644359"
+      },
+      {
+        "text": "Service as Action",
+        "href": "https://s19.idu.edu.pl/subjects/54591"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644627"
+      },
+      {
+        "text": "MYP4_Geo_(2)",
+        "href": "https://s19.idu.edu.pl/subjects/54128"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644723"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews"
+      }
+    ]
+  },
+  {
+    "i": 19,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnie recenzje\nzwiń",
+    "textStart": "Ostatnie recenzje zwiń MYP4_Maths_(6) 30 paź 2023, 09:57 zobacz MYP4_Spanish_(2) 03 lis 2023, 13:16 zobacz Service as Action 03 lis 2023, 22:11 zobacz MYP4_Geo_(2) 04 lis 2023, 06:12 zobacz Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 1407,
+      "width": 950,
+      "height": 172
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "MYP4_Maths_(6)",
+        "href": "https://s19.idu.edu.pl/subjects/54223"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/643765"
+      },
+      {
+        "text": "MYP4_Spanish_(2)",
+        "href": "https://s19.idu.edu.pl/subjects/54155"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644359"
+      },
+      {
+        "text": "Service as Action",
+        "href": "https://s19.idu.edu.pl/subjects/54591"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644627"
+      },
+      {
+        "text": "MYP4_Geo_(2)",
+        "href": "https://s19.idu.edu.pl/subjects/54128"
+      },
+      {
+        "text": "zobacz",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews/644723"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/reviews"
+      }
+    ]
+  },
+  {
+    "i": 20,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Aktualny plan\nzwiń",
+    "textStart": "Aktualny plan zwiń 2026-06-08 Poniedziałek Wtorek Środa Czwartek Piątek 0 1 DP1_TOK (2) R_30 DP1_BM(HL) R_35 DP1_Geography(HL) R_31 2 DP1_TOK (2) R_30 DP1_BM(HL) R_35 DP1_Geography(HL) R_31 3 DP1_BM(HL) R_35 DP1_Polish_A (4)(SL) R_36 DP1_Maths_AI (2)(SL) R_b6 DP1_English_B (4)(HL) R_b6 4 DP1_BM(HL) R_35 DP1_Polish_A (4)(SL) R_36 DP1_Maths_AI (2)(SL) R_b6 DP1_English_B (4)(HL) R_b6 5 DP1_Maths_AI (",
+    "rect": {
+      "x": 200,
+      "y": 1589,
+      "width": 950,
+      "height": 1510
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Polish_A (4)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "R_36",
+        "href": "https://s19.idu.edu.pl/rooms/1253"
+      },
+      {
+        "text": "DP1_Maths_AI (2)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Polish_A (4)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "R_36",
+        "href": "https://s19.idu.edu.pl/rooms/1253"
+      },
+      {
+        "text": "DP1_Maths_AI (2)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 21,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Aktualny plan\nzwiń",
+    "textStart": "Aktualny plan zwiń 2026-06-08 Poniedziałek Wtorek Środa Czwartek Piątek 0 1 DP1_TOK (2) R_30 DP1_BM(HL) R_35 DP1_Geography(HL) R_31 2 DP1_TOK (2) R_30 DP1_BM(HL) R_35 DP1_Geography(HL) R_31 3 DP1_BM(HL) R_35 DP1_Polish_A (4)(SL) R_36 DP1_Maths_AI (2)(SL) R_b6 DP1_English_B (4)(HL) R_b6 4 DP1_BM(HL) R_35 DP1_Polish_A (4)(SL) R_36 DP1_Maths_AI (2)(SL) R_b6 DP1_English_B (4)(HL) R_b6 5 DP1_Maths_AI (",
+    "rect": {
+      "x": 200,
+      "y": 1589,
+      "width": 950,
+      "height": 1315
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_TOK (2)",
+        "href": "https://s19.idu.edu.pl/subjects/63207"
+      },
+      {
+        "text": "R_30",
+        "href": "https://s19.idu.edu.pl/rooms/1247"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Geography(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63173"
+      },
+      {
+        "text": "R_31",
+        "href": "https://s19.idu.edu.pl/rooms/1248"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Polish_A (4)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "R_36",
+        "href": "https://s19.idu.edu.pl/rooms/1253"
+      },
+      {
+        "text": "DP1_Maths_AI (2)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "DP1_Polish_A (4)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63215"
+      },
+      {
+        "text": "R_36",
+        "href": "https://s19.idu.edu.pl/rooms/1253"
+      },
+      {
+        "text": "DP1_Maths_AI (2)(SL)",
+        "href": "https://s19.idu.edu.pl/subjects/63206"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "DP1_English_B (4)(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63200"
+      },
+      {
+        "text": "R_b6",
+        "href": "https://s19.idu.edu.pl/rooms/1260"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      }
+    ]
+  },
+  {
+    "i": 22,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Fora przedmiotowe - ostatnie posty\nzwiń",
+    "textStart": "Fora przedmiotowe - ostatnie posty zwiń Przedmiot: DP1_BM DP1_CS DP1_Geography DP1_TUTOR DP1_English_B (4) DP1_Maths_AI (2) DP1_TOK (2) DP1_Polish_A (4) DP1_CAS DP1_CAS ALL Extended Essay Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 2914,
+      "width": 950,
+      "height": 175
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/forums"
+      }
+    ]
+  },
+  {
+    "i": 23,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Wydarzenia\nzwiń",
+    "textStart": "Wydarzenia zwiń Ostatnie zadania domowe zwiń TURNITIN FILE 01 cze 2026, 16:46 aktywne do: 07 cze 2026, 23:55 EXHIBITION- FINAL DRAFT 01 cze 2026, 10:58 aktywne do: 07 cze 2026, 23:55 First Draft 13 maj 2026, 11:09 aktywne do: 07 cze 2026, 18:00 EXHIBITION - FIRST DRAFT 12 maj 2026, 13:03 aktywne do: 17 maj 2026, 23:55 IA Research ideas 23 kwi 2026, 10:27 aktywne do: 29 kwi 2026, 22:00 Zobacz wszys",
+    "rect": {
+      "x": 200,
+      "y": 3099,
+      "width": 950,
+      "height": 273
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "TURNITIN FILE",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37950"
+      },
+      {
+        "text": "EXHIBITION- FINAL DRAFT",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37945"
+      },
+      {
+        "text": "First Draft",
+        "href": "https://s19.idu.edu.pl/subjects/63206/homeworks/37840"
+      },
+      {
+        "text": "EXHIBITION - FIRST DRAFT",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37831"
+      },
+      {
+        "text": "IA Research ideas",
+        "href": "https://s19.idu.edu.pl/subjects/63173/homeworks/37752"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/homeworks"
+      }
+    ]
+  },
+  {
+    "i": 24,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Wydarzenia\nzwiń",
+    "textStart": "Wydarzenia zwiń",
+    "rect": {
+      "x": 200,
+      "y": 3099,
+      "width": 950,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      }
+    ]
+  },
+  {
+    "i": 25,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnie zadania domowe\nzwiń",
+    "textStart": "Ostatnie zadania domowe zwiń TURNITIN FILE 01 cze 2026, 16:46 aktywne do: 07 cze 2026, 23:55 EXHIBITION- FINAL DRAFT 01 cze 2026, 10:58 aktywne do: 07 cze 2026, 23:55 First Draft 13 maj 2026, 11:09 aktywne do: 07 cze 2026, 18:00 EXHIBITION - FIRST DRAFT 12 maj 2026, 13:03 aktywne do: 17 maj 2026, 23:55 IA Research ideas 23 kwi 2026, 10:27 aktywne do: 29 kwi 2026, 22:00 Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 3165,
+      "width": 950,
+      "height": 197
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/#"
+      },
+      {
+        "text": "TURNITIN FILE",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37950"
+      },
+      {
+        "text": "EXHIBITION- FINAL DRAFT",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37945"
+      },
+      {
+        "text": "First Draft",
+        "href": "https://s19.idu.edu.pl/subjects/63206/homeworks/37840"
+      },
+      {
+        "text": "EXHIBITION - FIRST DRAFT",
+        "href": "https://s19.idu.edu.pl/subjects/63207/homeworks/37831"
+      },
+      {
+        "text": "IA Research ideas",
+        "href": "https://s19.idu.edu.pl/subjects/63173/homeworks/37752"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/students/11899/homeworks"
+      }
+    ]
+  }
+]

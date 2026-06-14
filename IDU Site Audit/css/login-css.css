@@ -1,0 +1,97 @@
+/* CSS dump for login */
+/* URL: https://s19.idu.edu.pl/users/sign_in */
+/* Exported: 2026-06-11T16:29:29.291Z */
+
+
+
+/* ===== STYLESHEET: https://s19.idu.edu.pl/assets/simple.css?1757934546 ===== */
+a { text-decoration: none; color: black; }
+.print_plan table { border: 2px solid black; }
+.print_plan td { border: 1px solid black; text-align: center; font-size: 11px; }
+.print_plan .dialog_content { display: none; }
+.print_rooms_in_week a { text-decoration: none; color: black; }
+td.lesson div.lesson-cell-line { border-bottom: 1px solid gray; }
+div.lesson-cell .subject.large { font-weight: bold; font-size: 1.2em; }
+table.zebra-table tbody tr:nth-child(2n+1) { background-color: rgb(255, 255, 255); }
+table.zebra-table tbody tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table.zebra-table tbody tr.odd { background-color: rgb(255, 255, 255); }
+table.zebra-table tbody tr.even { background-color: rgb(248, 248, 248); }
+
+
+/* ===== STYLESHEET: https://s19.idu.edu.pl/assets/common_print.css?1757934545 ===== */
+body { color: rgb(0, 0, 0); background: none; }
+.container { background: none; }
+hr { background: rgb(204, 204, 204); color: rgb(204, 204, 204); width: 100%; height: 2px; margin: 2em 0px; padding: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+hr.space { background: rgb(255, 255, 255); color: rgb(255, 255, 255); visibility: hidden; }
+h1, h2, h3, h4, h5, h6 { }
+code { }
+a img { border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+p img.top { margin-top: 0px; }
+blockquote { margin: 1.5em; padding: 1em; font-style: italic; font-size: 0.9em; }
+.quiet { color: rgb(153, 153, 153); }
+.hide { display: none; }
+a:link, a:visited { background: transparent; }
+a:link::after, a:visited::after { content: "(" attr(href) ")"; font-size: 90%; }
+#menu, #top, #footer, #top-selection, #breadcrumbs-section, #flash-messages-section, #reportBug { display: none; }
+#content .action-module { display: none; }
+.toggle-switch { display: none; }
+a:link::after, a:visited::after { content: normal; }
+.menu-exist #menu { float: left; display: none; }
+.menu-exist #content { float: left; width: 950px; }
+.menu-exist #content .left-column { float: left; width: 470px; margin-right: 10px; }
+.menu-exist #content .right-column { float: left; width: 470px; }
+.menu-exist #content .double-column { width: 950px; float: left; }
+table { float: none !important; }
+div { float: none !important; }
+.page-break { display: block; break-before: page; }
+.page-break.off { display: inline; break-before: auto; }
+.module { border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+.dont-print { display: none; }
+table.print_reviews_table { width: 100%; }
+table.print_reviews_table td { border: 1px solid black; padding: 5px; vertical-align: top; }
+table.print_reviews_table td.noborder { border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+table.print_reviews_table td a { color: black; font-weight: bold; }
+h4 a { color: black; }
+.fc-content { width: 768px; }
+.fc-event { }
+#calendar { padding-top: 60px; padding-left: 70px; transform: scale(1.3); }
+.fc-mon { width: 14%; }
+.fc-tue { width: 14%; }
+.fc-wed { width: 14%; }
+.fc-thu { width: 14%; }
+.fc-fri { width: 14%; }
+.fc-sat { width: 14%; }
+.fc-sun { width: 14%; }
+.fc-header-title { padding-right: 100px; }
+.fc-header-left { display: none; }
+.fc-header-right { display: none; }
+.dont-print { display: none; }
+#footnotes_debug { display: none; }
+
+
+/* ===== STYLESHEET: inline ===== */
+* { margin: 0px; padding: 0px; }
+body { background-color: rgb(248, 248, 248); color: rgb(34, 34, 34); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 12px; height: 100%; min-height: 350px; min-width: 500px; }
+#top { background-image: linear-gradient(rgb(105, 139, 172), rgb(145, 169, 193)); height: 45px; border-radius: 5px 5px 0px 0px; }
+#logo { float: left; padding: 7px 10px; width: auto; }
+a:focus, a:hover { text-decoration: underline; }
+a { color: rgb(88, 137, 187); text-decoration: none; }
+h1 { color: rgb(17, 17, 17); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; line-height: 1; margin-bottom: 10px; padding-bottom: 5px; }
+#container { background-color: rgb(255, 255, 255); border: 1px solid rgb(232, 232, 232); height: 280px; left: 50%; margin-left: -250px; margin-top: -140px; position: absolute; top: 50%; width: 500px; box-shadow: rgba(220, 220, 220, 0.3) 10px 10px 10px; border-radius: 5px; }
+#container-low { background-color: rgb(255, 255, 255); border: 1px solid rgb(232, 232, 232); height: 200px; left: 50%; margin-left: -250px; margin-top: -100px; position: absolute; top: 50%; width: 500px; }
+label { display: block; float: left; font-weight: normal; margin-bottom: 5px; padding: 8px 4px 4px; width: 60px; }
+form { border-bottom: 1px solid rgb(240, 240, 240); display: block; margin: 10px auto; padding: 10px; width: 280px; }
+.field input { width: 200px; }
+.remember-me { color: rgb(136, 136, 136); font-size: 11px; margin-left: 68px; padding: 5px 0px; }
+.remember-me input { margin-right: 5px; }
+input { background-color: rgb(255, 255, 255); border: 1px solid rgb(187, 187, 187); display: block; float: left; padding: 4px; }
+input[type="submit"], input.submit { background-color: rgb(125, 155, 184); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; color: rgb(255, 255, 255); float: right; font-family: Tahoma, Arial, Helvetica, sans-serif; font-weight: bold; margin-bottom: 10px; margin-right: 5px; padding: 4px; }
+input[type="hidden"] { border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; }
+#password-recovery { margin: 0px auto; padding-left: 115px; }
+#password-recovery a { background-image: url("../images/icons/icon-lost-password.png"); background-position: left center; background-repeat: no-repeat; padding: 2px 0px 2px 20px; }
+.clear { clear: both; }
+#language { padding-top: 10px; }
+#language a { float: right; padding-right: 10px; color: white !important; }
+.notice, .alert { border-radius: 5px; display: block; padding: 10px; text-align: center; margin-top: 5px; margin-bottom: 5px; }
+.notice { color: rgb(0, 64, 133); background-color: rgb(204, 229, 255); border-color: rgb(184, 218, 255); }
+.alert { color: rgb(185, 48, 48); background-color: rgb(248, 215, 218); border-color: rgb(245, 198, 203); }

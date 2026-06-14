@@ -1,0 +1,889 @@
+[
+  {
+    "i": 0,
+    "tag": "div",
+    "id": "visual",
+    "className": "",
+    "heading": "",
+    "textStart": "I Społeczne Liceum Ogólnokształcące z Oddziałami Międzynarodowymi (IB) im. Maharadży Jam Saheba Digvijay Sinhji change language: EN Wylogowanie za: 59m 57s",
+    "rect": {
+      "x": 200,
+      "y": 0,
+      "width": 950,
+      "height": 90
+    },
+    "links": [
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "change language: EN",
+        "href": "https://s19.idu.edu.pl/locale?locale=en"
+      }
+    ]
+  },
+  {
+    "i": 1,
+    "tag": "div",
+    "id": "account-actions",
+    "className": "",
+    "heading": "",
+    "textStart": "Witaj, Student Name Masz 43 nowe wiadomości Pojawiły się 1234 nowe aktualności szablony forum wyloguj się Twój profil",
+    "rect": {
+      "x": 200,
+      "y": 90,
+      "width": 950,
+      "height": 30
+    },
+    "links": [
+      {
+        "text": "43 nowe wiadomości",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK exhibition - coming soon!",
+        "href": "https://s19.idu.edu.pl/internal_messages/5038104/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "Spływ kajakowy :: 23.06.2026",
+        "href": "https://s19.idu.edu.pl/internal_messages/5037239/watek"
+      },
+      {
+        "text": "Andrzej Fister-Stoga",
+        "href": "https://s19.idu.edu.pl/teachers/878"
+      },
+      {
+        "text": "TOK EXHIBITION SUBMISSION INFORMATION",
+        "href": "https://s19.idu.edu.pl/internal_messages/5027322/watek"
+      },
+      {
+        "text": "Michał Sokolski",
+        "href": "https://s19.idu.edu.pl/teachers/2437"
+      },
+      {
+        "text": "link - immigration policies",
+        "href": "https://s19.idu.edu.pl/internal_messages/4999512/watek"
+      },
+      {
+        "text": "Robert Lasek",
+        "href": "https://s19.idu.edu.pl/teachers/2081"
+      },
+      {
+        "text": "DP1 Science Trip :: Sprawdziany i poprawy",
+        "href": "https://s19.idu.edu.pl/internal_messages/4994484/watek"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/internal_messages"
+      },
+      {
+        "text": "Nowa wiadomość",
+        "href": "https://s19.idu.edu.pl/internal_messages/new"
+      },
+      {
+        "text": "Pojawiły się 1234 nowe aktualności",
+        "href": "https://s19.idu.edu.pl/informations"
+      },
+      {
+        "text": "szablony",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "forum",
+        "href": "https://s19.idu.edu.pl/forums"
+      },
+      {
+        "text": "wyloguj się",
+        "href": "https://s19.idu.edu.pl/users/sign_out"
+      },
+      {
+        "text": "Twój profil",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "tag": "div",
+    "id": "top-selection",
+    "className": "",
+    "heading": "",
+    "textStart": "Semestr: Rok szkolny 2023/2024 - Semestr I Rok szkolny 2023/2024 - Semestr II Rok szkolny 2024/2025 - Semestr I Rok szkolny 2024/2025 - Semestr II Rok szkolny 2025/2026 - Semestr I Rok szkolny 2025/2026 - Semestr II 25/26",
+    "rect": {
+      "x": 200,
+      "y": 130,
+      "width": 950,
+      "height": 40
+    },
+    "links": []
+  },
+  {
+    "i": 3,
+    "tag": "div",
+    "id": "breadcrumbs-section",
+    "className": "span-24",
+    "heading": "",
+    "textStart": "Jesteś tutaj: Hol szkolny > Lista przedmiotów > DP1_BM",
+    "rect": {
+      "x": 200,
+      "y": 170,
+      "width": 950,
+      "height": 31
+    },
+    "links": [
+      {
+        "text": "Hol szkolny",
+        "href": "https://s19.idu.edu.pl/"
+      },
+      {
+        "text": "Lista przedmiotów",
+        "href": "https://s19.idu.edu.pl/subjects"
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "tag": "div",
+    "id": "",
+    "className": "left-column",
+    "heading": "DP1_BM",
+    "textStart": "DP1_BM Typ przedmiotu: Business Management Prowadzący: Bernard Markowski Klasy: Magnitudo Met Galla Andromeda Perseverance Twoje oceny zwiń 6 (oceny cząstkowe: MayMock) 08 cze 2026, 08:58 6 (oceny cząstkowe: Units 134 class test) 11 maj 2026, 11:09 7 (oceny cząstkowe: U1 definitions) 31 mar 2026, 10:04 6 (oceny cząstkowe: Unit 3 test) 05 mar 2026, 13:57 Zobacz wszystkie Twoje obecności zwiń Obecno",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 470,
+      "height": 947
+    },
+    "links": [
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "Magnitudo",
+        "href": "https://s19.idu.edu.pl/klasses/684"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Andromeda",
+        "href": "https://s19.idu.edu.pl/klasses/683"
+      },
+      {
+        "text": "Perseverance",
+        "href": "https://s19.idu.edu.pl/klasses/682"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_grades"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_presences"
+      },
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm/topics/61434-dp1_bm"
+      },
+      {
+        "text": "przejdź do forum przedmiotu",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm"
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "DP1_BM",
+    "textStart": "DP1_BM Typ przedmiotu: Business Management Prowadzący: Bernard Markowski Klasy: Magnitudo Met Galla Andromeda Perseverance",
+    "rect": {
+      "x": 200,
+      "y": 201,
+      "width": 470,
+      "height": 260
+    },
+    "links": [
+      {
+        "text": "Bernard Markowski",
+        "href": "https://s19.idu.edu.pl/teachers/2276"
+      },
+      {
+        "text": "Magnitudo",
+        "href": "https://s19.idu.edu.pl/klasses/684"
+      },
+      {
+        "text": "Met Galla",
+        "href": "https://s19.idu.edu.pl/klasses/681"
+      },
+      {
+        "text": "Andromeda",
+        "href": "https://s19.idu.edu.pl/klasses/683"
+      },
+      {
+        "text": "Perseverance",
+        "href": "https://s19.idu.edu.pl/klasses/682"
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Twoje oceny\nzwiń",
+    "textStart": "Twoje oceny zwiń 6 (oceny cząstkowe: MayMock) 08 cze 2026, 08:58 6 (oceny cząstkowe: Units 134 class test) 11 maj 2026, 11:09 7 (oceny cząstkowe: U1 definitions) 31 mar 2026, 10:04 6 (oceny cząstkowe: Unit 3 test) 05 mar 2026, 13:57 Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 471,
+      "width": 470,
+      "height": 172
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_grades"
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Twoje obecności\nzwiń",
+    "textStart": "Twoje obecności zwiń Obecność 10 cze 2026 Obecność 10 cze 2026 Nieobecność 10 cze 2026 Nieobecność 10 cze 2026 Obecność 08 cze 2026 Obecność 08 cze 2026 Nieobecność 11 mar 2026 Nieobecność 11 mar 2026 Nieobecność 03 cze 2026 Nieobecność 03 cze 2026 Zobacz wszystkie",
+    "rect": {
+      "x": 200,
+      "y": 653,
+      "width": 470,
+      "height": 319
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_presences"
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ostatnie wątki na forum przedmiotu",
+    "textStart": "Ostatnie wątki na forum przedmiotu DP1_BM Ostatni post : 0 odpowiedzi przejdź do forum przedmiotu",
+    "rect": {
+      "x": 200,
+      "y": 982,
+      "width": 470,
+      "height": 156
+    },
+    "links": [
+      {
+        "text": "DP1_BM",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm/topics/61434-dp1_bm"
+      },
+      {
+        "text": "przejdź do forum przedmiotu",
+        "href": "https://s19.idu.edu.pl/forums/64035-dp1_bm"
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "tag": "div",
+    "id": "",
+    "className": "right-column",
+    "heading": "Ogłoszenia przedmiotowe\nzwiń",
+    "textStart": "Ogłoszenia przedmiotowe zwiń Unit 3 class test 25 lut 2026, 14:49 Zmiana planu... 25 maj 2026, 19:06 Sprawdziany zwiń Zadania domowe zwiń Zobacz wszystkie Pliki zwiń brak Wszystkie pliki Tematy lekcji zwiń 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 Mock discussion, 2.2 Org. structure 08 cze 2026 Mock discussion, 2.2 O",
+    "rect": {
+      "x": 680,
+      "y": 201,
+      "width": 470,
+      "height": 940
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Unit 3 class test",
+        "href": "https://s19.idu.edu.pl/subject_announcements/137709/confirm"
+      },
+      {
+        "text": "Zmiana planu...",
+        "href": "https://s19.idu.edu.pl/subject_announcements/140808/confirm"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/homeworks"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Wszystkie pliki",
+        "href": "https://s19.idu.edu.pl/subjects/63164/subject_attachment_connections"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490272"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490273"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490282"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490283"
+      },
+      {
+        "text": "Mock discussion, 2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1488881"
+      },
+      {
+        "text": "Mock discussion, 2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1488882"
+      },
+      {
+        "text": "Wszystkie tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances"
+      },
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zofia Budny",
+        "href": "https://s19.idu.edu.pl/students/11897"
+      },
+      {
+        "text": "Tymoteusz Chojnacki",
+        "href": "https://s19.idu.edu.pl/students/11923"
+      },
+      {
+        "text": "Pola Gromnicka-Witek",
+        "href": "https://s19.idu.edu.pl/students/13131"
+      },
+      {
+        "text": "Alexander Krzemień Martins",
+        "href": "https://s19.idu.edu.pl/students/12002"
+      },
+      {
+        "text": "Franciszek Muster",
+        "href": "https://s19.idu.edu.pl/students/11887"
+      },
+      {
+        "text": "Student Name",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "Lista uczniów do druku",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_list"
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ogłoszenia przedmiotowe\nzwiń",
+    "textStart": "Ogłoszenia przedmiotowe zwiń Unit 3 class test 25 lut 2026, 14:49 Zmiana planu... 25 maj 2026, 19:06",
+    "rect": {
+      "x": 680,
+      "y": 201,
+      "width": 470,
+      "height": 105
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Unit 3 class test",
+        "href": "https://s19.idu.edu.pl/subject_announcements/137709/confirm"
+      },
+      {
+        "text": "Zmiana planu...",
+        "href": "https://s19.idu.edu.pl/subject_announcements/140808/confirm"
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Sprawdziany\nzwiń",
+    "textStart": "Sprawdziany zwiń",
+    "rect": {
+      "x": 680,
+      "y": 316,
+      "width": 470,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Zadania domowe\nzwiń",
+    "textStart": "Zadania domowe zwiń Zobacz wszystkie",
+    "rect": {
+      "x": 680,
+      "y": 382,
+      "width": 470,
+      "height": 74
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zobacz wszystkie",
+        "href": "https://s19.idu.edu.pl/subjects/63164/homeworks"
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Pliki\nzwiń",
+    "textStart": "Pliki zwiń brak Wszystkie pliki",
+    "rect": {
+      "x": 680,
+      "y": 466,
+      "width": 470,
+      "height": 98
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Wszystkie pliki",
+        "href": "https://s19.idu.edu.pl/subjects/63164/subject_attachment_connections"
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Tematy lekcji\nzwiń",
+    "textStart": "Tematy lekcji zwiń 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 2.2 Org. structure 10 cze 2026 Mock discussion, 2.2 Org. structure 08 cze 2026 Mock discussion, 2.2 Org. structure 08 cze 2026 Wszystkie tematy lekcji",
+    "rect": {
+      "x": 680,
+      "y": 574,
+      "width": 470,
+      "height": 221
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490272"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490273"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490282"
+      },
+      {
+        "text": "2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1490283"
+      },
+      {
+        "text": "Mock discussion, 2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1488881"
+      },
+      {
+        "text": "Mock discussion, 2.2 Org. structure",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances/1488882"
+      },
+      {
+        "text": "Wszystkie tematy lekcji",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_instances"
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Uczniowie\nzwiń",
+    "textStart": "Uczniowie zwiń Bez aspektu Zofia Budny Tymoteusz Chojnacki Pola Gromnicka-Witek Alexander Krzemień Martins Franciszek Muster Student Name Lista uczniów do druku",
+    "rect": {
+      "x": 680,
+      "y": 805,
+      "width": 470,
+      "height": 326
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "Zofia Budny",
+        "href": "https://s19.idu.edu.pl/students/11897"
+      },
+      {
+        "text": "Tymoteusz Chojnacki",
+        "href": "https://s19.idu.edu.pl/students/11923"
+      },
+      {
+        "text": "Pola Gromnicka-Witek",
+        "href": "https://s19.idu.edu.pl/students/13131"
+      },
+      {
+        "text": "Alexander Krzemień Martins",
+        "href": "https://s19.idu.edu.pl/students/12002"
+      },
+      {
+        "text": "Franciszek Muster",
+        "href": "https://s19.idu.edu.pl/students/11887"
+      },
+      {
+        "text": "Student Name",
+        "href": "https://s19.idu.edu.pl/students/11899"
+      },
+      {
+        "text": "Lista uczniów do druku",
+        "href": "https://s19.idu.edu.pl/subjects/63164/students_list"
+      }
+    ]
+  },
+  {
+    "i": 16,
+    "tag": "div",
+    "id": "",
+    "className": "double-column",
+    "heading": "Ogólny plan tygodniowy\nzwiń",
+    "textStart": "Ogólny plan tygodniowy zwiń Poniedziałek Wtorek Środa Czwartek Piątek 0 1 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 2 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 3 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 4 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 5 6 7 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 8 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 9 10 11 12 Wyświetl do druku Szczegółowy plan dla dni rozwiń",
+    "rect": {
+      "x": 200,
+      "y": 1147,
+      "width": 950,
+      "height": 1397
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Wyświetl do druku",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_plan"
+      },
+      {
+        "text": "rozwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      }
+    ]
+  },
+  {
+    "i": 17,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Ogólny plan tygodniowy\nzwiń",
+    "textStart": "Ogólny plan tygodniowy zwiń Poniedziałek Wtorek Środa Czwartek Piątek 0 1 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 2 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 3 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 4 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 5 6 7 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 8 DP1_BM(HL) Rocznik: DP1_2025/2026 R_35 9 10 11 12 Wyświetl do druku",
+    "rect": {
+      "x": 200,
+      "y": 1147,
+      "width": 950,
+      "height": 1321
+    },
+    "links": [
+      {
+        "text": "zwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "DP1_BM(HL)",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "R_35",
+        "href": "https://s19.idu.edu.pl/rooms/1252"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "",
+        "href": "https://s19.idu.edu.pl/subjects/63164"
+      },
+      {
+        "text": "Wyświetl do druku",
+        "href": "https://s19.idu.edu.pl/subjects/63164/lesson_plan"
+      }
+    ]
+  },
+  {
+    "i": 18,
+    "tag": "div",
+    "id": "",
+    "className": "module",
+    "heading": "Szczegółowy plan dla dni\nrozwiń",
+    "textStart": "Szczegółowy plan dla dni rozwiń",
+    "rect": {
+      "x": 200,
+      "y": 2478,
+      "width": 950,
+      "height": 56
+    },
+    "links": [
+      {
+        "text": "rozwiń",
+        "href": "https://s19.idu.edu.pl/subjects/63164#"
+      }
+    ]
+  }
+]
