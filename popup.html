@@ -34,6 +34,29 @@
         </div>
       </section>
 
+      <section class="control-group" aria-labelledby="layoutHeading">
+        <div class="section-heading">
+          <h2 id="layoutHeading">Layout</h2>
+          <p>Choose the page structure.</p>
+        </div>
+        <div class="layout-switch" role="group" aria-label="Layout">
+          <button class="layout-option" type="button" data-layout-option="glass" aria-pressed="true">
+            <span class="layout-icon glass-icon" aria-hidden="true"></span>
+            <span>
+              <strong>Portal</strong>
+              <small>Classic IDU+</small>
+            </span>
+          </button>
+          <button class="layout-option" type="button" data-layout-option="workspace" aria-pressed="false">
+            <span class="layout-icon workspace-icon" aria-hidden="true"></span>
+            <span>
+              <strong>Sidebar</strong>
+              <small>Modern app shell</small>
+            </span>
+          </button>
+        </div>
+      </section>
+
       <section class="control-group" aria-labelledby="accentHeading">
         <div class="section-heading">
           <h2 id="accentHeading">Accent</h2>
@@ -75,6 +98,12 @@
       </section>
 
       <section class="preview-card" aria-label="Theme preview">
+        <div class="preview-sidebar" aria-hidden="true">
+          <span></span>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
         <div class="preview-topbar">
           <span class="preview-logo">IDU+</span>
           <span class="preview-chip">Profile</span>

@@ -2,6 +2,7 @@
   const STORAGE_KEY = "iduPlusAppearance";
   const DEFAULT_APPEARANCE = Object.freeze({
     theme: "light",
+    layout: "glass",
     accent: "#2f78b7",
     topbar: "#0b2f55"
   });
@@ -20,8 +21,9 @@
   };
 
   const normalizeTheme = (theme) => (theme === "dark" ? "dark" : "light");
+  const normalizeLayout = (layout) => (layout === "workspace" ? "workspace" : "glass");
 
-  const normalizeHex = (value) => {
+  const normalizeHex = (value, fallback = DEFAULT_APPEARANCE.accent) => {
     const raw = String(value || "").trim();
     const shortMatch = raw.match(/^#([0-9a-f]{3})$/i);
 
@@ -36,7 +38,7 @@
       return raw.toLowerCase();
     }
 
-    return DEFAULT_APPEARANCE.accent;
+    return fallback;
   };
 
   const hexToRgb = (hex) => {
@@ -66,8 +68,9 @@
 
   const normalizeAppearance = (appearance = {}) => ({
     theme: normalizeTheme(appearance.theme),
+    layout: normalizeLayout(appearance.layout),
     accent: normalizeHex(appearance.accent),
-    topbar: normalizeHex(appearance.topbar || DEFAULT_APPEARANCE.topbar)
+    topbar: normalizeHex(appearance.topbar || DEFAULT_APPEARANCE.topbar, DEFAULT_APPEARANCE.topbar)
   });
 
   const readAppearance = () =>
@@ -141,6 +144,7 @@
     const root = document.documentElement;
 
     document.body.dataset.theme = nextAppearance.theme;
+    document.body.dataset.layout = nextAppearance.layout;
     root.style.setProperty("--accent", nextAppearance.accent);
     root.style.setProperty("--accent-deep", mixHex(nextAppearance.accent, "#000000", 0.22));
     root.style.setProperty("--accent-soft", rgba(nextAppearance.accent, nextAppearance.theme === "dark" ? 0.22 : 0.14));
@@ -154,6 +158,11 @@
 
     document.querySelectorAll("[data-theme-option]").forEach((button) => {
       const selected = button.dataset.themeOption === nextAppearance.theme;
+      button.setAttribute("aria-pressed", String(selected));
+    });
+
+    document.querySelectorAll("[data-layout-option]").forEach((button) => {
+      const selected = button.dataset.layoutOption === nextAppearance.layout;
       button.setAttribute("aria-pressed", String(selected));
     });
 
@@ -215,6 +224,12 @@
     document.querySelectorAll("[data-theme-option]").forEach((button) => {
       button.addEventListener("click", () => {
         save({ theme: button.dataset.themeOption });
+      });
+    });
+
+    document.querySelectorAll("[data-layout-option]").forEach((button) => {
+      button.addEventListener("click", () => {
+        save({ layout: button.dataset.layoutOption });
       });
     });
 

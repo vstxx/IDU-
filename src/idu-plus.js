@@ -3,8 +3,10 @@
   root.classList.add("idu-plus");
 
   const STORAGE_KEY = "iduPlusAppearance";
+  const WORKSPACE_COLLAPSED_KEY = "iduPlusWorkspaceSidebarCollapsed";
   const DEFAULT_APPEARANCE = Object.freeze({
     theme: "light",
+    layout: "glass",
     accent: "#2f78b7",
     topbar: "#0b2f55"
   });
@@ -18,8 +20,9 @@
   };
 
   const normalizeTheme = (theme) => (theme === "dark" ? "dark" : "light");
+  const normalizeLayout = (layout) => (layout === "workspace" ? "workspace" : "glass");
 
-  const normalizeHex = (value) => {
+  const normalizeHex = (value, fallback = DEFAULT_APPEARANCE.accent) => {
     const raw = String(value || "").trim();
     const shortMatch = raw.match(/^#([0-9a-f]{3})$/i);
 
@@ -34,7 +37,7 @@
       return raw.toLowerCase();
     }
 
-    return DEFAULT_APPEARANCE.accent;
+    return fallback;
   };
 
   const hexToRgb = (hex) => {
@@ -65,8 +68,9 @@
 
   const normalizeAppearance = (appearance = {}) => ({
     theme: normalizeTheme(appearance.theme),
+    layout: normalizeLayout(appearance.layout),
     accent: normalizeHex(appearance.accent),
-    topbar: normalizeHex(appearance.topbar || DEFAULT_APPEARANCE.topbar)
+    topbar: normalizeHex(appearance.topbar || DEFAULT_APPEARANCE.topbar, DEFAULT_APPEARANCE.topbar)
   });
 
   const applyAppearance = (appearance = DEFAULT_APPEARANCE) => {
@@ -75,6 +79,8 @@
     const topbar = nextAppearance.topbar;
 
     root.dataset.iduTheme = nextAppearance.theme;
+    root.dataset.iduLayout = nextAppearance.layout;
+    root.classList.toggle("idu-layout-workspace", nextAppearance.layout === "workspace");
     root.style.setProperty("--idu-accent", accent);
     root.style.setProperty("--idu-accent-2", mixHex(accent, "#ffffff", 0.16));
     root.style.setProperty("--idu-accent-deep", mixHex(accent, "#000000", 0.22));
@@ -91,6 +97,10 @@
     root.style.setProperty("--idu-topbar-2", mixHex(topbar, "#ffffff", nextAppearance.theme === "dark" ? 0.08 : 0.14));
     root.style.setProperty("--idu-topbar-glow", rgba(mixHex(topbar, "#ffffff", 0.28), nextAppearance.theme === "dark" ? 0.18 : 0.24));
     root.style.setProperty("--idu-topbar-shadow", `0 18px 50px ${rgba(topbar, nextAppearance.theme === "dark" ? 0.28 : 0.2)}`);
+
+    if (document.body && document.readyState !== "loading") {
+      requestAnimationFrame(() => buildWorkspaceShell());
+    }
   };
 
   const loadAppearance = () => {
@@ -292,6 +302,222 @@
     }
   };
 
+  function readWorkspaceCollapsedState() {
+    try {
+      return localStorage.getItem(WORKSPACE_COLLAPSED_KEY) === "true";
+    } catch (_error) {
+      return false;
+    }
+  }
+
+  function writeWorkspaceCollapsedState(collapsed) {
+    try {
+      localStorage.setItem(WORKSPACE_COLLAPSED_KEY, String(collapsed));
+    } catch (_error) {
+      // Ignore restricted storage contexts; the visual state still updates for this page.
+    }
+  }
+
+  function toggleWorkspaceSidebar(forceCollapsed) {
+    const collapsed =
+      typeof forceCollapsed === "boolean"
+        ? forceCollapsed
+        : !root.classList.contains("idu-workspace-sidebar-collapsed");
+    const toggle = document.querySelector(".idu-workspace-sidebar-toggle");
+
+    root.classList.toggle("idu-workspace-sidebar-collapsed", collapsed);
+    writeWorkspaceCollapsedState(collapsed);
+
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+      toggle.setAttribute("title", collapsed ? "Expand sidebar" : "Collapse sidebar");
+    }
+  }
+
+  function pickLink(selectors, fallbackHref = "#") {
+    for (const selector of selectors) {
+      const link = document.querySelector(selector);
+
+      if (link?.getAttribute("href")) {
+        return link;
+      }
+    }
+
+    const fallback = document.createElement("a");
+    fallback.href = fallbackHref;
+    return fallback;
+  }
+
+  function createWorkspaceNavLink(item) {
+    const link = document.createElement("a");
+    const icon = document.createElement("span");
+    const text = document.createElement("span");
+
+    link.className = "idu-workspace-nav-link";
+    link.href = item.href || "#";
+    link.dataset.iduWorkspaceIcon = item.icon;
+    icon.className = "idu-workspace-nav-icon";
+    icon.setAttribute("aria-hidden", "true");
+    text.className = "idu-workspace-nav-text";
+    text.textContent = item.label;
+    link.append(icon, text);
+
+    if (item.count) {
+      const count = document.createElement("span");
+      count.className = "idu-workspace-nav-count";
+      count.textContent = item.count;
+      link.appendChild(count);
+    }
+
+    if (item.sourceLink && item.sourceLink.getAttribute("href") === "#") {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        item.sourceLink.click();
+      });
+    }
+
+    return link;
+  }
+
+  function getWorkspaceItems() {
+    const messageLink = pickLink(["#toggle_last_internal_messages", '#messages a[href*="/internal_messages"]'], "/internal_messages");
+    const newsLink = pickLink(['#news a[href*="/informations"]'], "/informations");
+    const templatesLink = pickLink(["#open_user_templates"], "#");
+    const forumLink = pickLink(["#link_to_unread_forum_posts", '#forums_path a[href*="/forums"]'], "/forums");
+    const accountLink = pickLink(['#account a[href*="/students/"]'], "/students");
+    const logoutLink = pickLink(['#logout a[href*="/users/sign_out"]'], "/users/sign_out");
+    const documentsLink = pickLink(['.idu-documents-action a[href*="/documents/attachments"]', 'a[href*="/documents/attachments"]'], "/documents/attachments");
+    const messageCount = cleanText(document.querySelector("#messages strong")?.textContent);
+    const newsCount = cleanText(document.querySelector("#news strong")?.textContent);
+
+    return [
+      { label: "Dashboard", icon: "dashboard", href: "/" },
+      { label: "Messages", icon: "mail", href: messageLink.href, count: messageCount, sourceLink: messageLink },
+      { label: "News", icon: "news", href: newsLink.href, count: newsCount, sourceLink: newsLink },
+      { label: "Documents", icon: "documents", href: documentsLink.href, sourceLink: documentsLink },
+      { label: "Forum", icon: "forum", href: forumLink.href, sourceLink: forumLink },
+      { label: "Templates", icon: "templates", href: templatesLink.href, sourceLink: templatesLink },
+      { label: "Profile", icon: "profile", href: accountLink.href, sourceLink: accountLink },
+      { label: "Logout", icon: "logout", href: logoutLink.href, sourceLink: logoutLink }
+    ];
+  }
+
+  function findWorkspacePhoto() {
+    const candidates = [
+      "#student-card #photo img",
+      "#photo img",
+      ".student-photo img",
+      ".profile-photo img",
+      'img[alt*="Student photo"]'
+    ];
+
+    for (const selector of candidates) {
+      const image = document.querySelector(selector);
+      const source = image?.getAttribute("src") || "";
+
+      if (image && source.trim()) {
+        return image;
+      }
+    }
+
+    return null;
+  }
+
+  function syncWorkspaceShell(shell) {
+    const nav = shell.querySelector(".idu-workspace-nav");
+    const userName = cleanText(document.querySelector("#login strong")?.textContent) || "Student";
+    const schoolName = cleanText(document.querySelector("#school-name")?.textContent) || "IDU workspace";
+    const sourceLogo = document.querySelector("#logo img");
+    const logoImage = shell.querySelector(".idu-workspace-logo img");
+    const profileLink = document.querySelector('#account a[href*="/students/"]');
+    const userCard = shell.querySelector(".idu-workspace-user");
+    const avatar = shell.querySelector(".idu-workspace-avatar");
+    const avatarImage = shell.querySelector(".idu-workspace-avatar img");
+    const sourcePhoto = findWorkspacePhoto();
+    const user = shell.querySelector(".idu-workspace-user-name");
+    const subtitle = shell.querySelector(".idu-workspace-school");
+
+    if (sourceLogo && logoImage) {
+      logoImage.src = sourceLogo.currentSrc || sourceLogo.src;
+      logoImage.alt = sourceLogo.alt || "IDU";
+    }
+
+    if (profileLink && userCard) {
+      userCard.href = profileLink.href;
+      userCard.setAttribute("aria-label", `Open profile for ${userName}`);
+    }
+
+    if (avatar && avatarImage) {
+      const rawPhotoSource = sourcePhoto?.getAttribute("src") || "";
+      const photoSource = rawPhotoSource.trim() ? sourcePhoto.currentSrc || sourcePhoto.src || rawPhotoSource : "";
+      avatar.classList.toggle("has-image", Boolean(photoSource.trim()));
+
+      if (photoSource.trim()) {
+        avatarImage.src = photoSource;
+        avatarImage.alt = sourcePhoto.alt || userName;
+      } else {
+        avatarImage.removeAttribute("src");
+        avatarImage.alt = "";
+      }
+    }
+
+    if (user) {
+      user.textContent = userName;
+    }
+
+    if (subtitle) {
+      subtitle.textContent = schoolName;
+    }
+
+    if (nav) {
+      nav.replaceChildren(...getWorkspaceItems().map(createWorkspaceNavLink));
+    }
+  }
+
+  function buildWorkspaceShell() {
+    if (!document.body) {
+      return;
+    }
+
+    let shell = document.querySelector(".idu-workspace-sidebar");
+
+    if (root.dataset.iduLayout !== "workspace" || root.classList.contains("idu-login-page")) {
+      shell?.remove();
+      return;
+    }
+
+    if (!shell) {
+      shell = document.createElement("aside");
+      shell.className = "idu-workspace-sidebar";
+      shell.setAttribute("aria-label", "IDU+ workspace navigation");
+      shell.innerHTML = `
+        <div class="idu-workspace-brand">
+          <a class="idu-workspace-logo" href="/" aria-label="IDU home"><img alt="IDU" src="/images/logo.png"></a>
+          <button class="idu-workspace-sidebar-toggle" type="button" aria-label="Toggle sidebar" aria-expanded="true" title="Collapse sidebar">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <a class="idu-workspace-user" href="#" aria-label="Open your profile">
+          <span class="idu-workspace-avatar" aria-hidden="true"><img alt=""></span>
+          <div>
+            <strong class="idu-workspace-user-name">Student</strong>
+            <span class="idu-workspace-school">IDU workspace</span>
+          </div>
+        </a>
+        <nav class="idu-workspace-nav" aria-label="Main"></nav>
+        <div class="idu-workspace-footer">
+          <span class="idu-workspace-footer-dot" aria-hidden="true"></span>
+          <span>Workspace layout</span>
+        </div>
+      `;
+      document.body.prepend(shell);
+      shell.querySelector(".idu-workspace-sidebar-toggle")?.addEventListener("click", () => toggleWorkspaceSidebar());
+    }
+
+    syncWorkspaceShell(shell);
+    toggleWorkspaceSidebar(readWorkspaceCollapsedState());
+  }
+
   const enhanceSubjectModule = (module) => {
     const heading = module.querySelector(":scope > h3");
     const foldable = module.querySelector(":scope > .foldable");
@@ -394,6 +620,7 @@
     hideEmptyFlashSection();
     moveDocumentsAction();
     document.querySelectorAll(".module").forEach(enhanceSubjectModule);
+    buildWorkspaceShell();
     highlightProgrammeTokens();
   };
 
