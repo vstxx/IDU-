@@ -13,6 +13,14 @@ assert(
 );
 
 assert(
+  css.includes('font-family: "Audex";') &&
+    css.includes('src: url("../fonts/Audex-Regular.woff2") format("woff2");') &&
+    css.includes('font-family: "Otfits";') &&
+    css.includes('src: url("../fonts/Otfits Grotesk Reg Trial.woff2") format("woff2");'),
+  "Optional title fonts should be loaded from /fonts"
+);
+
+assert(
   css.includes("--idu-title-font: \"Aligra\", Georgia, serif;"),
   "CSS should define a title font token for Aligra"
 );
@@ -20,6 +28,20 @@ assert(
 assert(
   /html\.idu-plus \.module h3,[\s\S]*font-family:\s*var\(--idu-title-font\)\s*!important;/.test(css),
   "Module titles should use the Aligra title font"
+);
+
+assert(
+  css.includes('html.idu-plus[data-idu-title-font="aligra"]') &&
+    css.includes('html.idu-plus[data-idu-title-font="inter"]') &&
+    css.includes('html.idu-plus[data-idu-title-font="audex"]') &&
+    css.includes('html.idu-plus[data-idu-title-font="otfits"]') &&
+    /html\.idu-plus #content h3,[\s\S]*font-family:\s*var\(--idu-title-font\)\s*!important;/.test(css) &&
+    css.includes("html.idu-plus #subject-card h3") &&
+    css.includes("html.idu-plus #message h3") &&
+    css.includes("html.idu-plus #content h3 > :not(.toggle-switch)") &&
+    /html\.idu-plus \.module h3 > :not\(\.toggle-switch\),[\s\S]*font-family:\s*inherit\s*!important;/.test(css) &&
+    /html\.idu-plus \.module h3 \.toggle-switch,[\s\S]*font-family:\s*var\(--idu-font\)\s*!important;/.test(css),
+  "Title font choices should map to real module headings while preserving toggle UI font"
 );
 
 assert(

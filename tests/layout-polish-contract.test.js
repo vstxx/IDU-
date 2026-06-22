@@ -38,13 +38,43 @@ assert(
 );
 
 assert(
+  /html\.idu-plus #logo\s*\{[\s\S]*display:\s*inline-flex[\s\S]*flex:\s*0 0 104px[\s\S]*width:\s*104px\s*!important/.test(css) &&
+    /html\.idu-plus #logo a\s*\{[\s\S]*position:\s*relative[\s\S]*display:\s*inline-flex[\s\S]*width:\s*104px/.test(css) &&
+    css.includes('html.idu-plus[data-idu-logo-tone="dark"] #logo img') &&
+    css.includes('html.idu-plus[data-idu-logo-tone="dark"] .idu-workspace-logo img') &&
+    css.includes("filter: brightness(0)") &&
+    !css.includes("#logo a::after") &&
+    !css.includes("#logo::after"),
+  "Every IDU logo should use the real IDU+ asset and switch to a dark treatment on very light bars"
+);
+
+assert(
   /html\.idu-plus\.idu-dashboard-page \.no-menu #content > \.double-column > \.module[\s\S]*margin-bottom:\s*0\s*!important/.test(css),
   "Full-width dashboard modules should not add extra bottom margin on top of grid gaps"
 );
 
 assert(
+  /html\.idu-plus \.menu-exist #content\s*\{[\s\S]*gap:\s*20px;/.test(css) &&
+    /html\.idu-plus \.menu-exist #content > \.module,[\s\S]*margin-bottom:\s*0\s*!important/.test(css),
+  "Menu pages should use one comfortable grid gap between content sections, without stacked module margins"
+);
+
+assert(
   js.includes("flash.remove()"),
   "Empty flash section should be removed from layout after being identified"
+);
+
+assert(
+    js.includes("enhanceLoginForm") &&
+    js.includes("applyLogoAsset") &&
+    js.includes("assets/idu-plus-logo.png") &&
+    js.includes('submit.value = "Zaloguj"') &&
+    js.includes('placeholder", "Login"') &&
+    js.includes('placeholder", "Hasło"') &&
+    /html\.idu-plus\.idu-login-page #new_user \.field:has\(h1\)[\s\S]*text-align:\s*center/.test(css) &&
+    /html\.idu-plus\.idu-login-page #container #top[\s\S]*linear-gradient\(135deg, var\(--idu-topbar\), var\(--idu-topbar-2\)\)/.test(css) &&
+    /html\.idu-plus\.idu-login-page #new_user \.field:not\(:has\(h1\)\) label[\s\S]*clip:\s*rect\(0 0 0 0\)/.test(css),
+  "Login page should keep the title centered, language chip visible, topbar-colored header, placeholder inputs, and submit label restored"
 );
 
 console.log("layout polish contract ok");

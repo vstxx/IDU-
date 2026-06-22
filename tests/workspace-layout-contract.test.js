@@ -42,7 +42,7 @@ assert(
     contentJs.includes("buildWorkspaceShell") &&
     contentJs.includes("toggleWorkspaceSidebar") &&
     contentJs.includes(".idu-workspace-logo") &&
-    contentJs.includes("#logo img") &&
+    contentJs.includes("applyLogoAsset") &&
     contentJs.includes("findWorkspacePhoto") &&
     contentJs.includes('getAttribute("src")') &&
     contentJs.includes(".idu-workspace-user") &&
@@ -60,6 +60,8 @@ assert(
   contentCss.includes(".idu-workspace-sidebar") &&
     contentCss.includes(".idu-workspace-sidebar-toggle") &&
     contentCss.includes(".idu-workspace-logo img") &&
+    contentCss.includes('html.idu-plus[data-idu-logo-tone="dark"] .idu-workspace-logo img') &&
+    !contentCss.includes(".idu-workspace-logo::after") &&
     contentCss.includes(".idu-workspace-nav-link") &&
     /html\.idu-plus\[data-idu-layout="workspace"\] #top[\s\S]*position:\s*sticky/.test(contentCss) &&
     /html\.idu-plus\[data-idu-layout="workspace"\]:not\(\.idu-login-page\) body[\s\S]*padding-left:\s*var\(--idu-ws-sidebar-width\)\s*!important;/.test(contentCss) &&

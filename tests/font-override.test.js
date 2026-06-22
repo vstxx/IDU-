@@ -33,6 +33,11 @@ assert(
   "Manifest should expose /fonts Inter files to content CSS"
 );
 
+assert(
+  resources.includes("assets/*.png"),
+  "Manifest should expose IDU+ logo image assets to content CSS and scripts"
+);
+
 for (const fontFile of ["Inter-Regular.woff2", "Inter-Medium.woff2"]) {
   assert(
     fs.existsSync(path.join(root, "fonts", fontFile)),

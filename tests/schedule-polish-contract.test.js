@@ -20,8 +20,16 @@ assert(
 assert(
   /html\.idu-plus \.schedule\s*\{[\s\S]*padding:\s*8px;/.test(css) &&
     /html\.idu-plus \.schedule table\s*\{[\s\S]*border-spacing:\s*4px\s*!important;/.test(css) &&
-    /html\.idu-plus \.schedule table tbody td\s*\{[\s\S]*height:\s*64px;/.test(css),
+    /html\.idu-plus \.schedule\s*\{[\s\S]*--idu-schedule-slot-height:\s*78px;/.test(css) &&
+    /html\.idu-plus \.schedule table tbody td\s*\{[\s\S]*height:\s*var\(--idu-schedule-slot-height\);/.test(css),
   "Schedule should use a balanced compact table rhythm"
+);
+
+assert(
+  /html\.idu-plus \.schedule table\s*\{[\s\S]*width:\s*100%;/.test(css) &&
+    /html\.idu-plus \.schedule table\s*\{[\s\S]*table-layout:\s*fixed;/.test(css) &&
+    /html\.idu-plus \.schedule table tbody td\s*\{[\s\S]*vertical-align:\s*middle;/.test(css),
+  "Schedule rows and columns should stay evenly aligned"
 );
 
 assert(
@@ -44,11 +52,16 @@ assert(
 );
 
 assert(
-  /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*min-height:\s*58px;/.test(css) &&
-    /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*height:\s*auto;/.test(css) &&
+  /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*place-items:\s*center;/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*align-content:\s*center;/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*min-height:\s*calc\(var\(--idu-schedule-slot-height\) - 8px\);/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*height:\s*100%;/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*box-sizing:\s*border-box;/.test(css) &&
     /html\.idu-plus div\.lesson-cell\s*\{[\s\S]*padding:\s*8px 10px;/.test(css) &&
     /html\.idu-plus div\.lesson-cell > br\s*\{[\s\S]*display:\s*none\s*!important;/.test(css) &&
+    /html\.idu-plus \.schedule table tbody td \.location\s*\{[\s\S]*display:\s*inline-flex;/.test(css) &&
     /html\.idu-plus \.schedule table tbody td \.location\s*\{[\s\S]*margin-top:\s*4px;/.test(css) &&
+    /html\.idu-plus \.schedule table tbody td \.location br\s*\{[\s\S]*display:\s*none\s*!important;/.test(css) &&
     /html\.idu-plus \.schedule table tbody td \.subject \+ \.location\s*\{[\s\S]*margin-top:\s*5px;/.test(css),
   "Lesson cards should stay comfortable while keeping room numbers close to lesson names"
 );

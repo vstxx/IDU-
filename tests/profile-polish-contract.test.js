@@ -28,6 +28,18 @@ assert(
 );
 
 assert(
+  !css.includes("html.idu-plus.idu-profile-page #student-card::before"),
+  "Profile card should not render a decorative corner circle over the student details"
+);
+
+assert(
+  /html\.idu-plus #footer\s*\{[\s\S]*width:\s*auto\s*!important;/.test(css) &&
+    /html\.idu-plus #footer\s*\{[\s\S]*margin:\s*24px max\(24px, calc\(\(100vw - 1620px\) \/ 2\)\)\s*!important;/.test(css) &&
+    /html\.idu-plus #footer\s*\{[\s\S]*padding:\s*16px 22px\s*!important;/.test(css),
+  "Last-login footer should keep visible side gutters and comfortable inner padding"
+);
+
+assert(
   /html\.idu-plus\.idu-profile-page #student-card > table > tbody > tr[\s\S]*grid-template-columns:\s*132px minmax\(0, 1fr\)/.test(css),
   "Student card should split photo/action and profile details into a clean grid"
 );
