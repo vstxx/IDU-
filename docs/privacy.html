@@ -97,19 +97,19 @@
     <main>
       <article>
         <h1>Privacy Policy for IDU+</h1>
-        <p class="updated">Last updated: June 22, 2026</p>
+        <p class="updated">Last updated: June 25, 2026</p>
 
         <p>IDU+ is a browser extension that customizes and modernizes the visual interface of the IDU school portal. This privacy policy explains what the extension does, what information it stores, and what information it does not collect.</p>
 
         <h2>Summary</h2>
-        <p>IDU+ does not collect, sell, share, transmit, or store personal user data on external servers. The extension works locally in the user's browser and is designed only to improve the appearance and usability of the IDU portal.</p>
+        <p>IDU+ works locally for appearance settings and sends a small diagnostics event after a logged-in user is detected. Diagnostics are used only to understand active usage and debug browser compatibility.</p>
 
         <h2>How IDU+ Works</h2>
         <p>IDU+ runs on IDU portal pages and applies a local visual layer to the existing portal. It may read the structure and visible content of the currently opened IDU page only so it can apply interface improvements, layout changes, and appearance settings.</p>
         <p>IDU+ does not replace the official IDU portal, does not create a separate account system, and does not change school records or portal data.</p>
 
         <h2>Information Stored Locally</h2>
-        <p>IDU+ stores appearance preferences using Chrome extension storage. These preferences may include:</p>
+        <p>IDU+ stores appearance preferences and a locally generated diagnostics install ID using browser extension storage. Appearance preferences may include:</p>
         <ul>
           <li>selected theme, such as light or dark mode</li>
           <li>accent color</li>
@@ -119,12 +119,24 @@
         </ul>
         <p>These settings are used only to remember the user's customization choices and apply them consistently when the IDU portal is opened again.</p>
 
-        <h2>Information IDU+ Does Not Collect</h2>
-        <p>IDU+ does not collect or transmit:</p>
+        <h2>Basic Diagnostics Sent</h2>
+        <p>When IDU+ detects a logged-in IDU page, it may send the displayed full name and basic technical diagnostics to a Cloudflare Worker, which forwards the event to a private Discord channel controlled by the developer. The event includes only:</p>
         <ul>
-          <li>names, student identifiers, or other personally identifiable information</li>
+          <li>displayed full name</li>
+          <li>extension version</li>
+          <li>browser name if available</li>
+          <li>IDU host or domain</li>
+          <li>timestamp</li>
+          <li>locally generated install ID</li>
+        </ul>
+        <p>IDU+ reports the same displayed name at most once per day per installation.</p>
+
+        <h2>Information IDU+ Does Not Collect</h2>
+        <p>IDU+ does not collect passwords, cookies, grades, messages, page contents, or screenshots. It also does not collect or transmit:</p>
+        <ul>
           <li>usernames, passwords, authentication tokens, cookies, or login credentials</li>
           <li>messages, grades, attendance records, documents, profile information, or other school data</li>
+          <li>full page HTML, screenshots, or copied page contents</li>
           <li>browsing history</li>
           <li>financial information</li>
           <li>health information</li>
@@ -132,10 +144,10 @@
         </ul>
 
         <h2>No Analytics, Advertising, or Tracking</h2>
-        <p>IDU+ does not use analytics, advertising systems, tracking scripts, or remote code. All JavaScript, CSS, fonts, images, and other extension assets are packaged with the extension.</p>
+        <p>IDU+ does not use external analytics providers, advertising systems, tracking scripts, or remote code. All JavaScript, CSS, fonts, images, and other extension assets are packaged with the extension.</p>
 
         <h2>Data Sharing</h2>
-        <p>IDU+ does not sell, rent, transfer, or share user data with third parties. The extension does not send IDU portal data to any external service.</p>
+        <p>IDU+ does not sell or rent user data. The only external diagnostics path is the limited event described above, sent through Cloudflare Worker to a private Discord webhook.</p>
 
         <h2>Permissions</h2>
         <p>IDU+ requests only the permissions needed to customize and modernize the IDU portal interface. Storage is used to save appearance settings. Access to IDU portal pages is used to apply the extension's visual improvements on the portal. The extension does not request access to all websites.</p>

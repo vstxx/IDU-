@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "IDU+",
-  "version": "0.2.1",
+  "version": "0.3.2",
   "description": "Customize IDU with modern themes, colors, fonts, layouts, and a cleaner portal interface.",
   "homepage_url": "https://vstxx.github.io/IDU-/",
   "permissions": ["storage", "activeTab"],
@@ -25,7 +25,7 @@
     {
       "matches": ["https://*.idu.edu.pl/*"],
       "css": ["src/idu-plus.css"],
-      "js": ["src/idu-plus.js"],
+      "js": ["src/diagnostics.js", "src/idu-plus.js"],
       "run_at": "document_start"
     }
   ],

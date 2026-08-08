@@ -16,10 +16,11 @@ assert(
 );
 
 assert(
-  js.includes("idu-documents-category-field") &&
+  js.includes("/kategoria|category/i.test(labelText)") &&
+    js.includes("field.remove()") &&
     js.includes("idu-documents-name-field") &&
     js.includes("idu-documents-actions-field"),
-  "Documents search fields should receive explicit layout classes"
+  "Documents search should remove the unnecessary category field and lay out the remaining controls"
 );
 
 assert(
@@ -34,15 +35,16 @@ assert(
 );
 
 assert(
-  /html\.idu-plus \.idu-documents-search[\s\S]*display:\s*grid\s*!important;[\s\S]*grid-template-columns:\s*minmax\(260px,\s*1\.05fr\)\s*minmax\(390px,\s*1\.35fr\)\s*auto;/.test(css),
+  /html\.idu-plus \.idu-documents-search[\s\S]*display:\s*grid\s*!important;[\s\S]*grid-template-columns:\s*minmax\(390px,\s*1fr\)\s*auto;/.test(css),
   "Documents search should use a deliberate desktop grid"
 );
 
 assert(
-  css.includes(".chosen-container-multi .chosen-choices") &&
+  css.includes(".idu-select-menu") &&
+    css.includes(".chosen-container-multi .chosen-choices") &&
     css.includes(".chosen-container .chosen-drop") &&
     css.includes(".chosen-container .chosen-results li.highlighted"),
-  "Chosen controls should be restyled to match the glassy UI"
+  "Native and Chosen dropdowns should share the polished dropdown treatment"
 );
 
 assert(

@@ -20,6 +20,14 @@
     saveTimer: null
   };
 
+  const controls = Object.freeze({
+    themes: document.querySelectorAll("[data-theme-option]"),
+    layouts: document.querySelectorAll("[data-layout-option]"),
+    titleFonts: document.querySelectorAll("[data-title-font-option]"),
+    accents: document.querySelectorAll("[data-accent-preset]"),
+    topbars: document.querySelectorAll("[data-topbar-preset]")
+  });
+
   const getChromeApi = () => {
     if (typeof chrome === "undefined") {
       return null;
@@ -170,34 +178,33 @@
     root.style.setProperty("--accent-soft", rgba(nextAppearance.accent, nextAppearance.theme === "dark" ? 0.22 : 0.14));
     root.style.setProperty("--topbar", nextAppearance.topbar);
     root.style.setProperty("--topbar-2", mixHex(nextAppearance.topbar, "#ffffff", nextAppearance.theme === "dark" ? 0.08 : 0.16));
-    root.style.setProperty("--topbar-glow", rgba(mixHex(nextAppearance.topbar, "#ffffff", 0.32), nextAppearance.theme === "dark" ? 0.18 : 0.26));
     root.style.setProperty("--title-font", TITLE_FONT_STACKS[nextAppearance.titleFont]);
   };
 
   const syncControls = (appearance) => {
     const nextAppearance = normalizeAppearance(appearance);
 
-    document.querySelectorAll("[data-theme-option]").forEach((button) => {
+    controls.themes.forEach((button) => {
       const selected = button.dataset.themeOption === nextAppearance.theme;
       button.setAttribute("aria-pressed", String(selected));
     });
 
-    document.querySelectorAll("[data-layout-option]").forEach((button) => {
+    controls.layouts.forEach((button) => {
       const selected = button.dataset.layoutOption === nextAppearance.layout;
       button.setAttribute("aria-pressed", String(selected));
     });
 
-    document.querySelectorAll("[data-title-font-option]").forEach((button) => {
+    controls.titleFonts.forEach((button) => {
       const selected = button.dataset.titleFontOption === nextAppearance.titleFont;
       button.setAttribute("aria-pressed", String(selected));
     });
 
-    document.querySelectorAll("[data-accent-preset]").forEach((button) => {
+    controls.accents.forEach((button) => {
       const selected = normalizeHex(button.dataset.accentPreset) === nextAppearance.accent;
       button.setAttribute("aria-pressed", String(selected));
     });
 
-    document.querySelectorAll("[data-topbar-preset]").forEach((button) => {
+    controls.topbars.forEach((button) => {
       const selected = normalizeHex(button.dataset.topbarPreset) === nextAppearance.topbar;
       button.setAttribute("aria-pressed", String(selected));
     });
@@ -247,34 +254,26 @@
   };
 
   const bindEvents = () => {
-    document.querySelectorAll("[data-theme-option]").forEach((button) => {
-      button.addEventListener("click", () => {
-        save({ theme: button.dataset.themeOption });
-      });
-    });
+    document.addEventListener("click", (event) => {
+      const option = event.target.closest(
+        "[data-theme-option], [data-layout-option], [data-title-font-option], [data-accent-preset], [data-topbar-preset]"
+      );
 
-    document.querySelectorAll("[data-layout-option]").forEach((button) => {
-      button.addEventListener("click", () => {
-        save({ layout: button.dataset.layoutOption });
-      });
-    });
+      if (!option) {
+        return;
+      }
 
-    document.querySelectorAll("[data-title-font-option]").forEach((button) => {
-      button.addEventListener("click", () => {
-        save({ titleFont: button.dataset.titleFontOption });
-      });
-    });
-
-    document.querySelectorAll("[data-accent-preset]").forEach((button) => {
-      button.addEventListener("click", () => {
-        save({ accent: button.dataset.accentPreset });
-      });
-    });
-
-    document.querySelectorAll("[data-topbar-preset]").forEach((button) => {
-      button.addEventListener("click", () => {
-        save({ topbar: button.dataset.topbarPreset });
-      });
+      if (option.dataset.themeOption) {
+        save({ theme: option.dataset.themeOption });
+      } else if (option.dataset.layoutOption) {
+        save({ layout: option.dataset.layoutOption });
+      } else if (option.dataset.titleFontOption) {
+        save({ titleFont: option.dataset.titleFontOption });
+      } else if (option.dataset.accentPreset) {
+        save({ accent: option.dataset.accentPreset });
+      } else if (option.dataset.topbarPreset) {
+        save({ topbar: option.dataset.topbarPreset });
+      }
     });
 
     document.querySelector("#accentColor")?.addEventListener("input", (event) => {

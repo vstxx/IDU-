@@ -50,8 +50,10 @@ assert(
 );
 
 assert(
-  /html\.idu-plus\.idu-profile-page #student-data > table > tbody > tr[\s\S]*grid-template-columns:\s*repeat\(4, minmax\(170px, 1fr\)\)/.test(css),
-  "Profile detail groups should become an aligned card grid on desktop"
+  /html\.idu-plus\.idu-profile-page #student-data > table > tbody > tr[\s\S]*grid-template-areas:[\s\S]*"parents contact social"[\s\S]*"details details details"/.test(css) &&
+    /tr\.idu-profile-no-social[\s\S]*"parents contact"[\s\S]*"details details"/.test(css) &&
+    /html\.idu-plus\.idu-profile-page #student-data > table > tbody > tr[\s\S]*align-items:\s*stretch/.test(css),
+  "Profile detail groups should use a balanced named grid with an empty-social variant"
 );
 
 assert(
@@ -71,8 +73,22 @@ assert(
 );
 
 assert(
-  /html\.idu-plus\.idu-profile-page #student-card \.data[\s\S]*background-image:\s*none\s*!important/.test(css),
-  "Profile data rows should suppress legacy IDU background icons"
+  /html\.idu-plus\.idu-profile-page #student-card \.data[\s\S]*border:\s*0\s*!important[\s\S]*background-image:\s*none\s*!important/.test(css),
+  "Profile data rows should suppress legacy divider lines and background icons"
+);
+
+assert(
+  js.includes("enhanceProfileDetails") &&
+    js.includes("idu-profile-field") &&
+    js.includes("idu-profile-no-social") &&
+    js.includes("idu-profile-cell-empty"),
+  "Content script should group profile labels with values and hide a genuinely empty social card"
+);
+
+assert(
+  /html\.idu-plus\.idu-profile-page #contact-data,[\s\S]*html\.idu-plus\.idu-profile-page #messengers[\s\S]*grid-template-columns:\s*repeat\(3, minmax\(0, 1fr\)\)/.test(css) &&
+    /html\.idu-plus\.idu-profile-page \.idu-profile-field\.is-empty \.data::after[\s\S]*content:\s*"—"/.test(css),
+  "Long profile data should be compacted into a clean field grid with consistent empty values"
 );
 
 assert(

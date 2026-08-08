@@ -54,6 +54,11 @@ assert(
 );
 
 assert(
+  /html\.idu-plus\.idu-dashboard-page \.no-menu #content > \.double-column\s*\{[\s\S]*display:\s*grid;[\s\S]*gap:\s*var\(--idu-dashboard-gap\);/.test(css),
+  "Stacked dashboard modules such as Events and Recent Homework should keep a visible gap inside full-width columns"
+);
+
+assert(
   /html\.idu-plus \.menu-exist #content\s*\{[\s\S]*gap:\s*20px;/.test(css) &&
     /html\.idu-plus \.menu-exist #content > \.module,[\s\S]*margin-bottom:\s*0\s*!important/.test(css),
   "Menu pages should use one comfortable grid gap between content sections, without stacked module margins"

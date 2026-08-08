@@ -33,4 +33,10 @@ assert(
   "Dark mode should suppress inline table backgrounds and native option white surfaces"
 );
 
+assert(
+  /html\.idu-plus\[data-idu-theme="dark"\] \.presence-table thead tr th,[\s\S]*html\.idu-plus\[data-idu-theme="dark"\] \.presence-table th\.lateness-cell\s*\{[\s\S]*background:\s*var\(--idu-row-bg\)\s*!important;/.test(css) &&
+    /html\.idu-plus\[data-idu-theme="dark"\] \.presence-table td\.presence-cell,[\s\S]*html\.idu-plus\[data-idu-theme="dark"\] \.presence-table td\.lateness-cell\s*\{[\s\S]*background-color:\s*var\(--idu-row-bg-soft\)\s*!important;/.test(css),
+  "Dark mode should replace the white attendance summary strip and pastel attendance cells with dark surfaces"
+);
+
 console.log("dark mode hardening contract ok");

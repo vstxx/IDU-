@@ -13,7 +13,7 @@ const popupJsPath = path.join(root, "src", "popup.js");
 
 assert.equal(manifest.action?.default_popup, "popup.html", "Extension action should open popup.html");
 assert(manifest.permissions?.includes("storage"), "Extension should request storage permission");
-assert.equal(manifest.version, "0.2.1", "Manifest should declare the 0.2.1 release version");
+assert.equal(manifest.version, "0.3.2", "Manifest should declare the 0.3.2 release version");
 assert(
   /customize|themes|colors|fonts|layouts/i.test(manifest.description || ""),
   "Manifest description should emphasize customizable appearance controls"
@@ -65,7 +65,9 @@ assert(
     popupCss.includes(".accent-swatch[aria-pressed=\"true\"]") &&
     popupCss.includes(".popup-logo") &&
     popupCss.includes('body[data-logo-tone="dark"] .preview-logo') &&
-    popupCss.includes(".preview-card"),
+    popupCss.includes(".preview-card") &&
+    /\.layout-switch\s*\{[\s\S]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/.test(popupCss) &&
+    /\.control-group,[\s\S]*\.preview-card[\s\S]*border-radius:\s*15px/.test(popupCss),
   "Popup CSS should style the settings surface, font selected states, and live preview"
 );
 
@@ -103,6 +105,15 @@ assert(
     css.includes('html.idu-plus[data-idu-logo-tone="dark"] #logo img') &&
     css.includes("filter: brightness(0)"),
   "Manifest, content script, and CSS should support the shared IDU+ logo asset and dark logo tone"
+);
+
+assert(
+  /html\.idu-plus\[data-idu-logo-tone="dark"\] #top[\s\S]*color:\s*var\(--idu-text\)/.test(css) &&
+    /html\.idu-plus\[data-idu-logo-tone="dark"\] #school-name[\s\S]*text-shadow:\s*none/.test(css) &&
+    /html\.idu-plus\[data-idu-logo-tone="dark"\] #account-actions > div:not\(#last_internal_messages\):not\(#unread_forum_posts\)[\s\S]*color:\s*var\(--idu-text-soft\)/.test(css) &&
+    /html\.idu-plus\[data-idu-logo-tone="dark"\] #account-actions strong,[\s\S]*#account-actions #login strong[\s\S]*color:\s*var\(--idu-text\)/.test(css) &&
+    /html\.idu-plus\[data-idu-logo-tone="dark"\] #change_language \.logout-timer,[\s\S]*#change_language \.js-counter[\s\S]*color:\s*var\(--idu-text-soft\)/.test(css),
+  "Light topbars should darken portal topbar text, links, buttons, icons, and timer text with the logo tone"
 );
 
 assert(

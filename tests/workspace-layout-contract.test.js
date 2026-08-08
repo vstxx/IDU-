@@ -76,7 +76,8 @@ assert(
 );
 
 assert(
-  /<a class="idu-workspace-user" href="#"/.test(contentJs) &&
+  contentJs.includes('userCard.className = "idu-workspace-user"') &&
+    contentJs.includes('userCard.href = "#"') &&
     /userCard\.href\s*=\s*profileLink\.href/.test(contentJs) &&
     /avatar\.classList\.toggle\("has-image"/.test(contentJs),
   "Workspace sidebar user card should link to the profile and display a photo when IDU exposes one"

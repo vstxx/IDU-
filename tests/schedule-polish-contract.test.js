@@ -66,4 +66,11 @@ assert(
   "Lesson cards should stay comfortable while keeping room numbers close to lesson names"
 );
 
+assert(
+  /html\.idu-plus div\.lesson-cell\.canceled\s*\{[\s\S]*border-color:\s*rgba\(239, 68, 68, 0\.72\)/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\.canceled\s*\{[\s\S]*background:[\s\S]*rgba\(239, 68, 68, 0\.22\)/.test(css) &&
+    /html\.idu-plus div\.lesson-cell\.canceled \.subject a,[\s\S]*html\.idu-plus div\.lesson-cell\.canceled \.location\s*\{[\s\S]*text-decoration-line:\s*underline;/.test(css),
+  "Canceled lessons should be visibly red and underlined instead of looking like normal lesson cards"
+);
+
 console.log("schedule polish contract ok");
