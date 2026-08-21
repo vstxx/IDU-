@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDU+ Privacy Policy</title>
+    <meta name="description" content="Privacy policy for the IDU+ browser extension.">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #eef5fb;
+        --surface: rgba(255, 255, 255, 0.86);
+        --border: rgba(127, 166, 202, 0.34);
+        --text: #0d2945;
+        --muted: #5d7286;
+        --accent: #2f78b7;
+        --shadow: 0 18px 48px rgba(38, 78, 112, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 12% -10%, rgba(130, 181, 224, 0.38), transparent 30rem),
+          radial-gradient(circle at 88% 8%, rgba(47, 120, 183, 0.16), transparent 28rem),
+          linear-gradient(180deg, var(--bg), #f7fbff);
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        line-height: 1.65;
+      }
+
+      main {
+        width: min(920px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      article {
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+        padding: clamp(22px, 5vw, 46px);
+      }
+
+      h1,
+      h2 {
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(34px, 6vw, 58px);
+      }
+
+      h2 {
+        margin: 32px 0 10px;
+        font-size: 24px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul {
+        margin: 0 0 14px;
+        padding-left: 22px;
+      }
+
+      a {
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .updated {
+        color: var(--accent);
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Privacy Policy for IDU+</h1>
+        <p class="updated">Last updated: June 25, 2026</p>
+
+        <p>IDU+ is a browser extension that customizes and modernizes the visual interface of the IDU school portal. This privacy policy explains what the extension does, what information it stores, and what information it does not collect.</p>
+
+        <h2>Summary</h2>
+        <p>IDU+ works locally for appearance settings and sends a small diagnostics event after a logged-in user is detected. Diagnostics are used only to understand active usage and debug browser compatibility.</p>
+
+        <h2>How IDU+ Works</h2>
+        <p>IDU+ runs on IDU portal pages and applies a local visual layer to the existing portal. It may read the structure and visible content of the currently opened IDU page only so it can apply interface improvements, layout changes, and appearance settings.</p>
+        <p>IDU+ does not replace the official IDU portal, does not create a separate account system, and does not change school records or portal data.</p>
+
+        <h2>Information Stored Locally</h2>
+        <p>IDU+ stores appearance preferences and a locally generated diagnostics install ID using browser extension storage. Appearance preferences may include:</p>
+        <ul>
+          <li>selected theme, such as light or dark mode</li>
+          <li>accent color</li>
+          <li>topbar color</li>
+          <li>title font choice</li>
+          <li>layout mode, such as portal or sidebar layout</li>
+        </ul>
+        <p>These settings are used only to remember the user's customization choices and apply them consistently when the IDU portal is opened again.</p>
+
+        <h2>Basic Diagnostics Sent</h2>
+        <p>When IDU+ detects a logged-in IDU page, it may send the displayed full name and basic technical diagnostics to a Cloudflare Worker, which forwards the event to a private Discord channel controlled by the developer. The event includes only:</p>
+        <ul>
+          <li>displayed full name</li>
+          <li>extension version</li>
+          <li>browser name if available</li>
+          <li>IDU host or domain</li>
+          <li>timestamp</li>
+          <li>locally generated install ID</li>
+        </ul>
+        <p>IDU+ reports a displayed name only once per installation. After a successful first report, the same person is not reported again from that installation.</p>
+
+        <h2>Information IDU+ Does Not Collect</h2>
+        <p>IDU+ does not collect passwords, cookies, grades, messages, page contents, or screenshots. It also does not collect or transmit:</p>
+        <ul>
+          <li>usernames, passwords, authentication tokens, cookies, or login credentials</li>
+          <li>messages, grades, attendance records, documents, profile information, or other school data</li>
+          <li>full page HTML, screenshots, or copied page contents</li>
+          <li>browsing history</li>
+          <li>financial information</li>
+          <li>health information</li>
+          <li>location data</li>
+        </ul>
+
+        <h2>No Analytics, Advertising, or Tracking</h2>
+        <p>IDU+ does not use external analytics providers, advertising systems, tracking scripts, or remote code. All JavaScript, CSS, fonts, images, and other extension assets are packaged with the extension.</p>
+
+        <h2>Data Sharing</h2>
+        <p>IDU+ does not sell or rent user data. The only external diagnostics path is the limited event described above, sent through Cloudflare Worker to a private Discord webhook.</p>
+
+        <h2>Permissions</h2>
+        <p>IDU+ requests only the permissions needed to customize and modernize the IDU portal interface. Storage is used to save appearance settings. Access to IDU portal pages is used to apply the extension's visual improvements on the portal. The extension does not request access to all websites.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, contact the developer through the <a href="https://github.com/vstxx/IDU-">IDU+ GitHub repository</a>.</p>
+      </article>
+    </main>
+  </body>
+</html>
