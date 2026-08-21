@@ -76,15 +76,17 @@ assert(
 
 assert(
   /html\.idu-plus #change_language\s*\{[\s\S]*flex-direction:\s*row;[\s\S]*align-items:\s*center;/.test(css) &&
-    /html\.idu-plus #change_language \.logout-timer,[\s\S]*html\.idu-plus #change_language \.js-counter\s*\{[\s\S]*display:\s*none\s*!important;/.test(css) &&
-    js.includes("removeLogoutCountdown"),
-  "Topbar language control should align like a normal chip and remove the logout countdown"
+    /html\.idu-plus #change_language \.logout-timer\s*\{[\s\S]*display:\s*inline-flex\s*!important;/.test(css) &&
+    /html\.idu-plus #change_language \.js-counter\s*\{[\s\S]*display:\s*inline\s*!important;/.test(css) &&
+    js.includes("enhanceSessionTimeout") &&
+    js.includes("syncWorkspaceSessionTimeout"),
+  "Session timeout should remain readable in the topbar and stay synchronized in Sidebar layout"
 );
 
 assert(
   js.includes("moveLanguageControl") &&
     js.includes('document.querySelector("#account-actions")') &&
-    js.includes("Change language") &&
+    js.includes('getCurrentLocale() === "en" ? "Language" : "J\\u0119zyk"') &&
     /html\.idu-plus #account-actions > #change_language:not\(#last_internal_messages\):not\(#unread_forum_posts\)[\s\S]*min-height:\s*34px;/.test(css) &&
     /html\.idu-plus #account-actions #change_language a\s*\{[\s\S]*border:\s*0\s*!important;[\s\S]*background:\s*transparent\s*!important;/.test(css),
   "Language chip should live in the same action row and match the size of the other topbar buttons"
@@ -115,9 +117,9 @@ assert(
     js.includes("data-sticky-action") &&
     js.includes("IntersectionObserver") &&
     /html\.idu-plus \.idu-sticky-actions\s*\{[\s\S]*position:\s*fixed;[\s\S]*top:\s*0;/.test(css) &&
-    /html\.idu-plus \.idu-sticky-actions\s*\{[\s\S]*background:\s*var\(--idu-topbar\)\s*!important;/.test(css) &&
+    /html\.idu-plus \.idu-sticky-actions\s*\{[\s\S]*background:\s*var\(--idu-glass-topbar-surface\)\s*!important;/.test(css) &&
     /html\.idu-plus \.idu-sticky-actions\.is-visible\s*\{[\s\S]*transform:\s*translateY\(0\);/.test(css),
-  "Topbar action buttons should stay available in a compact flat sticky bar after scrolling and reuse the selected topbar color"
+  "Topbar action buttons should stay available in a compact frosted sticky bar after scrolling and reuse the selected topbar color"
 );
 
 assert(

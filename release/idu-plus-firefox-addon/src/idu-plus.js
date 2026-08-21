@@ -6,7 +6,7 @@
   const WORKSPACE_COLLAPSED_KEY = "iduPlusWorkspaceSidebarCollapsed";
   const LOGO_ASSET_PATH = "assets/idu-plus-logo.png";
   const MOBILE_VIEWPORT_CONTENT = "width=device-width, initial-scale=1, viewport-fit=cover";
-  const USERSCRIPT_COMPACT_SCHOOL_NAME = "1SLO IB";
+  const SETTINGS_WRITE_DEBOUNCE_MS = 180;
   const USERSCRIPT_THEME_DOCK_ID = "idu-plus-userscript-theme-dock";
   const STICKY_ACTIONS_ID = "idu-plus-sticky-actions";
   const DIAGNOSTICS_ENDPOINT = "https://idu-plus-diagnostics.jas-nowacki.workers.dev/diagnostics";
@@ -30,6 +30,19 @@
     inter: '"InterVariable"',
     audex: '"Audex"',
     otfits: '"Otfits"'
+  });
+  const BUNDLED_FONT_ASSETS = Object.freeze({
+    interRegular: Object.freeze({ family: "InterVariable", path: "fonts/Inter-Regular.woff2", weight: "400" }),
+    interMedium: Object.freeze({ family: "InterVariable", path: "fonts/Inter-Medium.woff2", weight: "500 800" }),
+    aligra: Object.freeze({ family: "Aligra", path: "fonts/Aligra.woff2", weight: "400" }),
+    audex: Object.freeze({ family: "Audex", path: "fonts/Audex-Regular.woff2", weight: "400" }),
+    otfits: Object.freeze({ family: "Otfits", path: "fonts/Otfits Grotesk Reg Trial.woff2", weight: "400" })
+  });
+  const TITLE_FONT_ASSET_KEYS = Object.freeze({
+    aligra: Object.freeze(["aligra"]),
+    inter: Object.freeze([]),
+    audex: Object.freeze(["audex"]),
+    otfits: Object.freeze(["otfits"])
   });
   const USERSCRIPT_THEME_OPTIONS = Object.freeze([
     ["light", "Light"],
@@ -73,7 +86,8 @@
       messagesBefore: "Masz",
       messagesAfter: "nowe wiadomo\u015bci",
       newsBefore: "Pojawi\u0142y si\u0119",
-      newsAfter: "nowe aktualno\u015bci"
+      newsAfter: "nowe aktualno\u015bci",
+      documents: "Dokumenty"
     },
     en: {
       templates: "Templates",
@@ -84,7 +98,8 @@
       messagesBefore: "You have",
       messagesAfter: "new messages",
       newsBefore: "There are",
-      newsAfter: "new announcements"
+      newsAfter: "new announcements",
+      documents: "Documents"
     }
   });
   const WORKSPACE_LABELS = Object.freeze({
@@ -97,7 +112,6 @@
       templates: "Szablony",
       profile: "Profil",
       logout: "Wyloguj",
-      footer: "Uk\u0142ad workspace",
       home: "IDU+ strona g\u0142\u00f3wna",
       main: "G\u0142\u00f3wne",
       toggle: "Prze\u0142\u0105cz sidebar",
@@ -114,7 +128,6 @@
       templates: "Templates",
       profile: "Profile",
       logout: "Logout",
-      footer: "Workspace layout",
       home: "IDU+ home",
       main: "Main",
       toggle: "Toggle sidebar",
@@ -122,6 +135,32 @@
       collapse: "Collapse sidebar",
       openProfile: "Open your profile"
     }
+  });
+  const MESSAGE_FOLDER_LABELS = Object.freeze({
+    pl: Object.freeze({
+      navigation: "Foldery wiadomo\u015bci",
+      inbox: "Odebrane",
+      drafts: "Szkice",
+      sent: "Wys\u0142ane",
+      trash: "Kosz",
+      compose: "Nowa wiadomo\u015b\u0107"
+    }),
+    en: Object.freeze({
+      navigation: "Message folders",
+      inbox: "Inbox",
+      drafts: "Drafts",
+      sent: "Sent",
+      trash: "Trash",
+      compose: "New message"
+    })
+  });
+  const FORUM_TOOL_LABELS = Object.freeze({
+    pl: Object.freeze({ navigation: "Narz\u0119dzia forum", forums: "Fora", search: "Szukaj na forum" }),
+    en: Object.freeze({ navigation: "Forum tools", forums: "Forums", search: "Search forum" })
+  });
+  const GRADE_DETAIL_LABELS = Object.freeze({
+    pl: Object.freeze({ title: "Szczeg\u00f3\u0142y oceny", open: "Poka\u017c szczeg\u00f3\u0142y oceny", close: "Zamknij" }),
+    en: Object.freeze({ title: "Grade details", open: "Show grade details", close: "Close" })
   });
   const UI_TRANSLATIONS = Object.freeze({
     en: new Map([
@@ -151,6 +190,78 @@
       ["Najbli\u017csze sprawdziany", "Upcoming tests"],
       ["NajbliÅ¼sze sprawdziany", "Upcoming tests"],
       ["Ostatnie obecno\u015bci", "Recent attendance"],
+      ["Twoja klasa i przedmioty", "Your class and subjects"],
+      ["Twoja klasa", "Your class"],
+      ["Twoje przedmioty", "Your subjects"],
+      ["Twoje obecno\u015bci", "Your attendance"],
+      ["Twoje oceny", "Your grades"],
+      ["Og\u0142oszenia przedmiotowe", "Subject announcements"],
+      ["Ostatnio wystawione obecno\u015bci", "Recently recorded attendance"],
+      ["Ostatnio wystawione oceny", "Recently awarded grades"],
+      ["Ostatnie w\u0105tki na forum przedmiotu", "Recent subject forum threads"],
+      ["Fora przedmiotowe - ostatnie posty", "Subject forums - recent posts"],
+      ["Moje wypowiedzi na forach", "My forum posts"],
+      ["Ostatnie recenzje", "Recent reviews"],
+      ["Zadania domowe", "Homework"],
+      ["zadania domowe", "homework"],
+      ["Tematy lekcji", "Lesson topics"],
+      ["tematy lekcji", "lesson topics"],
+      ["Sprawdziany", "Tests"],
+      ["Oceny", "Grades"],
+      ["oceny", "grades"],
+      ["Obecno\u015bci", "Attendance"],
+      ["obecno\u015bci", "attendance"],
+      ["Dokumenty", "Documents"],
+      ["Pliki", "Files"],
+      ["Wszystkie pliki", "All files"],
+      ["Przypisane pliki", "Assigned files"],
+      ["Przedmioty", "Subjects"],
+      ["Uczniowie", "Students"],
+      ["Lista przedmiot\u00f3w", "Subject list"],
+      ["Lista uczni\u00f3w do druku", "Printable student list"],
+      ["Profil ucznia", "Student profile"],
+      ["Edytuj profil", "Edit profile"],
+      ["Rodzice/opiekunowie", "Parents/guardians"],
+      ["Dane kontaktowe", "Contact details"],
+      ["Kontakt elektroniczny", "Electronic contact"],
+      ["Ucze\u0144 w Internecie", "Student online"],
+      ["Adres zamieszkania", "Residential address"],
+      ["Adres zameldowania", "Registered address"],
+      ["Nr z ksi\u0119gi ucznia", "Student record number"],
+      ["Telefon kom.", "Mobile phone"],
+      ["Telefon", "Phone"],
+      ["Data urodzenia", "Date of birth"],
+      ["Miejscowo\u015b\u0107 urodzenia", "Place of birth"],
+      ["Rok przyj\u0119cia do szko\u0142y", "School admission year"],
+      ["Data przyj\u015bcia", "Admission date"],
+      ["Data odej\u015bcia", "Leaving date"],
+      ["Zaloguj si\u0119", "Sign in"],
+      ["Zaloguj", "Sign in"],
+      ["Has\u0142o", "Password"],
+      ["Zapomnia\u0142e\u015b/a\u015b has\u0142a?", "Forgot your password?"],
+      ["Nie dosta\u0142e\u015b instrukcji odblokowania konta?", "Didn't receive unlock instructions?"],
+      ["forum klasowe", "class forum"],
+      ["przejd\u017a do forum przedmiotu", "go to subject forum"],
+      ["wychowawca", "tutor"],
+      ["Szczeg\u00f3\u0142owy plan dla dni", "Detailed timetable for days"],
+      ["Og\u00f3lny plan tygodniowy", "Weekly timetable"],
+      ["Aktualny plan", "Current timetable"],
+      ["Wy\u015bwietl do druku", "Print view"],
+      ["Rok szkolny", "School year"],
+      ["Semestr", "Semester"],
+      ["Kategoria", "Category"],
+      ["Nazwa", "Name"],
+      ["Tre\u015b\u0107", "Content"],
+      ["Data", "Date"],
+      ["Klasy:", "Classes:"],
+      ["Prowadz\u0105cy:", "Teacher:"],
+      ["Ocena ko\u0144cowa", "Final grade"],
+      ["wystawiono:", "issued:"],
+      ["rocznik:", "year group:"],
+      ["Poka\u017c", "Show"],
+      ["Ukryj", "Hide"],
+      ["Nast\u0119pna", "Next"],
+      ["Poprzednia", "Previous"],
       ["Ostatnie obecnoÅ›ci", "Recent attendance"],
       ["Frekwencja ucznia", "Student attendance"],
       ["Przedmiot", "Subject"],
@@ -182,18 +293,126 @@
       ["Czwartek", "Thursday"],
       ["Pi\u0105tek", "Friday"],
       ["PiÄ…tek", "Friday"],
-      ["Sobota", "Saturday"]
+      ["Sobota", "Saturday"],
+      ["Stycze\u0144", "January"],
+      ["Luty", "February"],
+      ["Marzec", "March"],
+      ["Kwiecie\u0144", "April"],
+      ["Maj", "May"],
+      ["Czerwiec", "June"],
+      ["Lipiec", "July"],
+      ["Sierpie\u0144", "August"],
+      ["Wrzesie\u0144", "September"],
+      ["Pa\u017adziernik", "October"],
+      ["Listopad", "November"],
+      ["Grudzie\u0144", "December"]
+    ]),
+    pl: new Map([
+      ["IDU+ Appearance", "Wygl\u0105d IDU+"],
+      ["Open settings", "Otw\u00f3rz ustawienia"],
+      ["Choose the portal mood.", "Wybierz wygl\u0105d portalu."],
+      ["Choose the page structure.", "Wybierz uk\u0142ad strony."],
+      ["Controls headings across IDU+.", "Steruje wygl\u0105dem nag\u0142\u00f3wk\u00f3w."],
+      ["Controls links, chips, focus, and buttons.", "Steruje linkami, znacznikami i przyciskami."],
+      ["Controls the main header bar.", "Steruje kolorem g\u00f3rnego paska."],
+      ["Classic IDU+", "Klasyczny IDU+"],
+      ["Modern app shell", "Nowoczesny uk\u0142ad aplikacji"],
+      ["Title Font", "Czcionka tytu\u0142\u00f3w"],
+      ["Title font", "Czcionka tytu\u0142\u00f3w"],
+      ["Theme", "Motyw"],
+      ["Light", "Jasny"],
+      ["Dark", "Ciemny"],
+      ["Layout", "Uk\u0142ad"],
+      ["Sidebar", "Pasek boczny"],
+      ["Accent", "Akcent"],
+      ["Topbar", "G\u00f3rny pasek"],
+      ["Reset", "Resetuj"],
+      ["Close", "Zamknij"]
     ])
   });
+  const STATIC_UI_TEXT_SELECTOR = [
+    "#top-selection label",
+    "#top-selection option",
+    "#breadcrumbs",
+    "#breadcrumbs a",
+    ".module > h2",
+    ".module > h3",
+    ".module > h4",
+    ".module-important > h2",
+    ".module-important > h3",
+    ".module-important > h4",
+    ".action-module > h2",
+    ".action-module > h3",
+    ".foldable > h4",
+    "#student-card h3",
+    "#student-card h6",
+    "#student-card p",
+    "#subject-card h3",
+    "#subject-card h6",
+    "#subject-card p",
+    "html.idu-login-page #container a",
+    "html.idu-login-page #container-low a",
+    ".toggle-switch a",
+    ".toggle-switch button",
+    ".see-more a",
+    "form label",
+    "form legend",
+    "form option",
+    "form button",
+    "table th",
+    ".idu-subject-actions a",
+    ".idu-class-summary",
+    ".idu-class-summary a",
+    ".idu-documents-action a",
+    ".menu-section a",
+    ".profile-event > span",
+    ".profile-event > a",
+    ".profile-event[title]",
+    ".presence-table th",
+    ".presence-table td",
+    ".presences_table th",
+    ".presences_table td",
+    "#last_internal_messages .header",
+    "#unread_forum_posts",
+    ".idu-select-button-label",
+    ".idu-select-option",
+    ".idu-select-group-label",
+    ".idu-userscript-appearance-dock strong",
+    ".idu-userscript-appearance-dock small",
+    ".idu-userscript-appearance-dock p",
+    ".idu-userscript-appearance-dock label",
+    ".idu-userscript-appearance-dock button"
+  ].join(", ");
+  const STATIC_UI_ATTRIBUTE_SELECTOR = [
+    "form input",
+    "form textarea",
+    "form select",
+    ".toggle-switch a",
+    ".toggle-switch button",
+    ".idu-select button",
+    ".profile-event[title]",
+    ".idu-schedule-print-link",
+    ".idu-userscript-appearance-dock [aria-label]",
+    ".idu-userscript-appearance-dock [title]"
+  ].join(", ");
   let currentAppearance = { ...DEFAULT_APPEARANCE };
   let lastAppliedAppearance = "";
   let diagnosticsComplete = false;
+  let diagnosticsPending = false;
   let foldableAnimationsBound = false;
   let stickyActionsObserver = null;
+  let workspaceSessionTimeoutObserver = null;
   let stickyActionsScrollBound = false;
   let openSelectDropdown = null;
   let selectOutsideClickBound = false;
   let enhancedSelectCount = 0;
+  let userscriptAppearanceWriteTimer = null;
+  let gradeDetailsBound = false;
+  let gradeDetailsReturnFocus = null;
+  let dynamicContentObserver = null;
+  let dynamicContentTimer = null;
+  let dynamicEnhancementRunning = false;
+  const bundledFontLoads = new Map();
 
   const getChromeApi = () => {
     if (typeof chrome === "undefined") {
@@ -213,10 +432,11 @@
     const api = getChromeApi();
 
     try {
-      if (diagnosticsComplete || !window.IDUPlusDiagnostics?.reportActiveUser || !api?.runtime) {
+      if (diagnosticsComplete || diagnosticsPending || !window.IDUPlusDiagnostics?.reportActiveUser || !api?.runtime) {
         return;
       }
 
+      diagnosticsPending = true;
       void window.IDUPlusDiagnostics.reportActiveUser({
         document,
         endpoint: DIAGNOSTICS_ENDPOINT,
@@ -228,11 +448,14 @@
         crypto: window.crypto
       })
         .then((result) => {
-          if (result?.sent || result?.reason === "throttled") {
+          if (result?.sent || result?.reason === "already-reported") {
             diagnosticsComplete = true;
           }
         })
-        .catch(() => {});
+        .catch(() => {})
+        .finally(() => {
+          diagnosticsPending = false;
+        });
     } catch (_error) {
       // Diagnostics must never affect the IDU+ visual layer.
     }
@@ -258,6 +481,9 @@
 
     return isPhone || isTouchTablet;
   };
+
+  const prefersReducedMotion = () =>
+    Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
 
   const isUserscriptBuild = () =>
     Boolean(window.__IDU_PLUS_USERSCRIPT__) || root.classList.contains("idu-userscript-build");
@@ -382,14 +608,54 @@
     }
   };
 
-  const loadTitleFont = (titleFont) => {
-    const family = TITLE_FONT_FAMILIES[normalizeTitleFont(titleFont)];
+  const loadExtensionFontAsset = (assetKey) => {
+    const asset = BUNDLED_FONT_ASSETS[assetKey];
+    const api = getChromeApi();
 
-    if (!document.fonts?.load || !family) {
-      return;
+    if (!asset || !api?.runtime?.getURL || typeof FontFace !== "function" || !document.fonts?.add) {
+      return Promise.resolve(null);
     }
 
-    document.fonts.load(`22px ${family}`).catch(() => {});
+    if (bundledFontLoads.has(assetKey)) {
+      return bundledFontLoads.get(assetKey);
+    }
+
+    const load = fetch(api.runtime.getURL(asset.path), { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unable to load bundled font: ${asset.path}`);
+        }
+
+        return response.arrayBuffer();
+      })
+      .then((buffer) => new FontFace(asset.family, buffer, { style: "normal", weight: asset.weight }).load())
+      .then((fontFace) => {
+        document.fonts.add(fontFace);
+        return fontFace;
+      })
+      .catch(() => null);
+
+    bundledFontLoads.set(assetKey, load);
+    return load;
+  };
+
+  const loadTitleFont = (titleFont) => {
+    const normalizedTitleFont = normalizeTitleFont(titleFont);
+    const family = TITLE_FONT_FAMILIES[normalizedTitleFont];
+    const assetKeys = ["interRegular", "interMedium", ...TITLE_FONT_ASSET_KEYS[normalizedTitleFont]];
+    const extensionLoads = assetKeys.map(loadExtensionFontAsset);
+
+    if (extensionLoads.some((load) => load)) {
+      void Promise.all(extensionLoads).then(() => {
+        if (currentAppearance.titleFont === normalizedTitleFont) {
+          applyTitleFontToHeadings(normalizedTitleFont);
+        }
+      });
+    }
+
+    if (document.fonts?.load && family) {
+      document.fonts.load(`22px ${family}`).catch(() => {});
+    }
   };
 
   const applyTitleFontToHeadings = (titleFont) => {
@@ -458,7 +724,10 @@
     lastAppliedAppearance = appearanceKey;
 
     if (document.body && document.readyState !== "loading") {
-      requestAnimationFrame(() => buildWorkspaceShell());
+      requestAnimationFrame(() => {
+        buildWorkspaceShell();
+        buildStickyActionBar();
+      });
     }
 
   };
@@ -501,6 +770,15 @@
   applyAppearance(DEFAULT_APPEARANCE);
   loadAppearance();
   bindAppearanceUpdates();
+  window.addEventListener("pagehide", () => {
+    if (!userscriptAppearanceWriteTimer) {
+      return;
+    }
+
+    window.clearTimeout(userscriptAppearanceWriteTimer);
+    userscriptAppearanceWriteTimer = null;
+    writeLocalAppearance(currentAppearance);
+  });
 
   const onReady = (callback) => {
     if (document.readyState === "loading") {
@@ -592,11 +870,72 @@
     });
   };
 
-  const removeLogoutCountdown = () => {
-    document.querySelectorAll("#change_language .logout-timer, #change_language .js-counter").forEach((element) => {
-      const container = element.closest(".logout-timer") || element;
-      container.remove();
+  const translateUiAttributes = (selector, locale = getCurrentLocale()) => {
+    if (!UI_TRANSLATIONS[locale]) {
+      return;
+    }
+
+    document.querySelectorAll(selector).forEach((element) => {
+      ["placeholder", "title", "aria-label"].forEach((attribute) => {
+        const value = element.getAttribute(attribute);
+
+        if (!value) {
+          return;
+        }
+
+        const translated = translateUiText(value, locale);
+
+        if (translated !== cleanText(value)) {
+          element.setAttribute(attribute, translated);
+        }
+      });
+
+      if (element.matches('input[type="submit"], input[type="button"]') && cleanText(element.value)) {
+        const translated = translateUiText(element.value, locale);
+
+        if (translated !== cleanText(element.value)) {
+          element.value = translated;
+        }
+      }
     });
+  };
+
+  const enhanceSessionTimeout = () => {
+    const timer = document.querySelector("#change_language .logout-timer");
+    const counter = timer?.querySelector(".js-counter");
+
+    if (!timer || !counter) {
+      return;
+    }
+
+    timer.classList.add("idu-session-timeout");
+    timer.setAttribute("role", "timer");
+    timer.setAttribute("aria-live", "off");
+    const isEnglish = getCurrentLocale() === "en";
+    const accessibleLabel = isEnglish ? "Time until automatic sign-out" : "Czas do automatycznego wylogowania";
+    const shortLabel = isEnglish ? "Session:" : "Sesja:";
+
+    timer.title = accessibleLabel;
+    counter.setAttribute("aria-label", accessibleLabel);
+    let labelWritten = false;
+
+    Array.from(timer.childNodes).forEach((node) => {
+      if (node.nodeType !== Node.TEXT_NODE) {
+        return;
+      }
+
+      if (!labelWritten && cleanText(node.nodeValue)) {
+        node.nodeValue = `${shortLabel} `;
+        labelWritten = true;
+        return;
+      }
+
+      node.nodeValue = "";
+    });
+
+    if (!labelWritten) {
+      counter.before(document.createTextNode(`${shortLabel} `));
+    }
   };
 
   const moveLanguageControl = () => {
@@ -614,31 +953,9 @@
     const locale = getCurrentLocale();
 
     root.lang = locale;
-
-    if (locale !== "en") {
-      return;
-    }
-
-    translateTextNodes(
-      [
-        "#top-selection label",
-        "#breadcrumbs",
-        "#breadcrumbs a",
-        ".module h3",
-        ".module h4",
-        ".toggle-switch a",
-        ".see-more a",
-        ".profile-event > span",
-        ".profile-event > a",
-        ".presence-table th",
-        ".presence-table td",
-        ".presences_table th",
-        ".presences_table td",
-        "#last_internal_messages .header",
-        "#unread_forum_posts"
-      ].join(", "),
-      locale
-    );
+    root.dataset.iduLocale = locale;
+    translateTextNodes(STATIC_UI_TEXT_SELECTOR, locale);
+    translateUiAttributes(STATIC_UI_ATTRIBUTE_SELECTOR, locale);
   };
 
   // Linki "zobacz ..." w .see-more IDU wyswietla natywnie mala litera obok
@@ -782,11 +1099,82 @@
     const login = document.querySelector("#login");
     const loginName = login?.querySelector("strong");
     const languageLink = document.querySelector("#change_language a");
+    const forumLink = document.querySelector("#link_to_unread_forum_posts");
+
+    document.querySelectorAll('#toggle_last_internal_messages, #messages a[href]').forEach((messageLink) => {
+      messageLink.setAttribute("href", "/internal_messages");
+      messageLink.removeAttribute("onclick");
+
+      if (messageLink.dataset.iduMessagesNavigation !== "true") {
+        messageLink.dataset.iduMessagesNavigation = "true";
+        messageLink.addEventListener(
+          "click",
+          (event) => {
+            if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            window.location.assign(messageLink.href);
+          },
+          true
+        );
+      }
+    });
+
+    const messageAction = document.querySelector("#messages");
+
+    if (messageAction && messageAction.dataset.iduMessagesAction !== "true") {
+      messageAction.dataset.iduMessagesAction = "true";
+      messageAction.addEventListener(
+        "click",
+        (event) => {
+          if (
+            event.target?.closest?.("a") ||
+            event.button !== 0 ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+          ) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          window.location.assign("/internal_messages");
+        },
+        true
+      );
+    }
+
+    if (forumLink) {
+      forumLink.setAttribute("href", "/forums");
+      forumLink.removeAttribute("onclick");
+
+      if (forumLink.dataset.iduForumNavigation !== "true") {
+        forumLink.dataset.iduForumNavigation = "true";
+        forumLink.addEventListener(
+          "click",
+          (event) => {
+            // IDU podpina do tego elementu otwieranie starego panelu. Zatrzymujemy
+            // pozostale handlery, ale nie domyslna nawigacje prawdziwego linku.
+            event.stopImmediatePropagation();
+          },
+          true
+        );
+      }
+    }
 
     setLinkText("#open_user_templates", labels.templates);
     setLinkText("#link_to_unread_forum_posts", labels.forum);
     setLinkText("#logout a", labels.logout);
     setLinkText("#account a", labels.profile);
+    setLinkText(
+      '.action-module .action-button a[href*="/documents/attachments"], .idu-documents-action a[href*="/documents/attachments"]',
+      labels.documents
+    );
     normalizeCountLink("#messages", labels.messagesBefore, labels.messagesAfter);
     normalizeCountLink("#news", labels.newsBefore, labels.newsAfter);
 
@@ -796,9 +1184,29 @@
 
     if (languageLink) {
       const targetLocale = getCurrentLocale() === "en" ? "PL" : "EN";
-      languageLink.textContent = `Change language: ${targetLocale}`;
+      const languageLabel = getCurrentLocale() === "en" ? "Language" : "J\u0119zyk";
+      languageLink.textContent = `${languageLabel}: ${targetLocale}`;
+    }
+
+    const accountActions = document.querySelector("#account-actions");
+    const accountAction = document.querySelector("#account");
+    const logoutAction = document.querySelector("#logout");
+
+    if (
+      accountActions &&
+      accountAction?.parentElement === accountActions &&
+      logoutAction?.parentElement === accountActions &&
+      accountAction.nextElementSibling !== logoutAction
+    ) {
+      accountActions.insertBefore(accountAction, logoutAction);
     }
   };
+
+  const isForumPagePath = (pathname = window.location.pathname) =>
+    /^\/forums(?:\/|$)/.test(pathname) || /^\/forum\/(?:search|topics)(?:\/|$)/.test(pathname);
+
+  const isMessagesPagePath = (pathname = window.location.pathname) =>
+    /^\/internal_messages(?:\/|$)/.test(pathname);
 
   const markPageType = () => {
     const loginForm = document.querySelector(
@@ -809,12 +1217,107 @@
     const profileCard = document.querySelector("#student-card #student-data");
     const documentsModule = findDocumentsModule();
     const messagesModule = findMessagesModule();
+    const forumPage = isForumPagePath();
+    const classPage = /^\/klasses\/\d+\/?$/i.test(window.location.pathname);
+    const subjectPage = /^\/subjects\/\d+\/?$/i.test(window.location.pathname);
 
     root.classList.toggle("idu-login-page", Boolean(loginForm));
     root.classList.toggle("idu-dashboard-page", Boolean(dashboardShell && dashboardSearch));
     root.classList.toggle("idu-profile-page", Boolean(profileCard));
     root.classList.toggle("idu-documents-page", Boolean(documentsModule));
-    root.classList.toggle("idu-messages-page", Boolean(messagesModule));
+    root.classList.toggle("idu-messages-page", isMessagesPagePath() || Boolean(messagesModule));
+    root.classList.toggle("idu-forum-page", forumPage);
+    root.classList.toggle("idu-class-page", classPage);
+    root.classList.toggle("idu-subject-page", subjectPage);
+  };
+
+  const enhanceForumPages = () => {
+    if (!root.classList.contains("idu-forum-page")) {
+      return;
+    }
+
+    document.querySelectorAll(".forum-table").forEach((table) => {
+      table.classList.add("idu-forum-list");
+
+      table.querySelectorAll("tr").forEach((row) => {
+        if (row.querySelector(".thread-title, .subforum-title")) {
+          row.classList.add("idu-forum-row");
+        }
+      });
+    });
+
+    document.querySelectorAll(".thread-table").forEach((table) => {
+      const containsPosts = Boolean(table.querySelector("td.author, td.post-content"));
+      table.classList.toggle("idu-thread-posts", containsPosts);
+
+      if (!table.querySelector("tr") && document.querySelector('[id="forum/post_search"]')) {
+        table.classList.add("idu-forum-empty");
+        table.dataset.iduEmptyLabel = getCurrentLocale() === "en" ? "No matching posts" : "Brak pasuj\u0105cych wpis\u00f3w";
+      }
+    });
+  };
+
+  const buildForumNavigation = () => {
+    if (!isForumPagePath() || document.querySelector(".idu-forum-tools")) {
+      return;
+    }
+
+    const module = document.querySelector("#content .module, #content .module-important");
+    const heading = module?.querySelector(":scope > h1, :scope > h2, :scope > h3");
+
+    if (!module) {
+      return;
+    }
+
+    const labels = FORUM_TOOL_LABELS[getCurrentLocale()] || FORUM_TOOL_LABELS.pl;
+    const navigation = document.createElement("nav");
+    const links = [
+      { href: "/forums", label: labels.forums, active: /^\/forums\/?$/.test(window.location.pathname) },
+      { href: "/forum/search", label: labels.search, active: /^\/forum\/search\/?$/.test(window.location.pathname) }
+    ];
+
+    navigation.className = "idu-page-tools idu-forum-tools idu-generated";
+    navigation.setAttribute("aria-label", labels.navigation);
+
+    links.forEach(({ href, label, active }) => {
+      const link = document.createElement("a");
+
+      link.href = href;
+      link.textContent = label;
+      link.className = "idu-page-tool-link";
+
+      if (active) {
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "page");
+      }
+
+      navigation.appendChild(link);
+    });
+
+    heading ? heading.after(navigation) : module.prepend(navigation);
+  };
+
+  const enhanceProfileBoards = () => {
+    document.querySelectorAll(".module, .module-important").forEach((module) => {
+      const heading = module.querySelector(":scope > h3, :scope > h2");
+
+      if (!heading || !/(?:^|\s)(?:moja\s+tablica|tablica|my\s+board|board)(?:\s|$)/i.test(cleanText(heading.textContent))) {
+        return;
+      }
+
+      const surface = Array.from(module.children).find(
+        (element) => element !== heading && isElement(element, "DIV") && !element.classList.contains("action-module")
+      );
+
+      if (!surface) {
+        return;
+      }
+
+      module.classList.add("idu-board-module");
+      surface.classList.add("idu-board-surface");
+      surface.setAttribute("role", "region");
+      surface.setAttribute("aria-label", cleanText(heading.textContent));
+    });
   };
 
   const findDocumentsModule = () =>
@@ -822,14 +1325,31 @@
       /dokumenty szkolne/i.test(cleanText(module.querySelector(":scope > h3")?.textContent))
     ) || null;
 
-  const findMessagesModule = () =>
-    Array.from(document.querySelectorAll(".module, .module-important")).find((module) => {
+  const findMessagesModule = () => {
+    const searchForm = document.querySelector("form.message_transport_search");
+    const searchModule = searchForm?.closest(".module, .module-important");
+
+    if (searchModule) {
+      return searchModule;
+    }
+
+    const matchedModule = Array.from(document.querySelectorAll(".module, .module-important")).find((module) => {
       const title = cleanText(module.querySelector(":scope > h3")?.textContent);
       const form = module.querySelector("form");
       const searchableInputs = form?.querySelectorAll('input[type="text"], input[type="search"]').length || 0;
 
       return /wiadomo/i.test(title) && searchableInputs >= 2;
-    }) || null;
+    });
+
+    if (matchedModule || !isMessagesPagePath()) {
+      return matchedModule || null;
+    }
+
+    return (
+      document.querySelector("#content .module:has(form), #content .module-important:has(form)") ||
+      document.querySelector("#content .module, #content .module-important")
+    );
+  };
 
   const hideEmptyFlashSection = () => {
     const flash = document.querySelector("#flash-messages-section");
@@ -848,7 +1368,7 @@
     }
   };
 
-  const compactUserscriptSchoolName = () => {
+  const normalizeSchoolName = () => {
     const schoolName = document.querySelector("#school-name");
 
     if (!schoolName) {
@@ -856,19 +1376,11 @@
     }
 
     if (!schoolName.dataset.iduOriginalSchoolName) {
-      schoolName.dataset.iduOriginalSchoolName = schoolName.textContent || "";
+      schoolName.dataset.iduOriginalSchoolName = cleanText(schoolName.textContent);
     }
 
-    if (shouldUseUserscriptMobileUX()) {
-      schoolName.textContent = USERSCRIPT_COMPACT_SCHOOL_NAME;
-      schoolName.setAttribute("title", schoolName.dataset.iduOriginalSchoolName);
-      return;
-    }
-
-    if (schoolName.dataset.iduOriginalSchoolName) {
-      schoolName.textContent = schoolName.dataset.iduOriginalSchoolName;
-      schoolName.removeAttribute("title");
-    }
+    schoolName.textContent = schoolName.dataset.iduOriginalSchoolName;
+    schoolName.setAttribute("title", schoolName.dataset.iduOriginalSchoolName);
   };
 
   function syncUserscriptAppearanceDock() {
@@ -925,14 +1437,25 @@
     }
   }
 
-  function setUserscriptAppearance(patch) {
+  function setUserscriptAppearance(patch, { debounceWrite = false } = {}) {
     const nextAppearance = normalizeAppearance({
       ...currentAppearance,
       ...patch
     });
 
-    writeLocalAppearance(nextAppearance);
     applyAppearance(nextAppearance);
+    window.clearTimeout(userscriptAppearanceWriteTimer);
+
+    if (debounceWrite) {
+      userscriptAppearanceWriteTimer = window.setTimeout(() => {
+        userscriptAppearanceWriteTimer = null;
+        writeLocalAppearance(nextAppearance);
+      }, SETTINGS_WRITE_DEBOUNCE_MS);
+      return;
+    }
+
+    userscriptAppearanceWriteTimer = null;
+    writeLocalAppearance(nextAppearance);
   }
 
   function createUserscriptControlGroup(title, description) {
@@ -1007,10 +1530,22 @@
 
   function bindUserscriptColorControl(dock, key, appearanceKey) {
     dock.querySelector(`[data-idu-userscript-${key}-color]`)?.addEventListener("input", (event) => {
+      setUserscriptAppearance({ [appearanceKey]: event.currentTarget.value }, { debounceWrite: true });
+    });
+
+    dock.querySelector(`[data-idu-userscript-${key}-color]`)?.addEventListener("change", (event) => {
       setUserscriptAppearance({ [appearanceKey]: event.currentTarget.value });
     });
 
     dock.querySelector(`[data-idu-userscript-${key}-hex]`)?.addEventListener("input", (event) => {
+      const value = event.currentTarget.value.trim();
+
+      if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
+        setUserscriptAppearance({ [appearanceKey]: value }, { debounceWrite: true });
+      }
+    });
+
+    dock.querySelector(`[data-idu-userscript-${key}-hex]`)?.addEventListener("change", (event) => {
       const value = event.currentTarget.value.trim();
 
       if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
@@ -1143,12 +1678,21 @@
       return;
     }
 
+    const locale = getCurrentLocale();
     const submit = document.querySelector('#new_user input[type="submit"], form.new_user input[type="submit"]');
     const loginInput = document.querySelector('#new_user input[name="user[login]"], form.new_user input[name="user[login]"]');
     const passwordInput = document.querySelector(
       '#new_user input[name="user[password]"], form.new_user input[name="user[password]"]'
     );
     applyLogoAsset(document.querySelector("#container #logo img, #container-low #logo img"));
+
+    if (passwordInput) {
+      passwordInput.setAttribute("placeholder", locale === "en" ? "Password" : "Has\u0142o");
+    }
+
+    if (submit) {
+      submit.value = locale === "en" ? "Sign in" : "Zaloguj";
+    }
 
     if (loginInput && !loginInput.getAttribute("placeholder")) {
       loginInput.setAttribute("placeholder", "Login");
@@ -1217,6 +1761,64 @@
     row.classList.toggle("idu-profile-no-social", !socialHasData);
     socialPanel?.closest("td")?.classList.toggle("idu-profile-cell-empty", !socialHasData);
     row.dataset.iduProfileGrid = "true";
+  };
+
+  const enhanceAttendancePage = () => {
+    const summaryModule = Array.from(document.querySelectorAll(".module")).find((module) =>
+      /frekwencja ucznia|student attendance/i.test(cleanText(module.querySelector(":scope > h3")?.textContent))
+    );
+    const summaryTable = summaryModule?.querySelector(":scope > table");
+
+    if (!summaryModule || !summaryTable) {
+      return;
+    }
+
+    root.classList.add("idu-attendance-page");
+    summaryModule.classList.add("idu-attendance-summary");
+    summaryTable.classList.add("idu-attendance-summary-table");
+
+    const headerCells = Array.from(summaryTable.querySelectorAll("thead th"));
+    const fallbackLabels = ["Przedmiot", "Obecno\u015b\u0107", "Nieobecno\u015b\u0107", "Sp\u00f3\u017anienie", ""];
+    const labels = headerCells.map((cell, index) => cleanText(cell.textContent) || fallbackLabels[index] || "");
+
+    summaryTable.querySelectorAll("tbody tr").forEach((row) => {
+      Array.from(row.cells).forEach((cell, index) => {
+        cell.dataset.iduAttendanceLabel = labels[index] || fallbackLabels[index] || "";
+      });
+    });
+
+    const calendarModule = Array.from(document.querySelectorAll(".module")).find((module) =>
+      module.querySelector(".presences_table")
+    );
+
+    if (!calendarModule) {
+      return;
+    }
+
+    calendarModule.classList.add("idu-attendance-calendar");
+    calendarModule.querySelectorAll(".presences_table:not([data-idu-attendance-enhanced])").forEach((table) => {
+      const title = table.previousElementSibling?.matches("b") ? table.previousElementSibling : null;
+      const card = document.createElement("section");
+      const scroller = document.createElement("div");
+      const label = cleanText(title?.textContent) || "Tydzie\u0144 obecno\u015bci";
+
+      card.className = "idu-attendance-week-card";
+      scroller.className = "idu-attendance-week-scroll";
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", label);
+      table.dataset.iduAttendanceEnhanced = "true";
+
+      (title || table).before(card);
+
+      if (title) {
+        title.classList.add("idu-attendance-week-title");
+        card.appendChild(title);
+      }
+
+      scroller.appendChild(table);
+      card.appendChild(scroller);
+    });
   };
 
   const moveDocumentsAction = () => {
@@ -1543,7 +2145,11 @@
 
   const enhanceMessagesSearch = () => {
     const module = findMessagesModule();
-    const form = module?.querySelector("form");
+    const form =
+      module?.querySelector("form.message_transport_search") ||
+      Array.from(module?.querySelectorAll("form") || []).find(
+        (candidate) => candidate.querySelectorAll('input[type="text"], input[type="search"]').length >= 2
+      );
 
     if (!module || !form || form.dataset.iduMessagesSearch === "true") {
       return;
@@ -1574,6 +2180,238 @@
       const wrapper = submit.closest(".actions, .field, div") || submit.parentElement;
       wrapper?.classList.add("idu-messages-actions-field");
     });
+  };
+
+  const getMessageFolderKey = (pathname = window.location.pathname) => {
+    if (/^\/internal_messages\/drafts\/?$/.test(pathname)) {
+      return "drafts";
+    }
+
+    if (/^\/internal_messages\/sent\/?$/.test(pathname)) {
+      return "sent";
+    }
+
+    if (/^\/internal_messages\/trash\/?$/.test(pathname)) {
+      return "trash";
+    }
+
+    if (/^\/internal_messages\/new\/?$/.test(pathname)) {
+      return "compose";
+    }
+
+    return "inbox";
+  };
+
+  const buildMessageFolderNavigation = () => {
+    if (!isMessagesPagePath() || document.querySelector(".idu-message-folders")) {
+      return;
+    }
+
+    const module = findMessagesModule();
+
+    if (!module) {
+      return;
+    }
+
+    const labels = MESSAGE_FOLDER_LABELS[getCurrentLocale()] || MESSAGE_FOLDER_LABELS.pl;
+    const activeFolder = getMessageFolderKey();
+    const nativeNavigation = module.querySelector("#message-folders");
+    const folderKeys = ["inbox", "sent", "drafts", "trash", "compose"];
+
+    if (nativeNavigation) {
+      nativeNavigation.classList.add("idu-page-tools", "idu-message-folders");
+      nativeNavigation.setAttribute("role", "navigation");
+      nativeNavigation.setAttribute("aria-label", labels.navigation);
+
+      Array.from(nativeNavigation.querySelectorAll(":scope > .folder")).forEach((folder, index) => {
+        const key = folderKeys[index];
+
+        if (!key) {
+          return;
+        }
+
+        folder.classList.add("idu-page-tool-link", `idu-message-folder-${key}`);
+        folder.classList.toggle("is-active", key === activeFolder);
+
+        if (key === activeFolder) {
+          folder.setAttribute("aria-current", "page");
+        } else {
+          folder.removeAttribute("aria-current");
+        }
+      });
+
+      return;
+    }
+
+    const navigation = document.createElement("nav");
+    const folders = [
+      ["inbox", "/internal_messages"],
+      ["drafts", "/internal_messages/drafts"],
+      ["sent", "/internal_messages/sent"],
+      ["trash", "/internal_messages/trash"],
+      ["compose", "/internal_messages/new"]
+    ];
+
+    navigation.className = "idu-page-tools idu-message-folders idu-generated";
+    navigation.setAttribute("aria-label", labels.navigation);
+
+    folders.forEach(([key, href]) => {
+      const link = document.createElement("a");
+
+      link.href = href;
+      link.textContent = labels[key];
+      link.className = `idu-page-tool-link idu-message-folder-${key}`;
+
+      if (key === activeFolder) {
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "page");
+      }
+
+      navigation.appendChild(link);
+    });
+
+    const heading = module.querySelector(":scope > h1, :scope > h2, :scope > h3");
+    heading ? heading.after(navigation) : module.prepend(navigation);
+  };
+
+  const restoreGradeDetailsFocus = () => {
+    gradeDetailsReturnFocus?.focus?.();
+    gradeDetailsReturnFocus = null;
+  };
+
+  const closeGradeDetailsDialog = (dialog) => {
+    if (!dialog) {
+      return;
+    }
+
+    if (dialog.open && typeof dialog.close === "function") {
+      try {
+        dialog.close();
+        return;
+      } catch (_error) {
+        // Starsze Safari moze wystawic czesciowe API dialog; fallback jest nizej.
+      }
+    }
+
+    dialog.removeAttribute("open");
+    restoreGradeDetailsFocus();
+  };
+
+  const getGradeDetailsDialog = () => {
+    let dialog = document.querySelector("#idu-grade-details-dialog");
+
+    if (dialog) {
+      return dialog;
+    }
+
+    const labels = GRADE_DETAIL_LABELS[getCurrentLocale()] || GRADE_DETAIL_LABELS.pl;
+    dialog = document.createElement("dialog");
+    dialog.id = "idu-grade-details-dialog";
+    dialog.className = "idu-grade-details-dialog idu-generated";
+    dialog.setAttribute("aria-labelledby", "idu-grade-details-title");
+
+    const header = document.createElement("div");
+    const title = document.createElement("h2");
+    const closeForm = document.createElement("form");
+    const closeButton = document.createElement("button");
+    const content = document.createElement("div");
+
+    header.className = "idu-grade-details-header";
+    title.id = "idu-grade-details-title";
+    closeForm.method = "dialog";
+    closeForm.className = "idu-grade-details-close-form";
+    closeButton.type = "submit";
+    closeButton.value = "close";
+    closeButton.className = "idu-grade-details-close";
+    closeButton.setAttribute("aria-label", labels.close);
+    closeButton.textContent = labels.close;
+    content.className = "idu-grade-details-content";
+    closeForm.appendChild(closeButton);
+    header.append(title, closeForm);
+    dialog.append(header, content);
+
+    closeButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeGradeDetailsDialog(dialog);
+    });
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) {
+        closeGradeDetailsDialog(dialog);
+      }
+    });
+    dialog.addEventListener("close", restoreGradeDetailsFocus);
+    document.body.appendChild(dialog);
+    return dialog;
+  };
+
+  const openGradeDetails = (trigger, source) => {
+    const labels = GRADE_DETAIL_LABELS[getCurrentLocale()] || GRADE_DETAIL_LABELS.pl;
+    const dialog = getGradeDetailsDialog();
+    const title = dialog.querySelector("#idu-grade-details-title");
+    const content = dialog.querySelector(".idu-grade-details-content");
+    const clone = source.cloneNode(true);
+
+    clone.removeAttribute("id");
+    clone.querySelectorAll("[id]").forEach((element) => element.removeAttribute("id"));
+    clone.querySelectorAll("script, style").forEach((element) => element.remove());
+    title.textContent = `${labels.title}: ${cleanText(trigger.textContent)}`;
+    content.replaceChildren(...Array.from(clone.childNodes));
+    gradeDetailsReturnFocus = trigger;
+
+    if (typeof dialog.showModal === "function") {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute("open", "");
+    }
+
+    dialog.querySelector(".idu-grade-details-close")?.focus();
+  };
+
+  const enhanceGradeDetails = () => {
+    const labels = GRADE_DETAIL_LABELS[getCurrentLocale()] || GRADE_DETAIL_LABELS.pl;
+
+    document.querySelectorAll('a.fancybox[href^="#description_for_grade_"]').forEach((trigger) => {
+      trigger.classList.add("idu-grade-detail-trigger");
+      trigger.setAttribute("aria-haspopup", "dialog");
+      trigger.setAttribute("title", labels.open);
+    });
+
+    if (gradeDetailsBound) {
+      return;
+    }
+
+    gradeDetailsBound = true;
+    document.addEventListener(
+      "click",
+      (event) => {
+        const closeButton = event.target.closest?.(".idu-grade-details-close");
+
+        if (closeButton) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          closeGradeDetailsDialog(closeButton.closest("dialog"));
+          return;
+        }
+
+        const trigger = event.target.closest?.('a.fancybox[href^="#description_for_grade_"]');
+
+        if (!trigger) {
+          return;
+        }
+
+        const sourceId = trigger.getAttribute("href")?.slice(1);
+        const source = sourceId ? document.getElementById(sourceId) : null;
+
+        if (!source) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        openGradeDetails(trigger, source);
+      },
+      true
+    );
   };
 
   function readWorkspaceCollapsedState() {
@@ -1631,6 +2469,18 @@
     link.className = "idu-workspace-nav-link";
     link.href = item.href || "#";
     link.dataset.iduWorkspaceIcon = item.icon;
+
+    try {
+      const originalHref = item.sourceLink?.getAttribute("href") || item.href || "#";
+      const targetPath = new URL(link.href, window.location.href).pathname.replace(/\/$/, "") || "/";
+      const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+
+      if (!originalHref.trim().startsWith("#") && targetPath === currentPath) {
+        link.setAttribute("aria-current", "page");
+      }
+    } catch (_error) {
+      // Hash-only and legacy IDU actions do not need a current-page state.
+    }
     icon.className = "idu-workspace-nav-icon";
     icon.setAttribute("aria-hidden", "true");
     text.className = "idu-workspace-nav-text";
@@ -1656,15 +2506,17 @@
 
   function getWorkspaceItems() {
     const labels = getWorkspaceLabels();
-    const messageLink = pickLink(["#toggle_last_internal_messages", '#messages a[href*="/internal_messages"]'], "/internal_messages");
+    const messageLink = pickLink(['#messages a[href*="/internal_messages"]', "#toggle_last_internal_messages"], "/internal_messages");
     const newsLink = pickLink(['#news a[href*="/informations"]'], "/informations");
     const templatesLink = pickLink(["#open_user_templates"], "#");
     const forumLink = pickLink(["#link_to_unread_forum_posts", '#forums_path a[href*="/forums"]'], "/forums");
     const accountLink = pickLink(['#account a[href*="/students/"]'], "/students");
     const logoutLink = pickLink(['#logout a[href*="/users/sign_out"]'], "/users/sign_out");
+    const languageLink = document.querySelector("#change_language a[href]");
     const documentsLink = pickLink(['.idu-documents-action a[href*="/documents/attachments"]', 'a[href*="/documents/attachments"]'], "/documents/attachments");
     const messageCount = cleanText(document.querySelector("#messages strong")?.textContent);
     const newsCount = cleanText(document.querySelector("#news strong")?.textContent);
+    const sessionTime = cleanText(document.querySelector("#change_language .js-counter")?.textContent);
 
     return [
       { label: labels.dashboard, icon: "dashboard", href: "/" },
@@ -1674,8 +2526,40 @@
       { label: labels.forum, icon: "forum", href: forumLink.href, sourceLink: forumLink },
       { label: labels.templates, icon: "templates", href: templatesLink.href, sourceLink: templatesLink },
       { label: labels.profile, icon: "profile", href: accountLink.href, sourceLink: accountLink },
-      { label: labels.logout, icon: "logout", href: logoutLink.href, sourceLink: logoutLink }
+      ...(languageLink
+        ? [
+            {
+              label: cleanText(languageLink.textContent),
+              icon: "language",
+              href: languageLink.href,
+              sourceLink: languageLink
+            }
+          ]
+        : []),
+      { label: labels.logout, icon: "logout", href: logoutLink.href, count: sessionTime, sourceLink: logoutLink }
     ];
+  }
+
+  function syncWorkspaceSessionTimeout(shell) {
+    workspaceSessionTimeoutObserver?.disconnect();
+    workspaceSessionTimeoutObserver = null;
+
+    const source = document.querySelector("#change_language .js-counter");
+    const target = shell.querySelector(
+      '.idu-workspace-nav-link[data-idu-workspace-icon="logout"] .idu-workspace-nav-count'
+    );
+
+    if (!source || !target) {
+      return;
+    }
+
+    const sync = () => {
+      target.textContent = cleanText(source.textContent);
+    };
+
+    sync();
+    workspaceSessionTimeoutObserver = new MutationObserver(sync);
+    workspaceSessionTimeoutObserver.observe(source, { childList: true, characterData: true, subtree: true });
   }
 
   function findWorkspacePhoto() {
@@ -1714,7 +2598,6 @@
     const subtitle = shell.querySelector(".idu-workspace-school");
     const toggle = shell.querySelector(".idu-workspace-sidebar-toggle");
     const logoLink = shell.querySelector(".idu-workspace-logo");
-    const footerText = shell.querySelector(".idu-workspace-footer span:last-child");
 
     applyLogoAsset(logoImage);
     logoLink?.setAttribute("aria-label", labels.home);
@@ -1726,10 +2609,6 @@
         "title",
         root.classList.contains("idu-workspace-sidebar-collapsed") ? labels.expand : labels.collapse
       );
-    }
-
-    if (footerText) {
-      footerText.textContent = labels.footer;
     }
 
     if (profileLink && userCard) {
@@ -1761,6 +2640,7 @@
 
     if (nav) {
       nav.replaceChildren(...getWorkspaceItems().map(createWorkspaceNavLink));
+      syncWorkspaceSessionTimeout(shell);
     }
   }
 
@@ -1772,6 +2652,8 @@
     let shell = document.querySelector(".idu-workspace-sidebar");
 
     if (root.dataset.iduLayout !== "workspace" || root.classList.contains("idu-login-page")) {
+      workspaceSessionTimeoutObserver?.disconnect();
+      workspaceSessionTimeoutObserver = null;
       shell?.remove();
       return;
     }
@@ -1793,9 +2675,6 @@
       const userName = document.createElement("strong");
       const school = document.createElement("span");
       const nav = document.createElement("nav");
-      const footer = document.createElement("div");
-      const footerDot = document.createElement("span");
-      const footerText = document.createElement("span");
 
       brand.className = "idu-workspace-brand";
       logo.className = "idu-workspace-logo";
@@ -1831,13 +2710,7 @@
       nav.className = "idu-workspace-nav";
       nav.setAttribute("aria-label", getWorkspaceLabels().main);
 
-      footer.className = "idu-workspace-footer";
-      footerDot.className = "idu-workspace-footer-dot";
-      footerDot.setAttribute("aria-hidden", "true");
-      footerText.textContent = getWorkspaceLabels().footer;
-      footer.append(footerDot, footerText);
-
-      shell.append(brand, userCard, nav, footer);
+      shell.append(brand, userCard, nav);
       document.body.prepend(shell);
       shell.querySelector(".idu-workspace-sidebar-toggle")?.addEventListener("click", () => toggleWorkspaceSidebar());
     }
@@ -1883,6 +2756,17 @@
 
   const animateFoldable = (foldable, collapsed, toggleLink) => {
     if (!foldable || foldable.dataset.iduFoldableAnimating === "true") {
+      return;
+    }
+
+    if (prefersReducedMotion()) {
+      setFoldableToggleState(toggleLink, collapsed);
+      finishFoldableAnimation(foldable, collapsed);
+
+      if (!collapsed) {
+        foldable.style.display = "";
+      }
+
       return;
     }
 
@@ -1999,6 +2883,13 @@
     const sourceActions = document.querySelector("#account-actions");
     const topbar = document.querySelector("#top");
 
+    if (root.dataset.iduLayout === "workspace") {
+      stickyActionsObserver?.disconnect();
+      stickyActionsObserver = null;
+      document.querySelector(`#${STICKY_ACTIONS_ID}`)?.remove();
+      return;
+    }
+
     if (!document.body || !sourceActions || !topbar) {
       document.querySelector(`#${STICKY_ACTIONS_ID}`)?.remove();
       return;
@@ -2062,6 +2953,94 @@
     }
   };
 
+  const enhanceGroupedSubjectList = (foldable) => {
+    const source = foldable.querySelector(":scope > ul");
+
+    if (!source) {
+      return false;
+    }
+
+    const sourceGroups = Array.from(source.children).filter((item) => isElement(item, "LI"));
+
+    if (!sourceGroups.length || !sourceGroups.every((item) => item.querySelector(":scope > ul"))) {
+      return false;
+    }
+
+    const groups = document.createElement("div");
+    groups.className = "idu-profile-subject-groups";
+
+    sourceGroups.forEach((sourceGroup) => {
+      const sourceList = sourceGroup.querySelector(":scope > ul");
+      const rawLabel = Array.from(sourceGroup.childNodes)
+        .filter((node) => node !== sourceList)
+        .map((node) => cleanText(node.textContent))
+        .filter(Boolean)
+        .join(" ");
+      const normalizedLabel = foldDiacritics(rawLabel).toLowerCase();
+      const level = normalizedLabel.includes("higher") || normalizedLabel.includes("rozszerz")
+        ? "higher"
+        : normalizedLabel.includes("standard") || normalizedLabel.includes("podstaw")
+          ? "standard"
+          : "other";
+      const labels = {
+        higher: "Higher",
+        standard: "Standard",
+        other: getCurrentLocale() === "en" ? "Other" : "Inne"
+      };
+      const section = document.createElement("section");
+      const header = document.createElement("header");
+      const title = document.createElement("h4");
+      const count = document.createElement("span");
+      const items = document.createElement("div");
+      const subjects = Array.from(sourceList.children).filter((item) => isElement(item, "LI"));
+
+      section.className = "idu-profile-subject-group";
+      section.dataset.iduSubjectLevel = level;
+      header.className = "idu-profile-subject-group-header";
+      title.textContent = labels[level];
+      count.className = "idu-profile-subject-count";
+      count.textContent = String(subjects.length);
+      count.setAttribute("aria-label", `${subjects.length} ${getCurrentLocale() === "en" ? "subjects" : "przedmiot\u00f3w"}`);
+      items.className = "idu-profile-subject-items";
+      header.append(title, count);
+
+      subjects.forEach((subject) => {
+        const row = document.createElement("div");
+        const name = document.createElement("div");
+        const teachers = document.createElement("div");
+        const subjectLink = subject.querySelector('a[href*="/subjects/"]');
+        const teacherLinks = Array.from(subject.querySelectorAll('a[href*="/teachers/"]'));
+
+        row.className = "idu-profile-subject-row";
+        name.className = "idu-profile-subject-name";
+        teachers.className = "idu-profile-subject-teachers";
+
+        if (subjectLink) {
+          name.appendChild(subjectLink);
+        } else {
+          name.textContent = cleanText(subject.textContent).replace(/\s+-\s+.*$/, "");
+        }
+
+        teacherLinks.forEach((teacher, index) => {
+          if (index) {
+            teachers.appendChild(document.createTextNode(", "));
+          }
+          teachers.appendChild(teacher);
+        });
+
+        row.append(name, teachers);
+        items.appendChild(row);
+      });
+
+      section.append(header, items);
+      groups.appendChild(section);
+    });
+
+    source.replaceWith(groups);
+    foldable.classList.add("idu-profile-subjects-content");
+    return true;
+  };
+
   const enhanceSubjectModule = (module) => {
     const heading = module.querySelector(":scope > h3");
     const foldable = module.querySelector(":scope > .foldable");
@@ -2074,6 +3053,13 @@
       return;
     }
 
+    foldable.dataset.iduPlusSubjects = "true";
+    foldable.classList.add("idu-subjects-content");
+
+    if (enhanceGroupedSubjectList(foldable)) {
+      return;
+    }
+
     const subjectHeader = Array.from(foldable.querySelectorAll(":scope > h4")).find((h4) =>
       /przedmioty/i.test(cleanText(h4.textContent))
     );
@@ -2081,9 +3067,6 @@
     if (!subjectHeader) {
       return;
     }
-
-    foldable.dataset.iduPlusSubjects = "true";
-    foldable.classList.add("idu-subjects-content");
 
     const firstHeader = foldable.querySelector(":scope > h4");
     if (firstHeader && firstHeader !== subjectHeader) {
@@ -2158,6 +3141,100 @@
     }
   };
 
+  const enhanceSubjectOverview = () => {
+    const card = document.querySelector("#subject-card");
+
+    if (!card || card.dataset.iduSubjectOverview === "true") {
+      return;
+    }
+
+    const headings = Array.from(card.querySelectorAll(":scope > h4"));
+    const title = card.querySelector(":scope > h1");
+    const titleText = cleanText(title?.textContent);
+    const isClassOverview = /^(?:klasa|class)\s*:/i.test(titleText);
+    const yearHeading = headings.find((heading) => /rocznik|school\s*year|year\s*group/i.test(cleanText(heading.textContent)));
+    const teacherHeading = headings.find((heading) =>
+      /prowadz|teacher|wychowawc|tutor/i.test(cleanText(heading.textContent))
+    );
+    const classesHeading = headings.find((heading) => /klas|class/i.test(cleanText(heading.textContent)));
+    const teacherRow = teacherHeading?.nextElementSibling;
+
+    card.classList.add("idu-subject-overview");
+    card.classList.toggle("idu-class-overview", isClassOverview);
+    title?.classList.add("idu-subject-overview-title");
+    card.querySelector(":scope > p")?.classList.add("idu-subject-overview-type");
+
+    if (yearHeading) {
+      yearHeading.classList.add("idu-subject-overview-label", "idu-class-overview-year-label");
+      yearHeading.nextElementSibling?.classList.add("idu-class-overview-year");
+    }
+
+    if (teacherHeading) {
+      teacherHeading.classList.add("idu-subject-overview-label", "idu-subject-overview-teacher-label");
+    }
+
+    if (teacherRow?.matches(".data.teacher")) {
+      teacherRow.classList.add("idu-subject-overview-teacher");
+    }
+
+    if (classesHeading) {
+      classesHeading.classList.add("idu-subject-overview-label", "idu-subject-overview-classes-label");
+
+      const classRows = [];
+      let row = classesHeading.nextElementSibling;
+
+      while (row && !row.matches("h1, h2, h3, h4, h5, h6")) {
+        const nextRow = row.nextElementSibling;
+
+        if (row.querySelector('a[href*="/klasses/"]')) {
+          classRows.push(row);
+        }
+
+        row = nextRow;
+      }
+
+      if (classRows.length) {
+        const grid = document.createElement("div");
+        grid.className = "idu-subject-class-grid idu-generated";
+
+        classRows.forEach((classRow) => {
+          classRow.removeAttribute("style");
+          classRow.classList.add("idu-subject-class-item");
+          grid.appendChild(classRow);
+        });
+
+        classesHeading.after(grid);
+      }
+    }
+
+    card.dataset.iduSubjectOverview = "true";
+  };
+
+  const enhanceStudentLists = () => {
+    document.querySelectorAll("ul.students").forEach((list) => {
+      list.classList.add("idu-student-list");
+      list.closest(".module, .module-important")?.classList.add("idu-student-list-module");
+      list.closest(".foldable")?.classList.add("idu-student-list-content");
+
+      const groupLabel = list.previousElementSibling;
+
+      if (groupLabel?.matches("span, h4, h5, strong")) {
+        groupLabel.classList.add("idu-student-group-label");
+      }
+
+      Array.from(list.children).forEach((row) => {
+        if (!row.matches("li") || !row.querySelector('a[href^="/students/"]')) {
+          return;
+        }
+
+        row.classList.add("idu-student-list-item");
+        row.querySelector(".user")?.classList.add("idu-student-list-user");
+        row.querySelector(".avatar")?.classList.add("idu-student-list-avatar");
+        row.querySelector(".name")?.classList.add("idu-student-list-name");
+      });
+    });
+  };
+
   const SCHEDULE_EXPORT_CLASS = "idu-plus-ics-export";
   const SCHEDULE_TIMEZONE = "Europe/Warsaw";
   const SCHEDULE_ICS_WEEKDAYS = Object.freeze(["SU", "MO", "TU", "WE", "TH", "FR", "SA"]);
@@ -2179,6 +3256,63 @@
     9: Object.freeze({ start: "16:20", end: "17:05", block: 5 }),
     10: Object.freeze({ start: "17:10", end: "17:50", block: 5 })
   });
+
+  const enhanceScheduleTimeLabels = () => {
+    document.querySelectorAll(".schedule table tbody tr").forEach((row) => {
+      const cell = row.cells?.[0];
+
+      if (!cell || cell.dataset.iduScheduleTime === "true") {
+        return;
+      }
+
+      const lessonNumber = Number(cleanText(cell.textContent));
+
+      if (!Number.isInteger(lessonNumber)) {
+        return;
+      }
+
+      const slot = SCHEDULE_LESSON_SLOTS[lessonNumber];
+      const number = document.createElement("span");
+
+      number.className = "idu-schedule-slot-number";
+      number.textContent = String(lessonNumber);
+      cell.classList.add("idu-schedule-time-slot");
+      cell.dataset.iduScheduleTime = "true";
+      cell.dataset.iduLessonNumber = String(lessonNumber);
+      cell.replaceChildren(number);
+
+      if (!slot) {
+        return;
+      }
+
+      const time = document.createElement("span");
+      const range = `${slot.start}\u2013${slot.end}`;
+
+      time.className = "idu-schedule-slot-time";
+      time.textContent = range;
+      cell.title = range;
+      cell.setAttribute(
+        "aria-label",
+        getCurrentLocale() === "en" ? `Lesson ${lessonNumber}, ${range}` : `Lekcja ${lessonNumber}, ${range}`
+      );
+      cell.appendChild(time);
+    });
+  };
+
+  const enhanceScheduleLessonStacks = () => {
+    document.querySelectorAll(".schedule table tbody td.lesson").forEach((cell) => {
+      const lessonCards = Array.from(cell.children).filter((child) => child.classList.contains("lesson-cell"));
+      const multipleLessons = lessonCards.length > 1;
+
+      cell.classList.toggle("idu-schedule-multi-lesson", multipleLessons);
+
+      if (multipleLessons) {
+        cell.dataset.iduLessonCount = String(lessonCards.length);
+      } else {
+        delete cell.dataset.iduLessonCount;
+      }
+    });
+  };
 
   const SCHEDULE_VTIMEZONE = Object.freeze([
     "BEGIN:VTIMEZONE",
@@ -2209,7 +3343,7 @@
       empty: "Brak lekcji",
       failed: "B\u0142\u0105d eksportu",
       calendarName: "Plan lekcji (IDU+)",
-      hint: "Pobierz plan jako plik .ics i zaimportuj go w Google Calendar"
+      hint: "Pobierz cotygodniowy plan do ko\u0144ca roku szkolnego jako plik .ics"
     }),
     en: Object.freeze({
       idle: "Add to calendar",
@@ -2218,7 +3352,7 @@
       empty: "No lessons",
       failed: "Export failed",
       calendarName: "Timetable (IDU+)",
-      hint: "Download the timetable as an .ics file and import it into Google Calendar"
+      hint: "Download a weekly timetable through the end of the school year as an .ics file"
     })
   });
 
@@ -2345,25 +3479,34 @@
     });
   };
 
-  const readScheduleCell = (cell) => {
-    const box = cell.querySelector(".lesson-cell") || cell;
-    const subjectLink = box.querySelector(".subject a");
-    const subject = cleanText(subjectLink?.textContent || box.querySelector(".subject")?.textContent);
+  const readScheduleCells = (cell) => {
+    const lessonCards = Array.from(cell.children).filter((child) => child.classList.contains("lesson-cell"));
+    const boxes = lessonCards.length ? lessonCards : [cell];
 
-    if (!subject) {
-      return null;
-    }
+    return boxes
+      .map((box, parallelIndex) => {
+        const subjectLink = box.querySelector(".subject a");
+        const subject = cleanText(subjectLink?.textContent || box.querySelector(".subject")?.textContent);
 
-    return {
-      subject,
-      url: subjectLink?.href || "",
-      room: cleanText(box.querySelector(".location a")?.textContent),
-      teacher: cleanText(box.querySelector(".teacher")?.textContent),
-      klass: cleanText(box.querySelector(".klass")?.textContent)
-    };
+        if (!subject) {
+          return null;
+        }
+
+        return {
+          subject,
+          url: subjectLink?.href || "",
+          room: cleanText(box.querySelector(".location a")?.textContent),
+          teacher: cleanText(box.querySelector(".teacher")?.textContent),
+          klass: cleanText(box.querySelector(".klass")?.textContent),
+          parallelIndex,
+          parallelCount: boxes.length
+        };
+      })
+      .filter(Boolean);
   };
 
-  // Plan konczy sie 30 czerwca; od sierpnia liczymy juz nastepny rok szkolny.
+  // Plan powtarza sie do 30 czerwca; tygodnie od sierpnia naleza juz do
+  // kolejnego roku szkolnego. UNTIL zapisujemy jako koniec dnia w Warszawie.
   const readSchoolYearEnd = (weekStart) => {
     let year = weekStart.getMonth() >= 7 ? weekStart.getFullYear() + 1 : weekStart.getFullYear();
 
@@ -2393,7 +3536,10 @@
         return;
       }
 
-      const lessonNumber = Number(cleanText(cells[0].textContent));
+      const lessonNumber = Number(
+        cells[0].dataset.iduLessonNumber ||
+          cleanText(cells[0].querySelector(".idu-schedule-slot-number")?.textContent || cells[0].textContent)
+      );
 
       if (!Number.isInteger(lessonNumber)) {
         return;
@@ -2402,23 +3548,21 @@
       const slot = SCHEDULE_LESSON_SLOTS[lessonNumber];
 
       cells.slice(1).forEach((cell, columnIndex) => {
-        const lesson = readScheduleCell(cell);
+        const lessons = readScheduleCells(cell);
 
-        if (!lesson) {
-          return;
-        }
+        lessons.forEach((lesson) => {
+          // Wiersze bez znanych godzin (np. 11-12) pomijamy zamiast zgadywac.
+          if (!slot) {
+            skippedLessons += 1;
+            return;
+          }
 
-        // Wiersze bez znanych godzin (np. 11-12) pomijamy zamiast zgadywac.
-        if (!slot) {
-          skippedLessons += 1;
-          return;
-        }
+          if (!columns.has(columnIndex)) {
+            columns.set(columnIndex, []);
+          }
 
-        if (!columns.has(columnIndex)) {
-          columns.set(columnIndex, []);
-        }
-
-        columns.get(columnIndex).push({ ...lesson, lessonNumber, ...slot });
+          columns.get(columnIndex).push({ ...lesson, lessonNumber, ...slot });
+        });
       });
     });
 
@@ -2433,10 +3577,13 @@
           weekStart.getMonth(),
           weekStart.getDate() + offset
         );
-        const entries = columns.get(columnIndex).sort((a, b) => a.lessonNumber - b.lessonNumber);
-        let current = null;
+        const entries = columns
+          .get(columnIndex)
+          .sort((a, b) => a.lessonNumber - b.lessonNumber || a.parallelIndex - b.parallelIndex);
+        const currentByParallelTrack = new Map();
 
         entries.forEach((entry) => {
+          const current = currentByParallelTrack.get(entry.parallelIndex);
           // Dwie lekcje tego samego bloku i przedmiotu to jedno wydarzenie,
           // ale pol-bloki (druga polowa pusta) zostaja 45-minutowe.
           const mergeable =
@@ -2452,8 +3599,9 @@
             return;
           }
 
-          current = { ...entry, lastLesson: entry.lessonNumber, date };
-          events.push(current);
+          const nextEvent = { ...entry, lastLesson: entry.lessonNumber, date };
+          currentByParallelTrack.set(entry.parallelIndex, nextEvent);
+          events.push(nextEvent);
         });
       });
 
@@ -2479,10 +3627,11 @@
       const weekday = SCHEDULE_ICS_WEEKDAYS[event.date.getDay()];
       const slug = foldDiacritics(event.subject).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       const description = [event.teacher, event.klass].filter(Boolean).join("\n");
+      const parallelSuffix = event.parallelIndex ? `-p${event.parallelIndex + 1}` : "";
 
       lines.push(
         "BEGIN:VEVENT",
-        `UID:idu-plus-${weekday}-${event.lessonNumber}-${slug || "lekcja"}@idu.edu.pl`,
+        `UID:idu-plus-${weekday}-${event.lessonNumber}-${slug || "lekcja"}${parallelSuffix}@idu.edu.pl`,
         `DTSTAMP:${stamp}`,
         `DTSTART;TZID=${SCHEDULE_TIMEZONE}:${toIcsLocalStamp(event.date, event.start)}`,
         `DTEND;TZID=${SCHEDULE_TIMEZONE}:${toIcsLocalStamp(event.date, event.end)}`,
@@ -2607,21 +3756,99 @@
     document.querySelectorAll(".schedule").forEach(buildScheduleExportButton);
   };
 
+  const enhanceDynamicContent = () => {
+    markPageType();
+    enhanceForumPages();
+    buildForumNavigation();
+    enhanceProfileDetails();
+    enhanceProfileBoards();
+    enhanceAttendancePage();
+    hideEmptyFlashSection();
+    enhanceDocumentsSearch();
+    enhanceMessagesSearch();
+    buildMessageFolderNavigation();
+    enhanceGradeDetails();
+    enhanceScheduleForms();
+    enhanceScheduleLessonStacks();
+    enhanceScheduleTimeLabels();
+    enhanceSelects();
+    enhanceSubjectOverview();
+    enhanceStudentLists();
+    document.querySelectorAll(".module").forEach(enhanceSubjectModule);
+    buildScheduleExportButtons();
+    applyLocaleText();
+    capitalizeActionLinks();
+    bindFoldableAnimations();
+    applyTitleFontToHeadings(root.dataset.iduTitleFont);
+  };
+
+  const isIDUPlusGeneratedNode = (node) => {
+    if (!node || node.nodeType !== Node.ELEMENT_NODE) {
+      return true;
+    }
+
+    return Boolean(
+      node.closest(
+        ".idu-generated, .idu-select, .idu-workspace-shell, .idu-sticky-actions, " +
+          ".idu-userscript-appearance-dock, .idu-programme-badge, .idu-schedule-slot-number, .idu-schedule-slot-time"
+      )
+    );
+  };
+
+  const observeDynamicContent = () => {
+    if (dynamicContentObserver || !document.body) {
+      return;
+    }
+
+    dynamicContentObserver = new MutationObserver((mutations) => {
+      const hasExternalContent = mutations.some((mutation) =>
+        Array.from(mutation.addedNodes).some((node) => node.nodeType === Node.ELEMENT_NODE && !isIDUPlusGeneratedNode(node))
+      );
+
+      if (!hasExternalContent || dynamicEnhancementRunning) {
+        return;
+      }
+
+      window.clearTimeout(dynamicContentTimer);
+      dynamicContentTimer = window.setTimeout(() => {
+        dynamicEnhancementRunning = true;
+
+        try {
+          enhanceDynamicContent();
+        } finally {
+          dynamicEnhancementRunning = false;
+        }
+      }, 80);
+    });
+
+    dynamicContentObserver.observe(document.body, { childList: true, subtree: true });
+  };
+
   const enhancePage = () => {
     markPageType();
+    enhanceForumPages();
+    buildForumNavigation();
     applyPageLogos();
-    compactUserscriptSchoolName();
-    removeLogoutCountdown();
+    normalizeSchoolName();
+    enhanceSessionTimeout();
     moveLanguageControl();
     normalizeTopbarLabels();
     enhanceLoginForm();
     enhanceProfileDetails();
+    enhanceProfileBoards();
+    enhanceAttendancePage();
     hideEmptyFlashSection();
     moveDocumentsAction();
     enhanceDocumentsSearch();
     enhanceMessagesSearch();
+    buildMessageFolderNavigation();
+    enhanceGradeDetails();
     enhanceScheduleForms();
+    enhanceScheduleLessonStacks();
+    enhanceScheduleTimeLabels();
     enhanceSelects();
+    enhanceSubjectOverview();
+    enhanceStudentLists();
     document.querySelectorAll(".module").forEach(enhanceSubjectModule);
     buildScheduleExportButtons();
     buildWorkspaceShell();
@@ -2632,6 +3859,7 @@
     buildStickyActionBar();
     highlightProgrammeTokens();
     applyTitleFontToHeadings(root.dataset.iduTitleFont);
+    observeDynamicContent();
   };
 
   onReady(() => {

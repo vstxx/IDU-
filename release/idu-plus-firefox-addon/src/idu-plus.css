@@ -58,23 +58,51 @@
     --idu-topbar-2: #123f68;
     --idu-topbar-glow: rgba(102, 169, 224, 0.24);
     --idu-topbar-shadow: 0 6px 18px rgba(18, 52, 82, 0.15);
-    --idu-surface: rgba(255, 255, 255, 0.78);
-    --idu-surface-strong: rgba(255, 255, 255, 0.88);
-    --idu-surface-soft: rgba(255, 255, 255, 0.58);
-    --idu-popover: rgba(255, 255, 255, 0.94);
-    --idu-input-bg: rgba(255, 255, 255, 0.82);
-    --idu-input-gloss: rgba(255, 255, 255, 0.72);
-    --idu-table-bg: rgba(255, 255, 255, 0.54);
-    --idu-row-bg: rgba(255, 255, 255, 0.56);
-    --idu-row-bg-soft: rgba(255, 255, 255, 0.38);
-    --idu-row-alt: rgba(235, 244, 251, 0.5);
-    --idu-hover-bg: rgba(255, 255, 255, 0.58);
-    --idu-inline-bg: rgba(255, 255, 255, 0.5);
-    --idu-border: rgba(127, 166, 202, 0.34);
-    --idu-border-strong: rgba(103, 146, 184, 0.45);
-    --idu-line: rgba(132, 166, 196, 0.24);
-    --idu-shadow: 0 8px 24px rgba(38, 78, 112, 0.1);
-    --idu-shadow-soft: 0 4px 14px rgba(42, 83, 118, 0.08);
+    /* Frost is centralized here. Base material tokens are deliberately opaque
+       enough to remain readable when backdrop-filter is unavailable. */
+    --idu-glass-bg: rgba(255, 255, 255, 0.64);
+    --idu-glass-bg-strong: rgba(255, 255, 255, 0.78);
+    --idu-glass-bg-soft: rgba(255, 255, 255, 0.42);
+    --idu-glass-fallback-bg: rgba(248, 252, 255, 0.96);
+    --idu-glass-fallback-bg-strong: rgba(252, 254, 255, 0.985);
+    --idu-glass-fallback-bg-soft: rgba(244, 249, 253, 0.91);
+    --idu-glass-border: rgba(86, 126, 160, 0.2);
+    --idu-glass-border-highlight: rgba(255, 255, 255, 0.7);
+    --idu-glass-blur: 18px;
+    --idu-glass-saturation: 145%;
+    --idu-glass-shadow: 0 14px 36px rgba(28, 59, 84, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.58);
+    --idu-glass-shadow-soft: 0 7px 20px rgba(28, 59, 84, 0.065), inset 0 1px 0 rgba(255, 255, 255, 0.42);
+    --idu-glass-inner-highlight: rgba(255, 255, 255, 0.56);
+    --idu-glass-input-bg: rgba(255, 255, 255, 0.58);
+    --idu-glass-hover: rgba(255, 255, 255, 0.52);
+    --idu-glass-active: rgba(255, 255, 255, 0.68);
+    --idu-glass-popover-bg: rgba(252, 254, 255, 0.9);
+    --idu-glass-topbar-surface: color-mix(in srgb, var(--idu-topbar) 94%, var(--idu-bg));
+    --idu-glass-sidebar-surface: color-mix(in srgb, var(--idu-topbar) 94%, #0b1017);
+    --idu-material-bg: var(--idu-glass-fallback-bg);
+    --idu-material-bg-strong: var(--idu-glass-fallback-bg-strong);
+    --idu-material-bg-soft: var(--idu-glass-fallback-bg-soft);
+    --idu-surface: var(--idu-material-bg);
+    --idu-surface-strong: var(--idu-material-bg-strong);
+    --idu-surface-soft: var(--idu-material-bg-soft);
+    --idu-popover: var(--idu-glass-fallback-bg-strong);
+    --idu-input-bg: var(--idu-glass-input-bg);
+    --idu-input-gloss: var(--idu-glass-inner-highlight);
+    --idu-table-bg: rgba(255, 255, 255, 0.3);
+    --idu-row-bg: rgba(255, 255, 255, 0.34);
+    --idu-row-bg-soft: rgba(255, 255, 255, 0.22);
+    --idu-row-alt: rgba(223, 235, 244, 0.24);
+    --idu-hover-bg: var(--idu-glass-hover);
+    --idu-inline-bg: rgba(255, 255, 255, 0.3);
+    --idu-border: var(--idu-glass-border);
+    --idu-border-strong: rgba(80, 122, 157, 0.3);
+    --idu-line: rgba(92, 128, 158, 0.16);
+    --idu-shadow: var(--idu-glass-shadow);
+    --idu-shadow-soft: var(--idu-glass-shadow-soft);
+    --idu-ambient-background:
+      radial-gradient(900px circle at 4% -8%, color-mix(in srgb, var(--idu-accent) 8%, transparent), transparent 58%),
+      radial-gradient(760px circle at 96% 12%, color-mix(in srgb, var(--idu-accent) 4%, transparent), transparent 62%),
+      var(--idu-bg);
     --idu-header-text: #f5fbff;
     --idu-header-chip-bg: rgba(255, 255, 255, 0.085);
     --idu-header-chip-border: rgba(221, 236, 248, 0.22);
@@ -82,7 +110,7 @@
     --idu-lesson-bg: rgba(216, 232, 244, 0.8);
     --idu-lesson-border: rgba(111, 156, 194, 0.2);
     --idu-lesson-shadow: 0 3px 10px rgba(39, 78, 112, 0.07);
-    --idu-radius-lg: 22px;
+    --idu-radius-lg: 20px;
     --idu-radius-md: 16px;
     --idu-radius-sm: 12px;
     --idu-shell-max: 1620px;
@@ -169,23 +197,40 @@
     --idu-text: #f1f3f5;
     --idu-text-soft: #d3d7de;
     --idu-muted: #9ba1aa;
-    --idu-surface: rgba(24, 25, 29, 0.78);
-    --idu-surface-strong: rgba(31, 32, 37, 0.92);
-    --idu-surface-soft: rgba(35, 36, 42, 0.58);
-    --idu-popover: rgba(18, 19, 23, 0.96);
-    --idu-input-bg: rgba(20, 21, 25, 0.82);
-    --idu-input-gloss: rgba(255, 255, 255, 0.06);
-    --idu-table-bg: rgba(27, 28, 33, 0.6);
-    --idu-row-bg: rgba(35, 36, 42, 0.58);
-    --idu-row-bg-soft: rgba(33, 34, 39, 0.46);
-    --idu-row-alt: rgba(44, 45, 52, 0.42);
-    --idu-hover-bg: rgba(56, 57, 64, 0.48);
-    --idu-inline-bg: rgba(34, 35, 40, 0.58);
-    --idu-border: rgba(192, 198, 208, 0.18);
-    --idu-border-strong: rgba(204, 210, 220, 0.28);
-    --idu-line: rgba(205, 211, 221, 0.12);
-    --idu-shadow: 0 8px 24px rgba(0, 0, 0, 0.26);
-    --idu-shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.2);
+    --idu-glass-bg: rgba(21, 23, 28, 0.68);
+    --idu-glass-bg-strong: rgba(25, 27, 32, 0.8);
+    --idu-glass-bg-soft: rgba(28, 30, 35, 0.52);
+    --idu-glass-fallback-bg: rgba(21, 23, 28, 0.95);
+    --idu-glass-fallback-bg-strong: rgba(25, 27, 32, 0.98);
+    --idu-glass-fallback-bg-soft: rgba(24, 26, 31, 0.91);
+    --idu-glass-border: rgba(255, 255, 255, 0.085);
+    --idu-glass-border-highlight: rgba(255, 255, 255, 0.14);
+    --idu-glass-shadow: 0 16px 38px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.085);
+    --idu-glass-shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    --idu-glass-inner-highlight: rgba(255, 255, 255, 0.065);
+    --idu-glass-input-bg: rgba(19, 21, 25, 0.68);
+    --idu-glass-hover: rgba(255, 255, 255, 0.055);
+    --idu-glass-active: rgba(255, 255, 255, 0.085);
+    --idu-glass-popover-bg: rgba(18, 20, 24, 0.9);
+    --idu-glass-topbar-surface: color-mix(in srgb, var(--idu-topbar) 92%, #090b0e);
+    --idu-glass-sidebar-surface: color-mix(in srgb, var(--idu-topbar) 90%, #080a0d);
+    --idu-surface: var(--idu-material-bg);
+    --idu-surface-strong: var(--idu-material-bg-strong);
+    --idu-surface-soft: var(--idu-material-bg-soft);
+    --idu-popover: var(--idu-glass-fallback-bg-strong);
+    --idu-input-bg: var(--idu-glass-input-bg);
+    --idu-input-gloss: var(--idu-glass-inner-highlight);
+    --idu-table-bg: rgba(29, 31, 36, 0.34);
+    --idu-row-bg: rgba(255, 255, 255, 0.045);
+    --idu-row-bg-soft: rgba(255, 255, 255, 0.028);
+    --idu-row-alt: rgba(255, 255, 255, 0.032);
+    --idu-hover-bg: var(--idu-glass-hover);
+    --idu-inline-bg: rgba(255, 255, 255, 0.035);
+    --idu-border: var(--idu-glass-border);
+    --idu-border-strong: rgba(255, 255, 255, 0.14);
+    --idu-line: rgba(255, 255, 255, 0.075);
+    --idu-shadow: var(--idu-glass-shadow);
+    --idu-shadow-soft: var(--idu-glass-shadow-soft);
     --idu-header-text: #f2f8ff;
     --idu-header-chip-bg: rgba(255, 255, 255, 0.07);
     --idu-header-chip-border: rgba(195, 222, 246, 0.18);
@@ -194,6 +239,48 @@
     --idu-lesson-border: rgba(210, 216, 226, 0.14);
     --idu-lesson-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     color-scheme: dark;
+  }
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    html.idu-plus {
+      --idu-material-bg: var(--idu-glass-bg);
+      --idu-material-bg-strong: var(--idu-glass-bg-strong);
+      --idu-material-bg-soft: var(--idu-glass-bg-soft);
+      --idu-popover: var(--idu-glass-popover-bg);
+      --idu-glass-topbar-surface: color-mix(in srgb, var(--idu-topbar) 74%, transparent);
+      --idu-glass-sidebar-surface: color-mix(in srgb, var(--idu-topbar) 82%, transparent);
+    }
+
+    html.idu-plus #top,
+    html.idu-plus .idu-sticky-actions,
+    html.idu-plus[data-idu-layout="workspace"] .idu-workspace-sidebar,
+    html.idu-plus:not(.idu-login-page) .module,
+    html.idu-plus:not(.idu-login-page) .module-important,
+    html.idu-plus:not(.idu-login-page) .action-module,
+    html.idu-plus #student-card,
+    html.idu-plus #subject-card,
+    html.idu-plus .menu-section,
+    html.idu-plus #message,
+    html.idu-plus #top-selection,
+    html.idu-plus #breadcrumbs-section,
+    html.idu-plus #flash-messages-section,
+    html.idu-plus #last_internal_messages,
+    html.idu-plus #unread_forum_posts,
+    html.idu-plus .idu-select-menu,
+    html.idu-plus .chosen-container .chosen-drop,
+    html.idu-plus .ui-dialog,
+    html.idu-plus .ui-datepicker,
+    html.idu-plus .ui-menu,
+    html.idu-plus .ui-autocomplete,
+    html.idu-plus #fancybox-outer,
+    html.idu-plus #fancybox-content,
+    html.idu-plus #tiptip_content,
+    html.idu-plus .idu-userscript-theme-dock,
+    html.idu-plus.idu-login-page #container,
+    html.idu-plus.idu-login-page #container-low {
+      -webkit-backdrop-filter: blur(var(--idu-glass-blur)) saturate(var(--idu-glass-saturation));
+      backdrop-filter: blur(var(--idu-glass-blur)) saturate(var(--idu-glass-saturation));
+    }
   }
 
   html.idu-plus,
@@ -217,7 +304,8 @@
     position: relative;
     overflow-x: hidden;
     margin: 0 !important;
-    background: var(--idu-bg) !important;
+    background: var(--idu-ambient-background) !important;
+    background-attachment: fixed !important;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -265,6 +353,27 @@
     letter-spacing: 0;
   }
 
+  /* UI copy stays Inter; only semantic page and card titles use Title Font. */
+  html.idu-plus #content > h1,
+  html.idu-plus #content > h2,
+  html.idu-plus #site-content > h1,
+  html.idu-plus #site-content > h2,
+  html.idu-plus .module > h2,
+  html.idu-plus .module > h3,
+  html.idu-plus .module-important > h2,
+  html.idu-plus .module-important > h3,
+  html.idu-plus #student-card > h2,
+  html.idu-plus #student-card > h3,
+  html.idu-plus #subject-card > h2,
+  html.idu-plus #subject-card > h3,
+  html.idu-plus #message > h2,
+  html.idu-plus #message > h3,
+  html.idu-plus .idu-page-title,
+  html.idu-plus .idu-card-title {
+    font-family: var(--idu-title-font) !important;
+    font-weight: 400;
+  }
+
   html.idu-plus .container {
     width: min(calc(100vw - 48px), var(--idu-shell-max)) !important;
     max-width: var(--idu-shell-max);
@@ -296,9 +405,10 @@
     margin-right: calc(50% - 50vw) !important;
     margin-left: calc(50% - 50vw) !important;
     padding: 14px max(24px, calc((100vw - var(--idu-shell-max)) / 2 + 24px)) !important;
-    background: var(--idu-topbar) !important;
-    border-bottom: 1px solid rgba(196, 218, 237, 0.24);
-    box-shadow: 0 4px 14px rgba(12, 34, 54, 0.14);
+    background: var(--idu-glass-topbar-surface) !important;
+    border-bottom: 1px solid var(--idu-header-chip-border);
+    box-shadow: var(--idu-glass-shadow-soft);
+    overflow: hidden;
   }
 
   html.idu-plus #visual {
@@ -395,18 +505,26 @@
   }
 
   html.idu-plus #change_language .logout-timer {
-    color: rgba(231, 242, 251, 0.78) !important;
-    font-size: 12px;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    margin-left: 2px;
+    padding-left: 9px;
+    color: rgba(231, 242, 251, 0.7) !important;
+    border-left: 1px solid var(--idu-header-chip-border);
+    font-size: 10.5px;
+    font-weight: 560;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   html.idu-plus #change_language .js-counter {
-    color: #ffffff;
-    font-weight: 700;
-  }
-
-  html.idu-plus #change_language .logout-timer,
-  html.idu-plus #change_language .js-counter {
-    display: none !important;
+    display: inline !important;
+    color: var(--idu-header-text) !important;
+    font-variant-numeric: tabular-nums;
+    font-weight: 760;
+    letter-spacing: 0.01em;
   }
 
   html.idu-plus[data-idu-logo-tone="dark"] #change_language {
@@ -430,12 +548,20 @@
     display: flex !important;
     position: relative;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
     width: 100% !important;
+    min-width: 0;
     height: auto !important;
     min-height: 0;
     padding: 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     color: rgba(241, 248, 255, 0.86);
     font-size: 12px !important;
     line-height: 1.25;
@@ -556,9 +682,9 @@
     width: 100%;
     padding: 12px max(18px, calc((100vw - var(--idu-shell-max)) / 2 + 18px));
     pointer-events: none;
-    background: var(--idu-topbar) !important;
-    border-bottom: 1px solid rgba(196, 218, 237, 0.24);
-    box-shadow: var(--idu-topbar-shadow);
+    background: var(--idu-glass-topbar-surface) !important;
+    border-bottom: 1px solid var(--idu-header-chip-border);
+    box-shadow: var(--idu-glass-shadow-soft);
     opacity: 0;
     transform: translateY(-100%);
     transition: transform 180ms ease, opacity 180ms ease;
@@ -721,7 +847,8 @@
 
   html.idu-plus[data-idu-layout="workspace"]:not(.idu-login-page) body {
     padding-left: var(--idu-ws-sidebar-width) !important;
-    background: var(--idu-bg) !important;
+    background: var(--idu-ambient-background) !important;
+    background-attachment: fixed !important;
     transition: padding-left 180ms ease;
   }
 
@@ -730,25 +857,25 @@
     z-index: 90;
     inset: 0 auto 0 0;
     display: grid;
-    grid-template-rows: auto auto minmax(0, 1fr) auto;
-    gap: 16px;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: 12px;
     width: var(--idu-ws-sidebar-width);
-    padding: 18px 14px;
+    padding: 18px 16px;
     color: rgba(245, 250, 255, 0.9);
-    border-right: 1px solid rgba(221, 236, 248, 0.16);
-    background: color-mix(in srgb, var(--idu-topbar), #000000 7%);
-    box-shadow: 5px 0 18px rgba(12, 34, 54, 0.14);
+    border-right: 1px solid var(--idu-glass-border-highlight);
+    background: var(--idu-glass-sidebar-surface);
+    box-shadow: var(--idu-glass-shadow-soft);
+    font-family: "InterVariable", Inter, "Segoe UI", Arial, sans-serif !important;
     transition: width 180ms ease, padding 180ms ease;
   }
 
   html.idu-plus[data-idu-theme="dark"][data-idu-layout="workspace"] .idu-workspace-sidebar {
-    box-shadow: 5px 0 18px rgba(0, 0, 0, 0.28);
+    box-shadow: none;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-brand,
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-user,
-  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link,
-  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-footer {
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link {
     min-width: 0;
   }
 
@@ -769,7 +896,7 @@
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-logo img {
     display: block;
-    width: 90px;
+    width: 86px;
     height: auto;
     max-height: 34px;
     object-fit: contain;
@@ -778,21 +905,31 @@
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-sidebar-toggle {
     display: inline-grid;
     place-items: center;
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    color: rgba(245, 250, 255, 0.92);
-    border: 1px solid rgba(221, 236, 248, 0.2);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    padding: 0 !important;
+    color: rgba(245, 250, 255, 0.76) !important;
+    border: 0 !important;
+    border-radius: 9px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    font-size: 0 !important;
     cursor: pointer;
+    transition: color 140ms ease, background-color 140ms ease;
+  }
+
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-sidebar-toggle:hover,
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-sidebar-toggle:focus-visible {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-sidebar-toggle span {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     background: currentColor;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E") center / 17px 17px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E") center / 16px 16px no-repeat;
     transition: transform 180ms ease;
   }
 
@@ -802,14 +939,14 @@
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-user {
     display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
+    grid-template-columns: 38px minmax(0, 1fr);
     align-items: center;
-    gap: 11px;
-    padding: 11px;
+    gap: 10px;
+    padding: 7px 6px;
     color: rgba(245, 250, 255, 0.9) !important;
-    border: 1px solid rgba(221, 236, 248, 0.16);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
     text-decoration: none !important;
     cursor: pointer;
     transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
@@ -817,16 +954,15 @@
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-user:hover,
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-user:focus-visible {
-    border-color: rgba(221, 236, 248, 0.28);
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.07);
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-avatar {
     display: block;
     overflow: hidden;
-    width: 42px;
-    height: 42px;
-    border-radius: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     background: var(--idu-accent);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
   }
@@ -857,7 +993,7 @@
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-user-name {
     color: #ffffff;
     font-size: 13px;
-    font-weight: 780;
+    font-weight: 650;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-school {
@@ -870,77 +1006,85 @@
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav {
     display: grid;
     align-content: start;
-    gap: 6px;
+    gap: 3px;
     overflow-y: auto;
     padding-right: 2px;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link {
     display: grid;
-    grid-template-columns: 34px minmax(0, 1fr) auto;
+    grid-template-columns: 22px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 10px;
-    min-height: 42px;
-    padding: 5px 9px;
-    color: rgba(241, 248, 255, 0.78) !important;
-    border: 1px solid transparent;
-    border-radius: 14px;
+    gap: 11px;
+    min-height: 40px;
+    padding: 6px 8px;
+    color: rgba(241, 248, 255, 0.74) !important;
+    border: 0;
+    border-radius: 10px;
     font-size: 13px;
-    font-weight: 720;
+    font-weight: 600;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link:hover,
-  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link:focus-visible {
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link:focus-visible,
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[aria-current="page"] {
     color: #ffffff !important;
-    border-color: rgba(221, 236, 248, 0.18);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[aria-current="page"] {
+    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--idu-accent), #ffffff 18%);
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-icon {
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    color: rgba(247, 251, 255, 0.92);
-    border: 1px solid rgba(221, 236, 248, 0.16);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
+    width: 22px;
+    height: 22px;
+    color: rgba(247, 251, 255, 0.78);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-icon::before {
     content: "";
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     background: currentColor;
-    mask: var(--idu-icon-news) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-news) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="dashboard"] .idu-workspace-nav-icon::before {
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='8' rx='2'/%3E%3Crect x='14' y='3' width='7' height='5' rx='2'/%3E%3Crect x='14' y='12' width='7' height='9' rx='2'/%3E%3Crect x='3' y='15' width='7' height='6' rx='2'/%3E%3C/svg%3E") center / 17px 17px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='8' rx='2'/%3E%3Crect x='14' y='3' width='7' height='5' rx='2'/%3E%3Crect x='14' y='12' width='7' height='9' rx='2'/%3E%3Crect x='3' y='15' width='7' height='6' rx='2'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="mail"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-mail) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-mail) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="documents"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-document) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-document) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="forum"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-forum) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-forum) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="templates"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-template) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-template) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="profile"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-user) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-user) center / 18px 18px no-repeat;
+  }
+
+  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="language"] .idu-workspace-nav-icon::before {
+    mask: var(--idu-profile-icon-globe) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-link[data-idu-workspace-icon="logout"] .idu-workspace-nav-icon::before {
-    mask: var(--idu-icon-logout) center / 17px 17px no-repeat;
+    mask: var(--idu-icon-logout) center / 18px 18px no-repeat;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .idu-workspace-nav-text {
@@ -953,30 +1097,12 @@
     min-width: 24px;
     padding: 3px 7px;
     color: #ffffff;
-    border: 1px solid rgba(221, 236, 248, 0.18);
+    border: 0;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.09);
     font-size: 11px;
     font-weight: 780;
     text-align: center;
-  }
-
-  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 34px;
-    color: rgba(232, 242, 252, 0.62);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  html.idu-plus[data-idu-layout="workspace"] .idu-workspace-footer-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--idu-accent);
-    box-shadow: 0 0 0 4px var(--idu-accent-soft);
   }
 
   html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-sidebar {
@@ -986,8 +1112,7 @@
   html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-logo,
   html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-user > div,
   html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-nav-text,
-  html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-nav-count,
-  html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-footer span:not(.idu-workspace-footer-dot) {
+  html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-nav-count {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1010,10 +1135,6 @@
     grid-template-columns: 1fr;
     justify-items: center;
     padding: 5px;
-  }
-
-  html.idu-plus[data-idu-layout="workspace"].idu-workspace-sidebar-collapsed .idu-workspace-footer {
-    justify-content: center;
   }
 
   html.idu-plus[data-idu-layout="workspace"] .container {
@@ -1045,6 +1166,11 @@
 
   html.idu-plus[data-idu-theme="dark"][data-idu-layout="workspace"] #top {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  }
+
+  html.idu-plus[data-idu-layout="workspace"]:not(.idu-login-page) #top,
+  html.idu-plus[data-idu-layout="workspace"] .idu-sticky-actions {
+    display: none !important;
   }
 
   html.idu-plus[data-idu-layout="workspace"] #visual {
@@ -1135,6 +1261,8 @@
   }
 
   html.idu-plus #top-selection {
+    position: relative;
+    z-index: 35;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1319,7 +1447,7 @@
 
   html.idu-plus .module-important {
     border-color: rgba(209, 81, 81, 0.38) !important;
-    box-shadow: 0 6px 18px rgba(116, 42, 42, 0.1);
+    box-shadow: var(--idu-glass-shadow-soft);
   }
 
   html.idu-plus .module h3,
@@ -1516,6 +1644,16 @@
     gap: 14px;
   }
 
+  html.idu-plus #top-selection:has(.idu-select.is-open),
+  html.idu-plus #top-selection:has(.chosen-with-drop),
+  html.idu-plus .module:has(.idu-select.is-open),
+  html.idu-plus .module:has(.chosen-with-drop),
+  html.idu-plus .module-important:has(.idu-select.is-open),
+  html.idu-plus .module-important:has(.chosen-with-drop) {
+    position: relative;
+    z-index: 80;
+  }
+
   html.idu-plus.idu-profile-page #student-data > table > tbody > tr.idu-profile-no-social {
     grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.5fr);
     grid-template-areas:
@@ -1588,9 +1726,9 @@
     min-width: 0;
     height: 100%;
     box-sizing: border-box;
-    padding: 10px 11px;
-    border-radius: 12px;
-    background: var(--idu-inline-bg);
+    padding: 8px 6px;
+    border-radius: 0;
+    background: transparent;
   }
 
   html.idu-plus.idu-profile-page .idu-profile-field.is-empty {
@@ -1614,6 +1752,10 @@
     font-size: 11.5px !important;
     font-weight: 760;
     line-height: 1.25;
+  }
+
+  html.idu-plus #account-actions::-webkit-scrollbar {
+    display: none;
   }
 
   html.idu-plus.idu-profile-page #student-card .data {
@@ -1860,10 +2002,20 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html.idu-plus .toggle-switch a,
-    html.idu-plus .toggle-switch a::before,
-    html.idu-plus .foldable {
+    html.idu-plus {
+      scroll-behavior: auto !important;
+    }
+
+    html.idu-plus *,
+    html.idu-plus *::before,
+    html.idu-plus *::after {
+      animation: none !important;
+      scroll-behavior: auto !important;
       transition: none !important;
+    }
+
+    html.idu-plus .foldable {
+      will-change: auto !important;
     }
   }
 
@@ -1993,7 +2145,7 @@
     padding: 8px 14px !important;
     color: #ffffff !important;
     border: 0 !important;
-    border-radius: 999px !important;
+    border-radius: 12px !important;
     background: var(--idu-accent) !important;
     box-shadow: var(--idu-accent-shadow) !important;
     font-family: var(--idu-font) !important;
@@ -2346,6 +2498,309 @@
     line-height: 1.3;
   }
 
+  /* Subject overview: replace IDU's bright rules and bitmap teacher icon with
+     restrained, theme-aware rows. The real links and content stay untouched. */
+  html.idu-plus #subject-card.idu-subject-overview {
+    overflow: hidden;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-title {
+    margin: 0 !important;
+    padding: 0 0 13px !important;
+    color: var(--idu-text) !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    background: transparent !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: clamp(22px, 2vw, 30px) !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-type {
+    margin: 0 !important;
+    padding: 11px 0 3px !important;
+    color: var(--idu-text-soft) !important;
+    border: 0 !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    font-weight: 620;
+    line-height: 1.45;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-label {
+    margin: 16px 0 7px !important;
+    padding: 0 !important;
+    color: var(--idu-muted) !important;
+    border: 0 !important;
+    font-size: 12px !important;
+    font-weight: 720;
+    letter-spacing: 0.01em;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-teacher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    max-width: min(100%, 440px);
+    margin: 0 !important;
+    padding: 9px 12px 9px 40px !important;
+    color: var(--idu-text) !important;
+    border: 1px solid var(--idu-line) !important;
+    border-radius: var(--idu-radius-sm);
+    background: var(--idu-row-bg-soft) !important;
+    background-image: none !important;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--idu-glass-inner-highlight) 52%, transparent);
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-teacher::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    background: var(--idu-accent);
+    opacity: 0.88;
+    -webkit-mask: var(--idu-profile-icon-user) center / 18px 18px no-repeat;
+    mask: var(--idu-profile-icon-user) center / 18px 18px no-repeat;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-teacher a {
+    color: var(--idu-accent-deep) !important;
+    font-weight: 680;
+    text-decoration: none !important;
+  }
+
+  html.idu-plus #subject-card .idu-subject-overview-teacher a:hover,
+  html.idu-plus #subject-card .idu-subject-overview-teacher a:focus-visible {
+    color: var(--idu-accent) !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px;
+  }
+
+  html.idu-plus #subject-card .idu-subject-class-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 10px;
+    width: min(100%, 720px);
+  }
+
+  html.idu-plus #subject-card .idu-subject-class-item {
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--idu-text-soft) !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus #subject-card .idu-subject-class-item a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 9px 11px 9px 25px;
+    color: var(--idu-text-soft) !important;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--idu-row-bg-soft);
+    font-weight: 620;
+    line-height: 1.35;
+    text-decoration: none !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: background-color 170ms ease, border-color 170ms ease, color 170ms ease;
+  }
+
+  html.idu-plus #subject-card .idu-subject-class-item a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--idu-accent);
+    transform: translateY(-50%);
+  }
+
+  html.idu-plus #subject-card .idu-subject-class-item a:hover,
+  html.idu-plus #subject-card .idu-subject-class-item a:focus-visible {
+    color: var(--idu-accent-deep) !important;
+    border-color: var(--idu-accent-border);
+    background: var(--idu-accent-faint);
+  }
+
+  html.idu-plus.idu-class-page #content {
+    grid-template-columns: minmax(0, 1.18fr) minmax(420px, 0.82fr);
+  }
+
+  html.idu-plus #subject-card.idu-class-overview .idu-class-overview-year {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 7px 11px !important;
+    color: var(--idu-text) !important;
+    border: 1px solid var(--idu-line) !important;
+    border-radius: 10px;
+    background: var(--idu-row-bg-soft) !important;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  html.idu-plus .idu-student-list-module {
+    min-width: 0;
+  }
+
+  html.idu-plus .idu-student-list-content {
+    min-width: 0;
+  }
+
+  html.idu-plus .idu-student-group-label {
+    display: block;
+    margin: 2px 0 9px !important;
+    padding: 0 !important;
+    color: var(--idu-muted) !important;
+    font-size: 12px !important;
+    font-weight: 680;
+    line-height: 1.35;
+  }
+
+  html.idu-plus ul.idu-student-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 5px 10px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    counter-reset: idu-student;
+  }
+
+  html.idu-plus ul.idu-student-list + .idu-student-group-label {
+    margin-top: 15px !important;
+  }
+
+  html.idu-plus .idu-student-list-item {
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr);
+    align-items: center;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    counter-increment: idu-student;
+  }
+
+  html.idu-plus .idu-student-list-item::before {
+    content: counter(idu-student) ".";
+    grid-column: 1;
+    color: var(--idu-muted);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 650;
+    text-align: right;
+  }
+
+  html.idu-plus .idu-student-list-user {
+    grid-column: 2;
+    display: grid !important;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    margin: 0 !important;
+    padding: 5px 8px !important;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    background: transparent;
+    transition: background-color 170ms ease, border-color 170ms ease;
+  }
+
+  html.idu-plus .idu-student-list-item:hover .idu-student-list-user,
+  html.idu-plus .idu-student-list-item:focus-within .idu-student-list-user {
+    border-color: var(--idu-line);
+    background: var(--idu-row-bg-soft);
+  }
+
+  html.idu-plus .idu-student-list-avatar {
+    position: relative;
+    float: none !important;
+    display: grid;
+    place-items: center;
+    width: 34px !important;
+    height: 34px;
+    overflow: hidden;
+    margin: 0 !important;
+    border: 1px solid var(--idu-line);
+    border-radius: 50%;
+    background: var(--idu-accent-faint);
+  }
+
+  html.idu-plus .idu-student-list-avatar::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: var(--idu-accent);
+    opacity: 0.58;
+    -webkit-mask: var(--idu-profile-icon-user) center / 17px 17px no-repeat;
+    mask: var(--idu-profile-icon-user) center / 17px 17px no-repeat;
+  }
+
+  html.idu-plus .idu-student-list-avatar img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    border: 0 !important;
+    border-radius: 50%;
+    background: var(--idu-surface-soft);
+    object-fit: cover;
+  }
+
+  html.idu-plus .idu-student-list-avatar img:not([src]),
+  html.idu-plus .idu-student-list-avatar img[src=""] {
+    display: none !important;
+  }
+
+  html.idu-plus .idu-student-list-name {
+    float: none !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 620 !important;
+    line-height: 1.3;
+  }
+
+  html.idu-plus .idu-student-list-name a {
+    display: block;
+    overflow: hidden;
+    color: var(--idu-text-soft) !important;
+    text-decoration: none !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html.idu-plus .idu-student-list-name a:hover,
+  html.idu-plus .idu-student-list-name a:focus-visible {
+    color: var(--idu-accent-deep) !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px;
+  }
+
+  html.idu-plus .idu-student-list-item > .clear {
+    display: none !important;
+  }
+
   html.idu-plus .chosen-container .chosen-results li.active-result:hover {
     background: var(--idu-accent-soft);
   }
@@ -2438,6 +2893,161 @@
 
   html.idu-plus .idu-messages-module {
     min-height: 0 !important;
+  }
+
+  html.idu-plus .idu-page-tools {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    margin: -4px 0 16px;
+    padding: 2px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  html.idu-plus .idu-page-tools::-webkit-scrollbar {
+    display: none;
+  }
+
+  html.idu-plus .idu-page-tool-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 11px !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px;
+    background: transparent !important;
+    color: var(--idu-text-soft) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 12.5px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .idu-page-tool-link:hover {
+    border-color: var(--idu-border) !important;
+    background: var(--idu-row-bg-soft) !important;
+    color: var(--idu-text) !important;
+  }
+
+  html.idu-plus .idu-page-tool-link.is-active {
+    border-color: var(--idu-accent-border) !important;
+    background: var(--idu-accent-faint) !important;
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus .idu-message-folder-compose {
+    border-color: transparent !important;
+    background: var(--idu-accent) !important;
+    color: #ffffff !important;
+    box-shadow: var(--idu-accent-shadow) !important;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folders {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(118px, 1fr));
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 6px;
+    overflow-x: auto;
+    border: 1px solid var(--idu-line);
+    border-radius: 16px;
+    background: var(--idu-inline-bg);
+    box-shadow: inset 0 1px 0 var(--idu-input-gloss);
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folders .idu-page-tool-link {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 44px;
+    height: 44px;
+    margin: 0 !important;
+    padding: 0 14px !important;
+    border: 1px solid transparent !important;
+    border-radius: 11px;
+    background: transparent !important;
+    color: var(--idu-text-soft) !important;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: none !important;
+    transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  html.idu-plus.idu-messages-page #message-folders.idu-message-folders > .folder {
+    float: none !important;
+    width: auto !important;
+    background-image: none !important;
+  }
+
+  html.idu-plus.idu-messages-page #message-folders.idu-message-folders > .folder > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 28px);
+    height: 44px;
+    margin: 0 -14px;
+    padding: 0 14px !important;
+    color: inherit !important;
+    font: inherit !important;
+    text-decoration: none !important;
+  }
+
+  html.idu-plus.idu-messages-page #message-folders.idu-message-folders > .clear {
+    display: none !important;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folders .idu-page-tool-link:hover {
+    border-color: var(--idu-border) !important;
+    background: var(--idu-row-bg-soft) !important;
+    color: var(--idu-text) !important;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folders .idu-page-tool-link.is-active {
+    border-color: var(--idu-border) !important;
+    background: var(--idu-surface-strong) !important;
+    color: var(--idu-text) !important;
+    box-shadow: 0 4px 12px rgba(28, 66, 99, 0.1) !important;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folders .idu-message-folder-compose,
+  html.idu-plus.idu-messages-page .idu-message-folders .idu-message-folder-compose:hover {
+    border-color: transparent !important;
+    background: var(--idu-accent) !important;
+    color: #ffffff !important;
+    box-shadow: var(--idu-accent-shadow) !important;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folder-compose > a {
+    gap: 7px;
+  }
+
+  html.idu-plus.idu-messages-page .idu-message-folder-compose > a::before,
+  html.idu-plus.idu-messages-page nav > a.idu-message-folder-compose::before {
+    content: "+";
+    display: grid;
+    flex: 0 0 auto;
+    width: 17px;
+    height: 17px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
   }
 
   html.idu-plus .idu-messages-search {
@@ -2558,12 +3168,28 @@
     border: 1px solid var(--idu-border) !important;
     border-radius: var(--idu-radius-md);
     background: var(--idu-table-bg) !important;
-    box-shadow: 0 8px 22px rgba(45, 84, 116, 0.06);
+    box-shadow: none;
   }
 
   html.idu-plus th,
   html.idu-plus td {
     border-color: var(--idu-line) !important;
+  }
+
+  html.idu-plus .ui-dialog,
+  html.idu-plus .ui-dialog-content,
+  html.idu-plus .ui-datepicker,
+  html.idu-plus .ui-menu,
+  html.idu-plus .ui-autocomplete,
+  html.idu-plus #fancybox-outer,
+  html.idu-plus #fancybox-content,
+  html.idu-plus #tiptip_content {
+    color: var(--idu-text) !important;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: var(--idu-radius-md);
+    background: var(--idu-popover) !important;
+    background-image: none !important;
+    box-shadow: var(--idu-shadow-soft);
   }
 
   html.idu-plus table.message-table tr:first-child,
@@ -2667,6 +3293,207 @@
     background-image: none !important;
   }
 
+  html.idu-plus.idu-attendance-page #content {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start;
+  }
+
+  html.idu-plus.idu-attendance-page .idu-attendance-summary,
+  html.idu-plus.idu-attendance-page .idu-attendance-calendar {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  html.idu-plus .idu-attendance-summary-table {
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: hidden;
+    table-layout: fixed;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 16px;
+    background: var(--idu-table-bg) !important;
+  }
+
+  html.idu-plus .idu-attendance-summary-table th:nth-child(1) { width: 18%; }
+  html.idu-plus .idu-attendance-summary-table th:nth-child(2) { width: 21%; }
+  html.idu-plus .idu-attendance-summary-table th:nth-child(3) { width: 34%; }
+  html.idu-plus .idu-attendance-summary-table th:nth-child(4) { width: 12%; }
+  html.idu-plus .idu-attendance-summary-table th:nth-child(5) { width: 15%; }
+
+  html.idu-plus .idu-attendance-summary-table thead th {
+    height: 58px;
+    padding: 11px 12px !important;
+    color: var(--idu-text-soft) !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--idu-accent-border) !important;
+    background: var(--idu-accent-faint) !important;
+    font-size: 12px;
+    font-weight: 760 !important;
+    line-height: 1.25;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .idu-attendance-summary-table thead th span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  html.idu-plus .idu-attendance-summary-table thead th img {
+    flex: 0 0 auto;
+    width: 22px !important;
+    height: 22px !important;
+    object-fit: contain;
+  }
+
+  html.idu-plus .idu-attendance-summary-table tbody td {
+    padding: 12px !important;
+    color: var(--idu-text-soft) !important;
+    border: 0 !important;
+    border-top: 1px solid var(--idu-line) !important;
+    background: transparent !important;
+    background-image: none !important;
+    line-height: 1.55;
+    text-align: left !important;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+  }
+
+  html.idu-plus .idu-attendance-summary-table tbody tr:first-child td {
+    border-top: 0 !important;
+    background: var(--idu-surface-soft) !important;
+    font-weight: 650;
+  }
+
+  html.idu-plus .idu-attendance-summary-table tbody tr.js-presences-details:nth-child(odd) td {
+    background: var(--idu-row-alt) !important;
+  }
+
+  html.idu-plus .idu-attendance-summary-table tbody tr:hover td {
+    background: var(--idu-hover-bg) !important;
+  }
+
+  html.idu-plus .idu-attendance-summary-table .js-toggle-presences-details {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid var(--idu-accent-border);
+    border-radius: 999px;
+    background: var(--idu-accent-soft);
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  html.idu-plus .idu-attendance-calendar {
+    display: grid;
+    gap: 14px;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .idu-attendance-week-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--idu-border);
+    border-radius: 18px;
+    background: var(--idu-surface);
+    box-shadow: var(--idu-shadow-soft);
+  }
+
+  html.idu-plus .idu-attendance-week-title {
+    display: block;
+    padding: 13px 16px;
+    color: var(--idu-text);
+    border-bottom: 1px solid var(--idu-line);
+    background: var(--idu-surface-strong);
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  html.idu-plus .idu-attendance-week-title u {
+    text-decoration: none;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--idu-border-strong) transparent;
+    scrollbar-width: thin;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll:focus-visible {
+    outline: 0;
+    box-shadow: inset 0 0 0 3px var(--idu-focus-ring);
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table {
+    width: 100% !important;
+    min-width: 720px;
+    margin: 0 !important;
+    table-layout: fixed;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table th,
+  html.idu-plus .idu-attendance-week-scroll .presences_table td {
+    height: 34px;
+    padding: 7px 8px !important;
+    color: var(--idu-text-soft) !important;
+    border: 0 !important;
+    border-right: 1px solid var(--idu-line) !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    background: transparent !important;
+    background-image: none !important;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table tr:first-child th {
+    height: 58px;
+    color: var(--idu-text) !important;
+    background: var(--idu-accent-faint) !important;
+    font-weight: 650;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table tr:nth-child(odd):not(:first-child) td {
+    background: var(--idu-row-alt) !important;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table tr:hover td {
+    background: var(--idu-hover-bg) !important;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table th:first-child,
+  html.idu-plus .idu-attendance-week-scroll .presences_table td:first-child {
+    position: sticky;
+    z-index: 2;
+    left: 0;
+    width: 42px;
+    color: var(--idu-muted) !important;
+    background: var(--idu-surface-strong) !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table th:last-child,
+  html.idu-plus .idu-attendance-week-scroll .presences_table td:last-child {
+    border-right: 0 !important;
+  }
+
+  html.idu-plus .idu-attendance-week-scroll .presences_table tr:last-child td {
+    border-bottom: 0 !important;
+  }
+
   html.idu-plus .profile-event {
     position: relative;
     display: flex;
@@ -2683,7 +3510,7 @@
     background-image: none !important;
     background-position: 0 0 !important;
     background-repeat: no-repeat !important;
-    box-shadow: 0 6px 18px rgba(39, 78, 112, 0.055);
+    box-shadow: none;
   }
 
   html.idu-plus .profile-event::before {
@@ -2940,6 +3767,77 @@
     font-weight: 720;
   }
 
+  html.idu-plus .idu-board-module .idu-board-surface {
+    width: 100%;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 18px 20px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 15px !important;
+    background: var(--idu-row-bg-soft) !important;
+    background-color: var(--idu-row-bg-soft) !important;
+    background-image: none !important;
+    color: var(--idu-text-soft) !important;
+    font-size: 13px;
+    line-height: 1.65;
+    box-shadow: inset 0 1px 0 var(--idu-glass-inner-highlight) !important;
+  }
+
+  html.idu-plus .idu-board-surface p {
+    margin: 0 0 16px !important;
+    color: var(--idu-text-soft) !important;
+    line-height: 1.65;
+  }
+
+  html.idu-plus .idu-board-surface p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  html.idu-plus .idu-board-surface div,
+  html.idu-plus .idu-board-surface span,
+  html.idu-plus .idu-board-surface li {
+    color: inherit !important;
+  }
+
+  html.idu-plus .idu-board-surface strong,
+  html.idu-plus .idu-board-surface b {
+    color: var(--idu-text) !important;
+    font-weight: 700;
+  }
+
+  html.idu-plus .idu-board-surface a {
+    color: var(--idu-accent) !important;
+    font-weight: 580;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  html.idu-plus .idu-board-surface a:hover {
+    color: var(--idu-accent-deep) !important;
+  }
+
+  html.idu-plus .idu-board-surface ul,
+  html.idu-plus .idu-board-surface ol {
+    margin: 8px 0 16px 20px !important;
+    padding: 0 !important;
+  }
+
+  html.idu-plus .idu-board-surface hr {
+    height: 1px;
+    margin: 18px 0;
+    border: 0 !important;
+    background: var(--idu-line) !important;
+  }
+
+  html.idu-plus[data-idu-theme="dark"] .idu-board-module .idu-board-surface {
+    border-color: var(--idu-border) !important;
+    background: var(--idu-row-bg-soft) !important;
+    background-color: var(--idu-row-bg-soft) !important;
+    color: var(--idu-text-soft) !important;
+  }
+
   html.idu-plus .idu-class-summary {
     display: flex;
     align-items: center;
@@ -2967,7 +3865,7 @@
     border: 1px solid var(--idu-line);
     border-radius: 15px;
     background: var(--idu-hover-bg);
-    box-shadow: 0 6px 18px rgba(39, 78, 112, 0.05);
+    box-shadow: none;
   }
 
   html.idu-plus .idu-subject-name b,
@@ -2995,6 +3893,364 @@
     font-size: 12px;
     font-weight: 680;
     white-space: nowrap;
+  }
+
+  html.idu-plus .idu-profile-subject-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+  }
+
+  html.idu-plus .idu-profile-subject-group {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--idu-border);
+    border-radius: 16px;
+    background: var(--idu-row-bg-soft);
+  }
+
+  html.idu-plus .idu-profile-subject-group-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--idu-line);
+    background: var(--idu-row-bg);
+  }
+
+  html.idu-plus .idu-profile-subject-group-header::before {
+    flex: 0 0 auto;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    content: "";
+    background: var(--idu-accent);
+  }
+
+  html.idu-plus .idu-profile-subject-group[data-idu-subject-level="standard"] .idu-profile-subject-group-header::before {
+    opacity: 0.62;
+  }
+
+  html.idu-plus .idu-profile-subject-group[data-idu-subject-level="other"] .idu-profile-subject-group-header::before {
+    background: var(--idu-muted);
+    opacity: 0.58;
+  }
+
+  html.idu-plus .idu-profile-subject-group-header h4 {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 13px !important;
+    font-weight: 760 !important;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+
+  html.idu-plus .idu-profile-subject-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 3px 7px;
+    box-sizing: border-box;
+    border: 1px solid var(--idu-line);
+    border-radius: 9px;
+    background: var(--idu-inline-bg);
+    color: var(--idu-muted);
+    font-size: 10.5px;
+    font-weight: 720;
+    line-height: 1;
+  }
+
+  html.idu-plus .idu-profile-subject-items {
+    display: grid;
+    padding: 3px 13px 5px;
+  }
+
+  html.idu-plus .idu-profile-subject-row {
+    min-width: 0;
+    padding: 11px 2px;
+    border-bottom: 1px solid var(--idu-line);
+  }
+
+  html.idu-plus .idu-profile-subject-row:last-child {
+    border-bottom: 0;
+  }
+
+  html.idu-plus .idu-profile-subject-name,
+  html.idu-plus .idu-profile-subject-teachers {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  html.idu-plus .idu-profile-subject-name a {
+    color: var(--idu-text) !important;
+    font-size: 13px;
+    font-weight: 720;
+    line-height: 1.4;
+    text-decoration: none !important;
+  }
+
+  html.idu-plus .idu-profile-subject-name a:hover {
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus .idu-profile-subject-teachers {
+    margin-top: 3px;
+    color: var(--idu-muted);
+    font-size: 11.5px;
+    line-height: 1.42;
+  }
+
+  html.idu-plus .idu-profile-subject-teachers a {
+    color: var(--idu-text-soft) !important;
+    font-size: inherit;
+    font-weight: 520;
+    text-decoration: none !important;
+  }
+
+  html.idu-plus .idu-profile-subject-teachers a:hover {
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus #user_search .field {
+    display: grid;
+    grid-template-columns: minmax(130px, max-content) minmax(220px, 360px);
+    align-items: center;
+    gap: 12px 18px;
+    margin: 0;
+  }
+
+  html.idu-plus #user_search .field label {
+    margin: 0;
+    color: var(--idu-text-soft);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  html.idu-plus #user_search #search_profile_by_name {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html.idu-plus .idu-grade-detail-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  html.idu-plus .idu-grade-detail-trigger::after {
+    content: "i";
+    display: inline-grid;
+    place-items: center;
+    width: 15px;
+    height: 15px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-family: var(--idu-font);
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 750;
+    line-height: 1;
+    opacity: 0.68;
+  }
+
+  /* Legacy IDU resets every <dialog> to display:block, including a closed one. */
+  html.idu-plus dialog.idu-grade-details-dialog:not([open]) {
+    display: none !important;
+  }
+
+  html.idu-plus .idu-grade-details-dialog {
+    width: min(560px, calc(100vw - 32px));
+    max-height: min(680px, calc(100dvh - 32px));
+    margin: auto;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 1px solid var(--idu-glass-border-highlight) !important;
+    border-radius: 18px;
+    background: var(--idu-glass-bg-strong) !important;
+    color: var(--idu-text) !important;
+    box-shadow: var(--idu-glass-shadow) !important;
+  }
+
+  html.idu-plus .idu-grade-details-dialog::backdrop {
+    background: rgba(5, 7, 11, 0.52);
+  }
+
+  html.idu-plus .idu-grade-details-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--idu-line);
+  }
+
+  html.idu-plus .idu-grade-details-header h2 {
+    min-width: 0;
+    margin: 0 !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: 19px !important;
+    font-weight: 500 !important;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  html.idu-plus .idu-grade-details-close-form {
+    flex: 0 0 auto;
+    display: block !important;
+    width: auto !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus button.idu-grade-details-close {
+    flex: 0 0 auto;
+    min-height: 32px;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 9px !important;
+    background: var(--idu-row-bg-soft) !important;
+    color: var(--idu-text-soft) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 12px !important;
+    font-weight: 650 !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .idu-grade-details-content {
+    max-height: calc(100dvh - 128px);
+    padding: 18px;
+    overflow: auto;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  html.idu-plus .idu-grade-details-content p {
+    margin: 0 0 10px;
+    color: inherit !important;
+  }
+
+  html.idu-plus #users_search_ajax_loader {
+    width: 18px;
+    height: 18px;
+    margin: 12px 0 0;
+  }
+
+  html.idu-plus #users_search_result {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    width: 100% !important;
+    max-width: none !important;
+    padding-top: 16px;
+    clear: both;
+  }
+
+  html.idu-plus #users_search_result:empty {
+    display: none;
+  }
+
+  html.idu-plus #users_search_result > :not(.single_user):not(script):not(style) {
+    display: contents !important;
+  }
+
+  html.idu-plus #users_search_result > br {
+    display: none !important;
+  }
+
+  html.idu-plus #users_search_result .single_user {
+    float: none !important;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    height: auto !important;
+    min-height: 58px;
+    padding: 9px 12px !important;
+    border: 1px solid var(--idu-line);
+    border-radius: 12px;
+    background: var(--idu-row-bg-soft);
+    transition: border-color 140ms ease, background-color 140ms ease;
+  }
+
+  html.idu-plus #users_search_result .single_user:hover,
+  html.idu-plus #users_search_result .single_user:focus-within {
+    border-color: var(--idu-accent-border-strong);
+    background: var(--idu-row-bg-soft);
+  }
+
+  html.idu-plus #users_search_result .single_user .user_avatar {
+    float: none !important;
+    display: block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--idu-accent-faint);
+  }
+
+  html.idu-plus #users_search_result .single_user .user_avatar img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+
+  html.idu-plus #users_search_result .single_user .user_name {
+    float: none !important;
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0;
+    padding: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+  }
+
+  html.idu-plus #users_search_result .single_user .user_name a {
+    display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible;
+    color: var(--idu-text) !important;
+    font-size: 14px !important;
+    font-weight: 650 !important;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal !important;
+  }
+
+  html.idu-plus #users_search_result .single_user:hover .user_name a,
+  html.idu-plus #users_search_result .single_user .user_name a:focus-visible {
+    color: var(--idu-accent) !important;
+  }
+
+  @media (min-width: 1100px) {
+    html.idu-plus #users_search_result {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   html.idu-plus .schedule {
@@ -3031,6 +4287,12 @@
     letter-spacing: 0;
   }
 
+  html.idu-plus .schedule table thead th:first-child {
+    width: 54px;
+    min-width: 54px;
+    padding-inline: 2px !important;
+  }
+
   html.idu-plus .schedule table tbody td {
     height: var(--idu-schedule-slot-height);
     min-height: var(--idu-schedule-slot-height);
@@ -3046,8 +4308,8 @@
   }
 
   html.idu-plus .schedule table tbody td:first-child {
-    width: 34px;
-    min-width: 34px;
+    width: 54px;
+    min-width: 54px;
     padding: 4px 2px !important;
     text-align: center;
     vertical-align: middle;
@@ -3055,6 +4317,33 @@
     font-size: 12px;
     font-weight: 700;
     box-shadow: none;
+  }
+
+  html.idu-plus .schedule table tbody td.idu-schedule-time-slot {
+    padding-inline: 2px !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  html.idu-plus .idu-schedule-slot-number,
+  html.idu-plus .idu-schedule-slot-time {
+    display: block;
+    white-space: nowrap;
+  }
+
+  html.idu-plus .idu-schedule-slot-number {
+    color: var(--idu-text-soft);
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.1;
+  }
+
+  html.idu-plus .idu-schedule-slot-time {
+    margin-top: 5px;
+    color: var(--idu-muted);
+    font-size: 8.5px;
+    font-weight: 550;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   html.idu-plus .schedule table tbody td.lesson {
@@ -3078,6 +4367,31 @@
     border-radius: 12px;
     background: var(--idu-lesson-bg) !important;
     box-shadow: var(--idu-lesson-shadow);
+  }
+
+  html.idu-plus .schedule table tbody td.lesson.idu-schedule-multi-lesson,
+  html.idu-plus .schedule table tbody td.lesson:has(> .lesson-cell ~ .lesson-cell) {
+    height: auto !important;
+    min-height: var(--idu-schedule-slot-height);
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  html.idu-plus .schedule table tbody td.lesson.idu-schedule-multi-lesson > .lesson-cell,
+  html.idu-plus .schedule table tbody td.lesson:has(> .lesson-cell ~ .lesson-cell) > .lesson-cell {
+    height: auto !important;
+    min-height: calc(var(--idu-schedule-slot-height) - 8px);
+  }
+
+  html.idu-plus .schedule table tbody td.lesson.idu-schedule-multi-lesson > .lesson-cell-line,
+  html.idu-plus .schedule table tbody td.lesson:has(> .lesson-cell ~ .lesson-cell) > .lesson-cell-line {
+    display: block !important;
+    width: 100%;
+    height: 4px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
   }
 
   html.idu-plus div.lesson-cell.canceled {
@@ -3580,7 +4894,7 @@
     border: 1px solid var(--idu-border) !important;
     border-radius: 24px;
     background: var(--idu-surface-strong) !important;
-    box-shadow: 0 8px 24px rgba(42, 83, 118, 0.14);
+    box-shadow: var(--idu-glass-shadow);
   }
 
   html.idu-plus.idu-login-page #container #top,
@@ -3598,13 +4912,13 @@
     border: 0;
     border-bottom: 1px solid rgba(221, 236, 248, 0.18);
     border-radius: 0;
-    background: linear-gradient(135deg, var(--idu-topbar), var(--idu-topbar-2)) !important;
-    box-shadow: 0 4px 12px rgba(16, 54, 88, 0.09);
+    background: var(--idu-glass-topbar-surface) !important;
+    box-shadow: var(--idu-glass-shadow-soft);
   }
 
   html.idu-plus[data-idu-theme="dark"].idu-login-page #container #top,
   html.idu-plus[data-idu-theme="dark"].idu-login-page #container-low #top {
-    background: linear-gradient(135deg, var(--idu-topbar), var(--idu-topbar-2)) !important;
+    background: var(--idu-glass-topbar-surface) !important;
   }
 
   html.idu-plus.idu-login-page #container #logo,
@@ -3781,8 +5095,679 @@
     background-image: none !important;
   }
 
+  html.idu-plus .apple_pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 100%;
+    min-height: 54px;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box;
+    border: 0 !important;
+    border-top: 1px solid var(--idu-line) !important;
+    background: transparent !important;
+    color: var(--idu-muted) !important;
+    font-size: 12.5px;
+    line-height: 1;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .apple_pagination a,
+  html.idu-plus .apple_pagination span,
+  html.idu-plus .apple_pagination em {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 0 !important;
+    padding: 5px 8px !important;
+    box-sizing: border-box;
+    border: 0 !important;
+    border-radius: 9px;
+    background: transparent !important;
+    color: var(--idu-text-soft) !important;
+    font-style: normal !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .apple_pagination a:hover {
+    background: var(--idu-hover-bg) !important;
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus .apple_pagination em.current {
+    background: var(--idu-accent-soft) !important;
+    color: var(--idu-accent) !important;
+    font-weight: 750;
+  }
+
+  html.idu-plus .apple_pagination .previous_page,
+  html.idu-plus .apple_pagination .next_page {
+    width: auto;
+    padding-inline: 10px !important;
+  }
+
+  html.idu-plus .apple_pagination .disabled {
+    color: var(--idu-muted) !important;
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  html.idu-plus .apple_pagination .gap {
+    min-width: 22px;
+    padding-inline: 3px !important;
+    color: var(--idu-muted) !important;
+  }
+
+  /* Forum: quiet, information-first lists and discussion surfaces. */
+  html.idu-plus.idu-forum-page #content {
+    align-items: start;
+  }
+
+  html.idu-plus.idu-forum-page #content > .double-column {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  html.idu-plus.idu-forum-page #content > .double-column > .module {
+    min-width: 0;
+  }
+
+  html.idu-plus.idu-forum-page .module > h1 {
+    margin: 0 0 18px !important;
+    padding: 0 0 15px !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: clamp(22px, 2vw, 30px) !important;
+    font-weight: 500 !important;
+    line-height: 1.18 !important;
+    overflow-wrap: anywhere;
+  }
+
+  html.idu-plus.idu-forum-page .module > h1 #go_to_forum_owner {
+    display: inline-flex;
+    margin: 3px 0 0 10px;
+    vertical-align: middle;
+  }
+
+  html.idu-plus.idu-forum-page .module > h1 #go_to_forum_owner a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 9px;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 10px;
+    background: var(--idu-row-bg-soft) !important;
+    color: var(--idu-text-soft) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 11.5px !important;
+    font-weight: 650 !important;
+    line-height: 1.2;
+  }
+
+  html.idu-plus.idu-forum-page #content .action-module {
+    min-height: 0;
+    margin: 0 0 10px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus.idu-forum-page #content .action-module .action-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 !important;
+  }
+
+  html.idu-plus.idu-forum-page #content .action-module .action-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 13px !important;
+    border: 1px solid var(--idu-accent-border) !important;
+    border-radius: 11px;
+    background: var(--idu-accent-faint) !important;
+    color: var(--idu-accent) !important;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus.idu-forum-page #content .action-module .action-button a:hover {
+    border-color: var(--idu-accent-border-strong) !important;
+    background: var(--idu-accent-soft) !important;
+    color: var(--idu-accent-deep) !important;
+  }
+
+  html.idu-plus .forum-table,
+  html.idu-plus .thread-table {
+    width: 100% !important;
+    margin: 0 0 18px !important;
+    overflow: hidden;
+    table-layout: auto;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 16px;
+    background: var(--idu-row-bg-soft) !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .forum-table tbody,
+  html.idu-plus .thread-table tbody {
+    background: transparent !important;
+  }
+
+  html.idu-plus .forum-table tr,
+  html.idu-plus .forum-table tr.odd,
+  html.idu-plus .forum-table tr.even,
+  html.idu-plus .thread-table tr,
+  html.idu-plus .thread-table tr.odd,
+  html.idu-plus .thread-table tr.even {
+    background: transparent !important;
+  }
+
+  html.idu-plus .forum-table td,
+  html.idu-plus .thread-table td {
+    border: 0 !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    background: transparent !important;
+  }
+
+  html.idu-plus .forum-table tr:last-child > td,
+  html.idu-plus .thread-table tr:last-child > td {
+    border-bottom: 0 !important;
+  }
+
+  html.idu-plus .forum-table .forum-header {
+    height: auto !important;
+    padding: 12px 15px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    background: var(--idu-row-bg) !important;
+    color: var(--idu-text) !important;
+  }
+
+  html.idu-plus .forum-table .forum-header h4 {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.3;
+  }
+
+  html.idu-plus .forum-table tr.idu-forum-row {
+    transition: background-color 170ms ease;
+  }
+
+  html.idu-plus .forum-table tr.idu-forum-row:hover {
+    background: var(--idu-hover-bg) !important;
+  }
+
+  html.idu-plus .forum-table td.icon {
+    position: relative;
+    width: 48px !important;
+    min-width: 48px;
+    padding: 12px 4px 12px 14px !important;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .forum-table td.icon img {
+    display: none !important;
+  }
+
+  html.idu-plus .forum-table td.icon::before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    content: "";
+    background: var(--idu-muted);
+    opacity: 0.72;
+    -webkit-mask: var(--idu-icon-forum) center / contain no-repeat;
+    mask: var(--idu-icon-forum) center / contain no-repeat;
+  }
+
+  html.idu-plus .forum-table td.icon:has(img[src*="new-post"])::before,
+  html.idu-plus .forum-table td.icon:has(img[title*="Nowe"])::before {
+    background: var(--idu-accent);
+    opacity: 1;
+  }
+
+  html.idu-plus .forum-table td.thread-title,
+  html.idu-plus .forum-table td.subforum-title {
+    min-width: 0;
+    padding: 12px 10px !important;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .forum-table td.thread-title .title,
+  html.idu-plus .forum-table td.subforum-title .title {
+    margin: 0;
+    padding: 0 !important;
+    font-size: 14px !important;
+    font-weight: 680 !important;
+    line-height: 1.35;
+  }
+
+  html.idu-plus .forum-table td.thread-title .title a,
+  html.idu-plus .forum-table td.subforum-title .title a {
+    color: var(--idu-text) !important;
+    text-decoration: none !important;
+  }
+
+  html.idu-plus .forum-table td.thread-title .title a:hover,
+  html.idu-plus .forum-table td.subforum-title .title a:hover {
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus .forum-table .last-post {
+    max-width: none !important;
+    margin-top: 4px;
+    overflow: hidden;
+    color: var(--idu-muted) !important;
+    font-size: 12px !important;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html.idu-plus .forum-table .last-post a {
+    color: var(--idu-text-soft) !important;
+    font-weight: 500;
+  }
+
+  html.idu-plus .forum-table td.thread-data {
+    width: 184px !important;
+    min-width: 150px;
+    padding: 11px 15px !important;
+    color: var(--idu-muted) !important;
+    font-size: 11px !important;
+    line-height: 1.45;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  html.idu-plus .forum-table td.thread-data .post-date,
+  html.idu-plus .forum-table td.thread-data .post-author,
+  html.idu-plus .forum-table td.thread-data .post-author a {
+    color: var(--idu-text-soft) !important;
+  }
+
+  html.idu-plus .forum-table td.thread-data .post-author,
+  html.idu-plus .forum-table td.thread-data .post-author a,
+  html.idu-plus .forum-table td.thread-data .post-count {
+    font-weight: 650 !important;
+  }
+
+  html.idu-plus .forum-table td[colspan] > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    color: var(--idu-accent) !important;
+    font-size: 12px;
+    font-weight: 680;
+  }
+
+  html.idu-plus .forum-table td[colspan] > a::after {
+    margin-left: 6px;
+    content: "\2192";
+    font-size: 14px;
+  }
+
+  html.idu-plus .thread-table tr:has(> td.author, > td.post-content) {
+    display: grid;
+    grid-template-columns: minmax(126px, 156px) minmax(0, 1fr);
+  }
+
+  html.idu-plus .thread-table td.author {
+    width: auto !important;
+    padding: 16px !important;
+    border-right: 1px solid var(--idu-line) !important;
+    color: var(--idu-text-soft) !important;
+    background: var(--idu-row-bg-soft) !important;
+    text-align: left;
+  }
+
+  html.idu-plus .thread-table td.author .author-name {
+    color: var(--idu-text) !important;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  html.idu-plus .thread-table td.author .author-class {
+    padding: 3px 0 0 !important;
+    color: var(--idu-muted) !important;
+    font-size: 11px !important;
+    line-height: 1.35;
+  }
+
+  html.idu-plus .thread-table td.author a img {
+    width: 44px;
+    height: 44px;
+    margin-top: 9px;
+    padding: 0 !important;
+    border: 1px solid var(--idu-border);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  html.idu-plus .thread-table td.post-content {
+    min-width: 0;
+    padding: 15px 17px !important;
+    color: var(--idu-text-soft) !important;
+    vertical-align: top;
+  }
+
+  html.idu-plus .thread-table td.post-content .post-data {
+    margin: 0 0 12px !important;
+    padding: 0 0 9px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--idu-line) !important;
+    color: var(--idu-muted) !important;
+    font-size: 11px !important;
+    line-height: 1.4;
+  }
+
+  html.idu-plus .thread-table td.post-content .post-body {
+    max-width: none !important;
+    min-height: 42px;
+    margin: 0 0 13px !important;
+    padding: 0 !important;
+    overflow-wrap: anywhere;
+    color: var(--idu-text) !important;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  html.idu-plus .thread-table td.post-content .post-action {
+    min-height: 30px;
+    padding: 9px 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--idu-line) !important;
+  }
+
+  html.idu-plus a.thread-action-button,
+  html.idu-plus a.subject-action-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    margin: 0 8px 0 0 !important;
+    padding: 5px 8px !important;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 9px;
+    background: transparent !important;
+    color: var(--idu-text-soft) !important;
+    font-size: 11px !important;
+    font-weight: 650 !important;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus a.thread-action-button:hover,
+  html.idu-plus a.subject-action-button:hover {
+    border-color: var(--idu-accent-border-strong) !important;
+    background: var(--idu-accent-faint) !important;
+    color: var(--idu-accent) !important;
+  }
+
+  html.idu-plus .thread-reply {
+    margin-top: 16px;
+    padding: 17px !important;
+    overflow: hidden;
+    border: 1px solid var(--idu-border);
+    border-radius: 15px;
+    background: var(--idu-row-bg-soft);
+  }
+
+  html.idu-plus .thread-reply > h3 {
+    margin: 0 0 13px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-title-font) !important;
+    font-size: 19px !important;
+    font-weight: 500 !important;
+  }
+
+  html.idu-plus .markItUp,
+  html.idu-plus .markItUpContainer {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  html.idu-plus .markItUpContainer {
+    overflow: hidden;
+    border: 1px solid var(--idu-border) !important;
+    border-radius: 12px;
+    background: var(--idu-input-bg) !important;
+    box-shadow: inset 0 1px 0 var(--idu-input-gloss) !important;
+  }
+
+  html.idu-plus .markItUpHeader {
+    min-height: 40px;
+    padding: 5px 7px;
+    border-bottom: 1px solid var(--idu-line);
+    background: var(--idu-row-bg-soft);
+  }
+
+  html.idu-plus .markItUpHeader ul {
+    display: flex !important;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html.idu-plus .markItUpHeader ul li {
+    float: none !important;
+    margin: 0 !important;
+  }
+
+  html.idu-plus .markItUpHeader ul li.markItUpSeparator {
+    width: 1px !important;
+    height: 18px;
+    margin: 0 4px !important;
+    overflow: hidden;
+    background: var(--idu-line);
+    color: transparent !important;
+    font-size: 0 !important;
+  }
+
+  html.idu-plus .markItUpHeader ul li > a {
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 8px;
+    background-color: transparent !important;
+    opacity: 0.72;
+  }
+
+  html.idu-plus .markItUpHeader ul li > a:hover {
+    background-color: var(--idu-hover-bg) !important;
+    opacity: 1;
+  }
+
+  html.idu-plus .markItUpEditor,
+  html.idu-plus form.thread-reply textarea {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 180px;
+    margin: 0 !important;
+    padding: 13px 14px !important;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: var(--idu-text) !important;
+    font-family: var(--idu-font) !important;
+    font-size: 13.5px !important;
+    line-height: 1.55;
+    box-shadow: none !important;
+  }
+
+  html.idu-plus .markItUpEditor:focus {
+    outline: 2px solid var(--idu-accent-border-strong) !important;
+    outline-offset: -2px;
+  }
+
+  html.idu-plus .markItUpFooter {
+    height: 8px;
+    border-top: 1px solid var(--idu-line);
+    background: transparent !important;
+  }
+
+  html.idu-plus .thread-reply .add_nested_item,
+  html.idu-plus .thread-reply #preview_post {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    margin-top: 10px !important;
+    padding: 5px 8px;
+    color: var(--idu-text-soft) !important;
+    font-size: 11.5px;
+    font-weight: 650;
+  }
+
+  html.idu-plus .thread-reply input[type="submit"] {
+    min-width: 92px;
+    margin-top: 10px !important;
+  }
+
+  html.idu-plus form.new_forum_topic {
+    display: grid;
+    gap: 16px;
+    width: min(100%, 880px);
+    margin: 0 auto;
+  }
+
+  html.idu-plus form.new_forum_topic > p {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    margin: 0 !important;
+  }
+
+  html.idu-plus form.new_forum_topic > p:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  html.idu-plus form.new_forum_topic > br {
+    display: none;
+  }
+
+  html.idu-plus form.new_forum_topic label {
+    width: auto !important;
+    padding-top: 10px;
+    color: var(--idu-text-soft) !important;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  html.idu-plus form.new_forum_topic input[type="text"],
+  html.idu-plus form.new_forum_topic textarea {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+  }
+
+  html.idu-plus form.new_forum_topic textarea {
+    min-height: 260px;
+    resize: vertical;
+  }
+
+  html.idu-plus [id="forum/post_search"] {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    width: min(100%, 720px);
+    margin: 0 auto;
+  }
+
+  html.idu-plus [id="forum/post_search"] .field {
+    display: grid;
+    flex: 1 1 auto;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  html.idu-plus [id="forum/post_search"] label {
+    color: var(--idu-text-soft) !important;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+
+  html.idu-plus [id="forum/post_search"] input[type="text"] {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+  }
+
+  html.idu-plus [id="forum/post_search"] .actions {
+    flex: 0 0 auto;
+  }
+
+  html.idu-plus .thread-table.idu-forum-empty {
+    display: grid;
+    min-height: 108px;
+    place-items: center;
+    padding: 20px;
+    color: var(--idu-muted);
+    font-size: 12.5px;
+  }
+
+  html.idu-plus .thread-table.idu-forum-empty::before {
+    content: attr(data-idu-empty-label);
+  }
+
+  html.idu-plus[data-idu-theme="dark"] .forum-table,
+  html.idu-plus[data-idu-theme="dark"] .thread-table,
+  html.idu-plus[data-idu-theme="dark"] .forum-table tr,
+  html.idu-plus[data-idu-theme="dark"] .forum-table td,
+  html.idu-plus[data-idu-theme="dark"] .thread-table tr,
+  html.idu-plus[data-idu-theme="dark"] .thread-table td {
+    color: var(--idu-text-soft) !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  html.idu-plus[data-idu-theme="dark"] .forum-table .forum-header,
+  html.idu-plus[data-idu-theme="dark"] .thread-table td.author,
+  html.idu-plus[data-idu-theme="dark"] .thread-reply,
+  html.idu-plus[data-idu-theme="dark"] .markItUpHeader {
+    background-color: var(--idu-row-bg-soft) !important;
+  }
+
   @media (max-width: 1100px) {
+    html.idu-plus .idu-profile-subject-groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    html.idu-plus .idu-profile-subject-group[data-idu-subject-level="other"] {
+      grid-column: 1 / -1;
+    }
+
     html.idu-plus #content {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    html.idu-plus.idu-class-page #content {
       grid-template-columns: minmax(0, 1fr);
     }
 
@@ -3854,7 +5839,7 @@
       display: none;
     }
 
-    html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
+  html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
       flex: 0 0 auto !important;
       max-width: none;
       scroll-snap-align: start;
@@ -3894,12 +5879,54 @@
 
   @media (max-width: 760px) {
     html.idu-plus {
+      --idu-glass-bg: rgba(255, 255, 255, 0.76);
+      --idu-glass-bg-strong: rgba(255, 255, 255, 0.86);
+      --idu-glass-bg-soft: rgba(255, 255, 255, 0.58);
+      --idu-glass-blur: 11px;
+      --idu-glass-saturation: 130%;
+      --idu-glass-shadow: 0 9px 24px rgba(28, 59, 84, 0.07), inset 0 1px 0 var(--idu-glass-inner-highlight);
+      --idu-glass-shadow-soft: 0 5px 15px rgba(28, 59, 84, 0.05), inset 0 1px 0 var(--idu-glass-inner-highlight);
       --idu-radius-lg: 20px;
       --idu-radius-md: 16px;
       --idu-section-gap: 10px;
       --idu-dashboard-gap: 12px;
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
+    }
+
+    html.idu-plus[data-idu-theme="dark"] {
+      --idu-glass-bg: rgba(21, 23, 28, 0.78);
+      --idu-glass-bg-strong: rgba(25, 27, 32, 0.88);
+      --idu-glass-bg-soft: rgba(28, 30, 35, 0.64);
+    }
+
+    html.idu-plus .idu-profile-subject-groups {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    html.idu-plus .idu-profile-subject-group[data-idu-subject-level="other"] {
+      grid-column: auto;
+    }
+
+    html.idu-plus .idu-profile-subject-group-header {
+      min-height: 44px;
+      padding: 9px 12px;
+    }
+
+    html.idu-plus .idu-profile-subject-items {
+      padding-inline: 11px;
+    }
+
+    html.idu-plus .idu-board-module .idu-board-surface {
+      padding: 15px 16px !important;
+      border-radius: 14px !important;
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    html.idu-plus .idu-board-surface p {
+      margin-bottom: 14px !important;
     }
 
     html.idu-plus,
@@ -3913,7 +5940,12 @@
     html.idu-plus body {
       padding-right: env(safe-area-inset-right);
       padding-left: env(safe-area-inset-left);
-      background: var(--idu-bg) !important;
+      background: var(--idu-ambient-background) !important;
+      background-attachment: scroll !important;
+    }
+
+    html.idu-plus[data-idu-layout="workspace"]:not(.idu-login-page) body {
+      background-attachment: scroll !important;
     }
 
     html.idu-plus .container {
@@ -3944,9 +5976,9 @@
 
     html.idu-plus #visual {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      align-items: start;
-      gap: 11px;
+      grid-template-columns: 104px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
       min-height: 0;
     }
 
@@ -3966,14 +5998,18 @@
     }
 
     html.idu-plus #school-name {
-      width: 100%;
+      width: auto;
       min-width: 0;
       max-width: 100%;
       margin: 0 !important;
-      font-size: clamp(17px, 4.8vw, 20px) !important;
+      overflow: hidden;
+      font-size: clamp(13px, 3.8vw, 16px) !important;
       font-weight: 680;
       line-height: 1.22;
-      text-wrap: balance;
+      overflow-wrap: normal;
+      text-overflow: ellipsis;
+    white-space: nowrap;
+    scroll-snap-align: start;
     }
 
     html.idu-plus #change_language {
@@ -4318,9 +6354,18 @@
     }
 
     html.idu-plus .schedule table tbody td:first-child {
-      width: 28px;
-      min-width: 28px;
-      font-size: 12px;
+      width: 50px;
+      min-width: 50px;
+      font-size: 11px;
+    }
+
+    html.idu-plus .schedule table thead th:first-child {
+      width: 50px;
+      min-width: 50px;
+    }
+
+    html.idu-plus .idu-schedule-slot-time {
+      font-size: 8px;
     }
 
     html.idu-plus div.lesson-cell {
@@ -4391,6 +6436,349 @@
 
     html.idu-plus .idu-userscript-option {
       min-height: 40px;
+    }
+
+    html.idu-plus.idu-attendance-page .idu-attendance-summary,
+    html.idu-plus.idu-attendance-page .idu-attendance-week-card {
+      border-radius: 18px;
+    }
+
+    html.idu-plus .idu-attendance-summary-table,
+    html.idu-plus .idu-attendance-summary-table tbody {
+      display: block;
+      width: 100% !important;
+      border: 0 !important;
+      background: transparent !important;
+    }
+
+    html.idu-plus .idu-attendance-summary-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody {
+      display: grid;
+      gap: 10px;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody tr {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto auto auto;
+      gap: 0;
+      overflow: hidden;
+      border: 1px solid var(--idu-border);
+      border-radius: 15px;
+      background: var(--idu-row-bg) !important;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody tr[style*="display: none"] {
+      display: none !important;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td {
+      display: grid;
+      align-content: start;
+      gap: 5px;
+      min-width: 0;
+      padding: 10px 12px !important;
+      border: 0 !important;
+      border-bottom: 1px solid var(--idu-line) !important;
+      background: transparent !important;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    html.idu-plus #user_search .field {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    html.idu-plus #users_search_result {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td::before {
+      content: attr(data-idu-attendance-label);
+      color: var(--idu-muted);
+      font-size: 10px;
+      font-weight: 780;
+      letter-spacing: 0.045em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 3;
+      color: var(--idu-text) !important;
+      font-weight: 760;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(2) {
+      grid-area: 2 / 1 / 3 / 2;
+      border-right: 1px solid var(--idu-line) !important;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(4) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(3) {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(5) {
+      grid-area: 4 / 1 / 5 / 3;
+      border-bottom: 0 !important;
+    }
+
+    html.idu-plus .idu-attendance-summary-table tbody td:nth-child(5)::before {
+      content: none;
+    }
+
+    html.idu-plus .idu-attendance-summary-table .js-toggle-presences-details {
+      width: 100%;
+    }
+
+    html.idu-plus .idu-attendance-calendar {
+      gap: 12px;
+    }
+
+    html.idu-plus .idu-attendance-week-title {
+      padding: 12px 14px;
+      font-size: 12.5px;
+    }
+
+    html.idu-plus .idu-attendance-week-scroll {
+      width: 100%;
+      max-width: calc(100vw - 38px);
+      scroll-snap-type: x proximity;
+      touch-action: pan-x;
+    }
+
+    html.idu-plus .idu-attendance-week-scroll .presences_table {
+      min-width: 680px;
+    }
+
+    html.idu-plus .idu-attendance-week-scroll .presences_table th,
+    html.idu-plus .idu-attendance-week-scroll .presences_table td {
+      height: 38px;
+      padding: 8px 7px !important;
+      font-size: 11.5px;
+    }
+
+    html.idu-plus.idu-forum-page .module > h1 {
+      margin-bottom: 14px !important;
+      padding-bottom: 12px !important;
+      font-size: clamp(20px, 7vw, 25px) !important;
+    }
+
+    html.idu-plus.idu-forum-page .module > h1 #go_to_forum_owner {
+      display: flex;
+      width: fit-content;
+      margin: 9px 0 0;
+    }
+
+    html.idu-plus.idu-forum-page #content .action-module .action-button {
+      justify-content: stretch;
+    }
+
+    html.idu-plus.idu-forum-page #content .action-module .action-button a {
+      width: 100%;
+    }
+
+    html.idu-plus .forum-table,
+    html.idu-plus .forum-table tbody {
+      display: block;
+      width: 100% !important;
+    }
+
+    html.idu-plus .forum-table tr {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      width: 100%;
+      border-bottom: 1px solid var(--idu-line);
+    }
+
+    html.idu-plus .forum-table tr:last-child {
+      border-bottom: 0;
+    }
+
+    html.idu-plus .forum-table tr:has(> .forum-header),
+    html.idu-plus .forum-table tr:has(> td[colspan]) {
+      display: block;
+    }
+
+    html.idu-plus .forum-table .forum-header,
+    html.idu-plus .forum-table td[colspan] {
+      display: block;
+      width: auto !important;
+      border-bottom: 0 !important;
+    }
+
+    html.idu-plus .forum-table td.icon {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 38px !important;
+      min-width: 38px;
+      padding: 14px 4px 10px 12px !important;
+      border-bottom: 0 !important;
+      align-self: stretch;
+    }
+
+    html.idu-plus .forum-table td.thread-title,
+    html.idu-plus .forum-table td.subforum-title {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 12px 12px 5px 7px !important;
+      border-bottom: 0 !important;
+    }
+
+    html.idu-plus .forum-table .last-post {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    html.idu-plus .forum-table td.thread-data {
+      display: flex;
+      grid-column: 2;
+      grid-row: 2;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px 5px;
+      width: auto !important;
+      min-width: 0;
+      padding: 4px 12px 12px 7px !important;
+      border-bottom: 0 !important;
+      text-align: left;
+    }
+
+    html.idu-plus .forum-table td.thread-data > div {
+      margin-left: auto;
+    }
+
+    html.idu-plus .thread-table tr:has(> td.author, > td.post-content) {
+      display: block;
+    }
+
+    html.idu-plus .thread-table td.author,
+    html.idu-plus .thread-table td.post-content {
+      display: block;
+      width: auto !important;
+      border-right: 0 !important;
+    }
+
+    html.idu-plus .thread-table td.author {
+      padding: 12px 14px !important;
+      border-bottom: 1px solid var(--idu-line) !important;
+    }
+
+    html.idu-plus .thread-table td.author a img {
+      width: 36px;
+      height: 36px;
+      margin: 7px 0 0;
+    }
+
+    html.idu-plus .thread-table td.post-content {
+      padding: 13px 14px !important;
+    }
+
+    html.idu-plus .thread-reply {
+      padding: 13px !important;
+    }
+
+    html.idu-plus .markItUpHeader {
+      overflow: hidden;
+    }
+
+    html.idu-plus .markItUpHeader ul {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    html.idu-plus .markItUpHeader ul::-webkit-scrollbar {
+      display: none;
+    }
+
+    html.idu-plus .markItUpHeader ul li {
+      flex: 0 0 auto;
+    }
+
+    html.idu-plus .markItUpEditor,
+    html.idu-plus form.thread-reply textarea {
+      min-height: 160px;
+      padding: 12px !important;
+      font-size: 16px !important;
+    }
+
+    html.idu-plus form.new_forum_topic > p {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    html.idu-plus form.new_forum_topic label {
+      padding-top: 0;
+    }
+
+    html.idu-plus form.new_forum_topic textarea {
+      min-height: 220px;
+      font-size: 16px !important;
+    }
+
+    html.idu-plus [id="forum/post_search"] {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    html.idu-plus [id="forum/post_search"] .actions input[type="submit"] {
+      width: 100%;
+    }
+
+    html.idu-plus .idu-page-tools {
+      width: calc(100% + 4px);
+      margin: -2px -2px 14px;
+      padding: 2px;
+      scroll-padding-inline: 2px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    html.idu-plus .idu-message-folder-compose {
+      margin-left: 0;
+    }
+
+    html.idu-plus .idu-grade-details-dialog {
+      width: calc(100vw - 24px);
+      max-height: calc(100dvh - 24px);
+      border-radius: 15px;
+    }
+
+    html.idu-plus .idu-grade-details-header,
+    html.idu-plus .idu-grade-details-content {
+      padding: 14px;
+    }
+
+    html.idu-plus #subject-card .idu-subject-class-grid {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+    }
+
+    html.idu-plus #subject-card .idu-subject-overview-teacher {
+      max-width: 100%;
+    }
+
+    html.idu-plus #subject-card .idu-subject-overview-title {
+      font-size: 23px !important;
     }
 
     html.idu-plus table,

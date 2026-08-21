@@ -16,11 +16,17 @@ assert.ok(
 );
 
 assert.ok(
-  js.includes('const USERSCRIPT_COMPACT_SCHOOL_NAME = "1SLO IB"') &&
-    js.includes("const isUserscriptBuild = () =>") &&
-    js.includes("const shouldUseUserscriptMobileUX = () => isUserscriptBuild() && isMobileBrowser()") &&
-    js.includes("compactUserscriptSchoolName();"),
-  "Safari userscript mobile UX should compact the topbar school name without changing extension builds"
+  js.includes("const normalizeSchoolName = () =>") &&
+    js.includes("schoolName.dataset.iduOriginalSchoolName = cleanText(schoolName.textContent)") &&
+    js.includes("schoolName.textContent = schoolName.dataset.iduOriginalSchoolName") &&
+    !js.includes("USERSCRIPT_COMPACT_SCHOOL_NAME"),
+  "Mobile UX should preserve the full school name for CSS ellipsis instead of replacing it"
+);
+
+assert.ok(
+  /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #visual\s*\{[\s\S]*grid-template-columns:\s*104px minmax\(0,\s*1fr\);/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #school-name\s*\{[\s\S]*text-overflow:\s*ellipsis;[\s\S]*white-space:\s*nowrap;/.test(css),
+  "Mobile topbar should place the full school name beside the logo and truncate it visually"
 );
 
 assert.ok(
@@ -83,6 +89,14 @@ assert.ok(
   /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.schedule\s*\{[\s\S]*overflow-x:\s*auto;[\s\S]*-webkit-overflow-scrolling:\s*touch;/.test(css) &&
     /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.schedule table\s*\{[\s\S]*min-width:\s*760px;/.test(css),
   "Mobile schedule should stay readable with contained horizontal scrolling instead of page zoom"
+);
+
+assert.ok(
+  js.includes("const enhanceAttendancePage = () =>") &&
+    js.includes('scroller.className = "idu-attendance-week-scroll"') &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.idu-attendance-summary-table tbody tr\s*\{[\s\S]*display:\s*grid\s*!important;/.test(css) &&
+    /html\.idu-plus \.idu-attendance-week-scroll\s*\{[\s\S]*overflow-x:\s*auto;[\s\S]*-webkit-overflow-scrolling:\s*touch;/.test(css),
+  "Mobile attendance should use readable summary cards and contained horizontal week scrolling"
 );
 
 assert.ok(

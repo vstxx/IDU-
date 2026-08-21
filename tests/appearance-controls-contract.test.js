@@ -13,7 +13,7 @@ const popupJsPath = path.join(root, "src", "popup.js");
 
 assert.equal(manifest.action?.default_popup, "popup.html", "Extension action should open popup.html");
 assert(manifest.permissions?.includes("storage"), "Extension should request storage permission");
-assert.equal(manifest.version, "0.3.2", "Manifest should declare the 0.3.2 release version");
+assert.equal(manifest.version, "0.3.7", "Manifest should declare the 0.3.7 release version");
 assert(
   /customize|themes|colors|fonts|layouts/i.test(manifest.description || ""),
   "Manifest description should emphasize customizable appearance controls"
@@ -124,9 +124,13 @@ assert(
     contentJs.includes("#content h3") &&
     contentJs.includes("applyTitleFontToHeadings") &&
     contentJs.includes('heading.style.setProperty("font-family", stack, "important")') &&
+    contentJs.includes("loadExtensionFontAsset") &&
+    contentJs.includes("response.arrayBuffer()") &&
+    contentJs.includes("new FontFace") &&
+    contentJs.includes("document.fonts.add(fontFace)") &&
     contentJs.includes("document.fonts.load") &&
     contentJs.includes("--idu-title-font"),
-  "Content script should default title font to Aligra and apply selected title fonts to real portal headings"
+  "Content script should load bundled Chrome fonts and apply selected title fonts to real portal headings"
 );
 
 assert(
@@ -140,8 +144,9 @@ assert(
   css.includes('html.idu-plus[data-idu-theme="dark"]') &&
     /html\.idu-plus\[data-idu-theme="dark"\][\s\S]*color-scheme:\s*dark/.test(css) &&
     /html\.idu-plus\[data-idu-theme="dark"\][\s\S]*--idu-bg:\s*#0b0c0f/.test(css) &&
-    /html\.idu-plus\[data-idu-theme="dark"\][\s\S]*--idu-surface:\s*rgba\(24, 25, 29, 0\.78\)/.test(css),
-  "CSS should define a neutral gray/black dark-mode token set, not a blue dark theme"
+    /html\.idu-plus\[data-idu-theme="dark"\][\s\S]*--idu-glass-bg:\s*rgba\(21, 23, 28, 0\.68\)/.test(css) &&
+    /html\.idu-plus\[data-idu-theme="dark"\][\s\S]*--idu-surface:\s*var\(--idu-material-bg\)/.test(css),
+  "CSS should define a neutral graphite Frost token set for dark mode"
 );
 
 assert(

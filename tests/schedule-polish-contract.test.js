@@ -4,6 +4,7 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const css = fs.readFileSync(path.join(root, "src", "idu-plus.css"), "utf8");
+const js = fs.readFileSync(path.join(root, "src", "idu-plus.js"), "utf8");
 
 assert(
   /html\.idu-plus \.schedule\s*\{[\s\S]*border-radius:\s*var\(--idu-radius-lg\)/.test(css) &&
@@ -30,6 +31,21 @@ assert(
     /html\.idu-plus \.schedule table\s*\{[\s\S]*table-layout:\s*fixed;/.test(css) &&
     /html\.idu-plus \.schedule table tbody td\s*\{[\s\S]*vertical-align:\s*middle;/.test(css),
   "Schedule rows and columns should stay evenly aligned"
+);
+
+assert(
+  /const enhanceScheduleTimeLabels = \(\) => \{/.test(js) &&
+    /const slot = SCHEDULE_LESSON_SLOTS\[lessonNumber\];/.test(js) &&
+    /time\.textContent = range;/.test(js) &&
+    /enhanceScheduleTimeLabels\(\);/.test(js),
+  "Schedule row labels should reuse the ICS lesson times and be enhanced on every page pass"
+);
+
+assert(
+  /html\.idu-plus \.schedule table thead th:first-child\s*\{[\s\S]*width:\s*54px;/.test(css) &&
+    /html\.idu-plus \.schedule table tbody td:first-child\s*\{[\s\S]*width:\s*54px;/.test(css) &&
+    /html\.idu-plus \.idu-schedule-slot-time\s*\{[\s\S]*font-size:\s*8\.5px;/.test(css),
+  "Schedule number column should stay narrow while showing a compact time range"
 );
 
 assert(

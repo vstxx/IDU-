@@ -20,7 +20,7 @@ const firstBytes = fs.readFileSync(userScriptPath).subarray(0, 3);
 assert.notDeepStrictEqual([...firstBytes], [0xef, 0xbb, 0xbf], "Userscript should not include a UTF-8 BOM");
 assert.ok(userScript.startsWith("// ==UserScript=="), "Userscript should start with metadata block");
 assert.ok(userScript.includes("// @name         IDU+"), "Userscript should declare IDU+ name");
-assert.ok(userScript.includes("// @version      0.3.2"), "Userscript should use release version 0.3.2");
+assert.ok(userScript.includes("// @version      0.3.7"), "Userscript should use release version 0.3.7");
 assert.ok(userScript.includes("// @match        https://*.idu.edu.pl/*"), "Userscript should target IDU portals");
 assert.ok(userScript.includes("// @run-at       document-start"), "Userscript should run at document-start");
 assert.ok(userScript.includes("// @grant        none"), "Userscript should not require userscript manager grants");
@@ -41,8 +41,11 @@ assert.ok(
 assert.ok(
   userScript.includes('document.documentElement.classList.add("idu-userscript-build")') &&
     userScript.includes("window.__IDU_PLUS_USERSCRIPT__ = true") &&
-    userScript.includes('const USERSCRIPT_COMPACT_SCHOOL_NAME = "1SLO IB"'),
-  "Userscript should mark itself and compact the mobile topbar school name"
+    userScript.includes("const normalizeSchoolName = () =>") &&
+    userScript.includes("schoolName.textContent = schoolName.dataset.iduOriginalSchoolName") &&
+    userScript.includes("grid-template-columns: 104px minmax(0, 1fr)") &&
+    !userScript.includes('const USERSCRIPT_COMPACT_SCHOOL_NAME = "1SLO IB"'),
+  "Userscript should mark itself and keep the full school name beside the mobile logo"
 );
 assert.ok(
   userScript.includes('const USERSCRIPT_THEME_DOCK_ID = "idu-plus-userscript-theme-dock"') &&

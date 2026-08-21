@@ -22,6 +22,12 @@ foreach ($target in @($chromeDir, $firefoxDir, $safariDir)) {
   if (-not $resolvedTarget.StartsWith($releaseRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
     throw "Release target escaped the release directory: $resolvedTarget"
   }
+
+  Get-ChildItem -LiteralPath $resolvedTarget -Force | Remove-Item -Recurse -Force
+}
+
+foreach ($target in @($chromeDir, $firefoxDir)) {
+  New-Item -ItemType Directory -Force -Path (Join-Path $target "src"), (Join-Path $target "assets"), (Join-Path $target "fonts") | Out-Null
 }
 
 $rootFiles = @("popup.html", "README.md")
@@ -75,6 +81,9 @@ try {
 }
 
 Copy-Item -LiteralPath (Join-Path $workspace "README.md") -Destination (Join-Path $safariDir "README-extension.md") -Force
+$safariReadmeTemplate = Get-Content -Raw (Join-Path $workspace "scripts\safari-userscript-readme.md")
+$safariReadme = $safariReadmeTemplate.Replace("{{VERSION}}", $version)
+[System.IO.File]::WriteAllText((Join-Path $safariDir "README.md"), $safariReadme, $utf8NoBom)
 
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem

@@ -1,12 +1,14 @@
 const MAX_BODY_BYTES = 4096;
+const RATE_LIMIT_WINDOW_SECONDS = 60;
 const REQUIRED_KEYS = Object.freeze(["browser", "extensionVersion", "fullName", "host", "installId", "timestamp"]);
 
-const jsonResponse = (body, status = 200, origin = null) =>
+const jsonResponse = (body, status = 200, origin = null, extraHeaders = {}) =>
   new Response(JSON.stringify(body), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      ...corsHeaders(origin)
+      ...corsHeaders(origin),
+      ...extraHeaders
     }
   });
 
@@ -155,6 +157,32 @@ const readLimitedJson = async (request) => {
   }
 };
 
+const enforceRateLimit = async (binding, key) => {
+  if (!binding?.limit) {
+    return { ok: false, status: 503, error: "Diagnostics rate limiting is not configured." };
+  }
+
+  try {
+    const result = await binding.limit({ key });
+
+    if (!result?.success) {
+      return { ok: false, status: 429, error: "Too many diagnostics requests." };
+    }
+
+    return { ok: true };
+  } catch (_error) {
+    return { ok: false, status: 503, error: "Diagnostics rate limiting is unavailable." };
+  }
+};
+
+const rateLimitResponse = (result, corsOrigin) =>
+  jsonResponse(
+    { error: result.error },
+    result.status,
+    corsOrigin,
+    result.status === 429 ? { "retry-after": String(RATE_LIMIT_WINDOW_SECONDS) } : {}
+  );
+
 export const handleDiagnosticsRequest = async (request, env, _ctx, options = {}) => {
   const url = new URL(request.url);
   const origin = request.headers.get("origin");
@@ -187,6 +215,12 @@ export const handleDiagnosticsRequest = async (request, env, _ctx, options = {})
     return jsonResponse({ error: "Diagnostics webhook is not configured." }, 503, corsOrigin);
   }
 
+  const globalLimit = await enforceRateLimit(env.DIAGNOSTICS_GLOBAL_RATE_LIMITER, "diagnostics");
+
+  if (!globalLimit.ok) {
+    return rateLimitResponse(globalLimit, corsOrigin);
+  }
+
   const parsed = await readLimitedJson(request);
 
   if (!parsed.ok) {
@@ -197,6 +231,13 @@ export const handleDiagnosticsRequest = async (request, env, _ctx, options = {})
 
   if (!validation.ok) {
     return jsonResponse({ error: validation.error }, 400, corsOrigin);
+  }
+
+  const clientAddress = request.headers.get("cf-connecting-ip") || "unknown-client";
+  const clientLimit = await enforceRateLimit(env.DIAGNOSTICS_CLIENT_RATE_LIMITER, clientAddress);
+
+  if (!clientLimit.ok) {
+    return rateLimitResponse(clientLimit, corsOrigin);
   }
 
   try {

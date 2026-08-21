@@ -45,4 +45,24 @@ assert(
   "Messages search should collapse cleanly on mobile"
 );
 
+assert(
+  js.includes('document.querySelectorAll(\'#toggle_last_internal_messages, #messages a[href]\')') &&
+    js.includes('window.location.assign(messageLink.href)') &&
+    js.includes('window.location.assign("/internal_messages")'),
+  "Messages topbar action should bypass the legacy preview and navigate to the inbox"
+);
+
+assert(
+  js.includes('module.querySelector("#message-folders")') &&
+    js.includes('nativeNavigation.classList.add("idu-page-tools", "idu-message-folders")') &&
+    js.includes('const folderKeys = ["inbox", "sent", "drafts", "trash", "compose"]'),
+  "Message folders should enhance the native IDU navigation instead of duplicating it"
+);
+
+assert(
+  /html\.idu-plus\.idu-messages-page \.idu-message-folders[\s\S]*display:\s*grid\s*!important;[\s\S]*grid-template-columns:\s*repeat\(5,\s*minmax\(118px,\s*1fr\)\);/.test(css) &&
+    /html\.idu-plus\.idu-messages-page \.idu-message-folders \.idu-page-tool-link[\s\S]*min-height:\s*44px;[\s\S]*height:\s*44px;/.test(css),
+  "Message folder actions should use five aligned equal-height columns"
+);
+
 console.log("messages search contract ok");

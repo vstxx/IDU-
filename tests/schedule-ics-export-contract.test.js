@@ -31,6 +31,12 @@ expectedSlots.forEach(([lesson, start, end, block]) => {
 });
 
 assert(
+  /cell\.dataset\.iduLessonNumber = String\(lessonNumber\);/.test(js) &&
+    /cells\[0\]\.dataset\.iduLessonNumber \|\|[\s\S]*\.idu-schedule-slot-number/.test(js),
+  "ICS parsing should keep the numeric lesson index after the visible time range is added to the first column"
+);
+
+assert(
   !/11: Object\.freeze\(\{ start:/.test(js) && !/12: Object\.freeze\(\{ start:/.test(js),
   "Lesson rows without a known bell time must stay unmapped instead of being guessed"
 );
@@ -45,6 +51,21 @@ assert(
     js
   ),
   "Two lessons should merge into one block event only when the block, subject, room and order all match"
+);
+
+assert(
+  /const readScheduleCells = \(cell\) => \{/.test(js) &&
+    /const lessonCards = Array\.from\(cell\.children\)/.test(js) &&
+    /parallelIndex,[\s\S]*parallelCount: boxes\.length/.test(js) &&
+    /const lessons = readScheduleCells\(cell\);[\s\S]*lessons\.forEach\(\(lesson\) => \{/.test(js),
+  "ICS export should read every simultaneous lesson card in a timetable cell"
+);
+
+assert(
+  /const currentByParallelTrack = new Map\(\);/.test(js) &&
+    /currentByParallelTrack\.get\(entry\.parallelIndex\)/.test(js) &&
+    /currentByParallelTrack\.set\(entry\.parallelIndex, nextEvent\)/.test(js),
+  "Consecutive lessons should merge independently inside each parallel timetable track"
 );
 
 assert(
@@ -83,20 +104,26 @@ assert(
 );
 
 assert(
-  /RRULE:FREQ=WEEKLY;BYDAY=\$\{weekday\};UNTIL=\$\{until\}/.test(js),
-  "Each lesson should repeat weekly until the end of the school year"
+  /const SCHEDULE_ICS_WEEKDAYS = Object\.freeze\(\["SU", "MO", "TU", "WE", "TH", "FR", "SA"\]\);/.test(js) &&
+    /schoolYearEnd: readSchoolYearEnd\(weekStart\)/.test(js) &&
+    /Pobierz cotygodniowy plan do ko\\u0144ca roku szkolnego jako plik \.ics/.test(js),
+  "Export should build a weekly timetable through the end of the relevant school year"
 );
 
 assert(
-  /let year = weekStart\.getMonth\(\) >= 7 \? weekStart\.getFullYear\(\) \+ 1 : weekStart\.getFullYear\(\);/.test(
-    js
-  ) && /if \(new Date\(year, 5, 30\) < weekStart\) \{[\s\S]{0,40}year \+= 1;/.test(js),
-  "The recurrence end should roll into the next school year instead of landing in the past"
+  /const readSchoolYearEnd = \(weekStart\) => \{/.test(js) &&
+    /weekStart\.getMonth\(\) >= 7 \? weekStart\.getFullYear\(\) \+ 1 : weekStart\.getFullYear\(\)/.test(js) &&
+    /new Date\(Date\.UTC\(year, 5, 30, 21, 59, 59\)\)/.test(js),
+  "The recurring timetable should end at the end of June 30 in the correct school year"
 );
 
 assert(
-  /UID:idu-plus-\$\{weekday\}-\$\{event\.lessonNumber\}-\$\{slug \|\| "lekcja"\}@idu\.edu\.pl/.test(js),
-  "UIDs should be stable across exports so re-importing updates events instead of duplicating them"
+  /DTSTART;TZID=\$\{SCHEDULE_TIMEZONE\}:\$\{toIcsLocalStamp\(event\.date, event\.start\)\}/.test(js) &&
+    /DTEND;TZID=\$\{SCHEDULE_TIMEZONE\}:\$\{toIcsLocalStamp\(event\.date, event\.end\)\}/.test(js) &&
+    /RRULE:FREQ=WEEKLY;BYDAY=\$\{weekday\};UNTIL=\$\{until\}/.test(js) &&
+    /const parallelSuffix = event\.parallelIndex \? `-p\$\{event\.parallelIndex \+ 1\}` : "";/.test(js) &&
+    /UID:idu-plus-\$\{weekday\}-\$\{event\.lessonNumber\}-\$\{slug \|\| "lekcja"\}\$\{parallelSuffix\}@idu\.edu\.pl/.test(js),
+  "Each exported lesson should recur weekly on its weekday through the calculated school-year end"
 );
 
 assert(
@@ -180,8 +207,7 @@ assert(
 );
 
 assert(
-  /buildScheduleExportButtons\(\);/.test(js) &&
-    js.indexOf("buildScheduleExportButtons();") > js.indexOf("const enhancePage = () => {"),
+  /const enhancePage = \(\) => \{[\s\S]*buildScheduleExportButtons\(\);[\s\S]*observeDynamicContent\(\);[\s\S]*\};/.test(js),
   "Schedule export buttons should be built as part of the standard page enhancement"
 );
 

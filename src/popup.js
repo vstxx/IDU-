@@ -1,5 +1,6 @@
 (() => {
   const STORAGE_KEY = "iduPlusAppearance";
+  const SETTINGS_WRITE_DEBOUNCE_MS = 180;
   const DEFAULT_APPEARANCE = Object.freeze({
     theme: "light",
     layout: "glass",
@@ -17,7 +18,9 @@
 
   const state = {
     appearance: { ...DEFAULT_APPEARANCE },
-    saveTimer: null
+    saveTimer: null,
+    persistTimer: null,
+    persistRevision: 0
   };
 
   const controls = Object.freeze({
@@ -237,20 +240,40 @@
     syncControls(state.appearance);
   };
 
-  const save = async (patch) => {
+  const persistAppearance = async (appearance, revision) => {
+    await writeAppearance(appearance);
+
+    if (revision !== state.persistRevision) {
+      return;
+    }
+
+    setSaveStatus("Saved");
+    clearTimeout(state.saveTimer);
+    state.saveTimer = setTimeout(() => setSaveStatus("Saved"), 900);
+  };
+
+  const save = (patch, { debounceWrite = false } = {}) => {
     const nextAppearance = normalizeAppearance({
       ...state.appearance,
       ...patch
     });
+    const revision = ++state.persistRevision;
 
     render(nextAppearance);
-    setSaveStatus("Saving");
-    await writeAppearance(nextAppearance);
     notifyActiveTab(nextAppearance);
-    setSaveStatus("Saved");
+    setSaveStatus("Saving");
+    clearTimeout(state.persistTimer);
 
-    clearTimeout(state.saveTimer);
-    state.saveTimer = setTimeout(() => setSaveStatus("Saved"), 900);
+    if (debounceWrite) {
+      state.persistTimer = setTimeout(() => {
+        state.persistTimer = null;
+        void persistAppearance(nextAppearance, revision);
+      }, SETTINGS_WRITE_DEBOUNCE_MS);
+      return;
+    }
+
+    state.persistTimer = null;
+    void persistAppearance(nextAppearance, revision);
   };
 
   const bindEvents = () => {
@@ -277,10 +300,22 @@
     });
 
     document.querySelector("#accentColor")?.addEventListener("input", (event) => {
+      save({ accent: event.currentTarget.value }, { debounceWrite: true });
+    });
+
+    document.querySelector("#accentColor")?.addEventListener("change", (event) => {
       save({ accent: event.currentTarget.value });
     });
 
     document.querySelector("#accentHex")?.addEventListener("input", (event) => {
+      const value = event.currentTarget.value.trim();
+
+      if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
+        save({ accent: value }, { debounceWrite: true });
+      }
+    });
+
+    document.querySelector("#accentHex")?.addEventListener("change", (event) => {
       const value = event.currentTarget.value.trim();
 
       if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
@@ -289,10 +324,22 @@
     });
 
     document.querySelector("#topbarColor")?.addEventListener("input", (event) => {
+      save({ topbar: event.currentTarget.value }, { debounceWrite: true });
+    });
+
+    document.querySelector("#topbarColor")?.addEventListener("change", (event) => {
       save({ topbar: event.currentTarget.value });
     });
 
     document.querySelector("#topbarHex")?.addEventListener("input", (event) => {
+      const value = event.currentTarget.value.trim();
+
+      if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
+        save({ topbar: value }, { debounceWrite: true });
+      }
+    });
+
+    document.querySelector("#topbarHex")?.addEventListener("change", (event) => {
       const value = event.currentTarget.value.trim();
 
       if (/^#[0-9a-f]{6}$/i.test(value) || /^#[0-9a-f]{3}$/i.test(value)) {
@@ -302,6 +349,16 @@
 
     document.querySelector("#resetButton")?.addEventListener("click", () => {
       save(DEFAULT_APPEARANCE);
+    });
+
+    window.addEventListener("pagehide", () => {
+      if (!state.persistTimer) {
+        return;
+      }
+
+      clearTimeout(state.persistTimer);
+      state.persistTimer = null;
+      void writeAppearance(state.appearance);
     });
   };
 

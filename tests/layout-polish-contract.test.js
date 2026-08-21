@@ -77,9 +77,9 @@ assert(
     js.includes('placeholder", "Login"') &&
     js.includes('placeholder", "Hasło"') &&
     /html\.idu-plus\.idu-login-page #new_user \.field:has\(h1\)[\s\S]*text-align:\s*center/.test(css) &&
-    /html\.idu-plus\.idu-login-page #container #top[\s\S]*linear-gradient\(135deg, var\(--idu-topbar\), var\(--idu-topbar-2\)\)/.test(css) &&
+    /html\.idu-plus\.idu-login-page #container #top[\s\S]*background:\s*var\(--idu-glass-topbar-surface\)\s*!important/.test(css) &&
     /html\.idu-plus\.idu-login-page #new_user \.field:not\(:has\(h1\)\) label[\s\S]*clip:\s*rect\(0 0 0 0\)/.test(css),
-  "Login page should keep the title centered, language chip visible, topbar-colored header, placeholder inputs, and submit label restored"
+  "Login page should keep the title centered, language chip visible, frosted topbar-colored header, placeholder inputs, and submit label restored"
 );
 
 console.log("layout polish contract ok");

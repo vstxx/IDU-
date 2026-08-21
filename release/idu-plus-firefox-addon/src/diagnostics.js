@@ -85,8 +85,6 @@
     return "Unknown";
   };
 
-  const reportDateKey = (date) => date.toISOString().slice(0, 10);
-
   const normalizeReportKey = (fullName) => cleanText(fullName).toLocaleLowerCase("pl-PL");
 
   const getFromStorage = (storage, defaults) =>
@@ -160,7 +158,6 @@
       }
 
       const currentTime = now();
-      const dateKey = reportDateKey(currentTime);
       const stored = await getFromStorage(storage, {
         [INSTALL_ID_KEY]: null,
         [REPORTS_KEY]: {}
@@ -168,8 +165,10 @@
       const reports = normalizeReports(stored[REPORTS_KEY]);
       const reportKey = normalizeReportKey(fullName);
 
-      if (reports[reportKey] === dateKey) {
-        return { sent: false, reason: "throttled" };
+      // Kazdy stary wpis daty i nowy znacznik oznaczaja, ze ta osoba zostala
+      // juz zgloszona z tej instalacji. Nie wysylamy jej ponownie.
+      if (reports[reportKey]) {
+        return { sent: false, reason: "already-reported" };
       }
 
       const installId = cleanText(stored[INSTALL_ID_KEY]) || generateInstallId(crypto);
@@ -207,7 +206,7 @@
         return { sent: false, reason: "failed" };
       }
 
-      reports[reportKey] = dateKey;
+      reports[reportKey] = true;
       await setInStorage(storage, {
         [INSTALL_ID_KEY]: installId,
         [REPORTS_KEY]: reports
@@ -225,7 +224,6 @@
     detectDisplayedFullName,
     generateInstallId,
     reportActiveUser,
-    reportDateKey,
     sanitizeFullName
   };
 });
