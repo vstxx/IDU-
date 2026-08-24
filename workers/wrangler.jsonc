@@ -2,7 +2,13 @@
   "name": "idu-plus-diagnostics",
   "main": "./diagnostics-worker.mjs",
   "compatibility_date": "2026-06-25",
-  "workers_dev": true,
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "idu-diagnostics.vastbrowser.com",
+      "custom_domain": true
+    }
+  ],
   "ratelimits": [
     {
       "name": "DIAGNOSTICS_GLOBAL_RATE_LIMITER",
