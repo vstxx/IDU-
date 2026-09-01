@@ -20,7 +20,7 @@ const firstBytes = fs.readFileSync(userScriptPath).subarray(0, 3);
 assert.notDeepStrictEqual([...firstBytes], [0xef, 0xbb, 0xbf], "Userscript should not include a UTF-8 BOM");
 assert.ok(userScript.startsWith("// ==UserScript=="), "Userscript should start with metadata block");
 assert.ok(userScript.includes("// @name         IDU+"), "Userscript should declare IDU+ name");
-assert.ok(userScript.includes("// @version      0.3.7"), "Userscript should use release version 0.3.7");
+assert.ok(userScript.includes("// @version      0.3.11"), "Userscript should use release version 0.3.11");
 assert.ok(userScript.includes("// @match        https://*.idu.edu.pl/*"), "Userscript should target IDU portals");
 assert.ok(userScript.includes("// @run-at       document-start"), "Userscript should run at document-start");
 assert.ok(userScript.includes("// @grant        none"), "Userscript should not require userscript manager grants");

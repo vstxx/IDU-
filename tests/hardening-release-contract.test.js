@@ -51,4 +51,4 @@ assert(
   "Session timeout should remain compact and synchronized while the topbar stays on one horizontal line"
 );
 
-console.log("0.3.7 hardening contract ok");
+console.log("0.3.11 hardening contract ok");

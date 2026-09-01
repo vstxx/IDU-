@@ -1,6 +1,6 @@
 # IDU+ for Safari Userscripts
 
-This release is the Safari userscript build of IDU+ 0.3.7.
+This release is the Safari userscript build of IDU+ 0.3.11.
 
 ## Files
 

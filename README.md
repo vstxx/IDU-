@@ -1,24 +1,26 @@
-# IDU+ 0.3.7
+# IDU+ 0.3.11
 
 IDU+ is an MV3 browser extension and Safari userscript that modernizes the real IDU portal while preserving its existing data, links, and workflows.
 
 Privacy policy: https://vstxx.github.io/IDU-/privacy.html
 
-## What's new in 0.3.7
+## What's new in 0.3.11
 
-- Fixed the Messages topbar action so a normal click reliably opens the inbox instead of the legacy preview.
-- Restyled the portal's native message folders as one aligned five-column control with equal button heights and widths.
-- Kept message-folder navigation responsive with horizontal overflow on narrow screens.
+- Fixed IDU+ Diagnostics delivery: active-use reports now go to the live diagnostics endpoint again. The Worker moved to a custom domain on the server side, and the extension kept POSTing to the retired `workers.dev` address, so every report silently failed with a 404.
+- Diagnostics delivery failures now log a console warning instead of disappearing without a trace.
 
-## Previously in 0.3.5
+## Previously in 0.3.9
 
-- Refined Frost surfaces and typography across real IDU pages in Portal and Workspace layouts, with restrained light/dark materials and mobile fallbacks.
-- Reworked forums, forum search, message folders, grade details, documents, profile boards, pagination, and user search while preserving native IDU links and actions.
-- Safer recurring ICS timetable exports through the end of the school year, including parallel lessons and visible lesson-block times.
-- Improved attendance tables, schedules, class and subject summaries, tutor rows, class links, and student lists across desktop and mobile.
-- Reliable handling of dynamically inserted IDU content so enhancements remain active after partial page updates.
-- Cleaner responsive navigation, localized fixed interface labels, compact session status, and dependable bundled title-font selection.
-- One-time diagnostics reporting with server-side rate limiting, debounced settings persistence, and complete reduced-motion support.
+- Polished announcement lists and opened news posts across desktop and mobile, including cleaner titles, separators, comments, and section spacing.
+- Added an account-gated, local-only news customization mode. Customized content remains in browser-local storage and is never submitted to IDU.
+- Removed the legacy breadcrumb box and its unused layout space from every page.
+- Reduced scroll rendering cost by limiting live backdrop blur, skipping off-screen feed rendering where supported, and moving dynamic DOM enhancement work off the active interaction path.
+
+## Previously in 0.3.8
+
+- Rebuilt the message composer into a clean responsive layout with a full-width editor and compact fields and actions.
+- Added a dark CKEditor canvas and toolbar without a white loading flash in Dark Mode.
+- Improved the mobile inbox, attendance cards, message-folder consistency, forum navigation, and global overflow containment.
 
 ## What is included
 

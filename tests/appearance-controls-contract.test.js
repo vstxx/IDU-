@@ -13,7 +13,7 @@ const popupJsPath = path.join(root, "src", "popup.js");
 
 assert.equal(manifest.action?.default_popup, "popup.html", "Extension action should open popup.html");
 assert(manifest.permissions?.includes("storage"), "Extension should request storage permission");
-assert.equal(manifest.version, "0.3.7", "Manifest should declare the 0.3.7 release version");
+assert.equal(manifest.version, "0.3.11", "Manifest should declare the 0.3.11 release version");
 assert(
   /customize|themes|colors|fonts|layouts/i.test(manifest.description || ""),
   "Manifest description should emphasize customizable appearance controls"

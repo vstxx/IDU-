@@ -162,6 +162,18 @@
     pl: Object.freeze({ title: "Szczeg\u00f3\u0142y oceny", open: "Poka\u017c szczeg\u00f3\u0142y oceny", close: "Zamknij" }),
     en: Object.freeze({ title: "Grade details", open: "Show grade details", close: "Close" })
   });
+  // SHA-256 keeps account labels out of distributed source. This is a local
+  // feature gate, not a security boundary or a replacement for server auth.
+  const LOCAL_NEWS_EDITOR_ACCOUNT_DIGESTS = new Set([
+    "c668b8ea1d272022f982fe2fa7ca59f3e300797d1aab24ff6c3647876610506b",
+    "a7d3d6d4b153fcd555724ef2ce914443fddb3fc02607ab5d79f4322288b524fc",
+    "001f4014ffda532a4a7b256aa2d41ae8c794219171db3fe66fb79931b84cbde4",
+    "4a84195c89c303a7bcbfae453ba81ab9ec890cfcf9175b94d6780efdc5df8333"
+  ]);
+  const LOCAL_NEWS_EDITOR_CLICK_COUNT = 5;
+  const LOCAL_NEWS_EDITOR_CLICK_WINDOW_MS = 1800;
+  const LOCAL_NEWS_EDITOR_SAVE_DELAY_MS = 220;
+  const localNewsEditorBindings = new WeakSet();
   const UI_TRANSLATIONS = Object.freeze({
     en: new Map([
       ["Semestr:", "Semester:"],
@@ -333,8 +345,6 @@
   const STATIC_UI_TEXT_SELECTOR = [
     "#top-selection label",
     "#top-selection option",
-    "#breadcrumbs",
-    "#breadcrumbs a",
     ".module > h2",
     ".module > h3",
     ".module > h4",
@@ -411,6 +421,8 @@
   let gradeDetailsReturnFocus = null;
   let dynamicContentObserver = null;
   let dynamicContentTimer = null;
+  let dynamicContentUsesIdleCallback = false;
+  let dynamicContentPending = false;
   let dynamicEnhancementRunning = false;
   const bundledFontLoads = new Map();
 
@@ -450,9 +462,13 @@
         .then((result) => {
           if (result?.sent || result?.reason === "already-reported") {
             diagnosticsComplete = true;
+          } else if (result?.reason === "failed") {
+            console.warn("[IDU+] Diagnostics report failed; the diagnostics endpoint may be down.");
           }
         })
-        .catch(() => {})
+        .catch(() => {
+          console.warn("[IDU+] Diagnostics report could not be delivered.");
+        })
         .finally(() => {
           diagnosticsPending = false;
         });
@@ -667,13 +683,20 @@
     }
 
     document.querySelectorAll(TITLE_HEADING_SELECTOR).forEach((heading) => {
-      heading.dataset.iduTitleFont = normalizedTitleFont;
-      heading.style.setProperty("font-family", stack, "important");
+      if (heading.dataset.iduTitleFont !== normalizedTitleFont) {
+        heading.dataset.iduTitleFont = normalizedTitleFont;
+        heading.style.setProperty("font-family", stack, "important");
+      }
 
       heading
         .querySelectorAll(":scope > :not(.toggle-switch):not(.idu-plus-ics-export):not(.idu-schedule-print-link)")
         .forEach((child) => {
-          child.style.setProperty("font-family", "inherit", "important");
+          if (
+            child.style.getPropertyValue("font-family") !== "inherit" ||
+            child.style.getPropertyPriority("font-family") !== "important"
+          ) {
+            child.style.setProperty("font-family", "inherit", "important");
+          }
         });
     });
   };
@@ -727,6 +750,7 @@
       requestAnimationFrame(() => {
         buildWorkspaceShell();
         buildStickyActionBar();
+        syncMessageEditorTheme();
       });
     }
 
@@ -1205,10 +1229,20 @@
   const isForumPagePath = (pathname = window.location.pathname) =>
     /^\/forums(?:\/|$)/.test(pathname) || /^\/forum\/(?:search|topics)(?:\/|$)/.test(pathname);
 
+  const removeBreadcrumbs = () => {
+    document.querySelector("#breadcrumbs-section")?.remove();
+    document.querySelector("#breadcrumbs")?.remove();
+  };
+
   const isMessagesPagePath = (pathname = window.location.pathname) =>
     /^\/internal_messages(?:\/|$)/.test(pathname);
 
+  const isNewsPagePath = (pathname = window.location.pathname) => /^\/informations(?:\/|$)/.test(pathname);
+
+  const isNewsDetailPath = (pathname = window.location.pathname) => /^\/informations\/\d+\/?$/.test(pathname);
+
   const markPageType = () => {
+    removeBreadcrumbs();
     const loginForm = document.querySelector(
       '#new_user[action*="/users/sign_in"], form.new_user[action*="/users/sign_in"]'
     );
@@ -1218,6 +1252,8 @@
     const documentsModule = findDocumentsModule();
     const messagesModule = findMessagesModule();
     const forumPage = isForumPagePath();
+    const newsPage = isNewsPagePath();
+    const newsDetailPage = isNewsDetailPath();
     const classPage = /^\/klasses\/\d+\/?$/i.test(window.location.pathname);
     const subjectPage = /^\/subjects\/\d+\/?$/i.test(window.location.pathname);
 
@@ -1227,6 +1263,8 @@
     root.classList.toggle("idu-documents-page", Boolean(documentsModule));
     root.classList.toggle("idu-messages-page", isMessagesPagePath() || Boolean(messagesModule));
     root.classList.toggle("idu-forum-page", forumPage);
+    root.classList.toggle("idu-news-page", newsPage);
+    root.classList.toggle("idu-news-detail-page", newsDetailPage);
     root.classList.toggle("idu-class-page", classPage);
     root.classList.toggle("idu-subject-page", subjectPage);
   };
@@ -1234,6 +1272,16 @@
   const enhanceForumPages = () => {
     if (!root.classList.contains("idu-forum-page")) {
       return;
+    }
+
+    if (/^\/forums\/?$/.test(window.location.pathname)) {
+      document.querySelectorAll("#content .action-module").forEach((actionModule) => {
+        const links = Array.from(actionModule.querySelectorAll("a[href]"));
+        const onlyDuplicatesSearch =
+          links.length > 0 && links.every((link) => /^\/forum\/search\/?$/.test(new URL(link.href, window.location.origin).pathname));
+
+        actionModule.classList.toggle("idu-redundant-forum-action", onlyDuplicatesSearch);
+      });
     }
 
     document.querySelectorAll(".forum-table").forEach((table) => {
@@ -1295,6 +1343,570 @@
     });
 
     heading ? heading.after(navigation) : module.prepend(navigation);
+  };
+
+  const getDirectModuleHeading = (module) =>
+    module?.querySelector(":scope > h1, :scope > h2, :scope > h3") || null;
+
+  const isNewsCommentsHeading = (heading) =>
+    /^(?:komentarze|comments)\b/i.test(cleanText(heading?.textContent));
+
+  const ensureNewsBodySurface = (article, title) => {
+    const explicit = article.querySelector(
+      ":scope > .information-body, :scope > .information-content, :scope > .news-body, " +
+        ":scope > .post-body, :scope > .description, :scope > .content, :scope > .body"
+    );
+
+    if (explicit) {
+      return explicit;
+    }
+
+    const movable = [];
+    let node = title.nextSibling;
+
+    while (node) {
+      const next = node.nextSibling;
+      const isBlankText = node.nodeType === Node.TEXT_NODE && !cleanText(node.nodeValue);
+      const isExcludedElement =
+        node.nodeType === Node.ELEMENT_NODE &&
+        node.matches("script, style, form, .action-module, .actions, .date, .author, .idu-toolbar-actions");
+
+      if (!isBlankText && !isExcludedElement) {
+        movable.push(node);
+      }
+
+      node = next;
+    }
+
+    if (movable.length === 1 && movable[0].nodeType === Node.ELEMENT_NODE) {
+      return movable[0];
+    }
+
+    if (!movable.length) {
+      return null;
+    }
+
+    const surface = document.createElement("div");
+    surface.className = "idu-news-body idu-generated";
+    title.after(surface);
+    movable.forEach((child) => surface.appendChild(child));
+    return surface;
+  };
+
+  const enhanceNewsList = () => {
+    if (!/^\/informations\/?$/.test(window.location.pathname)) {
+      return;
+    }
+
+    const list = document.querySelector("#content > .double-column, #content .double-column");
+
+    if (!list) {
+      return;
+    }
+
+    list.classList.add("idu-news-list");
+    list.querySelectorAll(":scope > .module, :scope > .module-important").forEach((module) => {
+      module.classList.add("idu-news-list-module");
+    });
+
+    list.querySelectorAll(".profile-event.news").forEach((row) => {
+      const name = row.querySelector(":scope > .name");
+      const title = name?.querySelector('a[href*="/informations/"]');
+      const date = row.querySelector(":scope > .date");
+      const metadata = Array.from(row.children).find(
+        (child) => child !== name && child !== date && /(?:komentarze|comments)\s*:/i.test(cleanText(child.textContent))
+      );
+
+      row.classList.add("idu-news-row");
+      title?.classList.add("idu-news-row-title");
+      date?.classList.add("idu-news-date");
+      metadata?.classList.add("idu-news-comments-meta");
+
+      if (name && title && !name.querySelector(".idu-news-updated")) {
+        const updateText = Array.from(name.childNodes)
+          .filter((child) => child.nodeType === Node.TEXT_NODE)
+          .map((child) => cleanText(child.nodeValue))
+          .filter(Boolean)
+          .join(" ");
+
+        Array.from(name.childNodes)
+          .filter((child) => child.nodeType === Node.TEXT_NODE)
+          .forEach((child) => child.remove());
+
+        if (updateText) {
+          const updated = document.createElement("span");
+          updated.className = "idu-news-updated idu-generated";
+          updated.textContent = updateText;
+          title.after(updated);
+        }
+      }
+    });
+  };
+
+  const getNewsArticleParts = () => {
+    if (!isNewsDetailPath()) {
+      return null;
+    }
+
+    const modules = Array.from(document.querySelectorAll("#content .module, #content .module-important"));
+    const comments = modules.find((module) => isNewsCommentsHeading(getDirectModuleHeading(module))) || null;
+    const article = modules.find((module) => module !== comments && getDirectModuleHeading(module)) || null;
+    const title = getDirectModuleHeading(article);
+
+    if (!article || !title) {
+      return null;
+    }
+
+    const body = ensureNewsBodySurface(article, title);
+
+    if (!body) {
+      return null;
+    }
+
+    return { article, title, body, comments };
+  };
+
+  const enhanceNewsDetail = () => {
+    const parts = getNewsArticleParts();
+
+    if (!parts) {
+      return null;
+    }
+
+    parts.article.classList.add("idu-news-article");
+    parts.title.classList.add("idu-news-title");
+    parts.body.classList.add("idu-news-body");
+    parts.comments?.classList.add("idu-news-comments");
+    return parts;
+  };
+
+  const enhanceNewsPages = () => {
+    if (!isNewsPagePath()) {
+      return;
+    }
+
+    enhanceNewsList();
+    enhanceNewsDetail();
+  };
+
+  const digestLocalNewsAccount = async (value) => {
+    const normalized = cleanText(value).normalize("NFKC").toLocaleLowerCase("pl-PL");
+
+    if (!normalized || !globalThis.crypto?.subtle || typeof TextEncoder === "undefined") {
+      return "";
+    }
+
+    const digest = await globalThis.crypto.subtle.digest("SHA-256", new TextEncoder().encode(normalized));
+    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  };
+
+  const getLocalNewsStorageArea = () => {
+    try {
+      return globalThis.chrome?.storage?.local || null;
+    } catch (_error) {
+      return null;
+    }
+  };
+
+  const readLocalNewsDraft = (key) => {
+    const area = getLocalNewsStorageArea();
+
+    if (area) {
+      return new Promise((resolve) => {
+        let settled = false;
+        const finish = (result) => {
+          if (settled) {
+            return;
+          }
+
+          settled = true;
+          resolve(result?.[key] || null);
+        };
+
+        try {
+          const pending = area.get([key], finish);
+          pending?.then?.(finish, () => finish(null));
+        } catch (_error) {
+          finish(null);
+        }
+      });
+    }
+
+    try {
+      return Promise.resolve(JSON.parse(localStorage.getItem(key) || "null"));
+    } catch (_error) {
+      return Promise.resolve(null);
+    }
+  };
+
+  const writeLocalNewsDraft = (key, value) => {
+    const area = getLocalNewsStorageArea();
+
+    if (area) {
+      return new Promise((resolve) => {
+        let settled = false;
+        const finish = () => {
+          if (settled) {
+            return;
+          }
+
+          settled = true;
+          resolve();
+        };
+
+        try {
+          const pending = area.set({ [key]: value }, finish);
+          pending?.then?.(finish, finish);
+        } catch (_error) {
+          finish();
+        }
+      });
+    }
+
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (_error) {
+      // Restricted storage contexts still keep the current in-memory edit.
+    }
+
+    return Promise.resolve();
+  };
+
+  const LOCAL_NEWS_CONTENT_TAGS = new Set([
+    "a",
+    "b",
+    "blockquote",
+    "br",
+    "caption",
+    "code",
+    "div",
+    "em",
+    "figcaption",
+    "figure",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "hr",
+    "i",
+    "img",
+    "li",
+    "ol",
+    "p",
+    "pre",
+    "s",
+    "span",
+    "strike",
+    "strong",
+    "sub",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "tfoot",
+    "th",
+    "thead",
+    "tr",
+    "u",
+    "ul"
+  ]);
+  const LOCAL_NEWS_CONTENT_ATTRIBUTES = new Set([
+    "alt",
+    "class",
+    "colspan",
+    "dir",
+    "height",
+    "href",
+    "lang",
+    "rel",
+    "rowspan",
+    "scope",
+    "src",
+    "target",
+    "title",
+    "width"
+  ]);
+
+  const sanitizeLocalNewsAttribute = (name, rawValue, allowedResourceSources) => {
+    const normalizedName = String(name || "").toLowerCase();
+    const value = String(rawValue || "").trim();
+
+    if (!LOCAL_NEWS_CONTENT_ATTRIBUTES.has(normalizedName) || !value) {
+      return null;
+    }
+
+    if (normalizedName === "class") {
+      const classes = value
+        .split(/\s+/)
+        .filter((className) => className && className !== "idu-programme-badge")
+        .join(" ");
+      return classes || null;
+    }
+
+    if (normalizedName === "src") {
+      try {
+        const url = new URL(value, window.location.href);
+        return /^data:image\//i.test(value) || allowedResourceSources.has(url.href) ? value : null;
+      } catch (_error) {
+        return null;
+      }
+    }
+
+    if (normalizedName === "href") {
+      if (value.startsWith("#")) {
+        return value;
+      }
+
+      try {
+        const url = new URL(value, window.location.href);
+        return ["http:", "https:", "mailto:", "tel:"].includes(url.protocol) ? value : null;
+      } catch (_error) {
+        return null;
+      }
+    }
+
+    return value;
+  };
+
+  const snapshotLocalNewsNode = (node, allowedResourceSources) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return { type: "text", value: node.nodeValue || "" };
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+      return null;
+    }
+
+    if (node.classList.contains("idu-programme-badge")) {
+      return { type: "text", value: node.textContent || "" };
+    }
+
+    const tag = node.tagName.toLowerCase();
+
+    if (!LOCAL_NEWS_CONTENT_TAGS.has(tag)) {
+      return null;
+    }
+
+    const attributes = {};
+    Array.from(node.attributes).forEach((attribute) => {
+      const value = sanitizeLocalNewsAttribute(attribute.name, attribute.value, allowedResourceSources);
+
+      if (value !== null) {
+        attributes[attribute.name.toLowerCase()] = value;
+      }
+    });
+
+    return {
+      type: "element",
+      tag,
+      attributes,
+      children: Array.from(node.childNodes)
+        .map((child) => snapshotLocalNewsNode(child, allowedResourceSources))
+        .filter(Boolean)
+    };
+  };
+
+  const sanitizeLocalNewsMarkup = (source, allowedResourceSources = new Set()) =>
+    Array.from(source?.childNodes || [])
+      .map((node) => snapshotLocalNewsNode(node, allowedResourceSources))
+      .filter(Boolean);
+
+  const restoreLocalNewsNode = (snapshot, allowedResourceSources) => {
+    if (!snapshot || typeof snapshot !== "object") {
+      return null;
+    }
+
+    if (snapshot.type === "text") {
+      return document.createTextNode(String(snapshot.value || ""));
+    }
+
+    if (snapshot.type !== "element" || !LOCAL_NEWS_CONTENT_TAGS.has(snapshot.tag)) {
+      return null;
+    }
+
+    const element = document.createElement(snapshot.tag);
+    Object.entries(snapshot.attributes || {}).forEach(([name, rawValue]) => {
+      const value = sanitizeLocalNewsAttribute(name, rawValue, allowedResourceSources);
+
+      if (value !== null) {
+        element.setAttribute(name, value);
+      }
+    });
+    Array.from(snapshot.children || []).forEach((childSnapshot) => {
+      const child = restoreLocalNewsNode(childSnapshot, allowedResourceSources);
+
+      if (child) {
+        element.appendChild(child);
+      }
+    });
+
+    if (element.tagName === "A" && element.target === "_blank") {
+      element.rel = "noopener noreferrer";
+    }
+
+    return element;
+  };
+
+  const readLegacyLocalNewsText = (markup) =>
+    String(markup || "")
+      .replace(/<br\s*\/?\s*>/gi, "\n")
+      .replace(/<\/(?:p|div|li|h[1-6]|tr)>/gi, "\n")
+      .replace(/<[^>]*>/g, "")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&amp;/gi, "&")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/&quot;/gi, '"')
+      .replace(/&#(?:39|x27);/gi, "'");
+
+  const bindLocalNewsEditor = async ({ article, title, body }) => {
+    const accountName = cleanText(document.querySelector("#login strong")?.textContent);
+    const accountDigest = await digestLocalNewsAccount(accountName);
+
+    if (!LOCAL_NEWS_EDITOR_ACCOUNT_DIGESTS.has(accountDigest)) {
+      return;
+    }
+
+    const postId = window.location.pathname.match(/^\/informations\/(\d+)/)?.[1];
+
+    if (!postId) {
+      return;
+    }
+
+    const storageKey = `iduPlusLocalNews:${accountDigest.slice(0, 16)}:${postId}`;
+    const allowedResourceSources = new Set(
+      Array.from(body.querySelectorAll("[src]"))
+        .map((element) => {
+          try {
+            return new URL(element.getAttribute("src"), window.location.href).href;
+          } catch (_error) {
+            return "";
+          }
+        })
+        .filter(Boolean)
+    );
+    const saved = await readLocalNewsDraft(storageKey);
+
+    if (saved?.version === 2 && typeof saved.title === "string" && Array.isArray(saved.body)) {
+      title.textContent = saved.title;
+      body.replaceChildren(
+        ...saved.body.map((snapshot) => restoreLocalNewsNode(snapshot, allowedResourceSources)).filter(Boolean)
+      );
+      highlightProgrammeTokens(title);
+      highlightProgrammeTokens(body);
+    } else if (saved?.version === 1 && typeof saved.title === "string" && typeof saved.body === "string") {
+      title.textContent = saved.title;
+      body.textContent = readLegacyLocalNewsText(saved.body);
+      highlightProgrammeTokens(title);
+      highlightProgrammeTokens(body);
+    }
+
+    let editing = false;
+    let saveTimer = 0;
+    let clickTimes = [];
+
+    const save = async () => {
+      window.clearTimeout(saveTimer);
+      saveTimer = 0;
+      article.dataset.iduLocalLabel = getCurrentLocale() === "en" ? "Saving locally\u2026" : "Zapisuj\u0119 lokalnie\u2026";
+      await writeLocalNewsDraft(storageKey, {
+        version: 2,
+        title: cleanText(title.textContent),
+        body: sanitizeLocalNewsMarkup(body, allowedResourceSources),
+        savedAt: Date.now()
+      });
+
+      if (editing) {
+        article.dataset.iduLocalLabel = getCurrentLocale() === "en" ? "Saved locally" : "Zapisano lokalnie";
+      }
+    };
+
+    const scheduleSave = () => {
+      article.dataset.iduLocalLabel = getCurrentLocale() === "en" ? "Local edit" : "Edycja lokalna";
+      window.clearTimeout(saveTimer);
+      saveTimer = window.setTimeout(() => void save(), LOCAL_NEWS_EDITOR_SAVE_DELAY_MS);
+    };
+
+    const setEditing = (nextEditing) => {
+      editing = nextEditing;
+      article.classList.toggle("idu-local-news-editing", editing);
+
+      if (editing) {
+        title.textContent = cleanText(title.textContent);
+        title.setAttribute("contenteditable", "plaintext-only");
+        body.setAttribute("contenteditable", "true");
+        title.setAttribute("role", "textbox");
+        body.setAttribute("role", "textbox");
+        title.setAttribute("aria-multiline", "false");
+        body.setAttribute("aria-multiline", "true");
+        article.dataset.iduLocalLabel = getCurrentLocale() === "en" ? "Local edit" : "Edycja lokalna";
+        title.focus();
+        return;
+      }
+
+      title.removeAttribute("contenteditable");
+      body.removeAttribute("contenteditable");
+      title.removeAttribute("role");
+      body.removeAttribute("role");
+      title.removeAttribute("aria-multiline");
+      body.removeAttribute("aria-multiline");
+      delete article.dataset.iduLocalLabel;
+      void save().finally(() => {
+        delete article.dataset.iduLocalLabel;
+        highlightProgrammeTokens(title);
+        highlightProgrammeTokens(body);
+      });
+    };
+
+    title.addEventListener("click", () => {
+      const now = Date.now();
+      clickTimes = clickTimes.filter((timestamp) => now - timestamp <= LOCAL_NEWS_EDITOR_CLICK_WINDOW_MS);
+      clickTimes.push(now);
+
+      if (clickTimes.length >= LOCAL_NEWS_EDITOR_CLICK_COUNT) {
+        clickTimes = [];
+        setEditing(!editing);
+      }
+    });
+    title.addEventListener("keydown", (event) => {
+      if (!editing) {
+        return;
+      }
+
+      if (event.key === "Enter") {
+        event.preventDefault();
+        body.focus();
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        setEditing(false);
+      }
+    });
+    title.addEventListener("input", scheduleSave);
+    body.addEventListener("input", scheduleSave);
+    window.addEventListener("pagehide", () => {
+      if (editing || saveTimer) {
+        void save();
+      }
+    });
+  };
+
+  const enhanceLocalNewsEditor = () => {
+    const parts = getNewsArticleParts();
+
+    if (!parts || localNewsEditorBindings.has(parts.title)) {
+      return;
+    }
+
+    const accountName = cleanText(document.querySelector("#login strong")?.textContent);
+
+    if (!accountName) {
+      return;
+    }
+
+    localNewsEditorBindings.add(parts.title);
+    void bindLocalNewsEditor(parts).catch(() => localNewsEditorBindings.delete(parts.title));
   };
 
   const enhanceProfileBoards = () => {
@@ -1787,6 +2399,10 @@
       });
     });
 
+    if (shouldUseUserscriptMobileUX()) {
+      extractAttendanceDetailsTables(summaryTable);
+    }
+
     const calendarModule = Array.from(document.querySelectorAll(".module")).find((module) =>
       module.querySelector(".presences_table")
     );
@@ -1818,6 +2434,102 @@
 
       scroller.appendChild(table);
       card.appendChild(scroller);
+    });
+  };
+
+  const syncAttendanceDetailsCard = (card) => {
+    const visible = Array.from(card.querySelectorAll(".js-presences-details")).some(
+      (row) => row.style.display !== "none"
+    );
+    card.classList.toggle("idu-attendance-details-hidden", !visible);
+  };
+
+  const extractAttendanceDetailsTables = (summaryTable) => {
+    const tbody = summaryTable.querySelector("tbody");
+    const thead = summaryTable.querySelector("thead");
+
+    if (!tbody || tbody.dataset.iduDetailsExtracted === "true") {
+      return;
+    }
+    tbody.dataset.iduDetailsExtracted = "true";
+
+    const cards = [];
+    let group = [];
+
+    const flushGroup = () => {
+      if (!group.length) {
+        return;
+      }
+
+      const card = document.createElement("section");
+      const scroller = document.createElement("div");
+      const table = document.createElement("table");
+      const anchor = group[0];
+
+      card.className = "idu-attendance-details-card";
+      scroller.className = "idu-attendance-details-scroll";
+      table.className = "idu-attendance-details-table";
+      scroller.tabIndex = 0;
+      scroller.setAttribute("role", "region");
+      scroller.setAttribute("aria-label", "Szczeg\u00f3\u0142y obecno\u015bci");
+
+      anchor.before(card);
+
+      if (thead) {
+        table.appendChild(thead.cloneNode(true));
+      }
+      group.forEach((row) => {
+        row.querySelectorAll("td").forEach((cell) => {
+          delete cell.dataset.iduAttendanceLabel;
+        });
+        table.appendChild(row);
+      });
+      scroller.appendChild(table);
+      card.appendChild(scroller);
+      syncAttendanceDetailsCard(card);
+      cards.push(card);
+      group = [];
+    };
+
+    Array.from(tbody.children).forEach((child) => {
+      if (child.classList?.contains("js-presences-details")) {
+        group.push(child);
+      } else {
+        flushGroup();
+      }
+    });
+    flushGroup();
+
+    if (!cards.length) {
+      return;
+    }
+
+    new MutationObserver(() => {
+      cards.forEach(syncAttendanceDetailsCard);
+    }).observe(tbody, { subtree: true, attributes: true, attributeFilter: ["style"] });
+
+    let detailsOpen = false;
+
+    summaryTable.addEventListener("click", (event) => {
+      const link = event.target.closest(".js-toggle-presences-details");
+
+      if (!link) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const rows = cards.flatMap((card) => Array.from(card.querySelectorAll(".js-presences-details")));
+      detailsOpen = !detailsOpen;
+
+      rows.forEach((row) => {
+        row.style.display = detailsOpen ? "" : "none";
+      });
+
+      if (/poka|show|wy\u015bwietl|ukryj|hide/i.test(link.textContent)) {
+        link.textContent = detailsOpen ? "ukryj szczeg\u00f3\u0142y" : "poka\u017c szczeg\u00f3\u0142y";
+      }
     });
   };
 
@@ -2148,7 +2860,10 @@
     const form =
       module?.querySelector("form.message_transport_search") ||
       Array.from(module?.querySelectorAll("form") || []).find(
-        (candidate) => candidate.querySelectorAll('input[type="text"], input[type="search"]').length >= 2
+        (candidate) =>
+          !candidate.matches("#new_message_form") &&
+          !candidate.querySelector("textarea, .ckeditor, .cke") &&
+          candidate.querySelectorAll('input[type="text"], input[type="search"]').length >= 2
       );
 
     if (!module || !form || form.dataset.iduMessagesSearch === "true") {
@@ -2180,6 +2895,164 @@
       const wrapper = submit.closest(".actions, .field, div") || submit.parentElement;
       wrapper?.classList.add("idu-messages-actions-field");
     });
+  };
+
+  function syncMessageEditorTheme() {
+    const frame = document.querySelector("#cke_message_body iframe.cke_wysiwyg_frame, .idu-message-compose-body iframe.cke_wysiwyg_frame");
+
+    if (!frame) {
+      return;
+    }
+
+    const applyTheme = () => {
+      try {
+        const editorDocument = frame.contentDocument;
+
+        if (!editorDocument?.documentElement || !editorDocument.body) {
+          return;
+        }
+
+        const pageStyles = getComputedStyle(root);
+        const theme = root.dataset.iduTheme === "dark" ? "dark" : "light";
+        const canvas = pageStyles.getPropertyValue("--idu-editor-canvas").trim() || (theme === "dark" ? "#17191e" : "#ffffff");
+        const textColor = pageStyles.getPropertyValue("--idu-editor-text").trim() || (theme === "dark" ? "#edf0f4" : "#18232d");
+        const mutedColor = pageStyles.getPropertyValue("--idu-muted").trim() || (theme === "dark" ? "#9ba1aa" : "#6f8497");
+        const accent = pageStyles.getPropertyValue("--idu-accent").trim() || "#2f78b7";
+        const accentSoft = pageStyles.getPropertyValue("--idu-accent-soft").trim() || "rgba(47, 120, 183, 0.16)";
+        let themeStyle = editorDocument.getElementById("idu-plus-ckeditor-theme");
+
+        if (!themeStyle) {
+          themeStyle = editorDocument.createElement("style");
+          themeStyle.id = "idu-plus-ckeditor-theme";
+          (editorDocument.head || editorDocument.documentElement).appendChild(themeStyle);
+        }
+
+        editorDocument.documentElement.dataset.iduTheme = theme;
+        editorDocument.documentElement.style.colorScheme = theme;
+        themeStyle.textContent = `
+          :root {
+            color-scheme: ${theme};
+            background: ${canvas};
+          }
+
+          html,
+          body,
+          body.cke_editable {
+            box-sizing: border-box;
+            min-height: 100%;
+            background: ${canvas} !important;
+            color: ${textColor} !important;
+          }
+
+          body.cke_editable {
+            margin: 0 !important;
+            padding: 16px 18px !important;
+            font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+            overflow-wrap: anywhere;
+          }
+
+          body.cke_editable p {
+            margin-top: 0;
+          }
+
+          body.cke_editable a {
+            color: ${accent};
+          }
+
+          body.cke_editable blockquote {
+            margin-inline: 0;
+            padding-inline-start: 14px;
+            color: ${mutedColor};
+            border-inline-start: 3px solid ${accent};
+          }
+
+          body.cke_editable ::selection {
+            background: ${accentSoft};
+          }
+
+          @media (max-width: 760px) {
+            body.cke_editable {
+              padding: 14px !important;
+              font-size: 16px !important;
+            }
+          }
+        `;
+        frame.dataset.iduEditorThemeReady = "true";
+      } catch (_error) {
+        // The native editor is normally same-origin. If that ever changes,
+        // the parent CKEditor shell still keeps the correct IDU+ theme.
+        frame.dataset.iduEditorThemeReady = "true";
+      }
+    };
+
+    applyTheme();
+
+    if (frame.dataset.iduEditorThemeBound !== "true") {
+      frame.dataset.iduEditorThemeBound = "true";
+      frame.addEventListener("load", applyTheme);
+    }
+  }
+
+  const enhanceMessageCompose = () => {
+    const form = document.querySelector("#new_message_form");
+
+    if (!form) {
+      return;
+    }
+
+    const module = form.closest(".module, .module-important");
+    const receiverField = form.querySelector(".receivers_search") || form.querySelector("#message_receiver_ids")?.closest(".field");
+    const titleField = form.querySelector("#message_title")?.closest(".field");
+    const bodyField = form.querySelector("#message_body")?.closest(".field");
+    const copyField = form.querySelector("#message_send_copy_to_email")?.closest(".field");
+    const actions = form.querySelector(".actions");
+    const locale = getCurrentLocale();
+
+    module?.classList.add("idu-message-compose-module", "idu-messages-module");
+    form.classList.remove("idu-messages-search");
+    form.classList.add("idu-message-compose");
+    form.dataset.iduMessageCompose = "true";
+    delete form.dataset.iduMessagesSearch;
+
+    form.querySelectorAll(".idu-messages-search-field, .idu-messages-actions-field").forEach((element) => {
+      element.classList.remove("idu-messages-search-field", "idu-messages-actions-field");
+    });
+
+    receiverField?.classList.add("idu-message-compose-receivers");
+    titleField?.classList.add("idu-message-compose-title");
+    bodyField?.classList.add("idu-message-compose-body");
+    copyField?.classList.add("idu-message-compose-copy");
+    actions?.classList.add("idu-message-compose-actions");
+
+    const receiverInput = form.querySelector("#token-input-message_receiver_ids");
+    const receiverLabel = cleanText(receiverField?.querySelector("label")?.textContent);
+
+    if (receiverInput) {
+      receiverInput.setAttribute("placeholder", locale === "en" ? "Type a recipient…" : "Wpisz odbiorcę…");
+
+      if (!receiverInput.getAttribute("aria-label")) {
+        receiverInput.setAttribute("aria-label", receiverLabel || (locale === "en" ? "Recipient" : "Odbiorca"));
+      }
+    }
+
+    const titleInput = form.querySelector("#message_title");
+
+    if (titleInput && !titleInput.getAttribute("placeholder")) {
+      titleInput.setAttribute("placeholder", locale === "en" ? "Message subject" : "Tytuł wiadomości");
+    }
+
+    if (bodyField && !bodyField.querySelector(".idu-message-compose-label")) {
+      const bodyLabel = document.createElement("div");
+
+      bodyLabel.className = "idu-message-compose-label idu-generated";
+      bodyLabel.textContent = locale === "en" ? "Message" : "Treść wiadomości";
+      bodyLabel.setAttribute("aria-hidden", "true");
+      bodyField.prepend(bodyLabel);
+    }
+
+    syncMessageEditorTheme();
   };
 
   const getMessageFolderKey = (pathname = window.location.pathname) => {
@@ -2233,6 +3106,14 @@
         folder.classList.add("idu-page-tool-link", `idu-message-folder-${key}`);
         folder.classList.toggle("is-active", key === activeFolder);
 
+        const labelTarget = folder.querySelector(":scope > a");
+
+        if (labelTarget) {
+          labelTarget.textContent = labels[key];
+        } else if (!folder.children.length) {
+          folder.textContent = labels[key];
+        }
+
         if (key === activeFolder) {
           folder.setAttribute("aria-current", "page");
         } else {
@@ -2246,8 +3127,8 @@
     const navigation = document.createElement("nav");
     const folders = [
       ["inbox", "/internal_messages"],
-      ["drafts", "/internal_messages/drafts"],
       ["sent", "/internal_messages/sent"],
+      ["drafts", "/internal_messages/drafts"],
       ["trash", "/internal_messages/trash"],
       ["compose", "/internal_messages/new"]
     ];
@@ -3758,6 +4639,8 @@
 
   const enhanceDynamicContent = () => {
     markPageType();
+    enhanceNewsPages();
+    enhanceLocalNewsEditor();
     enhanceForumPages();
     buildForumNavigation();
     enhanceProfileDetails();
@@ -3765,6 +4648,7 @@
     enhanceAttendancePage();
     hideEmptyFlashSection();
     enhanceDocumentsSearch();
+    enhanceMessageCompose();
     enhanceMessagesSearch();
     buildMessageFolderNavigation();
     enhanceGradeDetails();
@@ -3795,6 +4679,61 @@
     );
   };
 
+  const cancelDynamicContentEnhancement = () => {
+    if (dynamicContentTimer === null) {
+      return;
+    }
+
+    if (dynamicContentUsesIdleCallback) {
+      window.cancelIdleCallback?.(dynamicContentTimer);
+    } else {
+      window.clearTimeout(dynamicContentTimer);
+    }
+
+    dynamicContentTimer = null;
+    dynamicContentUsesIdleCallback = false;
+  };
+
+  const scheduleDynamicContentEnhancement = () => {
+    dynamicContentPending = true;
+
+    if (document.hidden || dynamicEnhancementRunning) {
+      return;
+    }
+
+    cancelDynamicContentEnhancement();
+
+    const run = () => {
+      dynamicContentTimer = null;
+      dynamicContentUsesIdleCallback = false;
+
+      if (document.hidden) {
+        return;
+      }
+
+      dynamicContentPending = false;
+      dynamicEnhancementRunning = true;
+
+      try {
+        enhanceDynamicContent();
+      } finally {
+        dynamicEnhancementRunning = false;
+
+        if (dynamicContentPending) {
+          scheduleDynamicContentEnhancement();
+        }
+      }
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      dynamicContentUsesIdleCallback = true;
+      dynamicContentTimer = window.requestIdleCallback(run, { timeout: 480 });
+      return;
+    }
+
+    dynamicContentTimer = window.setTimeout(run, 120);
+  };
+
   const observeDynamicContent = () => {
     if (dynamicContentObserver || !document.body) {
       return;
@@ -3809,23 +4748,21 @@
         return;
       }
 
-      window.clearTimeout(dynamicContentTimer);
-      dynamicContentTimer = window.setTimeout(() => {
-        dynamicEnhancementRunning = true;
-
-        try {
-          enhanceDynamicContent();
-        } finally {
-          dynamicEnhancementRunning = false;
-        }
-      }, 80);
+      scheduleDynamicContentEnhancement();
     });
 
     dynamicContentObserver.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && dynamicContentPending) {
+        scheduleDynamicContentEnhancement();
+      }
+    });
   };
 
   const enhancePage = () => {
     markPageType();
+    enhanceNewsPages();
+    enhanceLocalNewsEditor();
     enhanceForumPages();
     buildForumNavigation();
     applyPageLogos();
@@ -3840,6 +4777,7 @@
     hideEmptyFlashSection();
     moveDocumentsAction();
     enhanceDocumentsSearch();
+    enhanceMessageCompose();
     enhanceMessagesSearch();
     buildMessageFolderNavigation();
     enhanceGradeDetails();

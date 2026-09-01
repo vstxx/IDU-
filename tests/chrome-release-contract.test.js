@@ -21,7 +21,7 @@ assert.notEqual(manifestBytes[0], 0xef, "Chrome manifest should be UTF-8 without
 const manifest = JSON.parse(manifestBytes.toString("utf8"));
 
 assert.equal(manifest.manifest_version, 3, "Chrome package should stay on Manifest V3");
-assert.equal(manifest.version, "0.3.7", "Chrome package should use the current IDU+ release version");
+assert.equal(manifest.version, "0.3.11", "Chrome package should use the current IDU+ release version");
 assert.equal(manifest.action?.default_popup, "popup.html", "Chrome package should keep the settings popup");
 assert.deepEqual(
   manifest.content_scripts?.[0]?.js,

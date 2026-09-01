@@ -26,7 +26,7 @@ const gecko = manifest.browser_specific_settings?.gecko;
 const geckoAndroid = manifest.browser_specific_settings?.gecko_android;
 
 assert.equal(manifest.manifest_version, 3, "Firefox package should stay on Manifest V3");
-assert.equal(manifest.version, "0.3.7", "Firefox package should use the current IDU+ release version");
+assert.equal(manifest.version, "0.3.11", "Firefox package should use the current IDU+ release version");
 assert.equal(gecko?.id, "idu-plus@vstxx.github.io", "Firefox package should declare a stable Gecko add-on ID");
 assert.equal(
   gecko?.strict_min_version,

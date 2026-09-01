@@ -68,9 +68,9 @@ assert.ok(
 );
 
 assert.ok(
-  /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.container\s*\{[\s\S]*gap:\s*14px;/.test(css) &&
-    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #site-content,[\s\S]*gap:\s*14px;/.test(css) &&
-    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.module,[\s\S]*margin:\s*0 0 4px\s*!important;/.test(css),
+  /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.container\s*\{[\s\S]*gap:\s*18px;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #site-content,[\s\S]*gap:\s*18px;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.module,[\s\S]*margin:\s*0 0 6px\s*!important;/.test(css),
   "Mobile pages should have more breathing room between grade, attendance, schedule, and similar sections"
 );
 
