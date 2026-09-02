@@ -496,7 +496,7 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    margin-left: auto;
+    margin-left: 0;
     padding: 0 !important;
     color: rgba(238, 247, 255, 0.82);
     font-size: 12px;
@@ -558,29 +558,35 @@
     display: flex !important;
     position: relative;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap !important;
     gap: 8px;
     width: 100% !important;
     min-width: 0;
     height: auto !important;
     min-height: 0;
     padding: 0 !important;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
     touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    white-space: nowrap;
     color: rgba(241, 248, 255, 0.86);
     font-size: 12px !important;
     line-height: 1.25;
   }
 
+  html.idu-plus #account-actions::-webkit-scrollbar,
+  html.idu-plus .idu-sticky-actions-row::-webkit-scrollbar {
+    display: none;
+  }
+
   html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
     float: none !important;
     display: inline-flex;
-    flex: 0 0 auto;
+    flex: 0 0 auto !important;
     align-items: center;
     gap: 7px;
     min-height: 34px;
@@ -709,11 +715,20 @@
   html.idu-plus .idu-sticky-actions-row {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow: row nowrap !important;
     gap: 8px;
-    justify-content: center;
+    justify-content: flex-start;
+    justify-content: safe center;
     width: 100%;
     max-width: var(--idu-shell-max);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
   }
 
   html.idu-plus .idu-sticky-actions-row > div {
@@ -730,6 +745,7 @@
     background-color: var(--idu-header-chip-bg) !important;
     box-shadow: none;
     white-space: nowrap;
+    scroll-snap-align: start;
   }
 
   html.idu-plus .idu-sticky-actions-row > div::before {
@@ -1221,8 +1237,10 @@
   }
 
   html.idu-plus[data-idu-layout="workspace"] #account-actions {
-    justify-content: flex-end;
+    justify-content: flex-start;
+    justify-content: safe flex-end;
     width: auto !important;
+    max-width: 100%;
     font-size: 11.5px !important;
   }
 
@@ -6372,7 +6390,7 @@
       display: none;
     }
 
-  html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
+    html.idu-plus #account-actions > div:not(#last_internal_messages):not(#unread_forum_posts) {
       flex: 0 0 auto !important;
       max-width: none;
       scroll-snap-align: start;
@@ -6421,8 +6439,8 @@
       --idu-glass-shadow-soft: 0 5px 15px rgba(28, 59, 84, 0.05), inset 0 1px 0 var(--idu-glass-inner-highlight);
       --idu-radius-lg: 20px;
       --idu-radius-md: 16px;
-      --idu-section-gap: 16px;
-      --idu-dashboard-gap: 18px;
+      --idu-section-gap: 22px;
+      --idu-dashboard-gap: 24px;
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
     }
@@ -6434,8 +6452,8 @@
     }
 
     html.idu-plus[data-idu-layout="workspace"] {
-      --idu-section-gap: 16px;
-      --idu-dashboard-gap: 18px;
+      --idu-section-gap: 22px;
+      --idu-dashboard-gap: 24px;
     }
 
     html.idu-plus .idu-profile-subject-groups {
@@ -6488,7 +6506,7 @@
 
     html.idu-plus .container {
       display: grid;
-      gap: 18px;
+      gap: 22px;
       width: min(100%, calc(100vw - 20px)) !important;
       max-width: none;
       padding-bottom: calc(34px + env(safe-area-inset-bottom)) !important;
@@ -6500,7 +6518,7 @@
     html.idu-plus .menu-exist #site-content {
       display: grid !important;
       grid-template-columns: minmax(0, 1fr) !important;
-      gap: 18px;
+      gap: 22px;
       width: 100% !important;
       min-width: 0;
     }
@@ -6546,8 +6564,8 @@
       line-height: 1.22;
       overflow-wrap: normal;
       text-overflow: ellipsis;
-    white-space: nowrap;
-    scroll-snap-align: start;
+      white-space: nowrap;
+      scroll-snap-align: start;
     }
 
     html.idu-plus #change_language {
@@ -6563,12 +6581,16 @@
     }
 
     html.idu-plus #account-actions {
+      flex-flow: row nowrap !important;
       gap: 8px;
       width: calc(100% + 32px) !important;
       margin: 0 -16px !important;
       padding: 0 16px 3px !important;
       font-size: 12.5px !important;
       scroll-padding-inline: 16px;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      white-space: nowrap;
     }
 
     html.idu-plus[data-idu-layout="workspace"] #account-actions {
@@ -6987,8 +7009,17 @@
     html.idu-plus #subject-card,
     html.idu-plus .menu-section {
       width: 100% !important;
-      margin: 0 0 6px !important;
+      margin: 0 !important;
       padding: 15px !important;
+    }
+
+    html.idu-plus .no-menu #content > .left-column,
+    html.idu-plus .no-menu #content > .right-column,
+    html.idu-plus .no-menu #content > .double-column,
+    html.idu-plus .no-menu #content > .triple-column {
+      display: grid !important;
+      align-content: start;
+      gap: 22px !important;
     }
 
     html.idu-plus .module h3,
@@ -7010,7 +7041,7 @@
     }
 
     html.idu-plus.idu-news-page .idu-news-list {
-      gap: 18px;
+      gap: 22px;
     }
 
     html.idu-plus.idu-news-page .idu-news-list-module {

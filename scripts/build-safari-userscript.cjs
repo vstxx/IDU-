@@ -25,6 +25,7 @@ for (const [cssPath, filePath] of fontReplacements) {
 }
 
 const logoDataUrl = `data:image/png;base64,${readBase64("assets/idu-plus-logo.png")}`;
+const diagnosticsScript = readText("src/diagnostics.js");
 const contentScript = readText("src/idu-plus.js").replace(
   'const LOGO_ASSET_PATH = "assets/idu-plus-logo.png";',
   `const LOGO_ASSET_PATH = "${logoDataUrl}";`
@@ -51,12 +52,15 @@ const userScript = `${metadata}
 
   document.documentElement.classList.add("idu-userscript-build");
   window.__IDU_PLUS_USERSCRIPT__ = true;
+  window.__IDU_PLUS_USERSCRIPT_VERSION__ = ${JSON.stringify(releaseVersion)};
 
   const css = ${JSON.stringify(css)};
   const style = document.createElement("style");
   style.id = "idu-plus-userscript-style";
   style.textContent = css;
   (document.head || document.documentElement).appendChild(style);
+
+${diagnosticsScript}
 
 ${contentScript}
 })();

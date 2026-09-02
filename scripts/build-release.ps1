@@ -140,4 +140,16 @@ New-ReleaseZip -SourceDirectory $firefoxDir -DestinationPath (Join-Path $release
 Copy-Item -LiteralPath (Join-Path $releaseRoot "idu-plus-firefox-addon.zip") -Destination (Join-Path $releaseRoot "idu-plus-firefox-addon.xpi") -Force
 New-ReleaseZip -SourceDirectory $safariDir -DestinationPath (Join-Path $releaseRoot "idu-plus-safari-userscript.zip")
 
+$releaseArchives = @(
+  "idu-plus-chrome-web-store.zip",
+  "idu-plus-firefox-addon.zip",
+  "idu-plus-firefox-addon.xpi",
+  "idu-plus-safari-userscript.zip"
+)
+$checksumLines = $releaseArchives | ForEach-Object {
+  $hash = (Get-FileHash -LiteralPath (Join-Path $releaseRoot $_) -Algorithm SHA256).Hash.ToLowerInvariant()
+  "$hash  $_"
+}
+[System.IO.File]::WriteAllLines((Join-Path $releaseRoot "SHA256SUMS-$version.txt"), $checksumLines, $utf8NoBom)
+
 Write-Output "Built IDU+ $version release packages in $releaseRoot"

@@ -47,8 +47,8 @@ assert(
     contentJs.includes("workspaceSessionTimeoutObserver.observe") &&
     /#change_language \.logout-timer\s*\{[\s\S]*display:\s*inline-flex\s*!important;/.test(contentCss) &&
     /#change_language \.js-counter\s*\{[\s\S]*font-variant-numeric:\s*tabular-nums;/.test(contentCss) &&
-    /#account-actions\s*\{[\s\S]*flex-wrap:\s*nowrap;[\s\S]*overflow-x:\s*auto;/.test(contentCss),
+    /#account-actions\s*\{[\s\S]*flex-flow:\s*row nowrap\s*!important;[\s\S]*overflow-x:\s*auto\s*!important;/.test(contentCss),
   "Session timeout should remain compact and synchronized while the topbar stays on one horizontal line"
 );
 
-console.log("0.3.11 hardening contract ok");
+console.log("0.3.12 hardening contract ok");

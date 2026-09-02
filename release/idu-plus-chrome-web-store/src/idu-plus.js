@@ -442,10 +442,29 @@
 
   const reportDiagnostics = () => {
     const api = getChromeApi();
+    const reportStage = (stage, details) => {
+      const safeDetails = Number.isInteger(details?.status) ? { status: details.status } : undefined;
+      console.debug(`[IDU+] diagnostics:${stage}`, safeDetails || "");
+    };
 
     try {
-      if (diagnosticsComplete || diagnosticsPending || !window.IDUPlusDiagnostics?.reportActiveUser || !api?.runtime) {
+      if (diagnosticsComplete || diagnosticsPending) {
         return;
+      }
+
+      if (!window.IDUPlusDiagnostics?.reportActiveUser) {
+        reportStage("helper-unavailable");
+        return;
+      }
+
+      let fallbackStorage = null;
+
+      if (window.__IDU_PLUS_USERSCRIPT__) {
+        try {
+          fallbackStorage = window.localStorage;
+        } catch (_error) {
+          reportStage("local-storage-unavailable");
+        }
       }
 
       diagnosticsPending = true;
@@ -455,25 +474,27 @@
         fetch: window.fetch?.bind(window),
         location: window.location,
         navigator: window.navigator,
-        runtime: api.runtime,
-        storage: api.storage,
-        crypto: window.crypto
+        runtime: api?.runtime,
+        storage: api?.storage,
+        fallbackStorage,
+        extensionVersion: window.__IDU_PLUS_USERSCRIPT_VERSION__,
+        crypto: window.crypto,
+        log: reportStage
       })
         .then((result) => {
           if (result?.sent || result?.reason === "already-reported") {
             diagnosticsComplete = true;
-          } else if (result?.reason === "failed") {
-            console.warn("[IDU+] Diagnostics report failed; the diagnostics endpoint may be down.");
           }
         })
         .catch(() => {
-          console.warn("[IDU+] Diagnostics report could not be delivered.");
+          reportStage("unexpected-client-error");
         })
         .finally(() => {
           diagnosticsPending = false;
         });
     } catch (_error) {
       // Diagnostics must never affect the IDU+ visual layer.
+      reportStage("unexpected-client-error");
     }
   };
 
@@ -4801,7 +4822,7 @@
   };
 
   onReady(() => {
-    enhancePage();
     scheduleDiagnosticsReport();
+    enhancePage();
   });
 })();

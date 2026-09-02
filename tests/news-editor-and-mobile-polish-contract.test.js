@@ -29,8 +29,8 @@ assert(
 );
 
 assert(
-  /@media \(max-width:\s*760px\)[\s\S]*--idu-section-gap:\s*16px;[\s\S]*--idu-dashboard-gap:\s*18px;/.test(css) &&
-    /@media \(max-width:\s*760px\)[\s\S]*\.container\s*\{[\s\S]*gap:\s*18px;/.test(css) &&
+  /@media \(max-width:\s*760px\)[\s\S]*--idu-section-gap:\s*22px;[\s\S]*--idu-dashboard-gap:\s*24px;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*\.container\s*\{[\s\S]*gap:\s*22px;/.test(css) &&
     /\.idu-news-row\s*\{[\s\S]*grid-template-areas:\s*"title title"\s*"date comments";/.test(css),
   "Mobile pages should use a roomier section rhythm and readable announcement cards"
 );

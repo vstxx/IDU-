@@ -1,13 +1,15 @@
-# IDU+ 0.3.11
+# IDU+ 0.3.12
 
 IDU+ is an MV3 browser extension and Safari userscript that modernizes the real IDU portal while preserving its existing data, links, and workflows.
 
 Privacy policy: https://vstxx.github.io/IDU-/privacy.html
 
-## What's new in 0.3.11
+## What's new in 0.3.12
 
-- Fixed IDU+ Diagnostics delivery: active-use reports now go to the live diagnostics endpoint again. The Worker moved to a custom domain on the server side, and the extension kept POSTing to the retired `workers.dev` address, so every report silently failed with a 404.
-- Diagnostics delivery failures now log a console warning instead of disappearing without a trace.
+- Fixed IDU+ Diagnostics delivery in the Safari userscript by bundling the helper, removing its hard dependency on `chrome.runtime`, and persisting its one-time marker in browser-local storage.
+- Diagnostics now exposes privacy-safe console stages for missing users/runtime/storage, request attempts, HTTP/network failures, rate limits, Worker/Discord failures, and success. No name or install ID is logged.
+- Kept the primary and sticky topbars on one horizontally scrollable row at every viewport width, including narrow tablets and desktop windows.
+- Increased the mobile spacing rhythm between page-level sections and stacked dashboard columns without enlarging form-field spacing.
 
 ## Previously in 0.3.9
 

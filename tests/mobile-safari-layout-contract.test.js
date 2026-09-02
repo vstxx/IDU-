@@ -62,16 +62,24 @@ assert.ok(
 );
 
 assert.ok(
+  /html\.idu-plus #account-actions\s*\{[\s\S]*flex-flow:\s*row nowrap\s*!important;[\s\S]*overflow-x:\s*auto\s*!important;[\s\S]*white-space:\s*nowrap;/.test(css) &&
+    /html\.idu-plus \.idu-sticky-actions-row\s*\{[\s\S]*flex-flow:\s*row nowrap\s*!important;[\s\S]*overflow-x:\s*auto;[\s\S]*white-space:\s*nowrap;/.test(css),
+  "Primary and sticky topbar actions should remain one horizontally scrollable row at every viewport width"
+);
+
+assert.ok(
   /@media \(max-width:\s*1100px\)[\s\S]*html\.idu-plus #account-actions\s*\{[\s\S]*flex-wrap:\s*nowrap\s*!important;[\s\S]*overflow-x:\s*auto\s*!important;[\s\S]*-webkit-overflow-scrolling:\s*touch;/.test(css) &&
     /@media \(max-width:\s*1100px\)[\s\S]*html\.idu-plus \.idu-sticky-actions-row\s*\{[\s\S]*flex-wrap:\s*nowrap;[\s\S]*overflow-x:\s*auto;/.test(css),
   "Mobile and narrow desktop topbar actions should become smooth horizontal chip rails"
 );
 
 assert.ok(
-  /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.container\s*\{[\s\S]*gap:\s*18px;/.test(css) &&
-    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #site-content,[\s\S]*gap:\s*18px;/.test(css) &&
-    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.module,[\s\S]*margin:\s*0 0 6px\s*!important;/.test(css),
-  "Mobile pages should have more breathing room between grade, attendance, schedule, and similar sections"
+  /@media \(max-width:\s*760px\)[\s\S]*--idu-section-gap:\s*22px;[\s\S]*--idu-dashboard-gap:\s*24px;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.container\s*\{[\s\S]*gap:\s*22px;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus #site-content,[\s\S]*gap:\s*22px;/.test(css) &&
+    /html\.idu-plus \.no-menu #content > \.left-column,[\s\S]*gap:\s*22px\s*!important;/.test(css) &&
+    /@media \(max-width:\s*760px\)[\s\S]*html\.idu-plus \.module,[\s\S]*margin:\s*0\s*!important;/.test(css),
+  "Every mobile page should keep a larger consistent gap between top-level and column sections"
 );
 
 assert.ok(

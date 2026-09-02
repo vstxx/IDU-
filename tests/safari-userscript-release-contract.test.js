@@ -20,10 +20,17 @@ const firstBytes = fs.readFileSync(userScriptPath).subarray(0, 3);
 assert.notDeepStrictEqual([...firstBytes], [0xef, 0xbb, 0xbf], "Userscript should not include a UTF-8 BOM");
 assert.ok(userScript.startsWith("// ==UserScript=="), "Userscript should start with metadata block");
 assert.ok(userScript.includes("// @name         IDU+"), "Userscript should declare IDU+ name");
-assert.ok(userScript.includes("// @version      0.3.11"), "Userscript should use release version 0.3.11");
+assert.ok(userScript.includes("// @version      0.3.12"), "Userscript should use release version 0.3.12");
 assert.ok(userScript.includes("// @match        https://*.idu.edu.pl/*"), "Userscript should target IDU portals");
 assert.ok(userScript.includes("// @run-at       document-start"), "Userscript should run at document-start");
 assert.ok(userScript.includes("// @grant        none"), "Userscript should not require userscript manager grants");
+assert.ok(userScript.includes("globalScope.IDUPlusDiagnostics = diagnostics"), "Userscript should bundle the diagnostics helper");
+assert.ok(
+  userScript.includes('window.__IDU_PLUS_USERSCRIPT_VERSION__ = "0.3.12"') &&
+    userScript.includes("fallbackStorage") &&
+    userScript.includes("diagnostics:${stage}"),
+  "Safari diagnostics should have a version, persistent local fallback, and safe stage logging"
+);
 assert.ok(userScript.includes("data:font/woff2;base64,"), "Userscript should embed extension fonts");
 assert.ok(userScript.includes("data:image/png;base64,"), "Userscript should embed IDU+ logo");
 assert.ok(!userScript.includes("../fonts/"), "Userscript should not reference extension font paths");

@@ -1,0 +1,4 @@
+782d691d0b8b0b7d1356d364d6f2337550425545cb042549af3e11f6b4c5c29d  idu-plus-chrome-web-store.zip
+ce48f6f7afda1c85232ea09a0e43301b8388a454fcfa9fba5f2610318f599167  idu-plus-firefox-addon.zip
+ce48f6f7afda1c85232ea09a0e43301b8388a454fcfa9fba5f2610318f599167  idu-plus-firefox-addon.xpi
+8845b4ac007c135a62ba76750d573cbe047426d28e1b3238c4f5961715dc2f58  idu-plus-safari-userscript.zip

@@ -51,6 +51,19 @@ function makeStorage(initial = {}) {
   };
 }
 
+function makeWebStorage(initial = {}) {
+  const store = new Map(Object.entries(initial));
+
+  return {
+    getItem(key) {
+      return store.has(key) ? store.get(key) : null;
+    },
+    setItem(key, value) {
+      store.set(key, String(value));
+    }
+  };
+}
+
 (async () => {
   const manifest = JSON.parse(readText("manifest.json"));
   const popupHtml = readText("popup.html");
@@ -107,6 +120,10 @@ function makeStorage(initial = {}) {
       contentJs.includes("DIAGNOSTICS_RETRY_DELAYS_MS") &&
       contentJs.includes("diagnosticsPending"),
     "Content script should retry diagnostics briefly in case the logged-in user label renders late"
+  );
+  assert(
+    /onReady\(\(\) => \{\s*scheduleDiagnosticsReport\(\);\s*enhancePage\(\);/.test(contentJs),
+    "Diagnostics scheduling should not be blocked by an unrelated visual enhancement failure"
   );
   assert(
     diagnosticsJs.includes('reason: "already-reported"') &&
@@ -176,6 +193,52 @@ function makeStorage(initial = {}) {
   assert.equal(payload.timestamp, "2026-06-25T09:00:00.000Z");
   assert(!JSON.stringify(payload).match(/password|cookie|grade|message|html|screenshot/i));
 
+  const safariStorage = makeWebStorage();
+  const safariStages = [];
+  let safariFetchCalls = 0;
+  const safariResult = await diagnostics.reportActiveUser({
+    document: makeDocumentWithLogin("Safari Test User"),
+    endpoint: "https://idu-plus-diagnostics.example.workers.dev/diagnostics",
+    fetch: async () => {
+      safariFetchCalls += 1;
+      return { ok: true, status: 202 };
+    },
+    location: { host: "demo.idu.edu.pl" },
+    navigator: { userAgent: "Mozilla/5.0 Version/18.0 Safari/605.1.15" },
+    runtime: null,
+    storage: null,
+    fallbackStorage: safariStorage,
+    extensionVersion: "0.3.11",
+    crypto: { randomUUID: () => "77777777-7777-4777-8777-777777777777" },
+    log: (stage, details) => safariStages.push({ stage, details }),
+    now: () => new Date("2026-09-02T09:00:00.000Z")
+  });
+  assert.equal(safariResult.sent, true, "Safari userscript should report without chrome.runtime");
+  assert.equal(safariFetchCalls, 1, "Safari userscript should attempt one diagnostics request");
+  assert.deepEqual(
+    safariStages.map(({ stage }) => stage),
+    ["runtime-ready", "user-detected", "storage-local", "payload-created", "request-attempted", "success"],
+    "Safe diagnostics stages should expose the successful client flow"
+  );
+  assert(!JSON.stringify(safariStages).includes("Safari Test User"), "Diagnostics logs must not include the displayed name");
+  assert(!JSON.stringify(safariStages).includes("77777777"), "Diagnostics logs must not include the install ID");
+
+  const repeatedSafariResult = await diagnostics.reportActiveUser({
+    document: makeDocumentWithLogin("Safari Test User"),
+    endpoint: "https://idu-plus-diagnostics.example.workers.dev/diagnostics",
+    fetch: async () => {
+      safariFetchCalls += 1;
+      return { ok: true, status: 202 };
+    },
+    location: { host: "demo.idu.edu.pl" },
+    navigator: { userAgent: "Mozilla/5.0 Version/18.0 Safari/605.1.15" },
+    fallbackStorage: safariStorage,
+    extensionVersion: "0.3.11",
+    crypto: { randomUUID: () => "88888888-8888-4888-8888-888888888888" }
+  });
+  assert.equal(repeatedSafariResult.reason, "already-reported", "Safari fallback storage should persist the success marker");
+  assert.equal(safariFetchCalls, 1, "Safari should not report the same displayed person twice");
+
   await diagnostics.reportActiveUser({
     document: makeDocumentWithLogin("Jan Kowalski"),
     endpoint: "https://idu-plus-diagnostics.example.workers.dev/diagnostics",
@@ -215,6 +278,7 @@ function makeStorage(initial = {}) {
     iduPlusDiagnosticsSuccessfulReports: { "jan kowalski": "2026-06-20" }
   });
   let migratedFetchCalls = 0;
+  const migratedStages = [];
   const migratedResult = await diagnostics.reportActiveUser({
     document: makeDocumentWithLogin("Jan Kowalski"),
     endpoint: "https://idu-plus-diagnostics.example.workers.dev/diagnostics",
@@ -227,10 +291,16 @@ function makeStorage(initial = {}) {
     runtime: { getManifest: () => ({ version: "0.3.5" }) },
     storage: migratedStorage.api,
     crypto: { randomUUID: () => "66666666-6666-4666-8666-666666666666" },
+    log: (stage) => migratedStages.push(stage),
     now: () => new Date("2026-06-27T09:00:00.000Z")
   });
   assert.equal(migratedResult.reason, "already-reported", "Old daily report dates should migrate to one-time markers");
   assert.equal(migratedFetchCalls, 0, "A legacy successful report must prevent another diagnostics request");
+  assert.deepEqual(
+    migratedStages,
+    ["runtime-ready", "user-detected", "storage-extension", "already-reported"],
+    "Chrome should identify a persisted one-time marker without creating a payload or attempting fetch"
+  );
 
   const failingStorage = makeStorage();
   const failingResult = await diagnostics.reportActiveUser({
@@ -247,7 +317,7 @@ function makeStorage(initial = {}) {
     now: () => new Date("2026-06-25T09:00:00.000Z")
   });
   assert.equal(failingResult.sent, false, "Diagnostics should fail silently when the endpoint is unavailable");
-  assert.equal(failingResult.reason, "failed");
+  assert.equal(failingResult.reason, "network-or-cors-error");
 
   const retryAfterFailureCalls = [];
   const retryAfterFailureResult = await diagnostics.reportActiveUser({
